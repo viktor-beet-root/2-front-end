@@ -1,2 +1,1 @@
-# BRA_JS_Learn
-https://htmlpreview.github.io/?https://github.com/SKarachevcev/BRA_JS_Learn/blob/main/index.html
+https://skarachevcev.github.io/2-front-end/students/sviatoslav_karachevtsev/1_hw1/index.html

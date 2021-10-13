@@ -9,7 +9,140 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <p><a href="../index.html">Back to menu</a></p>
+        </nav>
+    </header>
+    <main>
+        <h1 style="color: rgb(85, 32, 32);">Анкета посетителя ресторана</h1>
+        <form method="post" style="color: rgb(124, 58, 38);">
+            <fieldset style="background-color: rgb(250, 233, 179);">
+                <legend style="color: rgb(0, 179, 179);">Контанктная информация</legend>
+                <div>
+                    <label>
+                        Имя
+                        <input type="text" name="name" placeholder="name" required>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Телефон
+                        <input type="text" name="phone" placeholder="+7465937345" required>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        E-mail
+                        <input type="email" name="email" placeholder="example@ex.org" required pattern="*@*.*">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Дата посещения
+                        <input type="date" name="date">
+                    </label>
+                </div>
+            </fieldset>
 
+            <fieldset style="background-color: rgb(250, 233, 179);">
+                <legend style="color: rgb(0, 179, 179);">Персональная информация</legend>
+                <div>
+                    <label>
+                        Возраст
+                        <input type="number" name="age" placeholder="18" min="1" max="100" step="1">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Любимая кухня
+                        <select>
+                            <option value="" selected hidden>
+                                Выберите из списка:
+                            </option>
+                            <option value="Rus">
+                                Русская
+                            </option>
+                            <option value="Ukr">
+                                Украинская
+                            </option>
+                            <option value="Gru">
+                                Грузинская
+                            </option>
+                            <option value="Chi">
+                                Китайская
+                            </option>
+                            <option value="Ita">
+                                Итальянская
+                            </option>
+                            <option value="Fre">
+                                Французская
+                            </option>
+                            <option value="Jap">
+                                Японская
+                            </option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Какие блюда Вы хотели бы увидеть в меню?
+                        <textarea name="menus" id="menus" placeholder="Введите сюда"></textarea>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset style="background-color: rgb(250, 233, 179);">
+                <legend style="color: rgb(0, 179, 179);">Оценка нашего заведения</legend>
+                <b>Поечему Вы выбрали наше заведение?</b>
+                <div>
+                    <label>
+                        <input type="radio" name="rr">
+                        Недалеко от дома/работы
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="rr">
+                        Увидел рекламу
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="rr">
+                        Посоветовали
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="rr">
+                        Оптимальное соотношение цены и качества
+                    </label>
+                </div>
+                <b>Вы будете рекомендовать наше заведение своим знакомым?</b>
+                <div>
+                    <label>
+                        <input type="radio" name="rec">
+                        Да
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="rec">
+                        Нет
+                    </label>
+                </div>
+            </fieldset>
+            <div>
+                <input type="submit" value="Отправить">
+                <input type="reset" value="Сбросить">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
 
 </html>

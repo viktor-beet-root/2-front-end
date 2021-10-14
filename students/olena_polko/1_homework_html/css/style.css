@@ -1,0 +1,58 @@
+body {
+    border: 1px black;
+    border-style: groove;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+img {
+    position: absolute;
+    right: 370px;
+    top: 330px;
+    width: 120px;
+    padding-right: 10px;
+    }
+
+nav{
+    text-align: left;
+}    
+
+a:hover {
+    color:red;
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+}
+
+ul{
+    list-style-type: none; 
+}
+
+table, th, td {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+
+header h1{
+    margin-bottom: -20px;
+}
+  
+main h3 {
+margin-bottom: -10px;
+color: red;
+}
+
+.Important {
+    font-weight: bold;
+    }

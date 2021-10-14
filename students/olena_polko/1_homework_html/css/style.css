@@ -17,3 +17,20 @@ img {
     width: 120px;
     padding-right: 10px;
     }
+
+nav{
+    text-align: left;
+}    
+
+a:hover {
+    color:red;
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+}
+
+ul{
+    list-style-type: none; 
+}

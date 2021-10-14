@@ -1,0 +1,11 @@
+body {
+    border: 1px black;
+    border-style: groove;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px;
+}

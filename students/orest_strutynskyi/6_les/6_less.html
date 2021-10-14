@@ -11,6 +11,88 @@
     <header>
         <h1>Анкета посетителя ресторана</h1>
     </header>
+    <main>
+        <h1>Форма анкети</h1>
+        <form method="post" action="#">
+            <fieldset>
+                <legend>Реєстрація</legend>
+                <label>П.І.Б
+                    <input type="text" autofocus name="name">
+                </label><br>
+                <label>Телефон
+                    <input type="text" name="number phone"><br>
+                </label>
+
+                <label>Email
+                    <input type="email" name="e-mail"><br>
+                </label>
+
+                <label>Пароль
+                    <input type="password" name="password">
+                </label><br>
+                <label>Стать
+                    <input type="text" name="sex" disabled>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Персональні дані</legend>
+                <label>Вік
+                    <input type="radio" value="18-21" name="old">18-21
+                    <input type="radio" value="22-29" name="old">22-29
+                    <input type="radio" value="30-35" name="old">30-35
+                    <input type="radio" value="36-50" name="old">36-50<br>
+                </label>
+                <lable>Улюблений ранж музики</lable>
+                <input type="checkbox" value="pop-music" name="stil1"> Поп-музика
+                <input type="checkbox" value="rock" name="stil2">Рок
+                <input type="checkbox" value="blues" name="stil1">Блюз
+                <input type="checkbox" value="elecronik" name="stil1">Елктро<br>
+
+                <label>Оберіть місто
+                    <select name="city" required>
+                        <option value="#" selected hidden disabled>Выбрать город</option>
+                        <option value="Kiev">Київ</option>
+                        <option value="Rivne">Рівне</option>
+                        <option value="Kharkiv">Харків</option>
+                </label>
+                </select><br>
+                <label>Які області ви відвідували
+                    <select name="region" multiple size="3">
+                        <option value="Kiev reg">Київська обл.</option>
+                        <option value="Rivne reg">Рівненська обл.</option>
+                        <option value="Kharkiv reg">Харківська обл.</option>
+                </label>
+                </select><br>
+                <label>Опишіть ваше місто<br>
+                    <textarea name="will taste the city" cols="10" rows="5"></textarea>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Про вас</legend>
+                <label>Ваше фото
+                    <input type="file" value="photo" name="file">
+                </label><br>
+                <input type="hidden" value="#" name="hidden"><br>
+                <input type="image" name="image" src="https://pngimg.com/uploads/chrome_logo/chrome_logo_PNG34.png"
+                    width="50"><br>
+                <label>Ваш улюблений колір
+                    <input type="color" id="head" name="head">
+                </label>
+                <br>
+                <label>О котрій ви прокидаєтесь
+                    <input type="time" name="time">
+                </label><br>
+                <label>Коли ви останній раз були за кордоном
+                    <input type="date" name="date">
+                </label><br>
+                <label>Місцевий час та дата
+                    <input type="datetime-local" name="detetime-local">
+                </label><br>
+                <label>На якій гучності слухаєте музику<input type="range" id="volume" name="volume" min="0" max="10">
+                </label>
+            </fieldset>
+        </form>
+    </main>
 </body>
 
 </html>

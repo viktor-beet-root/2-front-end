@@ -13,7 +13,7 @@
         <h1>Заполните анкету</h1>
     </header>
     <main>
-        <form method="post" action="" autocomplete="off">
+        <form method="get" action="" autocomplete="off">
             <fieldset>
                 <legend>Персональная информация</legend>
                 <div>
@@ -55,45 +55,14 @@
                 </div>
                 <br>
                 <div>
-                    <label>
-                        <img src="./img/flag/us.png" alt="us" width="50" height="50">
-                        <input type="radio" value="us" name="flag">
-                    </label>
-                    <br>
-                    <label>
-                        <img src="./img/flag/ua.png" alt="ua" width="50" height="50">
-                        <input type="radio" value="ua" name="flag">
-                    </label>
-                    <br>
-                    <label>
-                        <img src="./img/flag/ru.png" alt="ru" width="50" height="50">
-                        <input type="radio" value="ru" name="flag">
-                    </label>
-                    <br>
-                    <label>
-                        <img src="./img/flag/ro.png" alt="ro" width="50" height="50">
-                        <input type="radio" value="ro" name="flag">
-                    </label>
-                    <br>
-                    <label>
-                        <img src="./img/flag/pl.png" alt="pl" width="50" height="50">
-                        <input type="radio" value="pl" name="flag">
-                    </label>
-                    <br>
-                    <label>
-                        <img src="./img/flag/jp.png" alt="jp" width="50" height="50">
-                        <input type="radio" value="jp" name="flag">
-                    </label>
-                    <br>
-                    <label>
-                        <img src="./img/flag/gr.png" alt="gr" width="50" height="50">
-                        <input type="radio" value="gr" name="flag">
-                    </label>
-                    <br>
-                    <label>
-                        <img src="./img/flag/fr.png" alt="fr" width="50" height="50">
-                        <input type="radio" value="fr" name="flag">
-                    </label>
+                    <input type="image" src="./img/flag/us.png" alt="us" width="50" height="50" value="us" name="flag">
+                    <input type="image" src="./img/flag/ua.png" alt="ua" width="50" height="50" value="ua" name="flag">
+                    <input type="image" src="./img/flag/ru.png" alt="ru" width="50" height="50" value="ru" name="flag">
+                    <input type="image" src="./img/flag/ro.png" alt="ro" width="50" height="50" value="ro" name="flag">
+                    <input type="image" src="./img/flag/pl.png" alt="pl" width="50" height="50" value="pl" name="flag">
+                    <input type="image" src="./img/flag/jp.png" alt="jp" width="50" height="50" value="jp" name="flag">
+                    <input type="image" src="./img/flag/gr.png" alt="gr" width="50" height="50" value="gr" name="flag">
+                    <input type="image" src="./img/flag/fr.png" alt="fr" width="50" height="50" value="fr" name="flag">
                     <br>
                 </div>
                 <br>
@@ -103,13 +72,16 @@
                     <textarea name="about_myself" id="comments" placeholder="Кратко о себе" cols="40"
                         rows="10"></textarea>
                 </div>
+                <br>
+                <input type="reset" value="Очистьть форму">
+                <input type="submit" value="Готово!">
             </fieldset>
         </form>
     </main>
     <footer>
         <div>
             <a href="./index.html"><img src="./img/back.png" alt="next" width="50" height="50"></a>
-            <a href="./personal_information.html"><img src="./img/next.png" alt="next" width="50" height="50"></a>
+            <a href="./any_questions.html"><img src="./img/next.png" alt="next" width="50" height="50"></a>
         </div>
     </footer>
 </body>

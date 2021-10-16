@@ -11,12 +11,16 @@
 <body>
     <header>
         <nav>
-            <p><a href="../index.html">Back to menu</a></p>
+            <p>
+                <a href="#inp">Inputs</a>
+                <a href="../index.html">Back to menu</a>
+            </p>
         </nav>
     </header>
     <main>
         <h1 style="color: rgb(85, 32, 32);">Анкета посетителя ресторана</h1>
-        <form method="post" style="color: rgb(124, 58, 38);" action="./">
+        <form method="post" style="color: rgb(124, 58, 38);" action="./" oninput="x.value=parseInt(a.value)"
+            onsubmit="alert('Submited'); outputer.value='Submited!'; return false">
             <fieldset style="background-color: rgb(250, 233, 179);">
                 <legend style="color: rgb(0, 179, 179);">Контанктная информация</legend>
                 <div>
@@ -116,13 +120,78 @@
                     </label>
                 </div>
             </fieldset>
+            <fieldset style="background-color: rgb(250, 233, 179);" id="inp">
+                <legend style="color: rgb(0, 179, 179);">Все инпуты:</legend>
+                <div><input type="button" name="button" placeholder="button" value="button">button</div>
+                <div><input type="checkbox" name="checkbox" placeholder="checkbox">checkbox</div>
+                <div><input type="color" name="color" placeholder="color">color</div>
+                <div><input type="date" name="date" placeholder="date">date</div>
+                <div><input type="datetime" name="datetime" placeholder="datetime">datetime</div>
+                <div><input type="datetime-local" name="datetimel" placeholder="datetimel">datetime-local</div>
+                <div><input type="email" name="email" placeholder="email">email</div>
+                <div><input type="file" name="file" placeholder="file">file</div>
+                <div><input type="hidden" name="hidden" placeholder="hidden">hidden</div>
+                <div><input type="image" name="image" placeholder="image" width="300" src="img/moz.png">image</div>
+                <div><input type="month" name="month" placeholder="month">month</div>
+                <div><input type="number" name="number" placeholder="number">number</div>
+                <div><input type="password" name="password" placeholder="password">password</div>
+                <div><input type="radio" name="radio" placeholder="radio">radio</div>
+                <div><input id="a" type="range" name="range" placeholder="range" value="100">DRAG ME:
+                    <output name="x" for="a"></output>
+                </div>
+                <div><input type="reset" name="reset" placeholder="reset">reset</div>
+                <div><input type="search" name="search" placeholder="search">search</div>
+                <div><input type="submit" name="submit" placeholder="submit">submit</div>
+                <div><input type="tel" name="tel" placeholder="tel">tel</div>
+                <div><input type="text" name="text" placeholder="text">text</div>
+                <div><input type="time" name="time" placeholder="time">time</div>
+                <div><input type="url" name="url" placeholder="url">url</div>
+                <div><input type="week" name="week" placeholder="week">week</div>
+                <div><button type="button" id="">button</button></div>
+                <div><button type="reset" id="">reset</button></div>
+                <div><button type="submit" id="">submit</button></div>
+                <div><select name="select" id="sel" size="14" multiple>
+                        <optgroup label="1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </optgroup>
+                        <optgroup label="2">
+                            <option>21</option>
+                            <option>22</option>
+                        </optgroup>
+                        <optgroup label="3">
+                            <option>31</option>
+                            <option>32</option>
+                            <option>33</option>
+                            <option>34</option>
+                            <option>35</option>
+                        </optgroup>
+                    </select></div>
+                <input list="dtl" name="dtl">
+                <datalist id="dtl">
+                    <option value="data1">
+                    <option value="data2">
+                    <option value="data3">
+                    <option value="data4">
+                    <option value="data5">
+                </datalist>
+            </fieldset>
             <div>
                 <input type="submit" value="Отправить">
+                <output name="outputer"></output>
                 <input type="reset" value="Сбросить">
             </div>
         </form>
     </main>
     <footer>
+        <nav>
+            <p>
+                <a href="#">Back to top</a>
+                <a href="../index.html">Back to menu</a>
+            </p>
+        </nav>
     </footer>
 </body>
 

@@ -39,10 +39,41 @@
                 <p><label for="dishes">Які страви ви б хотіли побачити в меню?</label></p>
                 <textarea name="dishes" id="dishes" cols="35" rows="4" placeholder="Введіть страви тут"></textarea>
             </fieldset>
-
+            <fieldset>
+                <legend>Оцінка нашого закладу</legend>
+                <p>Чому ви обрали наш заклад?</p>
+                <input type="radio" id="nearby" name="why" value="nearby">
+                <label for="nearby">Недалеко від дому/роботи</label><br>
+                <input type="radio" id="ad" name="why" value="ad">
+                <label for="ad">Побачив рекламу</label><br>
+                <input type="radio" id="advice" name="why" value="advice">
+                <label for="advice">Порадили</label><br>
+                <input type="radio" id="price/quality" name="why" value="price/quality">
+                <label for="price/quality">Оптимальне відношення ціни та якості</label>
+                <p>Чи порадите Ви нас своїм знайомим?</p>
+                <input type="radio" id="yes" name="recommend" value="yes">
+                <label for="yes">Так</label><br>
+                <input type="radio" id="no" name="recommend" value="no">
+                <label for="no">Ні</label>
+                <p>Що в нашому закладі Вам подобається?</p>
+                <input type="checkbox" id="feature1" name="feature1" value="prices">
+                <label for="feature1">Ціни</label><br>
+                <input type="checkbox" id="feature2" name="feature2" value="atmosphere">
+                <label for="feature2">Атмосфера</label><br>
+                <input type="checkbox" id="feature3" name="feature3" value="staff">
+                <label for="feature3">Персонал</label><br>
+                <input type="checkbox" id="feature4" name="feature4" value="music">
+                <label for="feature4">Музика</label><br>
+                <input type="checkbox" id="feature5" name="feature5" value="location">
+                <label for="feature5">Розташування</label><br>
+                <input type="checkbox" id="feature6" name="feature6" value="taste">
+                <label for="feature6">Смак</label><br>
+                <input type="checkbox" id="feature7" name="feature7" value="food/quality">
+                <label for="feature7">Якість страв</label><br>
+            </fieldset>
+            <p><input type="submit" value="Відправити"></p>
         </form>
     </section>
-
 </body>
 
 </html>

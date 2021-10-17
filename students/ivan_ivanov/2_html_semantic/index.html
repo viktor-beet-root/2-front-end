@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Семантичні елементи</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html" id="p1">Головна</a></li>
+                <li>
+                    <a href="https://ibah84.github.io/2-front-end/students/ivan_ivanov/1_html_sv/" target="_blank">
+                        Про мене</a>
+                </li>
+            </ul>
+            <br>
+            <ul>
+                <li><a href="#p2">Семантичні елементи</a></li>
+                <li><a href="#p3">Підтримка браузерів</a></li>
+                <li><a href="#p4">Нові семантичні елементи в HTML5</a></li>
+                <li><a href="#p5">HTML5 &lt;section&gt; елемент</a></li>
+                <li><a href="#p6">HTML5 &lt;article&gt; елемент</a></li>
+                <li><a href="#p7">HTML5 &lt;header&gt; елемент</a></li>
+                <li><a href="#p8">HTML5 &lt;footer&gt; елемент</a></li>
+                <li><a href="#p9">Відео</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 id="p2">HTML5 Семантичні елементи</h2>
+            <p>Семантичний елемент чітко описує його значення як для браузера, так і <br>
+                для розробника.</p>
+            <p>Приклади не <b>семантичних</b> елементів:
+                &lt;div&gt; і &lt;span&gt;- нічого не говорить <br> про його вміст.</p>
+            <p>Приклади <b>семантичних</b> елементів: &lt;form&gt;, &lt;table&gt; і &lt;article&gt;- чітко <br>
+                визначає його зміст.</p>
+        </section>
+        <section>
+            <h2 p="p3">Підтримка браузерів</h2>
+            <p>
+                <a href="https://ru.wikipedia.org/wiki/Google_Chrome" target="_blank"><img src="./img/iconchrome.png"
+                        width="40" height="40" alt="Chrome" title="Chrome"></a>
+                <a href="https://ru.wikipedia.org/wiki/Internet_Explorer" target="_blank"><img
+                        src="./img/iconexplorer.png" width="40" height="40" alt="Explorer" title="Explorer"></a>
+                <a href="https://ru.wikipedia.org/wiki/Mozilla_Firefox" target="_blank"><img src="./img/iconmozila.png"
+                        width="40" height="38" alt="Mozila" title="Mozila"></a>
+                <a href="https://ru.wikipedia.org/wiki/Safari" target="_blank"><img src="./img/iconsafari.png"
+                        width="40" height="46" alt="Safari" title="Safari"></a>
+                <a href="https://ru.wikipedia.org/wiki/Opera" target="_blank"><img src="./img/iconopera.png" width="40"
+                        height="40" alt="Opera" title="Opera"></a>
+            </p>
+            <p>Семантичні елементи HTML5 підтримуються у всіх сучасних браузерах.</p>
+            <p>Крім того, ви можете "навчити" старих браузерів, як обробляти "невідомі <br>
+                елементи".</p>
+            <p>Прочитайте про це в <a href="https://html5book.ru/osnovy-html/" target="_blank">підтримці браузера
+                    HTML5.</a></p>
+        </section>
+        <section>
+            <h2 id="p4">Нові семантичні елементи в HTML5</h2>
+            <p>HTML5 пропонує нові семантичні елементи для визначення різних частин <br>
+                веб-сторінки:</p>
+            <lu>
+                <li>&lt;section&gt;</li>
+                <li>&lt;article&gt;</li>
+                <li>&lt;header&gt;</li>
+                <li>&lt;footer&gt;</li>
+            </lu>
+        </section>
+        <section>
+            <h2 id="p5">HTML5 &lt;section&gt; елемент</h2>
+            <p>Елемент &lt;section&gt; визначає розділ в документі.</p>
+            <p>Згідно з документацією в3к'с HTML5: "розділ представляє собою <br>
+                тематичну угруповання контенту, зазвичай з заголовком".</p>
+            <p>Домашня сторінка зазвичай може бути розділена на розділи для <br>
+                ознайомлення, змісту і контактної інформації.
+                HTML5 </p>
+            <p><img src="./img/sectionimg.jpg" width="512" height="118" alt="section"></p>
+        </section>
+        <section>
+            <h2 id="p6">HTML5 &lt;article&gt; елемент</h2>
+            <p>Елемент &lt;article&gt; визначає незалежний, автономний вміст.</p>
+            <p>Стаття повинна мати сенс самостійно, і вона повинна мати можливість <br>
+                читати його незалежно від іншої частини веб-сайту.</p>
+            <p>Приклади того, де можна використовувати елемент &lt;article&gt;:</p>
+            <lu>
+                <li>Повідомлення на форумі</li>
+                <li>блозі</li>
+                <li>Газетна стаття</li>
+            </lu>
+            <p><img src="./img/article.jpg" width="512" height="122" alt="article"></p>
+        </section>
+        <section>
+            <h2 id="p7">HTML5 &lt;header&gt; елемент</h2>
+            <p>Елемент &lt;header&gt; задає заголовок для документа або розділу.</p>
+            <p>Елемент &lt;header&gt; повинен використовуватися в якості контейнера для <br>
+                вступного змісту.</p>
+            <p>В одному документі може бути кілька елементів &lt;header&gt;.</p>
+            <p>У наступному прикладі визначається заголовок для статті:</p>
+            <p><img src="./img/header.jpg" width="510" height="166" alt="header"></p>
+        </section>
+        <section>
+            <h2 id="p8">HTML5 &lt;footer&gt; елемент</h2>
+            <p>Елемент &lt;footer&gt; вказує нижній колонтитул для документа або розділу.</p>
+            <p>Нижній колонтитул зазвичай містить автора документа, інформацію про <br>
+                авторське право, посилання на умови використання, контактні дані і т.д.</p>
+            <p>В одному документі може бути кілька елементів &lt;footer&gt;.</p>
+            <p><img src="./img/footer.jpg" width="520" height="124" alt="footer"></p>
+        </section>
+    </main>
+    <footer>
+        <iframe src="https://ibah84.github.io/2-front-end/students/ivan_ivanov/1_html_sv/" frameborder="10" width="560"
+            height="315"></iframe>
+        <br>
+        <iframe id="p9" width="560" height="315" src="https://www.youtube.com/embed/FII4DRuiLLI"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <p><a href="#p1">&uArr; В початок &uArr;</a></p>
+    </footer>
+</body>
+
+</html>

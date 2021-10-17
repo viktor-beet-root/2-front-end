@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Всякие вопросы</title>
+</head>
+
+<body>
+    <header>
+        <h1>Заполните анкету</h1>
+    </header>
+    <main>
+        <form method="get" action="" autocomplete="off">
+            <fieldset>
+                <legend>Всякие вопросы</legend>
+
+                <fieldset>
+                    <legend>Увлечения</legend>
+                    <label>
+                        <input type="checkbox" value="cinema" name="cunema"> Кино
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="book" name="book"> Книги
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sport" name="sport"> Спорт
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="trips" name="trips"> Путешествия
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="game" name="game"> Игры
+                    </label>
+                    <br>
+                    <label>
+                        <input type="range" value="week" name="week" minlength="0" maxlength="7" step="14">
+                        Сколько дней в неделю уделяете на хобби?
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Всякое</legend>
+                    <label>
+                        <input type="color" value="color" name="color"> Любимый цвет
+                    </label>
+                    <br>
+                    <label>
+                        <input type="date" value="date" name="date"> Любимая дата
+                    </label>
+                    <br>
+                    <label>
+                        <input type="file" value="file" name="file"> Любимая фотка
+                    </label>
+                    <div>
+                        <label for="comments">Положительные стороны</label>
+                        <br>
+                        <textarea name="about_myself" id="comments" placeholder="Положительные стороны" cols="40"
+                            rows="10"></textarea>
+                    </div>
+                </fieldset>
+                <br>
+                <input type="reset" value="Очистьть форму">
+                <input type="submit" value="Готово!">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <div>
+            <a href="./personal_information.html"><img src="./img/back.png" alt="next" width="50" height="50"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

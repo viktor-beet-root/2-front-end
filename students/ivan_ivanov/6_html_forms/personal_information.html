@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персональная информация</title>
+</head>
+
+<body>
+    <header>
+        <h1>Заполните анкету</h1>
+    </header>
+    <main>
+        <form method="get" action="" autocomplete="off">
+            <fieldset>
+                <legend>Персональная информация</legend>
+                <div>
+                    <label>
+                        <input type="number" name="age" placeholder="age"> Возраст
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        <input type="date" name="date" placeholder="date">Дата рождения
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        <input type="radio" value="female" name="female_man" placeholder="female" required>
+                        &#9792;
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="man" name="female_man" placeholder="last name" required>
+                        &#9794;
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <label>
+                        <select name="zodiac_sign">
+                            <option value="zodiac_sign_0" disabled selected hidden>Знак зодиака</option>
+                            <option value="zodiac_sign_1">&#9800; Овен</option>
+                            <option value="zodiac_sign_2">&#9801; Телец</option>
+                            <option value="zodiac_sign_3">&#9802; Близнецы</option>
+                            <option value="zodiac_sign_4">&#9803; Рак</option>
+                            <option value="zodiac_sign_5">&#9804; Лев</option>
+                            <option value="zodiac_sign_6">&#9805; Дева</option>
+                            <option value="zodiac_sign_7">&#9806; Весы</option>
+                            <option value="zodiac_sign_8">&#9807; Скорпион</option>
+                            <option value="zodiac_sign_9">&#9808; Стрелец</option>
+                            <option value="zodiac_sign_10">&#9809; Козерог</option>
+                            <option value="zodiac_sign_11">&#9810; Водолей</option>
+                            <option value="zodiac_sign_12">&#9811; Рыбы</option>
+                        </select>
+                    </label>
+                </div>
+                <br>
+                <div>
+                    <input type="image" src="./img/flag/us.png" alt="us" width="50" height="50" value="us" name="flag">
+                    <input type="image" src="./img/flag/ua.png" alt="ua" width="50" height="50" value="ua" name="flag">
+                    <input type="image" src="./img/flag/ru.png" alt="ru" width="50" height="50" value="ru" name="flag">
+                    <input type="image" src="./img/flag/ro.png" alt="ro" width="50" height="50" value="ro" name="flag">
+                    <input type="image" src="./img/flag/pl.png" alt="pl" width="50" height="50" value="pl" name="flag">
+                    <input type="image" src="./img/flag/jp.png" alt="jp" width="50" height="50" value="jp" name="flag">
+                    <input type="image" src="./img/flag/gr.png" alt="gr" width="50" height="50" value="gr" name="flag">
+                    <input type="image" src="./img/flag/fr.png" alt="fr" width="50" height="50" value="fr" name="flag">
+                    <br>
+                </div>
+                <br>
+                <div>
+                    <label for="comments">Кратко о себе</label>
+                    <br>
+                    <textarea name="about_myself" id="comments" placeholder="Кратко о себе" cols="40"
+                        rows="10"></textarea>
+                </div>
+                <br>
+                <input type="reset" value="Очистьть форму">
+                <input type="submit" value="Готово!">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <div>
+            <a href="./index.html"><img src="./img/back.png" alt="next" width="50" height="50"></a>
+            <a href="./any_questions.html"><img src="./img/next.png" alt="next" width="50" height="50"></a>
+        </div>
+    </footer>
+</body>
+
+</html>

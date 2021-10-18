@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,10 @@
 <body>
     <header>
         <nav>
-            <p>
-                <a href="#inp">Inputs</a>
-                <a href="../index.html">Back to menu</a>
-            </p>
+            <ul>
+                <li><a href="#inp">Inputs</a></li>
+                <li><a href="../index.html">Back to menu</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -36,16 +36,12 @@
                     </label>
                 </div>
                 <div>
-                    <label>
-                        E-mail
-                        <input type="email" name="email" placeholder="example@ex.org" required pattern="*@*.*">
-                    </label>
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="example@ex.org" required>
                 </div>
                 <div>
-                    <label>
-                        Дата посещения
-                        <input type="date" name="date">
-                    </label>
+                    <label for="datev">Дата посещения</label>
+                    <input id="datev" type="date" name="date">
                 </div>
             </fieldset>
             <fieldset style="background-color: rgb(250, 233, 179);">
@@ -61,13 +57,13 @@
                         Любимая кухня
                         <select>
                             <option value="" selected hidden>Выберите из списка:</option>
-                            <option value="Rus">Русская</option>
-                            <option value="Ukr">Украинская</option>
-                            <option value="Gru">Грузинская</option>
-                            <option value="Chi">Китайская</option>
-                            <option value="Ita">Итальянская</option>
-                            <option value="Fre">Французская</option>
-                            <option value="Jap">Японская</option>
+                            <option value="rus">Русская</option>
+                            <option value="ukr">Украинская</option>
+                            <option value="gru">Грузинская</option>
+                            <option value="chi">Китайская</option>
+                            <option value="ita">Итальянская</option>
+                            <option value="fre">Французская</option>
+                            <option value="jap">Японская</option>
                         </select>
                     </label>
                 </div>
@@ -84,25 +80,23 @@
                 <b>Поечему Вы выбрали наше заведение?</b>
                 <div>
                     <label>
-                        <input type="radio" name="rr">
+                        <input type="radio" name="why" id="notffh">
                         Недалеко от дома/работы
                     </label>
                 </div>
                 <div>
-                    <label>
-                        <input type="radio" name="rr">
-                        Увидел рекламу
-                    </label>
+                    <input type="radio" name="why" id="advert">
+                    <label for="advert">Увидел рекламу</label>
                 </div>
                 <div>
                     <label>
-                        <input type="radio" name="rr">
+                        <input type="radio" name="why" id="recomended">
                         Посоветовали
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="radio" name="rr">
+                        <input type="radio" name="why" id="optimapnq">
                         Оптимальное соотношение цены и качества
                     </label>
                 </div>
@@ -187,10 +181,10 @@
     </main>
     <footer>
         <nav>
-            <p>
-                <a href="#">Back to top</a>
-                <a href="../index.html">Back to menu</a>
-            </p>
+            <ul>
+                <li><a href="#">Back to top</a></li>
+                <li><a href="../index.html">Back to menu</a></li>
+            </ul>
         </nav>
     </footer>
 </body>

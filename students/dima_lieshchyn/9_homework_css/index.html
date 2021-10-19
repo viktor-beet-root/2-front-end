@@ -1,119 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Landing Page</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
-        <nav id="navB">
-            <ul>
-                <li><a href="#navB">Home</a></li>
-                <li><a href="#aboutMe">About me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-        <h1>Denis Novik</h1>
-        <div><img src="images/header-logo.jpg" alt="Denis Novik" title="Denis Novik"></div>
+        <div id="nav-block">
+            <nav id="navB">
+                <ul id="nav-list" class="disp-flex">
+                    <li><a href="#navB" id="nav-home">Home</a></li>
+                    <li><a href="#aboutMe">About me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="line"></div>
+        <div id="head-block">
+            <h1>Denis Novik</h1>
+            <div><img src="images/header-logo.jpg" id="head-logo" alt="Denis Novik" title="Denis Novik"></div>
+        </div>
     </header>
     <main>
-        <section id="aboutMe">
-            <h2>About me</h2>
-            <div>
-                <p>Hi, I'm Denis – UX/UI designer from Minsk. 
-                    I'm interested in design and everything connected with it.
+        <div id="aboutMe-block" class="margin-top-100">
+            <section id="aboutMe">
+                <h2>About me</h2>
+                <div>
+                    <p>Hi, I'm Denis – UX/UI designer from Minsk.
+                        <br>
+                        I'm interested in design and everything connected with it.
+                    </p>
                     <br>
-                    I'm studying at courses "Web and mobile design 
-                    interfaces" in IT-Academy.
+                    <p>
+                        I'm studying at courses "Web and mobile design
+                        interfaces" in IT-Academy.
+                    </p>
                     <br>
-                    Ready to implement excellent projects
-                    with wonderful people.</p>
-            </div>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <p>I work in such programs as</p>
-            <div>
-                <div>
-                    <img src="images/1_ps.svg" alt="photoshop-logo" title="photoshop">
-                    <p>Adobe Photoshop</p>
-                    <div>
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_light.svg" alt="star-light" title="star light">
-                    </div>
+                    <p>
+                        Ready to implement excellent projects
+                        <br>
+                        with wonderful people.
+                    </p>
                 </div>
-                <div>
-                    <img src="images/2_ilustrator.svg" alt="Illustrator-logo" title="ilustrator">
-                    <p>Adobe Illustrator</p>
-                    <div>
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_light.svg" alt="star-light" title="star light">
-                        <img src="images/star_light.svg" alt="star-light" title="star light">
-                    </div>
-                </div>
-                <div>
-                    <img src="images/3_aftereffects.svg" alt="aftereffects-logo" title="after effetcs">
-                    <p>Adobe After Effects</p>
-                    <div>
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_light.svg" alt="star-light" title="star light">
-                    </div>
-                </div>
-                <div>
-                    <img src="images/4_figma.svg" alt="figma-logo" title="figma">
-                    <p>Figma</p>
-                    <div>
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_black.svg" alt="star-dark" title="star dark">
-                        <img src="images/star_light.svg" alt="star-light" title="star light">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <img src="images/portfolio.jpg" alt="portfolio" title="portfolio">
-            <br>
-            <a href="https://www.revolve.com/content/hotlist?navsrc=main" target="_blank">Online fashion store - Homepage</a>
-        </section>
-        <section>
-            <img src="images/reebok.jpg" alt="reebok" title="reebok">
-            <br>
-            <a href="https://www.reebok.com/us" target="_blank">Reebok Store - Concept</a>
-        </section>
-        <section>
-            <img src="images/braun.jpg" alt="braun" title="braun">
-            <br>
-            <a href="https://us.braun.com/en-us" target="_blank">Braun Landing Page - Concept</a>
-        </section>
-    </main>
-    <footer id="contacts">
-        <h2>Contacts</h2>
-        <br>
-        <p>Want to know more or just chat? You are welcome!</p>
-        <br>
-        <a href="#"><img src="images/button_sendm.png" alt="" srcset=""></a>
-        <div>
-            <a href=""><img src="images/footer_insta.svg" alt="Instagram" title="instagram"></a>
-            <a href=""><img src="images/footer_surface.svg" alt="surface" title="surface"></a>
-            <a href=""><img src="images/footer_behance.svg" alt="brhance" title="behance"></a>
-            <a href=""><img src="images/footer_ball.svg" alt="ball" title="ball"></a>
+            </section>
         </div>
-        <a href="#">Like me on LinkedIn, Instagram, Behance, Dribble</a>
-    </footer>
+        <div id="skills-block" class="margin-top-100">
+            <section id="skills">
+                <div id="skill-top-block">
+                    <h2>Skills</h2>
+                    <p>I work in such programs as</p>
+                </div>
+                <div id="skills-block-inside" class="disp-flex flex-dir-row">
+                    <div class="skills-content-block">
+                        <div class="skills-cont-ins">
+                            <img src="images/1_ps.svg" alt="photoshop-logo" title="photoshop">
+                            <p>Adobe<br>Photoshop</p>
+                        </div>
+                        <div class="stars disp-flex">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_light.svg" alt="star-light" title="star light">
+                        </div>
+                    </div>
+                    <div class="skills-content-block disp-flex flex-dir-col align-i-center">
+                        <div class="skills-cont-ins">
+                            <img src="images/2_ilustrator.svg" alt="Illustrator-logo" title="ilustrator">
+                            <p>Adobe<br>Illustrator</p>
+                        </div>
+                        <div class="stars disp-flex">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_light.svg" alt="star-light" title="star light">
+                            <img src="images/star_light.svg" alt="star-light" title="star light">
+                        </div>
+                    </div>
+                    <div class="skills-content-block">
+                        <div class="skills-cont-ins">
+                            <img src="images/3_aftereffects.svg" alt="aftereffects-logo" title="after effetcs">
+                            <p>Adobe After<br>Effects</p>
+                        </div>
+                        <div class="stars disp-flex">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_light.svg" alt="star-light" title="star light">
+                        </div>
+                    </div>
+                    <div class="skills-content-block">
+                        <div class="skills-cont-ins">
+                            <img src="images/4_figma.svg" alt="figma-logo" title="figma">
+                            <p>Figma</p><br>
+                        </div>
+                        <div class="stars disp-flex">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_black.svg" alt="star-dark" title="star dark">
+                            <img src="images/star_light.svg" alt="star-light" title="star light">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="main-bottom-block">
+            <div id="portfolio-block" class="margin-top-100">
+                <section id="portfolio">
+                    <h2>Portfolio</h2>
+                    <img src="images/portfolio.jpg" alt="portfolio" title="portfolio">
+                    <br>
+                    <a href="https://www.revolve.com/content/hotlist?navsrc=main" class="text-dec-und"
+                        target="_blank">Online fashion store -
+                        Homepage</a>
+                </section>
+            </div>
+            <div id="reebok-block" class="margin-top-50">
+                <section>
+                    <img src="images/reebok.jpg" alt="reebok" title="reebok">
+                    <br>
+                    <a href="https://www.reebok.com/us" class="text-dec-und" target="_blank">Reebok Store - Concept</a>
+                </section>
+            </div>
+            <div id="braun-block" class="margin-top-50">
+                <section>
+                    <img src="images/braun.jpg" alt="braun" title="braun">
+                    <br>
+                    <a href="https://us.braun.com/en-us" class="text-dec-und" target="_blank">Braun Landing Page -
+                        Concept</a>
+                </section>
+            </div>
+        </div>
+    </main>
+    <div id="footer-block" class="margin-top-100">
+        <footer id="contacts">
+            <h2>Contacts</h2>
+            <br>
+            <p>Want to know more or just chat?<br>
+                You are welcome!</p>
+            <br>
+            <div id="button-contact" class="margin-top-50"><a href="#"><img src="images/button_sendm.png" alt=""
+                        srcset=""></a></div>
+            <div id="fotter-imgs" class="disp-flex margin-top-100">
+                <a href=""><img src="images/footer_insta.svg" alt="Instagram" title="instagram"></a>
+                <a href=""><img src="images/footer_surface.svg" alt="surface" title="surface"></a>
+                <a href=""><img src="images/footer_behance.svg" alt="brhance" title="behance"></a>
+                <a href=""><img src="images/footer_ball.svg" alt="ball" title="ball"></a>
+            </div>
+            <div><a href="#">Like me on</a></div>
+            <div><a href="#">LinkedIn, Instagram, Behance, Dribble</a></div>
+            <div><a href="#">Dribble</a></div>
+        </footer>
+    </div>
 </body>
+
 </html>

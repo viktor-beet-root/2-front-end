@@ -1,0 +1,17 @@
+
+Шрифти:Open Sans, Gilroy-Bold
+body fs 18px regular
+h1 fs 47px bold
+h2 fs 34px bold
+btn fs  18px bold
+skills titels Gilroy-Bold 14px
+
+Container: max-width 947px
+
+Colors: 
+	body:#000
+	bg:#F6F6F6
+        nav  border-bottom:#828282
+	nav a:#828282
+	nav a.active:#000
+	skills titels:#828282

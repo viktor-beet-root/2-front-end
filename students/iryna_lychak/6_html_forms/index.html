@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+</head>
+
+<body>
+    <h1>Анкета: Який у тебе тип мислення?</h1>
+    <form method="post">
+        <fieldset>
+            <legend>Контактна інформація</legend>
+            <p><label for="name">Ім'я <br> <input type="text" autofocus required></label></p>
+            <p><label for="text">Телефон <br> <input type="text" maxlength="13" autofocus required></label></p>
+            <p><label for="email">Email <br> <input type="email" autofocus required
+                        placeholder="email@email.com"></label></p>
+        </fieldset>
+        <fieldset>
+            <legend>Біографічні дані</legend>
+            <p>
+                <label for="age">Вік
+                    <select name="age" id="age">
+                        <option value="0-10" selected>0-10</option>
+                        <option value="11-18" selected>11-18</option>
+                        <option value="19-29" selected>19-29</option>
+                        <option value="30-44" selected>30-44</option>
+                        <option value="45-60" selected>45-60</option>
+                        <option value=">60" selected>>60</option>
+                    </select>
+                    <input type="number" min="1" max="100" step="1">
+                </label>
+            </p>
+            <p>
+                <label for="sex">
+                    Стать<input type="radio" name="sex">чоловіча
+                    <input type="radio" name="sex">жіноча
+                    <input type="radio" name="sex">інша
+                </label>
+            </p>
+            <p>Місце проживання</p>
+            <label for="">
+                <select name="home" id="">
+                    <option value="" selected hidden disabled>Вибрати</option>
+                    <optgroup label="Країна">Країна</optgroup>
+                    <option value="">Україна</option>
+                    <option value="">США</option>
+                    <option value="">Велика Британія</option>
+                    <option value="">Бразилія</option>
+                    <option value="">Австралія</option>
+                </select>
+            </label>
+            <label for="">
+                <select name="" id="">
+                    <option value="" selected hidden disabled>Вибрати</option>
+                    <optgroup label="Місто">Місто</optgroup>
+                    <option value="">Київ</option>
+                    <option value="">Вінниця</option>
+                    <option value="">Львів</option>
+                    <option value="">Харків</option>
+                    <option value="">Одеса</option>
+                </select>
+            </label>
+            <p>Освіта</p>
+            <label for="">
+                <select name="ed" id="ed">
+                    <option value="ed" selected hidden disabled>Вибрати</option>
+                    <option value="ed">початкова загальна освіта</option>
+                    <option value="ed">базова загальна середня освіта</option>
+                    <option value="ed">повна загальна середня освіта</option>
+                    <option value="ed">професійно-технічна освіта</option>
+                    <option value="ed">неповна вища освіта</option>
+                    <option value="ed">базова вища освіта</option>
+                    <option value="ed">повна вища освіта</option>
+                </select>
+            </label>
+            <p>Професія</p>
+            <textarea name="" id="" cols="20" rows="5"></textarea>
+            <p>Сімейний стан</p>
+            <input type="radio" name="family">Одружений/заміжня
+            <input type="radio" name="family">Неодружений/незаміжня
+        </fieldset>
+        <p><button>Даю згоду на обробку моїх персональних даних</button></p>
+        <p><label for="date">Дата проходження тесту <input type="date"></label></p>
+</body>
+
+</html>

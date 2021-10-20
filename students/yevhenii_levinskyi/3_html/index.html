@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ukr">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,88 +7,94 @@
     <title>HTML FORMS</title>
 </head>
 <body>
-    <h1>Анкета відвідувача ресторана</h1>
-    <fieldset>
-        <legend>Контактна інформація</legend>
-        <div>
-            <lable> Імя
-                <input type="text">
-            </lable>
-        </div>
-        <div>
-            <lable> Телефон
-                <input type="tel">
-            </lable>
-        </div>
-        <div>
-            <lable> Email
-                <input type="email">
-            </lable>
-        </div>
-        <div>
-            <lable> Дата відвідування
-                <input type="date">
-            </lable>
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>Персональна інформація</legend>
-        <div>
-            <lable>Вік
-                <input type="number" min="1" max="100" step="1">
-            </lable>
-        </div>
-        <div>
-            <lable>Улюблена кухня
-                <select name="Кухня">
-                <option value="Національна">Національна</option>
-                <option value="Італійська">Італійська</option>
-                <option value="Азіатська">Азіатська</option>
-                <option value="Американська">Американська</option>
-                <option value="Європейська">Європейська</option>
-                <option value="Інша">Інша</option>
-                </select>
-            </lable>
-        </div>
-        <div>
-            <lable> Які страви Ви хотіли б бачити в меню?
-                <textarea name="" id="" cols="60" rows="4"></textarea>
-            </lable>
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>Оцінка закладу</legend>
-        <h4>Чому Ви обрали наш заклад?</h4>
-        <div>
-            <lable>
-                <input type="radio" name="choose">
-            Не далеко від дому/роботи</lable>
-        </div>
-        <div>
-            <lable>
-                <input type="radio" name="choose">
-            Реклама</lable>
-        </div>
-        <div>
-            <lable>
-                <input type="radio" name="choose">
-            Порадили</lable>
-        </div>
-        <div>
-            <lable>
-                <input type="radio" name="choose">
-            Оптимальне співвідношення ціни та якості</lable>
-        </div>
-        <h4>Ви будете рекомендувати наш заклад знайомим?</h4>
-        <div>
-            <label>
-                <input type="radio" name="recomend">
-            Так </label>
-        </div>
-        <div><label>
-            <input type="radio" name="recomend">
-        Ні </label></div>
-    </fieldset>
-    <div><input type="submit" value="Надіслати"></div>
+    <form name="Questionnaire">
+        <h1>Анкета відвідувача ресторана</h1>
+        <fieldset>
+            <legend>Контактна інформація</legend>
+            <div>
+                <label> Імя
+                    <input type="text" name="Name" required>
+                </label>
+            </div>
+            <div>
+                <label> Телефон
+                    <input type="tel" name="Phone" required>
+                </label>
+            </div>
+            <div>
+                <label> Email
+                    <input type="email" name="Mail" required>
+                </label>
+            </div>
+            <div>
+                <label> Дата відвідування
+                    <input type="date" name="Date">
+                </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Персональна інформація</legend>
+            <div>
+                <label>Вік
+                    <input type="number" min="1" max="100" step="1" name="Age">
+                </label>
+            </div>
+            <div>
+                <label>Улюблена кухня
+                    <select name="Кухня">
+                    <option value="Nacional">Національна</option>
+                    <option value="Italian">Італійська</option>
+                    <option value="Asia">Азіатська</option>
+                    <option value="USA">Американська</option>
+                    <option value="Europe">Європейська</option>
+                    <option value="Other">Інша</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label> Які страви Ви хотіли б бачити в меню?
+                    <textarea cols="60" rows="4"></textarea>
+                </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Оцінка закладу</legend>
+            <h4>Чому Ви обрали наш заклад?</h4>
+            <div>
+                <input type="radio" name="choose" value="distance" id="choose1"><label for="choose1">Не далеко від дому/роботи</label>
+            </div>
+            <div>
+                <input type="radio" name="choose" value="advertising" id="choose2"><label for="choose2">Реклама</label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="choose" value="recommend">
+                Порадили</label>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="choose" value="price">
+                Оптимальне співвідношення ціни та якості</label>
+            </div>
+            <p>
+                <input type="checkbox" name="choose" value="distance" id="choose3"><label for="choose1">Не далеко від дому/роботи</label><br>
+                <input type="checkbox" name="choose" value="advertising" id="choose4"><label for="choose2">Реклама</label><br>
+                <input type="checkbox" name="choose" value="recommend" id="choose5"><label for="choose3">Порадили</label><br>
+                <input type="checkbox" name="choose" value="price" id="choose6"><label for="choose4">Оптимальне співвідношення ціни та якості</label><br>
+            </p>
+            <h4>Ви будете рекомендувати наш заклад знайомим?</h4>
+            <div>
+                <label>
+                    <input type="radio" name="recommend" value="yes">
+                Так </label>
+            </div>
+            <div><label>
+                <input type="radio" name="recomend" value="no">
+            Ні </label></div>
+        </fieldset>
+        <div><input type="submit" value="Надіслати"></div>
+        <button type="submit">Надіслати</button>
+        <button type="reset">Скинути</button>
+    </form>
 </body>
 </html>

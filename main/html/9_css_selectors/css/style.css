@@ -1,0 +1,108 @@
+/* не использовать */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* не использовать */
+div {}
+
+#menu {
+    /* background-color: lightslategray; */
+}
+
+/* ok */
+.logo {
+    background-color: chartreuse;
+    width: 130px;
+}
+
+.menu {
+    background-color: lightcyan;
+}
+
+
+[href] {
+    color: maroon;
+}
+
+.logo,
+.menu {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.header .menu {
+    background-color: mediumvioletred;
+}
+
+.footer .menu {
+    background-color: yellow;
+}
+
+.menu-item>.menu-link {
+    color: white;
+}
+
+.menu>.menu-list>.menu-item>a {}
+
+.title-livel2~p {
+    /* background-color: red; */
+}
+
+.title-livel2+p {
+    /* background-color: black; */
+}
+
+.menu-link:hover {
+    background-color: chocolate;
+}
+
+.menu-link:active {
+    color: red;
+}
+
+.check:checked+.btn {
+    display: inline;
+}
+
+.btn {
+    display: none;
+}
+
+.menu-item:first-child {
+    background-color: seagreen;
+}
+
+.menu-item:not(:last-child)>a {
+    color: black;
+}
+
+.menu-item:nth-child(odd) {
+    background-color: black;
+}
+
+.footer::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: block;
+    border-radius: 50%;
+    background-color: red;
+}
+
+p::after {
+    content: '.';
+    color: yellow;
+    font-size: 50px;
+    line-height: 5px;
+}
+
+.title-livel2~.text:nth-of-type(2n+2) {
+    background-color: tomato;
+}
+
+.title-livel3~.text:nth-of-type(even) {
+    background-color: gray;
+}

@@ -1,0 +1,27 @@
+a[href] {  
+    color:black ;
+    text-decoration: none;
+}
+.menu {
+    word-spacing: 13px;
+    font-size: 18px;
+    text-align: center;
+    color:#828282;
+    text-decoration: none;
+   
+}
+li {
+    display: inline;
+}
+hr {
+    width: 940.6px;
+    background-color: #828282;
+    height: 0px;
+}
+
+.thumb figure {
+    width: 7%;
+    margin: 1%;
+    display: inline-block;
+}
+

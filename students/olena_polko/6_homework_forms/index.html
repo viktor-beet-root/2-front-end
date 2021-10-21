@@ -45,16 +45,16 @@
 <body>
     <section>
         <h1>Анкета відвідувача ресторану</h1>
-        <form action="..." method="post">
+        <form action="#" method="post">
             <fieldset>
                 <legend>Контактна інформація</legend>
-                <p><label for="name">Ім'я </label><input type="text" id="name" minlength="2" maxlength="25" autofocus
+                <p><label for="name">Ім'я</label><input type="text" id="name" minlength="2" maxlength="25" autofocus
                         required></p>
-                <p><label for="phone">Телефон </label><input type="tel" id="phone" placeholder="+380 63 333 33 33"
+                <p><label for="phone">Телефон</label><input type="tel" id="phone" placeholder="+380 63 333 33 33"
                         pattern="[+0-9]{4} [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}" required></p>
-                <p><label for="email">E-mail </label><input type="email" id="email" minlength="3" maxlength="32"
+                <p><label for="email">E-mail</label><input type="email" id="email" minlength="3" maxlength="32"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="user@example.com" required></p>
-                <p><label for="date">Дата відвідування </label><input type="date" id="date"></p>
+                <p><label for="date">Дата відвідування</label><input type="date" id="date"></p>
             </fieldset>
             <fieldset>
                 <legend>Персональна інформація</legend>
@@ -75,35 +75,41 @@
             </fieldset>
             <fieldset>
                 <legend>Оцінка нашого закладу</legend>
-                <p>Чому ви обрали наш заклад?</p>
-                <input type="radio" id="nearby" name="why" value="nearby">
-                <label for="nearby">Недалеко від дому/роботи</label><br>
-                <input type="radio" id="ad" name="why" value="ad">
-                <label for="ad">Побачив рекламу</label><br>
-                <input type="radio" id="advice" name="why" value="advice">
-                <label for="advice">Порадили</label><br>
-                <input type="radio" id="price/quality" name="why" value="price/quality">
-                <label for="price/quality">Оптимальне відношення ціни та якості</label>
-                <p>Чи порадите Ви нас своїм знайомим?</p>
-                <input type="radio" id="yes" name="recommend" value="yes">
-                <label for="yes">Так</label><br>
-                <input type="radio" id="no" name="recommend" value="no">
-                <label for="no">Ні</label>
-                <p>Що в нашому закладі Вам подобається?</p>
-                <input type="checkbox" id="feature1" name="feature1" value="prices">
-                <label for="feature1">Ціни</label><br>
-                <input type="checkbox" id="feature2" name="feature2" value="atmosphere">
-                <label for="feature2">Атмосфера</label><br>
-                <input type="checkbox" id="feature3" name="feature3" value="staff">
-                <label for="feature3">Персонал</label><br>
-                <input type="checkbox" id="feature4" name="feature4" value="music">
-                <label for="feature4">Музика</label><br>
-                <input type="checkbox" id="feature5" name="feature5" value="location">
-                <label for="feature5">Розташування</label><br>
-                <input type="checkbox" id="feature6" name="feature6" value="taste">
-                <label for="feature6">Смак</label><br>
-                <input type="checkbox" id="feature7" name="feature7" value="food/quality">
-                <label for="feature7">Якість страв</label><br>
+                <div class="reason">
+                    <p>Чому ви обрали наш заклад?</p>
+                    <input type="radio" id="nearby" name="why" value="nearby">
+                    <label for="nearby">Недалеко від дому/роботи</label><br>
+                    <input type="radio" id="ad" name="why" value="ad">
+                    <label for="ad">Побачив рекламу</label><br>
+                    <input type="radio" id="advice" name="why" value="advice">
+                    <label for="advice">Порадили</label><br>
+                    <input type="radio" id="price/quality" name="why" value="price/quality">
+                    <label for="price/quality">Оптимальне відношення ціни та якості</label>
+                </div>
+                <div class="recommend">
+                    <p>Чи порадите Ви нас своїм знайомим?</p>
+                    <input type="radio" id="yes" name="recommend" value="yes">
+                    <label for="yes">Так</label><br>
+                    <input type="radio" id="no" name="recommend" value="no">
+                    <label for="no">Ні</label>
+                </div>
+                <div class="like">
+                    <p>Що в нашому закладі Вам подобається?</p>
+                    <input type="checkbox" id="feature1" name="feature1" value="prices">
+                    <label for="feature1">Ціни</label><br>
+                    <input type="checkbox" id="feature2" name="feature2" value="atmosphere">
+                    <label for="feature2">Атмосфера</label><br>
+                    <input type="checkbox" id="feature3" name="feature3" value="staff">
+                    <label for="feature3">Персонал</label><br>
+                    <input type="checkbox" id="feature4" name="feature4" value="music">
+                    <label for="feature4">Музика</label><br>
+                    <input type="checkbox" id="feature5" name="feature5" value="location">
+                    <label for="feature5">Розташування</label><br>
+                    <input type="checkbox" id="feature6" name="feature6" value="taste">
+                    <label for="feature6">Смак</label><br>
+                    <input type="checkbox" id="feature7" name="feature7" value="food/quality">
+                    <label for="feature7">Якість страв</label><br>
+                </div>
             </fieldset>
             <p><input type="submit" value="Відправити"></p>
         </form>

@@ -1,0 +1,100 @@
+*{transition: all .1s ease-in;}
+
+body {
+    font-family:'Trebuchet MS', Trebuchet, Arial, sans-serif;
+    background-color: #3B3F45;
+color: white;
+}
+header {
+    background: #4A4F56;
+    color: #FF8984;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+main,
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-size: 24px;
+}
+header {
+    font-size: 16px;
+}
+footer {
+    font-size: 18px;
+}
+.form {
+    width: 534px;
+    margin: 20px 130px 135px 130px;
+}
+.checkbox {
+    display: flex;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+.main-form>.form>.checkbox:nth-child(2n) {
+background-color:  #7A7593;
+}
+.main-form>.form>.checkbox:nth-child(odd) {
+    background-color: #88839E;
+}
+.main-form>.form>.checkbox>.checkbox-text {
+    font-size: 18px;
+}
+.main-form>.form>.checkbox>.checkbox-text>span {
+    font-size: 11px;
+    vertical-align: middle;
+}
+.form>.checkbox>.checkbox-text>span::after {
+    content: ')';
+}
+.form>.checkbox>.checkbox-text>span::before {
+    content: '(';
+}
+[type="checkbox"] {
+    margin: 20px 16px 20px 20px;
+    transform: scale(2);
+}
+.main-form>.form>.checkbox:hover {
+    border-top-color: white;
+    border-bottom-color: white;
+    background-color: #625E77;
+    padding: 4px;
+    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
+.main-form>.form>.checkbox:active {
+    color:#FF8984;
+    text-decoration: underline;
+    text-decoration-color: #FF8984;
+}
+input[type="checkbox"]:checked + label {
+    color:#9B96AC;
+    text-decoration: unset;
+}
+.form .checkbox input:checked+.checkbox-text{
+    color: #9B96AC;
+    text-decoration: line-through;
+}
+button{
+    margin-top: 45px;
+    width: 534px;
+    height: 45px;
+    background-color: #4A4F56;
+    border: none;
+    color: #FF8984;
+}
+button::after{
+    content:':)';
+}
+button:hover {
+    border: 2px solid white;
+    color: red;
+}
+button:active{
+    color:white;
+    
+}

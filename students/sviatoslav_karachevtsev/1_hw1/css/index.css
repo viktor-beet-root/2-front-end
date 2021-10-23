@@ -1,0 +1,29 @@
+fieldset
+{
+    border: top 1px;
+}
+.rightpic
+{
+    float: right;
+    margin: 0 0 5px 5px;
+}
+.t1
+{
+    border-spacing: 20px;
+    width: 100%;
+}
+.tm
+{
+    background: rgb(105, 105, 105);
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+   } 
+
+a:hover 
+{ 
+    text-decoration: underline; 
+    color: rgb(87, 213, 255); 
+} 

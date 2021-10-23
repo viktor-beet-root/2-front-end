@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Lychak</title>
     <link rel="shortcut icon" href="./images/icons8.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <style type="text/css">
         .margin {
             margin: 20px;
             text-align: center;
-            color: purple;
+            float: left;
         }
 
         body {
@@ -30,18 +34,20 @@
         }
 
         .center {
+            margin: 0 auto;
             font-size: 25px;
+
             text-align: center;
             background-color: dimgray;
             overflow: hidden;
-            width: 100%;
+            list-style-type: none;
         }
 
         .center a {
             float: center;
             color: white;
             text-align: center;
-            padding: 20px 20px;
+            width: 11%;
             font-size: 25px;
         }
 
@@ -88,56 +94,57 @@
 <body>
     <header>
         <h1 style="text-align: center; color: rgb(255, 255, 255);">РЕЗЮМЕ</h1>
-        <h1 style="color: white;">Ірина Личак</h1>
-        <h3><i>Епілог</i></h3>
-        <div class="frame">
-            <p>
-                <i>
-                    Спокійна, кмітлива, уважна до деталей, швидко орієнтуюсь у поставлених задачах та здатна до
-                    навчання,
-                    самоорганізації.
-                    <br> Відповідальна, доброзичлива, стресостійка.
-                    <br> Шкідливі звички відсутні.
-                </i>
-            </p>
-        </div>
+        <h2 style="color: white;">Ірина Личак</h2>
+
         <h3 id="menu"><u> МЕНЮ</u></h3>
         <div class="background">
-            <p class="center">
-
-                <a href="#p1" class="margin">Особисті дані</a>
-                <a href="#p2" class="margin">Фото</a>
-                <a href="#p3" class="margin">Досвід роботи</a>
-                <a href="#p4" class="margin">Освіта</a>
-                <a href="#p5" class="margin">Навички</a>
-                <a href="#p6" class="margin">Інтереси</a>
-                <a href="#p7" class="margin">Мови</a>
-
-            </p>
+            <ul class="center">
+                <li><a href="#p1" class="margin">Особисті дані</a></li>
+                <li><a href="#p2" class="margin">Фото</a></li>
+                <li><a href="#p3" class="margin">Досвід роботи</a></li>
+                <li><a href="#p4" class="margin">Освіта</a></li>
+                <li><a href="#p5" class="margin">Навички</a></li>
+                <li><a href="#p6" class="margin">Інтереси</a></li>
+                <li><a href="#p7" class="margin">Мови</a></li>
+            </ul>
         </div>
     </header>
     <main>
         <section>
+            <h3><i>Епілог</i></h3>
+            <div class="frame">
+                <p>
+                    <i>
+                        Спокійна, кмітлива, уважна до деталей, швидко орієнтуюсь у поставлених задачах та здатна до
+                        навчання,
+                        самоорганізації.
+                        <br> Відповідальна, доброзичлива, стресостійка.
+                        <br> Шкідливі звички відсутні.
+                    </i>
+                </p>
+            </div>
+        </section>
+        <section>
             <h2 id="p1"><a href="#menu">Особисті дані</a></h2>
             <div>
-                <h4>Ім'я</h4>
+                <strong>Ім'я</strong>
                 <p class="underlined">Ірина Личак</p>
-                <h4>Адреса</h4>
+                <strong>Адреса</strong>
                 <p class="underlined">
                     вул. Вулична, буд. 102, кв.7
                     <br> 21012 Вінниця
                 </p>
-                <h4>Номер телефону</h4>
+                <strong>Номер телефону</strong>
                 <p class="underlined"><a target="_blank" href="tel:+380145903002">+380 (14) 59-03-002</a></p>
-                <h4>Email</h4>
+                <strong>Email</strong>
                 <p class="underlined"><a href="mailto:poshta@gmail.com">poshta@gmail.com</a></p>
-                <h4>Соціальні мережі</h4>
+                <strong>Соціальні мережі</strong>
                 <p class="underlined"><a target="_blank" href="https://www.instagram.com/lichak_ir.en.8/">Instagram</a>
                 </p>
                 <p class="underlined"><a target="_blank" href="https://t.me/iryna_lk">Telegram</a></p>
-                <h4>Дата народження</h4>
+                <strong>Дата народження</strong>
                 <p class="underlined">11.05.1999</p>
-                <h4>Місце народження</h4>
+                <strong>Місце народження</strong>
                 <p class="underlined">м. Львів</p>
             </div>
         </section>
@@ -147,78 +154,63 @@
                     width="250">
             </div>
             <h2 id="p3"><a href="#menu">Досвід роботи</a></h2>
-            <div>
-                <p><b> Researcher Aiko LLC</b> <i>11/2020 - 02/2021</i> </p>
-
+            <p><b>Researcher Aiko LLC</b><i>11/2020-02/2021</i></p>
+            <em>
                 <ul>
-                    <em>
-                        <li>Пошук товарів для інтернет-магазину за заданими критеріями;</li>
-                        <li>Аналіз знайдених товарів;</li>
-                        <li>Публікація лістингів;</li>
-                        <li>Ведення електронної таблиці, введення електронної звітності.</li>
-                    </em>
+                    <li>Пошук товарів для інтернет-магазину за заданими критеріями;</li>
+                    <li>Аналіз знайдених товарів;</li>
+                    <li>Публікація лістингів;</li>
+                    <li>Ведення електронної таблиці, введення електронної звітності.</li>
                 </ul>
-            </div>
+            </em>
         </section>
         <section>
             <h2 id="p4"><a href="#menu">Освіта</a></h2>
-            <div>
-                <p class="text-size">
-                    <a target="_blank" href="https://www.vnmu.edu.ua/">Вінницький національний медичний університет ім.
-                        М. І.
-                        Пирогова</a>;
-                    <br> Спеціальність: медицина;
-                    <br> Незакінчена вища, з 2016 по 2022 (5 років 9 місяців).
-                </p>
-            </div>
+            <p class="text-size">
+                <a target="_blank" href="https://www.vnmu.edu.ua/">Вінницький національний медичний університет ім.
+                    М. І.
+                    Пирогова</a>;
+                <br> Спеціальність: медицина;
+                <br> Незакінчена вища, з 2016 по 2022 (5 років 9 місяців).
+            </p>
         </section>
         <section>
             <h2 id="p5"><a href="#menu">Навички</a></h2>
-            <div>
-                <p class="text-size">
-                    Володію базовими навиками роботи з ОС Windows, Adobe Photoshop та впевнений користувач пакету MS
-                    Office
-                    (Word, Excel, PowerPoint, Outlook), Microsoft Teams.
-                    <br> Вмію встановлювати, вивчати документацію та швидко орієнтуватися у новому ПЗ.
-                    <br> Проcунутий користувач поштових клієнтів, соціальних мереж, мережі інтернет.
-                    <em>
-                        <ul>
-                            <li> Основи комп'ютерної грамотності: Високий С2;</li>
-                            <li>Інформаційна грамотність, уміння працювати з даними: Середній В2;</li>
-                            <li>Створення цифрового контенту: Високий С2;</li>
-                            <li>Комунікація та взаємодія у цифровому суспільстві: Високий C1;</li>
-                            <li>Безпека в цифровому середовищі: Високий С1;</li>
-                            <li>Розв'язання проблем у цифровому середовищі та навчання впродовж життя: Високий С2.</li>
-                        </ul>
-                        <p><i>Джерело:</i><a target="blank" href="https://osvita.diia.gov.ua/digigram"> Дія. Цифрова
-                                освіта.</a>
-                        </p>
-                    </em>
-                </p>
-            </div>
+            <p class="text-size">
+                Володію базовими навиками роботи з ОС Windows, Adobe Photoshop та впевнений користувач пакету MS
+                Office
+                (Word, Excel, PowerPoint, Outlook), Microsoft Teams.
+                <br> Вмію встановлювати, вивчати документацію та швидко орієнтуватися у новому ПЗ.
+                <br> Проcунутий користувач поштових клієнтів, соціальних мереж, мережі інтернет.
+            </p>
+            <ul>
+                <li> Основи комп'ютерної грамотності: Високий С2;</li>
+                <li>Інформаційна грамотність, уміння працювати з даними: Середній В2;</li>
+                <li>Створення цифрового контенту: Високий С2;</li>
+                <li>Комунікація та взаємодія у цифровому суспільстві: Високий C1;</li>
+                <li>Безпека в цифровому середовищі: Високий С1;</li>
+                <li>Розв'язання проблем у цифровому середовищі та навчання впродовж життя: Високий С2.</li>
+            </ul>
+            <p><i>Джерело:</i><a target="blank" href="https://osvita.diia.gov.ua/digigram"> Дія. Цифрова освіта.</a></p>
         </section>
         <section>
             <h2 id="p6"><a href="#menu">Інтереси</a></h2>
-            <div>
-                <p>
-                <ul>
-                    <li>Веб-дизайн;</li>
-                    <li>Мистецтво/арт-живопис;</li>
-                    <li>Історія;</li>
-                    <li>Медицина;</li>
-                </ul>
-                </p>
-            </div>
+            <p>
+            <ul>
+                <li>Веб-дизайн;</li>
+                <li>Мистецтво/арт-живопис;</li>
+                <li>Історія;</li>
+                <li>Медицина;</li>
+            </ul>
+            </p>
         </section>
         <section>
             <h2 id="p7"><a href="#menu">Мови</a></h2>
-            <div>
-                <ol>
-                    <li>Українська - С2;</li>
-                    <li>Російська - С1;</li>
-                    <li>Англійська - А2;</li>
-                </ol>
-            </div>
+            <ol>
+                <li>Українська - С2;</li>
+                <li>Російська - С1;</li>
+                <li>Англійська - А2;</li>
+            </ol>
         </section>
     </main>
     <footer>

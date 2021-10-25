@@ -36,14 +36,14 @@ main {
 .margin-top-50{
     margin-top: 50px;
 }
-#line {
+.line {
     border-top: 1px solid #828282;
 }
-#nav-list {
+.nav-list {
     justify-content: space-around;
     list-style-type: none;
 }
-#nav-home {
+.nav-home {
     color:#070707;
 }
 a {
@@ -58,29 +58,29 @@ h2 {
     font-size: 34px;
     font-weight: 700;
 }
-#head-block {
+.head-block {
     width: 943.61px;
 }
-#head-logo {
+.head-logo {
     width: 100%;
 }
 
-#aboutMe-block {
+.aboutMe-block {
     padding: 80px 0px 80px 0px;
     background-color: #F6F6F6;
     width: 1445px;
 }
-#skills-block {
+.skills-block {
     width: 943.61px;
     font-size: 14px;
 }
-#skill-top-block{
+.skill-top-block{
     margin-bottom: 80px;
 }
 .skill-top-block, p {
     font-size: 18px;
 }
-#skills-block-inside {
+.skills-block-inside {
     justify-content: space-around;
     width: 943.61px;
 }
@@ -99,14 +99,14 @@ h2 {
 div {
     text-align: center;
 }
-#braun-block {
+.braun-block {
     padding-bottom: 100px;
 }
-#fotter-imgs {
+.fotter-imgs {
     margin: 40px 0px 50px 0px;
     width: 100%;
     justify-content: space-between;
 }
-#footer-block, a{
+.footer-block, a{
     line-height: 25px;
 }

@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.menu-list {
+    list-style-type: none;
+    font-size: 0;
+}
+
+.menu-list .menu-item {
+    display: inline-block;
+    background-color: rosybrown;
+    font-size: 16px;
+    border-right: 1px solid black;
+}
+
+.menu-list>.menu-item:last-child {
+    border-right: none;
+}
+
+.menu-list>.menu-item .menu-link {
+    padding: 20px 50px;
+    display: inline-block;
+}
+
+.text,
+.text-box {
+    background-color: brown;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.text>div,
+.text-box>div {
+    padding: 20px;
+    width: calc(100% - 40px - 10px);
+    background-color: gray;
+    border: 5px solid red;
+}
+
+.text-box>div {
+    width: 100%;
+    box-sizing: border-box;
+    /* margin: 0 20px; */
+}
+
+.text-box>div>span {
+    padding: 50px;
+    display: inline-block;
+}
+
+img {
+    width: 250px;
+    display: block;
+}
+
+.wrapper {
+    font-size: 0;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.wrapper>div {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.wrapper-flot {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: black;
+    padding: 20px;
+}
+
+.wrapper-flot::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.wrapper-flot>div {
+    float: left;
+}
+
+body {
+    padding-bottom: 150px;
+}
+
+.print {
+    float: right;
+}
+
+.wrap {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.title>h2 {
+    float: left;
+}
+
+.d {
+    clear: both;
+}
+
+.mar {
+    margin-top: 150px;
+    background-color: cadetblue;
+    /* border: 1px solid transparent; */
+    padding: 15px;
+}
+
+.mar>p {
+    margin-bottom: 15px;
+    background-color: blueviolet;
+}
+
+.mar>p:last-child {
+    margin-bottom: 0;
+}
+
+/* .mar>p:first-child {
+    margin-bottom: 30px;
+} */
+
+.block {
+    background-color: lightslategray;
+    padding: 50px 0;
+}
+
+.block:nth-of-type(2) {
+    background-color: lime;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: turquoise;
+}
+
+.row {
+    margin: 0 -15px;
+}
+
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.col>div {
+    background-color: white;
+}

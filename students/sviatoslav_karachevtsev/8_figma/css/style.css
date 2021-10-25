@@ -1,7 +1,33 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/open-sans-v26-latin-regular.eot');
+    src: local(''),
+         url('../fonts/open-sans-v26-latin-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/open-sans-v26-latin-regular.woff2') format('woff2'),
+         url('../fonts/open-sans-v26-latin-regular.woff') format('woff'),
+         url('../fonts/open-sans-v26-latin-regular.ttf') format('truetype'),
+         url('../fonts/open-sans-v26-latin-regular.svg#OpenSans') format('svg');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/open-sans-v26-latin-700.eot');
+    src: local(''),
+         url('../fonts/open-sans-v26-latin-700.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/open-sans-v26-latin-700.woff2') format('woff2'),
+         url('../fonts/open-sans-v26-latin-700.woff') format('woff'),
+         url('../fonts/open-sans-v26-latin-700.ttf') format('truetype'),
+         url('../fonts/open-sans-v26-latin-700.svg#OpenSans') format('svg');
+}
+
 body {
     width: 946.31px;
     margin: 0 auto;
     text-align: center;
+    font-family: 'Open sans', Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
 
@@ -9,7 +35,8 @@ body {
     width: 940.6px;
     padding-top: 22px;
     padding-bottom: 29px;
-    border-bottom: 1px solid black;
+    font-weight: 400;
+    border-bottom: 1px solid #070707;
 }
 
 .menu-list {
@@ -30,17 +57,19 @@ body {
 }
 
 .menu-item a:hover {
-    color: black;
+    color: #070707;
 }
 
-.menu-item a::after {
+.menu-list::after {
     content: '';
     clear: both;
+    display: block;
 }
 
 h1 {
     text-align: left;
     font-size: 47px;
+    font-weight: 700;
 }
 
 header {
@@ -72,9 +101,18 @@ main {
 }
 
 .col {
-font-size: 18px;
-color: #828282;
-margin: 0 auto 20px;
+    margin: 0 auto 20px;
+}
+
+.col .col-text {
+    margin: 0 auto  ;
+    width: 101px;
+    height: 50px;
+    font-size: 18px;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    color: #828282;
 }
 
 .col embed:first-child {
@@ -84,9 +122,10 @@ margin: 0 auto 20px;
 .col embed:last-child {
     margin-top: 30px;
 }
-.col::after {
+.gridwrap::after {
     content: '';
     clear: both;
+    display: block;
 }
 
 .portfolio {
@@ -94,7 +133,7 @@ margin: 0 auto 20px;
 }
 
 .sourcer a {
-    color: black;
+    color: #070707;
 }
 
 .sourcer {
@@ -115,7 +154,7 @@ footer p{
 }
 
 footer p:nth-child(3) {
-margin-bottom: 78px;
+    margin-bottom: 78px;
 }
 
 .sendbutn {
@@ -130,7 +169,7 @@ margin-bottom: 78px;
 
 .icon-menu-item {
     display: inline-block;
-    width: 24%;
+    width: 23%;
     box-sizing: border-box;
 
 }

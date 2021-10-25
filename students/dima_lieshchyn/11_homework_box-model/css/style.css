@@ -2,93 +2,81 @@
     content: div;
     border: 20px solid transparent; border-left: 20px solid green;
 } */
-/* .header-wrapper,
-.section-wrapper {
-margin:0 auto;
-} */
-/* a {
-    text-decoration: none;
+
+.header-wrapper {
+    /* border: 1px solid red; */
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
 }
-.header-wrapper>header>img,
-nav,
-.in-block,
-.up-block {
-    list-style-type: none;
+
+.header-wrapper div,
+.header-col-1 img,
+.menu-list .menu-item,
+.header-col-3 .butn-block {
+    display: inline-block;
     font-size: 0;
-    
 }
-.header-wrapper>header>img,
-nav>ul>li,
-.in-block,
-.up-block
-{
-    display: inline-block;
+
+.menu-item .menu-link,
+.header-col-3 .butn-block a {
+    padding: 0 20px;
+    text-decoration: none;
     font-size: 14px;
+    color: black;
 }
-.menu-link{
-    color: #2F281E;
-    padding: 5px;
+
+.header-col-1 {
+    width: 30%;
 }
-.header-wrapper>header>div>a{
-    display: inline-block;
-    width: 110px;
-    font-size: 16px;
-    padding: 15px;
-    text-align: center;
+
+.header-col-1 img {
+    padding: 0 3px;
 }
-.up-block>a {
-    background-color:#FF9900;
+
+.header-col-2 {
+    width: 45%;
+    text-align: right;
+}
+
+.header-col-3 {
+    width: 220px;
+}
+
+.header-col-3 div {
+    margin: 0 10px;
+}
+
+.butn-block:last-of-type {
+    background-color: #FF9900;
+}
+
+.butn-block:first-child {
+    border: 1px solid #BCD0E5;
+}
+
+.butn-block:last-of-type a {
     color: white;
+}
+
+.butn-block>a {
+    line-height: 3;
+}
+
+.butn-block {
     border-radius: 4px;
 }
-.in-block>a {
-    border: 1px solid #BCD0E5;
-    color: black;
-} */
-.header-wrapper,
+
 .section-wrapper {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
-a {
-    text-decoration: none;
-}
-.menu-list {
-    font-size: 0;
-}
 
-.header-wrapper>header>div,
-.menu,
-.menu>.menu-list>.menu-item,
-.buttons-wrapper,
-.buttons-wrapper>div{
+.section-col-1,
+.section-col-2 {
     display: inline-block;
-    font-size: 16px;
-}
-.header-wrapper>header>img {
-    /* padding: 5px; */
-    border:1px solid red ;
-}
-.menu>.menu-list>.menu-item{
-    padding: 5px;
-}
-.buttons-wrapper>div{
-    /* padding: 15px; */
-    width: 110px;
-    font-size: 16px;
-    text-align: center;
-}
-.buttons-wrapper {
+    width: 45%;
     border: 1px solid red;
-    width:calc(30%);
 }
-.menu {
-    border: 1px solid red;
-    width:calc(30%);
 
-}
-.logo-wrapper {
-    border: 1px solid red;
-    width:calc(30%);
-    text-align: center;
-}
+.section-col-2 {}

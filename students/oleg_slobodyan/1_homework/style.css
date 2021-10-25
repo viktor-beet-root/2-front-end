@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Cuprum', sans-serif;
+    
+}
+.header{
+    padding: 40px 0 40px;
+    text-align: center;
+    background-image: url("../images/bg1.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.languages{
+    text-align: left;
+    font-size: 18px;
+    color: #fff;
+}
+.languages a{
+    text-decoration: none;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+}
+.languages a:hover{
+    color:rgb(113, 206, 183);
+}
+.languages a.lang-active{
+    color:rgb(113, 206, 183);
+  }
+p{
+    font-family: 'Bad Script', cursive;
+    font-size: 22px;
+}
+h1{
+    font-size: 40px;
+    color: aliceblue;
+    margin-bottom: 20px;
+}
+.portret{
+    width: 18%;
+    border-radius: 50%;
+    border:5px solid #fff;
+    margin-bottom: 20px;
+}
+.tell, .mail{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+
+}
+.tell:hover, .mail:hover{
+    color:rgb(113, 206, 183) ;
+}
+.tell{
+    padding-right: 20px;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1300px;
+}
+h1{
+    text-align: center;
+    font-family: 'Cuprum', sans-serif;
+}
+.socials{
+    margin-bottom: 20px;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    border:2px solid #fff;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 500ms ease-in-out;
+}
+.btn:hover{
+    background-color:rgb(113, 206, 183);
+    border-color: rgb(113, 206, 183);
+}
+nav ul{
+    list-style: none;
+    font-family: 'Cuprum', sans-serif;
+
+}
+nav ul li{
+    display: inline-block;
+}
+nav ul li:not(:last-child){
+    margin-right: 20px;
+}
+.about, .works, .education,.hobbis, .traveling{
+    padding: 50px 0;
+    font-size: 20px;
+}
+ul{
+    margin-left: 30px;
+    font-size: 22px;
+    font-family: 'Bad Script', cursive;
+}
+ol{
+    margin-left: 30px;
+    font-family: 'Bad Script', cursive;
+    font-size: 22px;
+}
+h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.education,.hobbis{
+    background: linear-gradient(45deg, #0f6b6e, #8de9b6);
+    color:#fff;
+}
+.traveling p{
+    margin-bottom: 20px;
+}
+
+footer{
+    text-align: center;
+    background: linear-gradient(
+    45deg, #0f6b6e, #8de9b6);
+    color: #fff;
+    padding: 20px 0;
+}

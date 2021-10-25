@@ -1,66 +1,71 @@
 body {
     color: #070707;
     font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-main {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: inline-block;
+    margin: 0 auto;
 }
 
-.main-bottom-block{
+main {
+    display: inline-block;
+}
+
+.nav-list li {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+.main-bottom-block {
     width: 1445px;
     background-color: #F6F6F6;
+    margin: 0 30px;
 }
+
 .text-dec-und {
     text-decoration: underline;
 }
-.disp-flex{
-    display: flex;
-}
-.flex-dir-col{
-    flex-direction:column;
-}
-.flex-dir-row{
-    flex-direction:row;
-}
-.align-i-center{
-    align-items: center;
-}
-.margin-top-100{
+
+.margin-top-100 {
     margin-top: 100px;
 }
-.margin-top-50{
+
+.margin-top-50 {
     margin-top: 50px;
 }
+
 .line {
     border-top: 1px solid #828282;
+    width: 65%;
+    margin: 0 auto;
 }
+
 .nav-list {
-    justify-content: space-around;
     list-style-type: none;
 }
+
 .nav-home {
-    color:#070707;
+    color: #070707;
 }
+
 a {
     text-decoration: none;
     color: #828282;
 }
+
 h1 {
     font-size: 47.34px;
     text-align: left;
 }
+
 h2 {
     font-size: 34px;
     font-weight: 700;
 }
+
 .head-block {
     width: 943.61px;
+    margin: 0 auto;
 }
+
 .head-logo {
     width: 100%;
 }
@@ -69,44 +74,67 @@ h2 {
     padding: 80px 0px 80px 0px;
     background-color: #F6F6F6;
     width: 1445px;
+    margin: 0 30px;
 }
+
 .skills-block {
     width: 943.61px;
     font-size: 14px;
+    margin: 30px 0 30px 50px;
+    width: 96%;
 }
-.skill-top-block{
+
+.skill-top-block {
     margin-bottom: 80px;
+    text-align: center;
 }
-.skill-top-block, p {
+
+.skill-top-block,
+p {
     font-size: 18px;
 }
+
 .skills-block-inside {
-    justify-content: space-around;
+    display: inline-block;
     width: 943.61px;
 }
+
 .skills-content-block {
     width: 15%;
+    display: inline-block;
+    padding: 0 30px;
 }
-.skills-cont-ins{
+
+.skills-cont-ins {
     width: 120%;
     padding-bottom: 50px;
 }
+
 .stars {
     width: 120%;
     justify-content: space-around;
     margin-bottom: 50px;
 }
+
 div {
     text-align: center;
 }
+
+.portfolio h2 {
+    padding-top: 50px;
+}
+
 .braun-block {
     padding-bottom: 100px;
+    margin: 0 30px;
 }
+
 .fotter-imgs {
     margin: 40px 0px 50px 0px;
     width: 100%;
-    justify-content: space-between;
 }
-.footer-block, a{
+
+.footer-block,
+a {
     line-height: 25px;
 }

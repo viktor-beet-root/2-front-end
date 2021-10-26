@@ -38,7 +38,6 @@
          url('../fonts/quicksand-v24-latin-700.woff2') format('woff2'),
          url('../fonts/quicksand-v24-latin-700.woff') format('woff');
   }
-
 body{
     font-size: 14;
 }
@@ -51,23 +50,25 @@ body{
 .second_s p{
   font-family:"Quicksand", Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;   
-    
 }
+
 .third_s p{
     font-family:"Quicksand", Georgia, 'Times New Roman', Times, serif;
     font-size:normal;
     font-weight: 400;
-
 }
+
 .fourth_s{
     font-family: "Roboto", Helvetica, sans-serif;
     font-weight: 400;
 }
+
 h1{
     font-weight: 700;
     font-style: italic;
     font-size: 36px;
 }
+
 span {
 font-weight:bold ;
 font-style: italic;
@@ -76,15 +77,16 @@ text-decoration: underline;
 
 .menu li {
   display: inline-block;
-
 }
 
 .menu-iteam {
   list-style-type: none;
 }
+
  .menu-iteam:before {
   content: " + "; 
  }
+
  ol {
   list-style-position: inside;
   padding-left: 0;
@@ -95,12 +97,12 @@ a {
   color: black;
   font-size: 13px;
 }
-.logo{
 
+.logo{
   float: right;
   width: 150px;
-
 }
+
 .wraper{
   max-width: 850px;
 }

@@ -1,0 +1,146 @@
+body{
+    display: block;
+    margin: 20px auto;
+    padding: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; 
+    font-style: normal; 
+    width: 1200px; 
+}
+header>div{
+    display: inline-block; 
+    box-sizing: border-box;
+}
+h1{
+    font-size: 44px;
+    font-family: 'Poppins' sans-serif;
+    font-weight: 700;
+}
+p{
+    font-family: 'Poppins' sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+.video{
+    font-family: 'Poppins' sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.navigation>li {
+   list-style-type: none;
+   display: inline-block;
+   padding: 0 10px;
+   font-size: 14px;
+   color: #2F281E;
+   font-family: 'Poppins' sans-serif;
+   font-weight: 400;
+}
+.navigation>li:hover{
+    opacity: .5;
+}
+.navigation>li>a{
+    text-decoration: none;
+    color: inherit;
+}
+.sing{
+    border: 1px solid #BCD0E5 ;
+    border-radius: 10%;
+    padding: 10px 15px ;
+    color: #173A56;  
+    font-size: 16px;
+    background-color: white;
+    margin: 5px;
+}
+.sing:hover{
+    background-color: #FF9900;
+    border: 1px solid transparent;
+    color: white;
+}
+section{
+     display: block;
+     box-sizing: border-box;
+}
+.block{
+    white-space: nowrap;
+    font-size: 0;
+}
+.block1 {
+    white-space: normal;   
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+    margin-right: 5%;
+    font-size: 14px;
+}
+.block .block1:first-child {
+    padding-top: 80px;
+}
+.block .block1:last-child {
+    padding-top: 50px; 
+    white-space: nowrap;
+    font-size: 0;
+}
+.block2 {
+    white-space: normal;   
+    display: inline-block;
+    width: 125px;
+    vertical-align: top;
+    font-size: 14px;
+}
+.menu{
+    white-space: nowrap;
+    font-size: 0;
+}
+.menu-items{
+    white-space: normal;   
+    display: inline-block;
+    width: 400px;
+    vertical-align: top;
+    margin-right: 5%;
+    font-size: 14px;
+}
+.triangle{
+    text-decoration: none;  
+    display: inline; 
+    white-space: nowrap;
+    font-size: 0;
+}
+.triangle>.video:hover{
+    color: black;
+    opacity: .5;
+    border-bottom: 1px solid black;
+}
+.triangle>img,
+.triangle>.video{
+    white-space: normal;   
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5%;
+    padding-top: 10px;
+}
+.triangle>img{
+    width: 10%;
+}
+.triangle>.video{
+    border-bottom: 1px solid #FF9900;
+    color: #FF9900;
+    margin: 0;
+    font-size: 16px;
+}
+.button-start{
+    background-color: white;
+    border: 1px solid #BCD0E5;
+    color: t#173A56;
+    font-size: 16px;
+    border-radius: 10%;
+    padding: 10px 15px ;
+}
+.button-start:hover{
+    background-color: #FF9900;
+    border: 1px solid transparent;
+    color: white;
+    font-size: 16px;
+    border-radius: 10%;
+    padding: 10px 15px ;
+}

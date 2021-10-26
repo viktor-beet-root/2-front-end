@@ -1,0 +1,35 @@
+.header-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.section-wrapper {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.header-wrapper>.header-col-1,
+.header-wrapper>.header-col-2,
+.header-wrapper>.header-col-3 {
+    float: left;
+}
+
+
+.header-wrapper>.header-col-1::after,
+.header-wrapper>.header-col-2::after,
+.header-wrapper>.header-col-3::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.header-wrapper {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.section-col-1 {
+    float: left;
+}

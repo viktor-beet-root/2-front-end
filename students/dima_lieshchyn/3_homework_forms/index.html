@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <header>
+        <h1>Анкета посетителя ресторана</h1>
+    </header>
+    <main>
+        <form method="post" action="" autocomplete="off">
+            <fieldset>
+                <legend>Контактная информация</legend>
+                <div>
+                    <label for="name_field_123">Имя</label>
+                    <input type="text" name="name" id="name_field_123" required>
+                </div>
+                <div>
+                    <label for="phone_field_123">Телефон</label>
+                    <input type="tel" name="phone number" id="phone_field_123"
+                        pattern="\+38\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}" required>
+                </div>
+                <div>
+                    <label for="email_field_123">Email</label>
+                    <input type="email" name="name" id="email_field_123"
+                        pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" required>
+                </div>
+                <div>
+                    <label for="date_field_123">Дата посещение</label>
+                    <input type="date" name="date" id="date_field_123">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Персональная информация</legend>
+                <div>
+                    <label for="age_field_123">Возраст</label>
+                    <input type="number" name="age" id="age_field_123" min="1" max="100" step="1">
+                </div>
+                <div>
+                    <label for="kitchen_field_123">Любимая кухня</label>
+                    <select name="kitchen" id="kithcen_field_123">
+                        <option value="russian" selected>Русская</option>
+                        <option value="japan">Японская</option>
+                        <option value="ukrainian">Украинская</option>
+                        <option value="hungarian">Венгерская</option>
+                        <option value="china">Китайская</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Оценка нашего заведения</legend>
+                <div>
+                    <h3>Почему выбрали наше заведение?</h3>
+                    <label><input type="radio" value="1" name="why_us">Недалеко от дома/работы</label><br>
+                    <label><input type="radio" value="2" name="why_us">Увидел рекламу</label><br>
+                    <label><input type="radio" value="3" name="why_us">Посоветовали</label><br>
+                    <label><input type="radio" value="4" name="why_us">Оптимальное</label><br>
+                </div>
+                <div>
+                    <h3>Вы будете рекомендовать наше заведение знакомым?</h3>
+                    <label><input type="radio" value="yes" name="recomend">Да</label><br>
+                    <label><input type="radio" value="no" name="recomend">Нет</label><br>
+                </div>
+            </fieldset>
+            <button type="submit">Отправить</button>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

@@ -99,8 +99,10 @@ a:hover {
     clear: both;
 }
 
+
+
 .logo {
-    width: 185px;
+    width: 185.34px;
     float: left;
     padding-top: 5px;
 }
@@ -110,7 +112,11 @@ a:hover {
 }
 
 .logo__image {
-    display: block;
+    display: inline;
+}
+
+.logo_w {
+    width: 120%;
 }
 
 .btn {
@@ -281,6 +287,10 @@ a:hover {
     content: url(../images/clock.svg);
 }
 
+.icon_tick::after {
+    content: url(../images/tick.svg);
+}
+
 .superpowers-list {
     list-style-type: none;
     padding: 0;
@@ -288,4 +298,62 @@ a:hover {
 
 .text-center {
     text-align: center;
+}
+
+.superpowers__btn {
+    margin-top: 38px;
+}
+
+.superpowers-list__title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.professionals .title {
+    margin-top: 0;
+}
+
+.professionals .info-wrapper__text {
+    width: 90%;
+}
+
+.col_p {
+    padding-left: 100px;
+}
+
+.managers .title {
+    margin-top: 0;
+}
+
+.managers-list {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.managers-list__item {
+    padding: 30px 0;
+}
+
+.icon_clock::after {
+    content: url(../images/clock.svg);
+}
+
+.managers-list__icon,
+.manager-list__text {
+    display: inline-block;
+}
+
+.managers-list__icon {
+    margin-right: 30px;
+    vertical-align: middle;
+}
+
+.manager-list__text {
+    width: 80%;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.marketers .title {
+    margin-top: 0;
 }

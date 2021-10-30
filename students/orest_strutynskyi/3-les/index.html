@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Форма Html</title>
+</head>
+
+<body>
+	<form method="post" action="#">
+		<label>
+			<input type="text" autofocus name="first_name" value="" placeholder="">
+		</label>
+		<label for="last_name_wetewt">last name</label>
+		<input id="last_name_wetewt" type="text" required name="last_name" maxlength="3">
+		<input type="reset">
+		<fieldset>
+			<legend>chois</legend>
+			<div>
+				<label>
+					<input type="checkbox" value="1" name="one">
+					one
+				</label><br>
+				<label>
+					<input type="checkbox" value="2" name="two">
+					tro
+				</label><br>
+				<label>
+					<input type="checkbox" value="3" name="three">
+					three
+				</label>
+			</div>
+		</fieldset>
+	</form>
+	<form method="post" action="">
+		<label>
+			<input type="text" autofocus name="first_name" value="" placeholder="">
+		</label>
+		<label for="last_name_wetewt">last name</label>
+		<input for="last_name_wetewt" type="text" required name="last_name" maxlength="3">
+		<input type="reset">
+		<fieldset>
+			<legend>chois</legend>
+			<div>
+				<label>
+					<input type="radio" value="1" name="number">
+					one
+				</label><br>
+				<label>
+					<input type="radio" value="2" name="number">
+					tro
+				</label><br>
+				<label>
+					<input type="radio" value="3" name="number">
+					three
+				</label>
+			</div>
+		</fieldset>
+		<div>
+			<label>city
+				<select name="city" multiple>
+					<option value="">выбрать город</option>
+					<option value="Rivne">rivne</option>
+					<option value="odessa">Olessa</option>
+				</select>
+			</label>
+		</div>
+	</form>
+	<div>
+		<label for="message">message</label>
+		<textarea name="message" id="message" cols="30" rows="6"></textarea>
+	</div>
+</body>
+
+</html>

@@ -186,6 +186,10 @@ a:hover {
     margin-top: 65px;
 }
 
+.info-wrapper__btn-wrapper {
+    padding-top: 29px;
+}
+
 .hero .text {
     font-size: 18px;
     font-weight: 400;
@@ -198,12 +202,6 @@ a:hover {
 }
 
 .link::before {
-    /* content: '';
-    background-image: url(../images/05.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain; */
-
     content: url(../images/05.svg);
     width: 20px;
     height: 17px;
@@ -356,4 +354,63 @@ a:hover {
 
 .marketers .title {
     margin-top: 0;
+}
+
+.footer {
+    padding: 146px 0 83px;
+}
+
+.footer__container {
+    border-top: 1px solid #BCD0E5;
+    padding: 0;
+
+}
+
+.footer-list,
+.footer-list__sub-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 35px;
+}
+
+.col_w {
+    width: 23.4%;
+}
+
+.footer-list__item {
+    padding-top: 100px;
+}
+
+.footer-list__sub-menu {
+    padding: 60px 0 0 40px;
+}
+
+.sub-menu__link {
+    font-weight: 400;
+    color: #544837;
+}
+
+.form {
+    padding-top: 90px;
+}
+
+.form__btn {
+    border: none;
+    min-width: 131px;
+
+}
+
+.form__link {
+    padding: 0;
+    color: white;
+}
+
+.form__search-area {
+    width: 325px;
+    height: 48px;
+    margin-bottom: 21px;
+    border: 1px solid #BCD0E5;
+    border-radius: 4px;
 }

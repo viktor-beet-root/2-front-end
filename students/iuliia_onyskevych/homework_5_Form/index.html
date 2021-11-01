@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    </head>
+<body>
+    <header>
+        <h1>Анкета поситителя ресторана</h1>
+    </header>
+    <main>
+        <form>
+            <fieldset>
+                <legend>Контактная информация</legend>
+                <p><label for="name">Имя </label><input type="text" id="name" required></p>
+                <p><label for="phone">Телефон </label><input type="text" id="phone" required></p>
+                <p><label for="email">E-mail </label><input type="email" id="email" required></p>
+                <p><label for="date">Дата посещения </label><input type="data" id="date"></p>
+            </fieldset>
+            <fieldset>
+                <legend>Персональная информация</legend>
+                <p><label for="age">Возраст </label><input type="number" min="1" max="100" step="1"></p>
+                <p><label for="text">Ваша любимая кухня </label>
+                    <select name="cuisine">
+                        <option value="russian">Русская</option>
+                        <option value="ukranian">Украинская</option>
+                        <option value="mediterranean">Средземноморская</option>
+                        <option value="chinese">Китайская</option>
+                  </select></p>
+                <label for="comments">Какие блюда Вы хотели бы увидить в меню</label>
+                <textarea id="comments"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Оценка нешего зеведения</legend>
+                <label>Почему Вы выбрали наше заведение?</label>
+                <p>
+                    <label>
+                        <input type="radio" name="status">
+                        Недалеко от дома/работы
+                    </label>
+                </p>
+                <p>
+                    <label>
+                    <input type="radio" name="status">
+                      Увидел рекламу
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="radio" name="status">
+                      Посоветовали
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="radio" name="status">
+                      Оптимальное соотношение цены и качества
+                    </label>
+                </p>
+                    <legend>Вы будете рекомендовать наше заведение своим знакомым?</legend>
+                    <p>
+                    <label>
+                        <input type="radio" name="status">
+                      Да
+                    </label>
+                    </p>
+                    <p>
+                    <label>
+                        <input type="radio" name="status">
+                      Нет
+                    </label>
+                    </p>
+            </fieldset>
+            <br>
+            <div>
+                <input type="submit" value="Отправить">
+            </div>
+        </form>
+    </main>
+</body>
+</html>

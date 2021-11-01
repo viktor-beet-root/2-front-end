@@ -60,7 +60,7 @@ ul li:nth-child(odd) {
 }
 
 ul li label {
-    padding: 8px 0px 8px 47px;
+    padding: 8px 0px 8px 12px;
     display: block;
     cursor: pointer;
     color: #fff;
@@ -92,9 +92,11 @@ form>ul+button:hover {
 }
 
 input[type="checkbox"] {
-    appearance: none;
-    visibility: hidden;
-    float: left;
+    height: 19px;
+    display: inline-block;
+    width: 19px;
+    transform: translateY(3px);
+    margin-right: 16px;
 }
 
 input[type="checkbox"]:active ul li {
@@ -119,33 +121,6 @@ span::before {
 
 span::after {
     content: ")";
-}
-
-label::before {
-    content: '';
-    height: 19px;
-    display: inline-block;
-    width: 19px;
-    background-color: #fff;
-    position: absolute;
-    left: 12px;
-}
-
-label::after {
-    content: '';
-    height: 8px;
-    width: 4px;
-    border-right: 3px solid #000;
-    border-bottom: 3px solid #000;
-    position: absolute;
-    left: 18px;
-    top: 10px;
-    transform: rotate(40deg);
-    display: none;
-}
-
-form ul li input:checked~label::after {
-    display: block;
 }
 
 form {

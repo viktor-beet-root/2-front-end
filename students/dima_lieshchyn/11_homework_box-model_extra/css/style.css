@@ -1,3 +1,95 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/roboto-v29-latin-regular.woff2') format('woff2'),
+        url('../fonts/roboto-v29-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('../fonts/roboto-v29-latin-700.woff2') format('woff2'),
+        url('../fonts/roboto-v29-latin-700.woff') format('woff');
+}
+
+* {
+    transition: all .1s ease-in;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.block {
+    margin: 0 auto;
+    background-color: #3399CC;
+    width: 832px;
+    height: 547px;
+    border-top: 13px solid #2B81AC;
+    border-bottom: 14px solid #2B81AC;
+    border-left: 16px solid #2B81AC;
+    border-right: 17px solid #2B81AC;
+    font-size: 0;
+}
+
+.weather-list {
+    margin: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+    width: 539px;
+    margin: 0 auto;
+    margin-top: calc(10%);
+}
+
+.weather-list li {
+    border-left: 1.5px solid #fff;
+    border-right: 1.5px solid #fff;
+    border-top: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    padding: 16px 0 19px;
+}
+
+.weather-list a {
+    margin: 0 auto;
+    color: white;
+    text-decoration: none;
+}
+
+.weather-list a span {
+    color: rgb(255, 255, 255, .9);
+    display: block;
+    padding-top: 4px;
+    font-size: 18px;
+}
+
+.weather-item-1,
+.weather-item-9 {
+    width: calc(60% - 3px);
+}
+
+.weather-item-2,
+.weather-item-3,
+.weather-item-8,
+.weather-item-10 {
+    width: calc(20% - 3px);
+}
+
+
+.weather-item-4,
+.weather-item-5,
+.weather-item-6,
+.weather-item-7 {
+    width: calc(25% - 3px);
+}
+
+.weather-item-11 {
+    width: calc(100%);
 }

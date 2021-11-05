@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/rubik-v14-latin-regular.woff2') format('woff2'),
+        url('../fonts/rubik-v14-latin-regular.woff') format('woff');
+}
+
+.margin__bottom {
+    margin-bottom: 15px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex__column {
+    flex-direction: column;
+}
+
+.container {
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    width: calc(1500px - 30px);
+    margin: 0 auto;
+    padding: 15px;
+    list-style-type: none;
+}
+
+.col-4 {
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: calc(100% / 12 * 4);
+}
+
+h2 {
+    max-height: 54px;
+    min-height: 54px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+h2+.div__container {
+    margin-top: 31px;
+}
+
+.li__date {
+    align-self: flex-end;
+}
+
+.footer__container {
+    align-items: flex-end;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.avatar_container {
+    align-items: center;
+}
+
+.btn {
+    color: white;
+    background-color: #FF9900;
+    border-radius: 4px;
+    padding: 10px 10px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.image_avatar {
+    border-radius: 40px;
+    border: 1px #FF9900 solid;
+}
+
+.name {
+    text-align: center;
+    max-width: 150px;
+    -webkit-box-orient: vertical;
+}

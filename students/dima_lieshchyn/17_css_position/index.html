@@ -11,6 +11,189 @@
 </head>
 
 <body class="page">
+    <header class="header">
+        <div class="header__menu-wrapper">
+            <nav class="header__menu menu">
+                <a class="menu__link" href="#"><img class="menu__item" src="img/eng.svg" alt="" srcset=""></a>
+                <a class="menu__link" href="#">Documentation / Who's using</a>
+            </nav>
+            <div class="header__logo"><img class="header__logo-img" src="img/logo.svg" alt="Konstruct"></div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="section-menu">
+            <ul class="section-menu__list">
+                <li class="section-menu__item">
+                    <a class="section-menu__link" href="#"><sup>1</sup>&nbsp;Introduction</a>
+                </li>
+                <li class="section-menu__item">
+                    <a class="section-menu__link" href="#"><sup>2</sup>&nbsp;Core Components</a>
+                </li>
+                <li class="section-menu__item">
+                    <a class="section-menu__link" href="#"><sup>3</sup>&nbsp;React Fundamentals</a>
+                </li>
+                <li class="section-menu__item">
+                    <a class="section-menu__link" href="#"><sup>4</sup>&nbsp;Handling Text Input</a>
+                </li>
+            </ul>
+        </section>
+        <section class="container">
+            <div class="row">
+                <div class="section-block col-9">
+                    <section class="section-block__introduction">
+                        <div class="section-block__wrapper">
+                            <h2 class="section-block__title">Introduction</h2>
+                            <p class="section-block__text">Welcome to the very start of your React Native journey! If
+                                you're looking for environment
+                                setup
+                                instructions,
+                                they've moved to <span>their own section</span>. Continue reading for an introduction to
+                                the
+                                documentation,
+                                Native
+                                Components, React, and more!</p>
+                        </div>
+                    </section>
+                    <section class="section-block__core">
+                        <div class="section-block__wrapper">
+                            <h2 class="section-block__title">Core Components</h2>
+                            <p class="section-block__text">React Native is an open source framework for building Android
+                                and iOS applications using
+                                React and
+                                the app
+                                platform’s native capabilities. With React Native, you use JavaScript to access your
+                                platform’s APIs
+                                as well
+                                as to describe the appearance and behavior of your UI using React components: bundles of
+                                reusable,
+                                nestable
+                                code. You can learn more about React in the next section. But first, let’s cover how
+                                components work
+                                in React
+                                Native.</p>
+                        </div>
+                    </section>
+                    <section class="section-block__react react">
+                        <div class="section-block__wrapper">
+                            <h2 class="section-block__title">React Fundamentals</h2>
+                            <p class="section-block__text">React Native runs on React, a popular open source library for
+                                building user interfaces with
+                                JavaScript. To
+                                make the most of React Native, it helps to understand React itself. This section can get
+                                you
+                                started
+                                or can
+                                serve as a refresher course.</p>
+                            <p class="section-block__text">We’re going to cover the core concepts behind React:
+                            </p>
+                            <ul class="react__react-list react-list">
+                                <li class="react-list__item">
+                                    <p class="section-block__text">components. The rest of this introduction to React
+                                        uses cats in its examples:
+                                        friendly,
+                                        approachable
+                                        creatures that need names and a cafe to work in.
+                                    </p>
+                                </li>
+                                <li class="react-list__item">
+                                    <p class="section-block__text">JSX. React and React Native use JSX, a syntax that
+                                        lets you write elements inside
+                                        JavaScript
+                                        like so:
+                                        &lt;Text&gt;Hello, I am your cat!&lt;/Text&gt;. The React docs have <span>a
+                                            comprehensive
+                                            guide to
+                                            JSX</span> you can
+                                        refer to
+                                        learn even more. Because JSX is JavaScript, you can use variables inside it.
+                                        Here
+                                        you are
+                                        declaring a name
+                                        for the cat, name, and embedding it with curly braces inside &lt;Text&gt;.
+                                    </p>
+                                </li>
+                                <li class="react-list__item">
+                                    <p class="section-block__text">props. Props is short for “properties”. </p>
+                                </li>
+                                <li class="react-list__item">
+                                    <p class="section-block__text">state. While you can think of props as arguments you
+                                        use to configure how
+                                        components
+                                        render,
+                                        state is
+                                        like a component’s personal data storage. State is useful for handling data that
+                                        changes
+                                        over time or that
+                                        comes from user interaction. State gives your components memory!</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="section-block__handling">
+                        <div class="section-block__wrapper">
+                            <h2 class="section-block__title">Handling Text Input</h2>
+                            <p class="section-block__text">TextInput is a Core Component that allows the user to enter
+                                text. It has an onChangeText
+                                prop
+                                that
+                                takes a
+                                function to be called every time the text changed, and an onSubmitEditing prop that
+                                takes a
+                                function
+                                to be
+                                called when the text is submitted.
+                            </p>
+                            <p class="section-block__text">
+                                For example, let's say that as the user types, you're translating their words into a
+                                different
+                                language. In
+                                this
+                                new language, every single word is written the same way: 🍕. So the sentence "Hello
+                                there
+                                Bob" would
+                                be
+                                translated as "🍕 🍕".
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-menu col-9">
+                    <div class="footer-menu__wrapper">
+                        <div class="footer-menu__item">
+                            <img src="img/f_1_b.png" alt="">
+                        </div>
+                        <div class="footer-menu__item">
+                            <img src="img/f_2_b.png" alt="">
+                        </div>
+                        <div class="footer-menu__item">
+                            <img src="img/f_3_b.png" alt="">
+                        </div>
+                        <div class="footer-menu__item">
+                            <img src="img/f_4_b.png" alt="">
+                        </div>
+                        <div class="footer-menu__item">
+                            <img src="img/f_5_b.png" alt="">
+                        </div>
+                        <div class="footer-menu__item">
+                            <img src="img/f_6_b.png" alt="">
+                        </div>
+                        <div class="footer-menu__item">
+                            <img src="img/f_7_b.png" alt="">
+                        </div>
+                        <div class="footer-menu__item">
+                            <img src="img/f_8_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 

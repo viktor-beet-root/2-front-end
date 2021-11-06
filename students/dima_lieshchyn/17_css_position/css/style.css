@@ -30,13 +30,14 @@ a:hover {
 .container {
     max-width: 1110px;
     padding: 0 15px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+    width: 100%;
 }
 
 [class*="col-"] {
@@ -92,6 +93,10 @@ a:hover {
     width: 100%;
 }
 
+.header {
+    margin-bottom: 60px;
+}
+
 .header__menu-wrapper {
     display: flex;
     justify-content: space-between;
@@ -113,7 +118,8 @@ a:hover {
 }
 
 .section-menu {
-    padding-top: 51px;
+    display: flex;
+    align-items: flex-start;
     position: sticky;
     top: 0;
     bottom: 0;
@@ -125,13 +131,24 @@ a:hover {
 .section-menu__list {
     list-style-type: none;
     padding-inline-start: 0;
+    margin: 0;
 }
 
-.section-menu__item {
+.section-menu__link {
+    border-bottom: 1px solid #BFBFBF;
+
+}
+
+.section-menu__item:nth-child(-n+3) {
     padding-bottom: 92px;
 }
 
-.container {
-    z-index: 200;
-    position: relative;
+
+.section-block__title::before {
+    content: '';
+    width: 81px;
+    height: 12px;
+    background-color: #000;
+    display: block;
+    margin: 15px 0;
 }

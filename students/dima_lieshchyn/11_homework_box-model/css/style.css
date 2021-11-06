@@ -1,0 +1,144 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-wrapper {
+    width: 82%;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.header-wrapper div,
+.header-col-1 img,
+.menu-list .menu-item,
+.header-col-3 .butn-block {
+    display: inline-block;
+    font-size: 0;
+}
+
+.menu-item .menu-link,
+.header-col-3 .butn-block a {
+    padding: 0 20px;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+
+.header-col-1 {
+    width: 30%;
+}
+
+.header-col-1 img {
+    padding: 0 3px;
+}
+
+.header-col-2 {
+    width: 45%;
+    text-align: right;
+}
+
+.header-col-3 {
+    width: 220px;
+}
+
+.header-col-3 div {
+    margin: 0 5px;
+}
+
+.butn-block:last-of-type {
+    background-color: #FF9900;
+}
+
+.butn-block:first-child {
+    border: 1px solid #BCD0E5;
+}
+
+.butn-block:last-of-type a {
+    color: white;
+}
+
+.butn-block>a {
+    line-height: 3;
+}
+
+.butn-block {
+    border-radius: 4px;
+}
+
+.section-wrapper {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.section-wrapper img {
+    width: 110%;
+}
+
+.section-col-1,
+.section-col-2 {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+
+
+.section-col-1 {
+    padding-top: 50px;
+}
+
+.section-col-1 h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 54px;
+}
+
+.section-col-1>.text-block {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    width: 80%;
+    margin-bottom: 45px;
+}
+
+
+.button-wrapper div {
+    display: inline-block;
+}
+
+.button-wrapper div a {
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.button-wrapper div:first-of-type {
+    background-color: #FF9900;
+}
+
+.button-wrapper div:last-of-type {
+    background-color: transparent;
+}
+
+.button-wrapper>div:first-of-type a {
+    color: white;
+    padding: 20px;
+}
+
+.button-wrapper>div:last-of-type a {
+    color: #FF9900;
+    text-decoration: underline;
+}
+
+.button-wrapper>div:last-of-type::before {
+    content: '\23F5';
+    font-size: 30px;
+    line-height: 1.6;
+    vertical-align: bottom;
+    color: #FF9900;
+    margin-right: -15px;
+}
+
+footer div {
+    text-align: center;
+    font-size: 30px;
+}

@@ -23,12 +23,7 @@ body {
     color: #000;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 .container {
-    max-width: 1110px;
     padding: 0 15px;
     width: 100%;
 }
@@ -36,7 +31,6 @@ a:hover {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
     width: 100%;
 }
 
@@ -121,10 +115,9 @@ a:hover {
     display: flex;
     align-items: flex-start;
     position: sticky;
-    top: 0;
+    top: 62px;
     bottom: 0;
-    left: 0;
-    z-index: 400;
+    z-index: 500;
     height: 100%;
 }
 
@@ -134,15 +127,36 @@ a:hover {
     margin: 0;
 }
 
-.section-menu__link {
-    border-bottom: 1px solid #BFBFBF;
+.section-block__text {
+    line-height: 48px;
 
 }
+
+.section-menu__link {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.section-menu__link::after {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    left: 0;
+    display: block;
+    clear: both;
+    background-color: #BFBFBF;
+    z-index: -10;
+}
+
 
 .section-menu__item:nth-child(-n+3) {
     padding-bottom: 92px;
 }
 
+.section-block__title {
+    padding-bottom: 30px;
+}
 
 .section-block__title::before {
     content: '';
@@ -151,4 +165,121 @@ a:hover {
     background-color: #000;
     display: block;
     margin: 15px 0;
+}
+
+.section-block__wrapper {
+    padding-bottom: 50px;
+}
+
+.react-list {
+    list-style-type: "+";
+}
+
+.react-list__item {
+    padding-left: 20px;
+}
+
+span {
+    text-decoration: underline;
+}
+
+.main {
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    top: 170px;
+    right: 0;
+    z-index: -1;
+}
+
+.footer-menu__wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.footer-menu__item {
+    width: 360px;
+    height: 200px;
+    background-color: #E6E6E6;
+    border-radius: 5px;
+}
+
+[class*="bg_"] {
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
+
+[class*="bg_"]:hover {
+    background-color: #000;
+}
+
+
+.bg_1 {
+    background-image: url(../img/f_1_b.png);
+}
+
+.bg_1:hover {
+    background-image: url(../img/f_1_w.png);
+}
+
+.bg_2 {
+    background-image: url(../img/f_2_b.png);
+}
+
+.bg_2:hover {
+    background-image: url(../img/f_2_w.png);
+}
+
+.bg_3 {
+    background-image: url(../img/f_3_b.png);
+}
+
+.bg_3:hover {
+    background-image: url(../img/f_3_w.png);
+}
+
+.bg_4 {
+    background-image: url(../img/f_4_b.png);
+}
+
+.bg_4:hover {
+    background-image: url(../img/f_4_w.png);
+}
+
+.bg_5 {
+    background-image: url(../img/f_5_b.png);
+}
+
+.bg_5:hover {
+    background-image: url(../img/f_5_w.png);
+}
+
+.bg_6 {
+    background-image: url(../img/f_6_b.png);
+}
+
+.bg_6:hover {
+    background-image: url(../img/f_6_w.png);
+}
+
+.bg_7 {
+    background-image: url(../img/f_7_b.png);
+}
+
+.bg_7:hover {
+    background-image: url(../img/f_7_w.png);
+}
+
+.bg_8 {
+    background-image: url(../img/f_8_b.png);
+}
+
+.bg_8:hover {
+    background-image: url(../img/f_8_w.png);
 }

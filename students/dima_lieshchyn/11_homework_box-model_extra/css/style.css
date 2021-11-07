@@ -44,13 +44,11 @@ body {
     width: 539px;
     margin: 0 auto;
     margin-top: calc(10%);
+
 }
 
 .weather-list li {
-    border-left: 1.5px solid #fff;
-    border-right: 1.5px solid #fff;
-    border-top: 1.5px solid #fff;
-    border-bottom: 1.5px solid #fff;
+    border-left: 3px solid #fff;
     display: inline-block;
     font-size: 16px;
     text-align: center;
@@ -70,9 +68,21 @@ body {
     font-size: 18px;
 }
 
+[class*="item"] {
+    border-top: 3px solid #fff;
+}
+
+.weather-item-3,
+.weather-item-7,
+.weather-item-10,
+.weather-item-11 {
+    border-right: 3px solid #fff;
+}
+
+
 .weather-item-1,
 .weather-item-9 {
-    width: calc(60% - 3px);
+    width: calc(60% - 6px);
 }
 
 .weather-item-2,
@@ -87,9 +97,57 @@ body {
 .weather-item-5,
 .weather-item-6,
 .weather-item-7 {
-    width: calc(25% - 3px);
+    width: calc(25.41% - 6px);
+
 }
 
 .weather-item-11 {
-    width: calc(100%);
+    width: calc(100% - 6px);
+    border-bottom: 3px solid #fff;
+
+}
+
+.weather-item-2 {
+    background-color: #33CCCC;
+}
+
+.weather-item-3 {
+    background-color: #996699;
+}
+
+.weather-item-4 {
+    background-color: #C24747;
+}
+
+.weather-item-5 {
+    background-color: #E2674A;
+}
+
+.weather-item-6 {
+    background-color: #FFCC66;
+}
+
+.weather-item-7 {
+    background-color: #99CC99;
+}
+
+.weather-item-8 {
+    background-color: #669999;
+}
+
+.weather-item-9 {
+    background-color: #CC6699;
+}
+
+.weather-item-10 {
+    background-color: #339966;
+}
+
+.weather-item-11 {
+    background-color: #666699;
+}
+
+.weather-list li:hover {
+    background: rgba(0, 0, 0, 0.75);
+    color: black;
 }

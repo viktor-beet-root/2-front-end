@@ -1,0 +1,21 @@
+body {
+    background-color: $bg-body-color;
+    background-image: url('#{$path-img}1.jpg');
+}
+
+.container {
+    max-width: $main-width;
+    padding: 0 $default-gap;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 (-$default-gap);
+}
+
+[class*="col-"] {
+    padding: 0 $default-gap;
+    box-sizing: border-box;
+}

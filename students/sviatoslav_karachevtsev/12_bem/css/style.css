@@ -94,6 +94,18 @@
     float: left;
 }
 
+.col-2 {
+    width: calc(100%/6);
+    box-sizing: border-box;
+    float: left;
+}
+
+.col-4 {
+    width: calc(100%/3);
+    box-sizing: border-box;
+    float: left;
+}
+
 .clear::after,
 .row::after {
     content: '';
@@ -253,8 +265,7 @@ a.btn:hover {
     list-style: none;
 }
 
-.icon::before {
-    content: '';
+.icon {
     display: block;
     height: 50px;
     width: 50px;
@@ -263,18 +274,96 @@ a.btn:hover {
     margin-bottom: 30px;
 }
 
-.icon::after {
-    content: '';
-    display: block;
+.icon_style1::after {
+    content: url(../images/arrow.svg);
     height: 18px;
     width: 18px;
-    background-image: url(../images/arrow.svg);
-    background-color: indigo;
-    float: left;
+    display: inline-block;
+    padding: 17px 0 0 19px;
 }
 
-.icon_color1::before {
+.icon_color1 {
     background-color: #7752BE;
 }
 
-.tools__btn {}
+.icon_style2::after {
+    content: url(../images/s.svg);
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    padding: 17px 0 0 16px;
+}
+
+.icon_color2 {
+    background-color: #FAB005;
+}
+
+.icon_style3::after {
+    content: url(../images/h.svg);
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    padding: 17px 0 0 17px;
+}
+
+.icon_color3 {
+    background-color: #F03E3D;
+}
+
+.icon_style4::after {
+    content: url(../images/t.svg);
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    padding: 17px 0 0 18px;
+}
+
+.icon_color4 {
+    background-color: #4DADF7;
+}
+
+.tools__btnwrap {
+    display: block;
+    text-align: center;
+    margin-bottom: 210px;
+}
+
+.text_mtitle {
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #2F281E;
+}
+
+.prof {
+    margin-bottom: 100px;
+}
+
+.managers {
+    margin-bottom: 100px;
+}
+
+.marketers {
+    border-bottom: 1px solid #BCD0E57F;
+    padding-bottom: 146px;
+    margin-bottom: 100px;
+}
+
+.footer__item {
+    float: none;
+}
+
+.footer__col {
+    padding-top: 72px;
+}
+
+.footer__form {
+    padding-top: 92px;
+}
+
+.footer__menu {
+    float: none;
+}
+
+.footer {
+    margin-bottom: 100px;
+}

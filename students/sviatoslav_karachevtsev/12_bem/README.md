@@ -1,1 +1,1 @@
-https://skarachevcev.github.io/2-front-end/students/sviatoslav_karachevtsev/10_productly/
+https://skarachevcev.github.io/2-front-end/students/sviatoslav_karachevtsev/12_bem/

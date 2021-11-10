@@ -1,0 +1,17 @@
+.menu {
+
+    // .menu__item
+    &__item {
+        &:hover {
+            .menu__link {
+                background-color: azure;
+            }
+        }
+    }
+
+    // .menu__link
+    &__link {}
+
+    // .menu__btn
+    &__btn {}
+}

@@ -1,0 +1,79 @@
+@include font-face($default-font-name, poppins-v15-latin-ext_latin-regular);
+@include font-face($default-font-name, poppins-v15-latin-ext_latin-500, 500);
+
+
+body {
+    background-color: $bg-body-color;
+    background-image: url('#{$path-img}1.jpg');
+}
+
+.container {
+    max-width: $main-width;
+    padding: 0 $default-gap;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 (-$default-gap);
+}
+
+[class*="col-"] {
+    padding: 0 $default-gap;
+    box-sizing: border-box;
+}
+
+.text {
+    @include test {
+        .menu__link {
+            background-color: #fff;
+        }
+    }
+
+    p {
+        text-align: center;
+
+        a {
+            color: red;
+
+            &:hover {
+                background-color: black;
+            }
+
+            span {
+                color: black;
+
+                &::after {
+                    content: '';
+                }
+
+                .active & {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.page {
+    @include clir;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+    &__header {
+        display: auto;
+
+        &_red {}
+    }
+}
+
+.main-title {
+    @extend %headegs;
+    @extend %flex-jst-wrap;
+    @extend .page;
+}
+
+.second-title {
+    @extend %headegs;
+    @extend %flex-jst-wrap;
+}

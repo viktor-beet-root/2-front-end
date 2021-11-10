@@ -105,3 +105,32 @@ body {
 .logo-image {
     display: block;
 }
+
+.main {
+    margin: 0 30px 0 50px;
+}
+
+.title {
+    text-transform: uppercase;
+    margin: 96px 0 48px;
+}
+
+.main-title {
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.title>sup {
+    font-weight: 400;
+    font-size: 60%;
+
+}
+
+.text>span {
+    text-decoration: underline;
+}
+
+.text {
+    margin-bottom: 48px;
+}

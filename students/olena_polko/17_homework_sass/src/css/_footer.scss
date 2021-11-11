@@ -1,0 +1,29 @@
+.footer {
+    border-top: 1px solid $color-light-gray;
+    padding: 100px 0 83px;
+    font-weight: 400;
+}
+
+.footer-list {
+    list-style-type: none;
+}
+
+.footer-list__link {
+    margin-top: 11px;
+    display: inline-block;
+    color: $color-light-brown;
+    text-decoration: none;
+}
+
+.footer-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid $color-light-blue;
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-bottom: 21px;
+}
+
+.btn_footer {
+    min-width: 130px;
+}

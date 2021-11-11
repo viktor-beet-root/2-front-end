@@ -1,0 +1,25 @@
+.hero {
+    padding: 35px 0 98px;
+}
+
+.main-title {
+    font-weight: $title-font-weight;
+    font-size: $main-title-size;
+    line-height: 1.2;
+    color: $color-dark-brown;
+    margin-bottom: 35px;
+}
+
+.info-wrapper__btn-wrapper {
+    padding-top: 45px;
+}
+
+.info-wrapper__main-title {
+    margin-top: 65px;
+}
+
+.hero .link {
+    margin-left: 50px;
+    font-weight: 600;
+    color: $color-bright-orange;
+}

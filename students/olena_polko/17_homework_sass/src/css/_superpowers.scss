@@ -1,0 +1,59 @@
+.title_center {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.block_bp {
+    padding: 60px 0 109px;
+}
+
+.block_bg {
+    background-color: $bg-color;
+}
+
+.superpowers__title {
+    max-width: 539px;
+    margin: 0 auto 55px;
+}
+
+
+.icon_v1 {
+    background-color: $color-purple;
+}
+
+.icon_v2 {
+    background-color: $color-yellow;
+}
+
+.icon_v3 {
+    background-color: $color-red;
+}
+
+.icon_v4 {
+    background-color: $color-blue;
+}
+
+.icon_arrow::after {
+    content: url(#{$path-img}arrow.svg);
+}
+
+.icon_wave::after {
+    content: url(#{$path-img}wave.svg);
+}
+
+.icon_heart::after {
+    content: url(#{$path-img}heart.svg);
+}
+
+.icon_sandglass::after {
+    content: url(../images/sandglass.svg);
+}
+
+.superpowers-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 34px;
+}

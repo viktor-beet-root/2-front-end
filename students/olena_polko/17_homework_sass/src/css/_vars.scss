@@ -1,0 +1,43 @@
+//colors
+$color-light-orange: #FFF4EC;
+$color-bright-orange: #FF9900;
+$color-light-blue: #BCD0E5;
+$color-light-gray: #DDE7F2;
+$color-dark-gray: #173A56;
+$color-purple: #7752BE;
+$color-yellow: #FAB005;
+$color-red: #F03E3D;
+$color-blue: #4DADF7;
+$color-light-brown: #544837;
+$color-dark-brown: #2F281E;
+$color-white: #ffffff;
+$color-black: #000000;
+
+$bg-color: $color-light-orange;
+$title-color: $color-dark-brown;
+$text-color: $color-light-brown;
+$icon-color: $color-yellow;
+$main-btn-color: $color-bright-orange;
+$secondary-btn-color: $color-white;
+//sizes
+$main-width: 1110px;
+$col-3: 25%;
+$col-6: 50%;
+$col-12: 100%;
+$default-gap: 15px;
+$border: 1px solid $color-light-gray;
+//fonts and text
+$font-name: 'Poppins';
+$font-family: 'Poppins',
+Arial,
+Helvetica,
+sans-serif;
+$default-line-height: 1.625;
+$text-font-size: 16px;
+$title-font-size: 36px;
+$main-title-size: 44px;
+$main-font-weight: 500;
+$title-font-weight: 700;
+$path-fonts: '../fonts/';
+$ft: font-;
+$path-img: '../images/';

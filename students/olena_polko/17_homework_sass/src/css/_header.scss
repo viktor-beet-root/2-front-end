@@ -1,0 +1,44 @@
+.header {
+    border-bottom: 1px solid $color-light-gray;
+    padding: 35px 0 30px;
+}
+
+
+.btn_min {
+    padding: 10px 5px;
+    min-width: 110px;
+    font-weight: $main-font-weight;
+}
+
+.btn_secondary {
+    background-color: $color-white;
+    border: 1px solid $color-light-blue;
+    color: $color-dark-gray;
+    margin-left: 30px;
+}
+
+.menu-wrapper {
+    float: right;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__item {
+    float: left;
+    margin-right: $default-gap;
+}
+
+.menu__item:last-child {
+    margin: 0;
+}
+
+.menu__link {
+    margin-top: 11px;
+    display: inline-block;
+    color: $color-dark-brown;
+    text-decoration: none;
+}

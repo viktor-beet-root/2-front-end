@@ -1,0 +1,33 @@
+.block {
+    padding: 39px 0;
+}
+
+.block_bp {
+    padding: 60px 0 109px;
+}
+
+.block_bg {
+    background-color: $color-light-yellow;
+}
+
+.title {
+    #{$ft}weight: bold;
+    #{$ft}size: 36px;
+    color: $color-orange-dark;
+}
+
+.title_center {
+    text-align: center;
+}
+
+.professionals .title {
+    margin-top: 0;
+}
+
+.professionals .info-wrapper__text {
+    width: 90%;
+}
+
+.col_p {
+    padding-left: 100px;
+}

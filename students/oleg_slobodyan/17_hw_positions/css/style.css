@@ -156,8 +156,9 @@ main {
 
 .aside-bar {
     position: sticky;
-    top: 84px;
+    top: 90px;
     margin-bottom: 50px;
+    margin-top: 10px;
 }
 
 .aside-menu__item {

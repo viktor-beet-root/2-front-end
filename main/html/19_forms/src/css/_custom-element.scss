@@ -1,0 +1,212 @@
+$swach-element-size: 20px;
+$swach-padding: 2.5px;
+$swach-width: $swach-element-size * 2+$swach-padding * 2;
+$swach-height: $swach-element-size+$swach-padding * 2;
+$swach-radius: math.div($swach-element-size, 2);
+$focus-shadow: 0 0 10px $gray-8-color;
+
+$checkbox-size: 20px;
+$checkbox-border-radius: math.div($checkbox-size, 10);
+$checkbox-border: 1px solid $gray-8-color;
+$checkbox-cheked-color: $green-color;
+
+.custom-element {
+    &__swach {
+        margin-bottom: 20px
+    }
+}
+
+.swach {
+    &_text {
+        .swach__control {
+            position: relative;
+            width: $swach-width * 1.4;
+        }
+
+        .swach__input:checked {
+            &+.swach__control {
+                &::before {
+                    transform: translateX(190%);
+                }
+
+                .swach__text {
+                    text-align: left;
+
+                    &::after {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &::before {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__input {
+        @include visuality-hidden;
+
+        &:checked+.swach__control::before {
+            transform: translateX(100%);
+            background-color: $green-color;
+            opacity: 1;
+        }
+
+        &:focus+.swach__control {
+            box-shadow: $focus-shadow;
+        }
+    }
+
+    &__label {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__control {
+        width: $swach-width;
+        height: $swach-height;
+        border-radius: $swach-element-size;
+        background-color: $white-color;
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 $swach-padding;
+
+        &+.swach__label-text {
+            margin-left: 10px;
+        }
+
+        &::before {
+            position: relative;
+            content: '';
+            display: block;
+            width: $swach-element-size;
+            height: $swach-element-size;
+            border-radius: 50%;
+            background-color: $gray-6-color;
+            opacity: .5;
+            transition: all .5s ease-in-out;
+            z-index: 100;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        left: $swach-padding*2;
+        right: $swach-padding*2;
+        line-height: $swach-height;
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: all .25s ease-in-out;
+        text-align: right;
+
+        &::after {
+            content: 'no';
+            display: inline;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .1s ease-in-out .4s;
+        }
+
+        &::before {
+            content: 'yes';
+            display: inline;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .1s ease-in-out .4s;
+        }
+    }
+}
+
+.checkbox {
+    &__input {
+        @include visuality-hidden;
+
+        &:checked+.checkbox__label .checkbox__box::after {
+            transform: rotate(45deg) translate(-50%, -50%) scale(1);
+        }
+
+        &:focus+.checkbox__label .checkbox__box {
+            box-shadow: $focus-shadow;
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+    }
+
+    &__box {
+        position: relative;
+        display: block;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        background-color: $white-color;
+        border: $checkbox-border;
+        border-radius: $checkbox-border-radius;
+        margin-right: $checkbox-size * .6;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 25%;
+            top: 50%;
+            width: math.div($checkbox-size, 4);
+            height: math.div($checkbox-size, 2);
+            border-right: 3px solid $checkbox-cheked-color;
+            border-bottom: 3px solid $checkbox-cheked-color;
+            transform: rotate(45deg) translate(-50%, -50%) scale(0);
+            transition: all .5s ease-in-out;
+        }
+    }
+}
+
+.radio {
+
+
+    &__input {
+        @extend .checkbox__input;
+
+        &:checked+.radio__label .radio__box::after {
+            transform: scale(1);
+        }
+
+        &:focus+.radio__label .radio__box {
+            box-shadow: $focus-shadow;
+        }
+    }
+
+    &__label {
+        @extend .checkbox__label;
+    }
+
+    &__box {
+        display: block;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        background-color: $white-color;
+        border: $checkbox-border;
+        border-radius: $checkbox-border-radius;
+        margin-right: $checkbox-size * .6;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::after {
+            content: '';
+            display: block;
+            border-radius: 50%;
+            width: math.div($checkbox-size, 2);
+            height: math.div($checkbox-size, 2);
+            border: none;
+            background-color: $checkbox-cheked-color;
+            transform: scale(0);
+            transition: all .5s ease-in-out;
+        }
+    }
+}

@@ -2,7 +2,7 @@
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
     autoprefixer = require('gulp-autoprefixer'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     cssmin = require('gulp-cssnano'),
     sourceMaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'),
@@ -113,7 +113,6 @@ gulp.task("style:prod", function () {
     return gulp.src(path.src.css)
         .pipe(sass())
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(cssmin())
@@ -128,7 +127,6 @@ gulp.task("style:build", function () {
         .pipe(sourceMaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(sourceMaps.write())

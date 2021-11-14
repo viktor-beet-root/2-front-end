@@ -1,13 +1,13 @@
 .block {
     padding: 39px 0;
-}
 
-.block_bp {
-    padding: 60px 0 109px;
-}
+    &_bp {
+        padding: 60px 0 109px;
+    }
 
-.block_bg {
-    background-color: $color-light-yellow;
+    &_bg {
+        background-color: $color-light-yellow;
+    }
 }
 
 .professionals .info-wrapper__text {

@@ -45,7 +45,3 @@
 .icon_clock::after {
     content: url(#{$path-img}clock.svg);
 }
-
-.icon_tick::after {
-    content: url(#{$path-img}tick.svg);
-}

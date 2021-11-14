@@ -23,18 +23,18 @@
 body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-weight: 700;
+    background-color: #3399CC;
 }
 
 .block {
     margin: 0 auto;
-    background-color: #3399CC;
-    width: 832px;
-    height: 547px;
+    font-size: 0;
+    padding-top: calc(10%);
+    height: 100vh;
     border-top: 13px solid #2B81AC;
     border-bottom: 14px solid #2B81AC;
     border-left: 16px solid #2B81AC;
     border-right: 17px solid #2B81AC;
-    font-size: 0;
 }
 
 .weather-list {
@@ -43,8 +43,6 @@ body {
     padding-inline-start: 0;
     width: 539px;
     margin: 0 auto;
-    margin-top: calc(10%);
-
 }
 
 .weather-list li {

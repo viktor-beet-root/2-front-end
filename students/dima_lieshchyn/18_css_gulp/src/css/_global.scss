@@ -1,144 +1,128 @@
-.container {
-    max-width: $main-width;
+@include font-face($main-font-name, 'rubik-v14-latin-regular');
+@include font-face($main-font-name, 'rubik-v14-latin-700', 700);
+
+.main-title {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.sprite {
+    @include visuality-hidden;
 }
 
 .page {
-    #{$ft}family: $font-family;
-    #{$ft}size: 16px;
-    #{$ft}weight: 500;
-    #{$ft}-style: normal;
-    line-height: $default-line-height;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    font-family: $main-font;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+    background-color: $main-color;
 }
 
 .container {
-    max-width: $main-width;
-    padding: 0 $default-gap;
+    max-width: $container-width;
     margin: 0 auto;
+    padding: 0 $default-gap;
 }
 
 .row {
     display: flex;
+    flex-wrap: wrap;
+    margin: 0 (-$default-gap);
 }
 
 [class*="col-"] {
     padding: 0 $default-gap;
-    box-sizing: $default-box-sizing;
-}
-
-.col {
-    padding: 0 $default-gap;
-    box-sizing: $default-box-sizing;
-
+    box-sizing: border-box;
 }
 
 .col-1 {
-    width: $col-1;
+    width: calc(100% / 12);
 }
 
 .col-2 {
-    width: $col-2;
+    width: calc(100% / 12 * 2);
 }
 
 .col-3 {
-    width: $col-3;
+    width: 25%;
 }
 
 .col-4 {
-    width: $col-4;
+    width: calc(100% / 12 * 4);
 }
 
 .col-5 {
-    width: $col-5;
+    width: calc(100% / 12 * 5);
 }
 
 .col-6 {
-    width: $col-6;
+    width: 50%;
 }
 
 .col-7 {
-    width: $col-7;
+    width: calc(100% / 12 * 7);
 }
 
 .col-8 {
-    width: $col-8;
+    width: calc(100% / 12 * 8);
 }
 
 .col-9 {
-    width: $col-9;
+    width: 75%;
 }
 
 .col-10 {
-    width: $col-10;
+    width: calc(100% / 12 * 10);
 }
 
 .col-11 {
-    width: $col-11;
+    width: calc(100% / 12 * 11);
 }
 
 .col-12 {
-    width: $col-12;
+    width: 100%;
 }
 
-.logo__image {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
+@keyframes bounce_up {
+
+    0%,
+    20%,
+    60%,
+    100% {
+        transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
 }
 
-.btn {
-    #{$ft}weight: bold;
-    color: $color-white;
-    background-color: $color-orange;
-    border-radius: 4px;
-    padding: 13.5px 10px;
-    display: inline-block;
-    min-width: 175px;
-    text-align: center;
-    text-decoration: none;
-    box-sizing: $default-box-sizing;
-}
+@keyframes bounce_down {
 
-.btn_min {
-    padding: 10px 5px;
-    min-width: 110px;
-    font-weight: 500;
-}
+    0%,
+    20%,
+    60%,
+    100% {
+        transform: translateY(0);
+        transform: translateY(0);
+    }
 
-.btn_secondary {
-    background-color: $color-white;
-    border: $border-color;
-    color: $color-dark-blue;
-    margin-left: 30px;
-}
+    40% {
+        transform: translateY(20px);
+        transform: translateY(20px);
+    }
 
-.link::before {
-    content: url(#{$path-img}05.svg);
-    width: 20px;
-    height: 17px;
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: -3px;
-}
-
-.icon {
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 19px;
-    text-align: center;
-}
-
-.icon::after {
-    width: 10px;
-    display: inline;
-    vertical-align: (-$default-gap);
-
+    80% {
+        transform: translateY(10px);
+        transform: translateY(10px);
+    }
 }

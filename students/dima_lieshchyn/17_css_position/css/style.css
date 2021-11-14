@@ -167,8 +167,8 @@ body {
     margin: 15px 0;
 }
 
-.section-block__wrapper {
-    padding-bottom: 50px;
+.padding_anchor {
+    padding-top: 60px;
 }
 
 .react-list {

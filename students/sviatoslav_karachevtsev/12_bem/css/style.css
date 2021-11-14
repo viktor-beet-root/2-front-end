@@ -114,7 +114,7 @@
 }
 
 .logo {
-    width: 184px;
+    width: 185px;
     height: 32px;
     float: left;
     margin-top: 8px;
@@ -128,22 +128,7 @@
     display: block;
 }
 
-.logowrap {
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logowrap__i1 {
-    align-self: flex-start;
-}
-
-.logowrap__i2 {
-    align-self: flex-end;
-}
-
-.menu__wrapper {
+.menu {
     float: right;
 }
 
@@ -357,7 +342,7 @@ a.btn:hover {
 }
 
 .footer__form {
-    padding-top: 92px;
+    padding-top: 45px;
 }
 
 .footer__menu {
@@ -366,4 +351,19 @@ a.btn:hover {
 
 .footer {
     margin-bottom: 100px;
+}
+
+.form__btn {
+    min-width: 131px;
+    border: none;
+    margin: 0;
+}
+
+.form__input {
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: #BCD0E5;
+    margin-bottom: 20px;
 }

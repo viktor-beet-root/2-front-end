@@ -1,3 +1,5 @@
+@import './social-list';
+
 .form {
     &__row {
         padding-top: $default-gap;
@@ -80,6 +82,17 @@
     }
 }
 
+.textarea {
+    @extend .input-text;
+    resize: none;
+    height: 150px;
+    padding: 10px;
+
+    &+.icon {
+        height: auto;
+    }
+}
+
 .icon {
     width: $form-input-height;
     height: $form-input-height;
@@ -93,4 +106,8 @@
         max-height: 25px;
         fill: $form-icon-color;
     }
+}
+
+.inpit-hiiden {
+    @include visuality-hidden;
 }

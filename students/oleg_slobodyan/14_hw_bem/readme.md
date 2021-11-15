@@ -1,1 +1,1 @@
-https://teddi90.github.io/2-front-end/students/oleg_slobodyan/12_hw_fonts/
+https://teddi90.github.io/2-front-end/students/oleg_slobodyan/14_hw_bem/

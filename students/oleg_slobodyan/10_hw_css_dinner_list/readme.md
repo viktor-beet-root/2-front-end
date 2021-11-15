@@ -1,0 +1,1 @@
+https://teddi90.github.io/2-front-end/students/oleg_slobodyan/10_hw_css_dinner_list/

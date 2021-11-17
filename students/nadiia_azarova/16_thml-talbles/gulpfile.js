@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     babel = require('gulp-babel'),
     minify = require('gulp-minify'),
-    rename = require("gulp-rename");
+    rename = require("gulp-rename"),
+    gulpHtmlBemValidator = require('gulp-html-bem-validator');
 
 var path = {
     build: {
@@ -50,6 +51,7 @@ gulp.task("webserver", function () {
 gulp.task("html:build", function () {
     return gulp.src(path.src.html)
         .pipe(rigger())
+        .pipe(gulpHtmlBemValidator())
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({
             stream: true

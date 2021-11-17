@@ -1,0 +1,317 @@
+$tbl-gap: 20px;
+
+.data-tbl {
+    background-color: $bg-color;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(75, 81, 91, 0.15);
+}
+
+.data-tbl__col {
+    &_auto {
+        width: auto;
+    }
+
+    &_150 {
+        width: 150px;
+    }
+
+    &_100 {
+        width: 100px;
+    }
+}
+
+
+.data-tbl__row {
+    position: relative;
+    box-shadow: 0 0 0 transparent;
+    background-color: transparent;
+    transition: all $animation;
+
+    &:hover {
+        box-shadow: $box-shadow;
+    }
+}
+
+.data-tbl__cell {
+    padding: 10px;
+
+    &:first-child {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(2) {
+        @extend %align-left;
+    }
+
+    &:nth-child(3) {
+        @extend %align-left;
+
+        p {
+            @extend %two-lines-elipsis;
+        }
+
+    }
+
+    &:nth-child(4) {
+        @extend %align-right;
+    }
+
+    &:nth-child(5) {
+        @extend %align-right;
+    }
+
+    &:nth-child(6) {
+        @extend %align-right;
+    }
+
+    &:nth-child(7) {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(8) {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(9) {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(10) {
+        @extend %align-center;
+        @extend %valign-middle;
+        padding-right: 30px;
+    }
+}
+
+.label {
+    cursor: pointer;
+
+    &__checkbox {
+        display: block;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        border: 1px solid $icon-stroke;
+        border-radius: 3px;
+        margin: 0 10px 0 20px;
+        line-height: 20px;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: transparent;
+            transition: background-color $animation;
+        }
+
+        &::after {
+            content: url('#{$img-path}checkbox.svg');
+            display: inline;
+            visibility: hidden;
+            opacity: 0;
+            transition: all $animation;
+        }
+    }
+}
+
+.data-tbl__p {
+    &_medium {
+        @extend %weight-500;
+    }
+
+    &_fs-s {
+        @extend %fs-s;
+    }
+
+    &_color-secondary {
+        color: $font-secondary-color;
+    }
+
+    &_color-negative {
+        color: $negative-color;
+    }
+
+    &_color-positive {
+        color: $positive-color;
+    }
+
+    &_color-neutral {
+        color: $font-secondary-color;
+    }
+}
+
+.data-tbl__status {
+    @extend %fs-xs;
+    @extend %all-caps;
+    @extend %weight-500;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0 25px;
+
+    &_active {
+        color: $bg-color;
+        background-color: $primary-color;
+
+        &::after {
+            content: 'Active';
+            display: inline;
+        }
+    }
+
+    &_paid {
+        color: $bg-color;
+        background-color: $positive-color;
+
+        &::after {
+            content: 'Paid';
+            display: inline;
+        }
+    }
+
+    &_open {
+        color: $warning-color;
+        border: 1px solid $warning-color;
+
+        &::after {
+            content: 'Open';
+            display: inline;
+        }
+    }
+
+    &_ordered {
+        color: $bg-color;
+        background-color: $positive-color;
+
+        &::after {
+            content: 'Ordered';
+            display: inline;
+        }
+    }
+
+    &_inactive {
+        color: $font-secondary-color;
+        border: 1px solid $font-secondary-color;
+
+        &::after {
+            content: 'Inactive';
+            display: inline;
+        }
+    }
+}
+
+.data-tbl__btn {
+    @extend %btn-reset;
+}
+
+.btn-action {
+    &__icon {
+        max-width: 20px;
+        max-height: 20px;
+        fill: $icon-stroke;
+        transition: fill $animation;
+
+        &:hover {
+            fill: $font-primary-color;
+        }
+    }
+}
+
+@include ckecked-row(row-1);
+@include ckecked-row(row-2);
+@include ckecked-row(row-3);
+@include ckecked-row(row-4);
+@include ckecked-row(row-5);
+@include ckecked-row(row-6);
+@include ckecked-row(row-7);
+@include ckecked-row(row-8);
+@include ckecked-row(row-9);
+@include ckecked-row(row-10);
+
+.checkbox[id="row-0"]:checked {
+    &~.data-tbl .data-tbl__row {
+        background-color: $selected-color;
+    }
+
+    &~.data-tbl label span {
+        background-color: $primary-color;
+        border-color: $primary-color;
+    }
+
+    &~.data-tbl label span::before {
+        background-color: $primary-color;
+    }
+
+    &~.data-tbl label span::after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.data-form,
+.checkbox {
+    @include visuality-hidden;
+
+}
+
+.data-tbl__foot-cell {
+    @extend %valign-middle,
+    %fs-s,
+    %weight-600,
+    %align-right;
+    padding: 15px 10px;
+    color: $font-secondary-color;
+
+    &:first-child {
+        @extend %align-left,
+        %all-caps,
+        %fs-xs;
+        padding-left: 30px;
+    }
+
+    &:last-child {
+        padding-right: 30px;
+    }
+
+    .data-tbl__foot-span_bold-fs-x {
+        @extend %fs-s;
+    }
+}
+
+.rows-number {
+    @extend %btn-reset;
+
+    &__img {
+        width: 8px;
+        height: 5px;
+        position: relative;
+        bottom: 1px;
+        @extend %foot-btn;
+    }
+}
+
+.nav-btn {
+    @extend %btn-reset;
+
+    &__img {
+        width: 6px;
+        height: 10px;
+        display: inline-block;
+        @extend %foot-btn;
+    }
+
+    &:first-child {
+        .nav-btn__img {
+            margin-right: 50px;
+        }
+    }
+}

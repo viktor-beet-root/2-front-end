@@ -3,6 +3,7 @@
 .form {
     &__row {
         padding-top: $default-gap;
+        margin-bottom: $form-margin;
     }
 
     &__item {
@@ -27,8 +28,6 @@
 
 .input-group {
     display: flex;
-
-    &__input {}
 
     &_left {
         flex-direction: row-reverse;
@@ -88,6 +87,7 @@
     height: 150px;
     padding: 10px;
 
+
     &+.icon {
         height: auto;
     }
@@ -100,6 +100,10 @@
     justify-content: center;
     align-items: center;
     background-color: $gray-3-color;
+
+    &_tick {
+        background-color: white;
+    }
 
     &__img {
         max-width: 25px;

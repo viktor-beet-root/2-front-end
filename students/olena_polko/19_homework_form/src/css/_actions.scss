@@ -1,0 +1,25 @@
+.form__action {
+    display: flex;
+    justify-content: space-between;
+    background-color: $title-bg-color;
+}
+
+.btn {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    border: none;
+    padding: $btn-padding;
+    cursor: pointer;
+    margin: $default-gap;
+}
+
+.btn_secondary {
+    background-color: $white-color;
+    color: $main-color;
+}
+
+.btn_primary {
+    background-color: $main-color;
+    color: $white-color;
+}

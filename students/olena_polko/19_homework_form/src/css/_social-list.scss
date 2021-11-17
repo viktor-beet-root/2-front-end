@@ -7,24 +7,86 @@
     }
 
     &__input {
+
+        &~.social-list__row .social-list__checked {
+            visibility: hidden;
+        }
+
+
+
         @include checked-input('fasebook', 'item') {
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #1877F2;
+            }
+
+            & .social-list__checked {
+                fill: green;
+                visibility: visible;
+
+            }
         }
 
         @include checked-input('instagram', 'item') {
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #E4405F;
+            }
+
+            & .social-list__checked {
+                fill: green;
+                visibility: visible;
+
+            }
         }
 
         @include checked-input('linkedin', 'item') {
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #0A66C2;
+            }
+
+            & .social-list__checked {
+                fill: green;
+                visibility: visible;
+
+            }
         }
 
         @include checked-input('googleplus', 'item') {
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #db4a39;
+            }
+
+            & .social-list__checked {
+                fill: green;
+                visibility: visible;
+
+            }
         }
 
         @include checked-input('twitter', 'item') {
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #1DA1F2;
+            }
+
+            & .social-list__checked {
+                fill: green;
+                visibility: visible;
+
+            }
         }
 
         &:checked~.social-list__row .social-list__label_hide {
@@ -35,31 +97,53 @@
         @include checked-input('fasebook', 'url-item') {
             transform: translateX(0);
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #1877F2;
+            }
         }
 
         @include checked-input('instagram', 'url-item') {
             transform: translateX(0);
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #E4405F;
+            }
         }
 
         @include checked-input('linkedin', 'url-item') {
             transform: translateX(0);
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #0A66C2;
+            }
         }
 
         @include checked-input('googleplus', 'url-item') {
             transform: translateX(0);
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #db4a39;
+            }
         }
 
         @include checked-input('twitter', 'url-item') {
             transform: translateX(0);
             opacity: 1;
+
+            & .icon__img {
+                transform: scale(1.1);
+                fill: #1DA1F2;
+            }
         }
-
     }
-
-    &__row {}
 
     &__label {
         @extend .label;
@@ -70,8 +154,6 @@
             transition: all .5s ease-in-out;
         }
     }
-
-    &__list-name {}
 
     &__item {
         @extend .input-group;
@@ -86,16 +168,6 @@
         &_left {
             flex-direction: row-reverse;
         }
-
-        &_fasebook {}
-
-        &_instagram {}
-
-        &_linkedin {}
-
-        &_googleplus {}
-
-        &_twitter {}
     }
 
     &__label-item {
@@ -106,8 +178,6 @@
         cursor: pointer;
     }
 
-    &__icon {}
-
     &__url-list {
         overflow: hidden;
     }
@@ -117,16 +187,6 @@
         transform: translateX(-100%);
         opacity: 0;
         transition: all .5s ease-in-out;
-
-        &_fasebook {}
-
-        &_instagram {}
-
-        &_linkedin {}
-
-        &_googleplus {}
-
-        &_twitter {}
     }
 
     &__input-group {

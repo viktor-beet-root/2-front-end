@@ -8,6 +8,10 @@
     &_bg {
         background-color: $color-light-yellow;
     }
+
+    @include media('sm') {
+        text-align: center;
+    }
 }
 
 .professionals .info-wrapper__text {

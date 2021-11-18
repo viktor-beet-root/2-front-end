@@ -6,21 +6,32 @@
     justify-content: space-between;
     align-items: center;
 
+    @include media('md') {
+        align-items: flex-start;
+    }
+
     &__icon {
         width: 20px;
         padding-right: 30px;
         margin-right: 30px;
-    }
-
-    &__text {
-        width: 80%;
-
+        background-color: $color-orange;
     }
 
     &__item-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include media('md') {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.item-wrapper {
+    &__text {
+        width: 80%;
+
     }
 }
 

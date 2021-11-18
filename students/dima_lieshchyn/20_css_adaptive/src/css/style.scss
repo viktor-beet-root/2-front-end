@@ -1,6 +1,7 @@
+@use 'sass:math';
 @import './vars';
+@import './mixins';
 @import './normalize';
-@import './fonts';
 @import './global';
 @import './header';
 @import './hero';

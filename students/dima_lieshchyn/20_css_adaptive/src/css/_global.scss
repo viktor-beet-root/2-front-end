@@ -1,12 +1,21 @@
+@include font-face($main-font-name, 'poppins-v15-latin-ext_latin-regular');
+@include font-face($main-font-name, 'poppins-v15-latin-ext_latin-500', 500);
+@include font-face($main-font-name, 'poppins-v15-latin-ext_latin-600', 600);
+@include font-face($main-font-name, 'poppins-v15-latin-ext_latin-700', 700);
+
+@include grid();
+
 .container {
-    max-width: $main-width;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
 }
 
 .page {
-    #{$ft}family: $font-family;
-    #{$ft}size: 16px;
-    #{$ft}weight: 500;
-    #{$ft}-style: normal;
+    font-family: $main-font;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    font-style: normal;
     line-height: $default-line-height;
 }
 
@@ -19,73 +28,73 @@ a:hover {
 }
 
 .container {
-    max-width: $main-width;
+    max-width: $container-width;
     padding: 0 $default-gap;
     margin: 0 auto;
 }
 
-.row {
-    display: flex;
-}
+// .row {
+//     display: flex;
+// }
 
-[class*="col-"] {
-    padding: 0 $default-gap;
-    box-sizing: $default-box-sizing;
-}
+// [class*="col-"] {
+//     padding: 0 $default-gap;
+//     box-sizing: $default-box-sizing;
+// }
 
-.col {
-    padding: 0 $default-gap;
-    box-sizing: $default-box-sizing;
+// .col {
+//     padding: 0 $default-gap;
+//     box-sizing: $default-box-sizing;
 
-}
+// }
 
-.col-1 {
-    width: $col-1;
-}
+// .col-1 {
+//     width: $col-1;
+// }
 
-.col-2 {
-    width: $col-2;
-}
+// .col-2 {
+//     width: $col-2;
+// }
 
-.col-3 {
-    width: $col-3;
-}
+// .col-3 {
+//     width: $col-3;
+// }
 
-.col-4 {
-    width: $col-4;
-}
+// .col-4 {
+//     width: $col-4;
+// }
 
-.col-5 {
-    width: $col-5;
-}
+// .col-5 {
+//     width: $col-5;
+// }
 
-.col-6 {
-    width: $col-6;
-}
+// .col-6 {
+//     width: $col-6;
+// }
 
-.col-7 {
-    width: $col-7;
-}
+// .col-7 {
+//     width: $col-7;
+// }
 
-.col-8 {
-    width: $col-8;
-}
+// .col-8 {
+//     width: $col-8;
+// }
 
-.col-9 {
-    width: $col-9;
-}
+// .col-9 {
+//     width: $col-9;
+// }
 
-.col-10 {
-    width: $col-10;
-}
+// .col-10 {
+//     width: $col-10;
+// }
 
-.col-11 {
-    width: $col-11;
-}
+// .col-11 {
+//     width: $col-11;
+// }
 
-.col-12 {
-    width: $col-12;
-}
+// .col-12 {
+//     width: $col-12;
+// }
 
 .logo__image {
     display: inline-block;
@@ -94,8 +103,8 @@ a:hover {
 }
 
 .title {
-    #{$ft}weight: bold;
-    #{$ft}size: 36px;
+    font-weight: bold;
+    font-size: 36px;
     color: $color-orange-dark;
 }
 
@@ -108,7 +117,7 @@ a:hover {
 }
 
 .btn {
-    #{$ft}weight: bold;
+    font-weight: bold;
     color: $color-white;
     background-color: $color-orange;
     border-radius: 4px;

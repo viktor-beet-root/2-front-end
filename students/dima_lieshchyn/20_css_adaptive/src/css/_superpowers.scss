@@ -1,3 +1,9 @@
+.superpowers__title {
+    @include media('xs') {
+        font-size: 22px;
+    }
+}
+
 .superpowers-list {
     list-style-type: none;
     padding: 0;
@@ -8,40 +14,58 @@
     margin-top: 38px;
 }
 
-.superpowers-list__title {
-    font-size: 22px;
-    font-weight: 600;
-}
+.superpowers-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-.icon_v1 {
-    background-color: $color-violet;
-}
+    @include media('sm') {
+        justify-content: center;
+        text-align: center;
+    }
 
-.icon_v2 {
-    background-color: $color-orange-v2;
-}
+    &__item span {
+        @include media('sm') {
+            margin: 0 auto;
+        }
 
-.icon_v3 {
-    background-color: $color-red;
-}
+        &__title {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
 
-.icon_v4 {
-    background-color: $color-blue;
-}
 
-.icon_arrow::after {
-    content: url(#{$path-img}arrow.svg);
-}
+    .icon_v1 {
+        background-color: $color-violet;
+    }
 
-.icon_snake::after {
-    content: url(#{$path-img}snake.svg);
-    vertical-align: -13px;
-}
+    .icon_v2 {
+        background-color: $color-orange-v2;
+    }
 
-.icon_heart::after {
-    content: url(#{$path-img}heart.svg);
-}
+    .icon_v3 {
+        background-color: $color-red;
+    }
 
-.icon_clock::after {
-    content: url(#{$path-img}clock.svg);
+    .icon_v4 {
+        background-color: $color-blue;
+    }
+
+    .icon_arrow::after {
+        content: url(#{$path-img}arrow.svg);
+    }
+
+    .icon_snake::after {
+        content: url(#{$path-img}snake.svg);
+        vertical-align: -13px;
+    }
+
+    .icon_heart::after {
+        content: url(#{$path-img}heart.svg);
+    }
+
+    .icon_clock::after {
+        content: url(#{$path-img}clock.svg);
+    }
 }

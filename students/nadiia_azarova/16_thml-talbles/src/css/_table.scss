@@ -100,8 +100,16 @@ $tbl-gap: 20px;
         border-radius: 3px;
         margin: 0 10px 0 20px;
         line-height: 20px;
+        outline: 1px solid transparent;
+        outline-offset: -2px;
+        transition: all $animation;
 
-        &::before {
+        .label:hover & {
+            outline-color: $primary-color;
+            border-color: $primary-color;
+        }
+
+        .data-tbl__row &::before {
             content: '';
             display: block;
             position: absolute;
@@ -110,7 +118,7 @@ $tbl-gap: 20px;
             bottom: 0;
             left: 0;
             background-color: transparent;
-            transition: background-color $animation;
+            transition: box-shadow $animation;
         }
 
         &::after {
@@ -217,12 +225,7 @@ $tbl-gap: 20px;
     &__icon {
         max-width: 20px;
         max-height: 20px;
-        fill: $icon-stroke;
-        transition: fill $animation;
-
-        &:hover {
-            fill: $font-primary-color;
-        }
+        @include color-change(fill, $icon-stroke, $font-primary-color);
     }
 }
 
@@ -313,5 +316,112 @@ $tbl-gap: 20px;
         .nav-btn__img {
             margin-right: 50px;
         }
+    }
+}
+
+
+.data-tbl__head-cell {
+    @extend .data-tbl__cell;
+    @extend %valign-middle;
+    @extend %all-caps;
+    @extend %fs-s;
+    @extend %weight-600;
+    color: $font-secondary-color;
+
+    &:last-child {
+        @extend .data-tbl__cell,
+        :nth-child(10);
+    }
+
+    .data-tbl__head-row:first-child & {
+        padding-top: 30px;
+
+        &:last-child {
+            @extend %align-right;
+        }
+    }
+}
+
+.sort {
+    display: inline-block;
+    margin-left: 0.5em;
+    cursor: pointer;
+
+    &__img {
+        width: 8px;
+        height: 11px;
+        position: relative;
+        top: 1px;
+        @include color-change(fill, $icon-stroke, $font-primary-color);
+    }
+}
+
+.filter {
+    cursor: pointer;
+
+    .filter__img {
+        width: 20px;
+        height: 20px;
+        @include color-change(fill, $primary-color, $btn-hover-color);
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
+.search-form {
+    background-color: $input-color;
+    border-radius: 4px;
+    width: 300px;
+    height: 40px;
+    position: relative;
+
+    &__btn {
+        @extend %btn-reset;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    &__input {
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 10px 10px 10px 40px;
+        font-weight: $body-font-weight;
+        font-size: $body-font-size;
+        color: $font-primary-color;
+    }
+
+    &__img {
+        width: 20px;
+        height: 20px;
+        @include color-change(fill, $icon-stroke, $icon-hover)
+    }
+}
+
+.add-btn {
+    @extend %btn-reset;
+    @include color-change(background-color, $primary-color, $btn-hover-color);
+    color: $bg-color;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: $body-font-size;
+
+    &__img {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        fill: $bg-color;
+    }
+
+    &__txt {
+        display: inline-block;
+        overflow: hidden;
+        line-height: 20px;
     }
 }

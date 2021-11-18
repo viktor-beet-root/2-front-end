@@ -56,3 +56,12 @@
         fill: $font-primary-color;
     }
 }
+
+%icon-hover {
+    fill: $icon-stroke;
+    transition: fill $animation;
+
+    &:hover {
+        fill: $font-primary-color;
+    }
+}

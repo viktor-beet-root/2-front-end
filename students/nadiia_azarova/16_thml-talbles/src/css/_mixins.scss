@@ -51,3 +51,12 @@
 @mixin weight-500 {
     font-weight: 500;
 }
+
+@mixin color-change($definition, $base-color, $hover-color) {
+    #{$definition}: #{$base-color};
+    transition: $definition $animation;
+
+    &:hover {
+        #{$definition}: #{$hover-color};
+    }
+}

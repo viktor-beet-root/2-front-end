@@ -1,0 +1,55 @@
+.block {
+    @extend %block;
+}
+
+.col {
+    &_6 {
+        width: 50%;
+    }
+}
+
+.text-top {
+    @extend %text-top;
+
+}
+
+.strong-bottom {
+    @extend %strong-bottom;
+}
+
+.managers-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        padding: 15px 0;
+        display: flex;
+    }
+
+    &__icon {
+        margin-right: 30px;
+        vertical-align: middle;
+    }
+
+    &__text {
+        width: 65%;
+        margin: 0;
+        vertical-align: middle;
+    }
+}
+
+.icon {
+    @extend %icon;
+
+    &_v5 {
+        background-color: $lightorange-color;
+    }
+
+    &_tick {
+        &::after {
+            content: url(../images/tick.svg);
+        }
+    }
+}

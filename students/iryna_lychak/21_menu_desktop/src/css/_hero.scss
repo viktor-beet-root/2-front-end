@@ -1,0 +1,42 @@
+.hero {
+    padding: 35px 0 98px;
+}
+
+.col {
+    &_6 {
+        width: 50%;
+    }
+}
+
+.info-wrapper {
+    @extend %info-wrapper;
+}
+
+.main-title {
+    font-size: 44px;
+    font-weight: bold;
+    color: $brown-color;
+    line-height: 1.2;
+    margin-bottom: 32px;
+}
+
+.text {
+    @extend %text;
+    margin-right: 112px;
+}
+
+.link {
+    margin-left: 50px;
+
+    &::before {
+        width: 20px;
+        height: 17px;
+        content: '';
+        background-image: url(../images/p.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,31 @@
+.block {
+    @extend %block;
+}
+
+.col {
+    &_6 {
+        width: 50%;
+    }
+}
+
+.title {
+    @extend %title;
+}
+
+.info-wrapper {
+    @extend %info-wrapper;
+}
+
+.text {
+    @extend %text;
+}
+
+
+.text-top {
+    @extend %text-top;
+
+}
+
+.strong-bottom {
+    @extend %strong-bottom;
+}

@@ -1,0 +1,46 @@
+//colors
+$color-orange-dark:#2F281E;
+$color-orange: #FF9900;
+$color-gray: #BCD0E5;
+$color-light-yellow:#fff4ec;
+$color-white: #fff;
+$color-dark-blue:#173A56;
+//additional colors
+$color-violet:#7752BE;
+$color-orange-v2:#FAB005;
+$color-red:#F03E3D;
+$color-blue:#4DADF7;
+$color-brown: #544837;
+
+$border-color: 1px solid $color-gray;
+
+$main-width: 1110px;
+
+$default-gap: 15px;
+
+$default-box-sizing: border-box;
+
+$path-img: '../images/';
+$ft: font-;
+
+$default-font-name: 'Popins';
+$font-family: $default-font-name,
+Arial,
+Helvetica,
+sans-serif;
+$path-fonts: '../fonts/';
+
+$default-line-height: 1.625;
+
+$col-1:calc(100% / 12);
+$col-2:calc(100% / 12 * 2);
+$col-3:25%;
+$col-4:33.33333%;
+$col-5:calc(100% / 12 * 5);
+$col-6:50%;
+$col-7:calc(100% / 12 * 7);
+$col-8:calc(100% / 12 * 8);
+$col-9: calc(100% / 12 * 9);
+$col-10:calc(100% / 12 * 10);
+$col-11:calc(100% / 12 * 11);
+$col-12:100%;

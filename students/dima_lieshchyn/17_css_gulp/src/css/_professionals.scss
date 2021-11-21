@@ -1,0 +1,19 @@
+.block {
+    padding: 39px 0;
+
+    &_bp {
+        padding: 60px 0 109px;
+    }
+
+    &_bg {
+        background-color: $color-light-yellow;
+    }
+}
+
+.professionals .info-wrapper__text {
+    width: 90%;
+}
+
+.col_p {
+    padding-left: 100px;
+}

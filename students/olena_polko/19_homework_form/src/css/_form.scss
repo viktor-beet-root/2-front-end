@@ -1,0 +1,117 @@
+@import './social-list';
+
+.form {
+    &__row {
+        padding-top: $default-gap;
+        margin-bottom: $form-margin;
+    }
+
+    &__item {
+        position: relative;
+    }
+}
+
+.label {
+    display: block;
+    background-color: $title-bg-color;
+    color: $title-text-color;
+    padding: 5px 10px;
+    font-size: 20px;
+
+    .required & {
+        &::after {
+            content: '*';
+            display: inline;
+        }
+    }
+}
+
+.input-group {
+    display: flex;
+
+    &_left {
+        flex-direction: row-reverse;
+    }
+
+    &__icon {
+        &::after {
+            content: '';
+            display: block;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: $default-gap;
+            right: $default-gap;
+            bottom: 0;
+            box-shadow: 0 0 10px $gray-8-color;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .5s ease-in-out;
+        }
+    }
+}
+
+.input-text {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    padding: $form-padding;
+    height: $form-input-height;
+    outline: none;
+
+    &:focus,
+    &[required]:valid:focus {
+        &+.icon>.icon__img {
+            fill: $main-color;
+        }
+    }
+
+    &:focus {
+        &+.input-group__icon::after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &[required]:valid {
+        &+.icon>.icon__img {
+            fill: $valide-color;
+        }
+    }
+}
+
+.textarea {
+    @extend .input-text;
+    resize: none;
+    height: 150px;
+    padding: 10px;
+
+
+    &+.icon {
+        height: auto;
+    }
+}
+
+.icon {
+    width: $form-input-height;
+    height: $form-input-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray-3-color;
+
+    &_tick {
+        background-color: white;
+    }
+
+    &__img {
+        max-width: 25px;
+        max-height: 25px;
+        fill: $form-icon-color;
+    }
+}
+
+.inpit-hiiden {
+    @include visuality-hidden;
+}

@@ -75,7 +75,7 @@ ul {
 
 .header {
     position: fixed;
-    padding: 18px 0;
+    padding-top: 11px;
     display: flex;
     justify-content: space-between;
     width: calc(100% - 30px);
@@ -95,10 +95,6 @@ ul {
 
 .menu__item {
     display: inline-block;
-}
-
-main {
-    padding-top: 120px;
 }
 
 .menu__link {
@@ -136,12 +132,12 @@ main {
 }
 
 .block {
-    padding-bottom: 46px;
+    padding-top: 77px;
 }
 
-.block_padding {
+/* .block_padding {
     padding-top: 32px;
-}
+} */
 
 .block a {
     text-decoration: underline;
@@ -156,7 +152,7 @@ main {
 
 .aside-bar {
     position: sticky;
-    top: 90px;
+    top: 106px;
     margin-bottom: 50px;
     margin-top: 10px;
 }

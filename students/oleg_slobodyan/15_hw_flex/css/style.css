@@ -70,9 +70,18 @@ a:hover {
     width: 50%;
 }
 
-.col-3 {
-    width: calc(100% / 12 *3);
+.col-2 {
+    width: calc(100% / 12 *2);
 }
+
+.col-4 {
+    width: calc(100% / 12 *4);
+}
+
+.col-3 {
+    width: 25%;
+}
+
 
 .page {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
@@ -324,11 +333,12 @@ a.btn:hover {
 .footer-privecy__link {
     color: #544837;
     display: inline-block;
+    font-weight: normal;
 }
 
 .footer-menu__item,
 .footer-privecy__item {
-    margin-bottom: 23px;
+    margin-bottom: 12px;
 }
 
 .footer-menu__item:last-child,
@@ -338,6 +348,7 @@ a.btn:hover {
 
 .footer-menu {
     margin-top: 75px;
+    padding-left: 40px;
 }
 
 .footer-privecy,
@@ -349,7 +360,7 @@ a.btn:hover {
 }
 
 .footer-form__input {
-    height: 48px;
+    height: 44px;
     display: block;
     border: 1px solid #BCD0E5;
     margin-bottom: 21px;
@@ -364,5 +375,6 @@ a.btn:hover {
     color: #fff;
     border-radius: 4px;
     padding: 13px 15px;
-    width: 130px;
+    width: 132px;
+    font-weight: bold;
 }

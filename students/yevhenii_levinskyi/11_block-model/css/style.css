@@ -16,6 +16,10 @@
          url('../font/roboto-v29-latin-700.woff') format('woff');
 }
 
+html{
+    width: 100%;
+    height: 100%;
+}
 
 body{
     font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -24,11 +28,17 @@ body{
     font-size: 16px;
     color: #fff;
     text-align: center;
-    max-width: 799px;
-    height: 520px;
     background-color: #3399CC;
     border: 16px solid #2B81AC;
     margin: 0 auto;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+
+.wrapper{}
+
+.container{
 }
 
 .header{
@@ -52,7 +62,6 @@ body{
 li .temperature{
     display: block;
 }
-
 
 .list:hover li:not(li:hover){
     opacity: 0.4;

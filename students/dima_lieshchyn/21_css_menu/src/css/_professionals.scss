@@ -14,10 +14,12 @@
     }
 }
 
-.professionals .info-wrapper__text {
-    width: 90%;
-}
 
 .col_p {
     padding-left: 100px;
+
+    // @include media('sm') {
+    //     // padding-left: 20px;
+    //     box-sizing: border-box;
+    // }
 }

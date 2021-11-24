@@ -1,0 +1,127 @@
+// @include font-face($main-font-name, 'rubik-v14-latin-regular');
+// @include font-face($main-font-name, 'rubik-v14-latin-700', 700);
+
+@include grid();
+
+.main-title {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.sprite {
+    @include visuality-hidden;
+}
+
+.page {
+    font-family: $main-font;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+    display: grid;
+    grid-template-columns: minmax(100px, 20%) 1fr;
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer"
+    ;
+    gap: 30px;
+
+    @include media('sm') {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer"
+        ;
+    }
+}
+
+.header {
+    grid-area: header;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.header,
+.footer {
+    background-color: burlywood;
+}
+
+.header,
+.footer,
+.aside,
+.main {
+    padding: 15px;
+}
+
+.header,
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__link {
+        display: block;
+        padding: 10px 20px;
+    }
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+
+.aside {
+    border-right: 1px solid burlywood;
+
+    @include media('sm') {
+        border-right: none;
+        border-top: 1px solid burlywood;
+    }
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}
+
+.header {
+    border-bottom: 1px solid $gray-3-color;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: $main-color;
+    color: $white-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

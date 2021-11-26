@@ -1,25 +1,15 @@
-$orang-color: #f76707;
 $white-color: #fff;
-$gray-3-color: #dee2e6;
-$gray-6-color: #868e96;
-$grey-7-color: #495057;
-$gray-8-color: #343a40;
-$green-color: green;
-
-$facebook-color: #3b5998;
-$instagram-color:#E1306C;
-$color-linkedin:#2867B2;
-$color-googleplus:#db4a39;
-$color-twitter:#00acee;
+$gray-700-color: #565656;
+$black-color: #000;
 
 
-$main-color: $orang-color;
-$main-text-color: $grey-7-color;
-$title-bg-color: $gray-8-color;
-$title-text-color: $white-color;
-$border-color: $gray-6-color;
-$form-icno-color: $grey-7-color;
-$valide-color: $green-color;
+$main-color: $gray-700-color;
+$main-text-color: $gray-700-color;
+// $title-bg-color: $gray-8-color;
+// $title-text-color: $white-color;
+$border-color: $gray-700-color;
+// $form-icno-color: $grey-7-color;
+// $valide-color: $green-color;
 
 $default-border: 1px solid $border-color;
 
@@ -29,13 +19,14 @@ $default-gap: 15px;
 $font-follback: Arial,
 Helvetica,
 sans-serif;
-$main-font-name: 'Rubik';
+$main-font-name: 'Lato';
+$additional-font-name: 'Red Hat Display';
 $path-fonts: '../fonts/';
 
 $main-font: $main-font-name,
 $font-follback;
-$base-font-size: 18px;
-$base-line-height: 1.5;
+$base-font-size: 19px;
+$base-line-height: 1.68;
 $base-font-weight: 400;
 
 $form-border-radius: 5px;

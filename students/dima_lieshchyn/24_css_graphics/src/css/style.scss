@@ -1,6 +1,5 @@
 @use 'sass:math';
+@import './normalize';
 @import './vars';
 @import './mixins';
-@import './extend';
-@import './normalize';
 @import './global';

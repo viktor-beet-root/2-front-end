@@ -1,3 +1,6 @@
+@include font-face($main-font-name, 'lato-v20-latin-regular');
+@include font-face($additional-font-name, 'red-hat-display-v7-latin-regular');
+
 @include grid();
 
 .page {
@@ -5,28 +8,10 @@
     font-size: $base-font-size;
     font-weight: $base-font-weight;
     line-height: $base-line-height;
-    // background-color: $main-color;
 }
 
 .container {
     max-width: $container-width;
     margin: 0 auto;
     padding: 0 $default-gap;
-}
-
-.header {
-    border: 1px solid $gray-3-color;
-}
-
-.btn {
-    padding: 10px 20px;
-    border-radius: 4px;
-    background-color: $main-color;
-    color: $white-color;
-    text-transform: uppercase;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-    }
 }

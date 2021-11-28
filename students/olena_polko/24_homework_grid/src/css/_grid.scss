@@ -1,0 +1,87 @@
+html,
+body,
+.container {
+    height: 100%;
+}
+
+
+.grid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 120px);
+    gap: 20px;
+    padding: $default-gap;
+    box-sizing: border-box;
+
+}
+
+.item {
+    &_1 {
+        background-color: #ADA7C9;
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        height: 190px;
+    }
+
+    &_2 {
+        background-color: #D7B9D5;
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 2;
+        margin-top: 70px;
+    }
+
+    &_3 {
+        background-color: #EAC4D5;
+        grid-column: 3 / span 2;
+        grid-row: 1 / span 3;
+    }
+
+    &_4 {
+        background-color: #1D3236;
+        grid-column: 5 / span 2;
+        grid-row: 1;
+    }
+
+    &_5 {
+        background-color: #89B6A5;
+        grid-column: 5 / span 2;
+        grid-row: 2;
+    }
+
+    &_6 {
+        background-color: #4C3B4D;
+        grid-column: 5 / span 2;
+        grid-row: 3;
+    }
+
+    &_7 {
+        background-color: #729EA1;
+        grid-column: 1 / span 2;
+        grid-row: 4 / span 2;
+    }
+
+    &_8 {
+        background-color: #93A8AC;
+        grid-column: 3;
+        grid-row: 4;
+    }
+
+    &_9 {
+        background-color: #ADA7C9;
+        grid-column: 3;
+        grid-row: 5;
+    }
+
+    &_10 {
+        background-color: #BAD4AA;
+        grid-column: 4 / span 2;
+        grid-row: 4 / span 2;
+    }
+
+    &_11 {
+        background-color: #2F323A;
+        grid-column: 6;
+        grid-row: 4 / span 2;
+    }
+}

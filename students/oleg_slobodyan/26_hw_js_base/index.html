@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work 26 JS lesson 1</title>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <script>
+
+        const personName = prompt("Введіть ваше Ім'я:");  // імя користувача
+        // const personSurname = prompt("Введіть ваше Прізвище:");
+        const personBirthYear = prompt("Введіть рік вашого народження:");
+        const curentYear = 2021;
+        const personAge = curentYear - personBirthYear;   /* рахуємо вік користувача */
+        const storonaKvadrata = +prompt("Введіть довжену сторони квадрата:");
+        const perumetrKvadrata = storonaKvadrata * 4;  /* рахуємо периметр квадрату */
+        const radiusCircle = +prompt("Введіть радіус кола:");
+        const squareCircle = 3.14 * Math.pow(radiusCircle, 2);  /* рахуємо площу кола */
+        const s = +prompt("Яку відстань потрібно подолати (км)?");
+        const t = +prompt("За скільки часу?");
+        const v = s / t;
+        const dolarСurrency = +prompt("Введіть сумму $:");
+        const eurosСurrency = 0.8835;
+
+        const resultСurrency = dolarСurrency * eurosСurrency; // конвертуєм валюту
+        alert("Привіт " + personName + "!");
+        alert(personName + " ваш вік: " + personAge + "р.");
+        alert("Периметр квадрата = " + perumetrKvadrata);
+        alert("Площа кола = " + squareCircle);
+        alert("Потрібно рухатися зі швидкістю: " + v + 'км/год');
+        alert(dolarСurrency + "$ = " + resultСurrency + '€');
+        // console.log("Привіт " + personName + "!");
+        // console.log(personName + " ваш вік: " + personAge + "р.");
+        // console.log("Периметр квадрата = " + perumetrKvadrata);
+        // console.log("Площа кола = " + squareCircle);
+        // console.log("Потрібно рухатися зі швидкістю: " + v + 'км/год');
+        // console.log(dolarСurrency + "$ = " + resultСurrency + '€');
+    </script>
+</body>
+
+</html>

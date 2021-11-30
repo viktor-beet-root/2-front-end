@@ -1,0 +1,166 @@
+@include font-face(Inter, inter-v7-latin-regular);
+@include font-face(Inter, inter-v7-latin-500, 500);
+@include font-face(Inter, inter-v7-latin-600, 600);
+@include font-face(Inter, inter-v7-latin-700, 700);
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    font-family: $body-font-family, $humanist;
+    font-size: $body-font-size;
+    font-weight: $body-font-weight;
+    line-height: $body-line-height;
+    color: $body-txt-color;
+
+    display: grid;
+    gap: $grid-gap;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer'
+    ;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $half-gap;
+    @include grid;
+    grid-template-columns: 1fr;
+
+    &_col-3 {
+        @include grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            'header aside'
+            'blog aside'
+            'btn aside'
+        ;
+
+        @include media('md') {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                'header header'
+                'blog blog'
+                'btn btn'
+                'aside aside'
+            ;
+        }
+
+        .blog_col-2 {
+
+            @include media('md') {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section__header {
+            grid-area: header;
+        }
+
+        .blog {
+            grid-area: blog;
+        }
+
+        .btn {
+            grid-area: btn;
+        }
+
+        .aside {
+            grid-area: aside;
+        }
+    }
+
+}
+
+::selection {
+    background-color: $alizarin;
+    color: $white;
+}
+
+.section {
+    padding: $grid-gap 0;
+}
+
+.wrap-title {
+    &__subtitle {
+        margin-top: $half-gap;
+    }
+}
+
+.title {
+    @extend %two-lines;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: $black;
+
+    &__link {
+        text-decoration: none;
+        @include color-change($alizarin);
+    }
+
+    &_b {
+        font-size: $fs-xxl;
+    }
+
+    &_c {
+        font-size: $fs-xl;
+    }
+
+    &_d {
+        font-size: $fs-l;
+    }
+}
+
+.sprite {
+    @include visuality-hidden;
+}
+
+.btn {
+    &_center {
+        justify-self: center;
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 10px 30px;
+        color: $white;
+        font-weight: 500;
+        letter-spacing: .01em;
+        @extend %round-corners;
+        @include bg-color-change($alizarin);
+    }
+}
+
+@include media('xs') {
+    $grid-gap: 15px;
+    $half-gap: 15px;
+}

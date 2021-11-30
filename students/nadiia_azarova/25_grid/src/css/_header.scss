@@ -1,0 +1,130 @@
+.header {
+
+    border-bottom: 1px solid lighten($body-txt-color, 35%);
+    overflow: hidden;
+    position: relative;
+
+    &__container {
+        @include grid;
+        grid-template-columns: 1fr auto;
+        justify-items: start;
+        align-items: center;
+    }
+}
+
+.hamburger {
+    display: none;
+
+    @include media('sm') {
+        display: block;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media('sm') {
+        position: fixed;
+        z-index: 100;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 59px;
+        display: block;
+        transform: translateX(-100%);
+        transition: transform $animation;
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-right: $half-gap;
+
+            @include media('sm') {
+                margin: 0;
+                border-bottom: 1px solid lighten($body-txt-color, 35%);
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 15px 10px;
+        box-sizing: border-box;
+        height: 100%;
+        font-weight: 600;
+        letter-spacing: 00.02em;
+        @include color-change($alizarin, inherit);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: $body-txt-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateX(-101%);
+            transition: transform $animation;
+        }
+
+        .active &:before {
+            transform: translateX(0);
+        }
+    }
+}
+
+.form-search {
+    font-size: $fs-s;
+    color: lighten($body-txt-color, 35%);
+    display: flex;
+    border: 1px solid currentColor;
+    @extend %round-corners;
+
+
+    &__input {
+        display: block;
+        width: 100%;
+        border: unset;
+        padding: 5px 10px;
+        @extend %round-corners;
+
+
+        &:focus {
+            @include focus($alizarin);
+        }
+    }
+
+
+    &__btn {
+        @include btn-reset;
+        @extend %round-corners;
+        display: block;
+        width: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:focus {
+            @include focus;
+        }
+
+        &:hover {
+            .form-search__btn-img {
+                fill: $alizarin;
+            }
+        }
+    }
+
+    &__btn-img {
+        width: 15px;
+        height: 15px;
+        fill: lighten($body-txt-color, 35%);
+        transition: fill $animation;
+    }
+}

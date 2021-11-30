@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="page">
+    <header class="header">
+        <div class="container header__container">
+            <button class="hamburger hamburger--squeeze" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <ul class="menu">
+                <li class="menu__item active">
+                    <a href="index.html" class="menu__link">Item 1</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Item 2</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Item 3</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Item 4</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Item 5</a>
+                </li>
+            </ul>
+            <form class="form-search" action="./" method="post">
+                <input class="form-search__input" type="search" placeholder="Search articles">
+                <button class="form-search__btn">
+                    <svg class="form-search__btn-img">
+                        <use xlink:href="#icon-search" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </header>
+    <main class="main">
+        <section class="section">
+            <div class="container">
+                <ul class="blog blog_featured blog_horizontal">
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-10.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_inspiration"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Proident ex aliquip sunt ipsum Lorem</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-07.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_health"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Voluptate aliqua aliquip id eiusmod anim et</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-08.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_fitness"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Veniam proident ad sint pariatur fugiat aliquip
+                                    deserunt
+                                    magna in sint veniam</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-09.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_inspiration"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Magna tempor excepteur nulla dolor cupidatat
+                                    reprehenderit
+                                    aliquip ut labore tempor</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="title title_b">Editorial Pick Post</h2>
+                    <p class="subtitle">This is an optional subtitle for post section</p>
+                </header>
+                <ul class="blog blog_col-3">
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-01.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_fitness"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Proident ex aliquip sunt ipsum Lorem</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Officia cillum deserunt excepteur minim ullamco. Eiusmod
+                                reprehenderit
+                                sunt cupidatat Lorem. Non nisi in officia duis non. Id mollit sint eiusmod amet ut dolor
+                                ipsum officia sint sunt enim. Nostrud amet laboris anim irure amet ut consequat elit
+                                eiusmod proident eiusmod est officia. Et nostrud ut nulla proident cupidatat nulla
+                                laboris quis ex exercitation do Lorem elit. Cupidatat laboris est nostrud consectetur
+                                ipsum aliqua ex sit aute aliqua ea laboris irure.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-02.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_nutrition"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Adipisicing magna qui nostrud aliqua ea deserunt
+                                    pariatur occaecat ea irure sunt fugiat pariatur</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Mollit esse quis ex commodo eiusmod do eiusmod. Consectetur laboris
+                                culpa ipsum veniam cupidatat mollit id duis officia. Cupidatat enim in fugiat id ipsum
+                                do consectetur excepteur laboris. Tempor minim ex voluptate culpa quis eu culpa pariatur
+                                commodo do exercitation. Aliqua laborum adipisicing Lorem quis magna sunt adipisicing.
+                                Excepteur anim sint proident eu ad aliquip deserunt.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-03.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_inspiration"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Sit incididunt duis sint do et ut pariatur tempor do</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Amet culpa velit incididunt ullamco. Labore fugiat nulla
+                                consectetur exercitation fugiat ut ex voluptate nisi. Sint aliquip velit deserunt labore
+                                culpa incididunt.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-04.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_health"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">In officia quis officia adipisicing est aute proident
+                                    magna eiusmod sit minim mollit</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Esse commodo eiusmod do quis laboris in. Ex dolor aliquip eiusmod
+                                nostrud non elit est incididunt consequat. Anim cillum esse deserunt aliquip velit
+                                commodo. Sunt excepteur excepteur veniam enim adipisicing anim commodo mollit excepteur
+                                laborum nisi nisi est. Culpa nulla officia et consectetur fugiat aute. Dolore eiusmod
+                                cillum ea consequat est nostrud aliquip et ullamco esse magna ea.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-05.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_bodymind"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Et qui eu aute elit et cillum sunt consectetur
+                                    laborum</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Irure reprehenderit sunt sit magna consequat do sunt ipsum et non
+                                mollit aliqua. Et anim proident ad nostrud minim. Id anim Lorem non duis laborum magna
+                                laboris ex voluptate dolor aliquip. Id cupidatat excepteur proident ex nulla ea
+                                excepteur adipisicing commodo est occaecat. Veniam ea aute reprehenderit ex ipsum esse.
+                                Esse ipsum commodo laboris magna eiusmod commodo voluptate voluptate qui est. Minim sit
+                                eiusmod officia occaecat qui exercitation ut excepteur ad ex officia sit excepteur.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-06.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_fitness"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Commodo velit adipisicing fugiat consequat quis amet non
+                                    exercitation id do</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Velit minim aute veniam eiusmod est irure reprehenderit excepteur
+                                commodo aute quis ea cillum. Amet enim consequat non sit exercitation ex duis amet amet
+                                ipsum et. Veniam excepteur magna est consequat nostrud labore eu nostrud nisi anim duis
+                                ad. Mollit quis quis in eiusmod deserunt enim excepteur pariatur duis aliquip aliqua.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="btn btn_center">
+                    <a href="#" class="btn__link">Load More</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="title title_b">Lifestyle News</h2>
+                    <p class="subtitle">This is an optional subtitle for post section</p>
+                </header>
+                <ul class="blog blog_col-4 blog_lifestyle">
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-11.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_inspiration"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Sint laborum magna quis fugiat ad officia laborum
+                                    deserunt cupidatat duis voluptate velit duis do</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Est anim eiusmod labore cupidatat sunt excepteur. Consequat sit
+                                culpa officia tempor ex cupidatat ut laboris. Lorem officia elit do exercitation quis
+                                excepteur minim et in aute veniam. Proident culpa ea quis incididunt. Culpa amet quis
+                                aliqua nulla exercitation. Pariatur ea non cupidatat laboris laboris eu.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-14.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_lifestyle"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Pariatur incididunt excepteur occaecat aute in magna</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-20.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_fitness"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Anim magna non elit mollit</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-26.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_lifestyle"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Anim do et Lorem laborum proident minim consectetur
+                                    eiusmod velit cupidatat cupidatat sit</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-21.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_health"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Minim anim et nulla cupidatat consequat pariatur anim et
+                                    deserunt elit</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="title title_b">Health & Fitness</h2>
+                    <p class="subtitle">This is an optional subtitle for post section</p>
+                </header>
+                <ul class="blog blog_col-4">
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-22.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_nutrition"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Deserunt voluptate veniam quis qui in</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-24.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_fitness"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Mollit aliqua sunt commodo in mollit consectetur do</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-29.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_health"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Irure aute aliquip in voluptate veniam quis nulla</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-31.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_fitness"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Qui nostrud officia enim ea reprehenderit laboris
+                                    exercitation et dolore ad duis excepteur</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="title title_b">Top Of The Week</h2>
+                    <p class="subtitle">This is an optional subtitle for post section</p>
+                </header>
+                <div class="slider-wrap">
+                    <ul class="slider">
+                        <li class="slider__item">
+                            <div class="img-wrap">
+                                <a href="#" class="img-wrap__link">
+                                    <img src="./images/img-30.jpg" alt="" class="img-wrap__img">
+                                </a>
+                            </div>
+                            <div class="txt-wrap">
+                                <a href="#" class="tag tag_nutrition"></a>
+                                <h3 class="title title_c">
+                                    <a class="title__link" href="#">Commodo tempor proident exercitation veniam
+                                        exercitation
+                                        ullamco ullamco</a>
+                                </h3>
+                                <div class="info">
+                                    <div class="info__item">
+                                        <a href="#" class="info__item-link">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-author" />
+                                            </svg>
+                                            Author
+                                        </a>
+                                    </div>
+                                    <div class="info__item">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-pencil" />
+                                        </svg>
+                                        November 25, 2021
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="slider-control slider-control_left"></div>
+                    <div class="slider-control slider-control_right"></div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container container_col-3">
+                <header class="section__header">
+                    <h2 class="title title_b">Recent Post</h2>
+                    <p class="subtitle">This is an optional subtitle for post section</p>
+                </header>
+                <ul class="blog blog_col-2">
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-12.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_inspiration"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Reprehenderit laborum enim aliqua commodo deserunt
+                                    fugiat consectetur</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Occaecat nostrud et ex magna amet. Deserunt veniam est non sint
+                                esse officia laboris enim ad duis. Aliquip occaecat exercitation eu in esse eiusmod qui
+                                laborum. Veniam eiusmod ex occaecat ut sint sint eiusmod dolor pariatur. Enim fugiat
+                                tempor commodo fugiat laboris. In nostrud eu Lorem eiusmod non. Commodo dolore qui
+                                reprehenderit laborum enim et adipisicing dolor fugiat incididunt eu in.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-15.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_fitness"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Voluptate id occaecat adipisicing excepteur esse
+                                    nostrud</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Eiusmod Lorem ullamco aute officia ipsum quis tempor laborum dolor.
+                                Dolore eu proident aliqua commodo velit. Laborum in cupidatat adipisicing non commodo
+                                Lorem Lorem in ad fugiat est.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-32.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_health"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Culpa dolore est nisi aliquip quis tempor qui laboris
+                                    dolor anim nisi sunt ad sunt</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">In ullamco deserunt nostrud dolore esse duis veniam sunt officia
+                                dolor eu occaecat. Quis ut pariatur incididunt velit cillum do nulla voluptate eiusmod
+                                do consequat nulla. Voluptate incididunt sint dolore cillum sit ad quis. Duis aute
+                                eiusmod exercitation adipisicing ullamco irure non laboris veniam ipsum. Qui magna et
+                                magna elit aliqua irure tempor elit proident. Occaecat veniam labore sit consectetur.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-22.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_nutrition"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Occaecat et in non esse occaecat laborum labore
+                                    excepteur tempor exercitation laboris</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Reprehenderit incididunt ut commodo occaecat labore fugiat laboris.
+                                Ex fugiat quis nulla duis consequat exercitation velit veniam sunt. Enim sint labore
+                                commodo aute nisi deserunt. Deserunt tempor voluptate quis tempor mollit magna nulla.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-27.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_fitness"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Deserunt magna aute in cupidatat nostrud aliquip Lorem
+                                    commodo</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Ad et esse anim aliquip sint adipisicing in qui excepteur mollit
+                                ea. Aliqua laboris duis culpa excepteur do proident eiusmod voluptate tempor. Lorem
+                                aliqua nostrud minim aliqua cupidatat do aliquip consectetur ea eiusmod quis Lorem.
+                                Laborum dolore anim eiusmod consequat exercitation in magna consequat cillum sunt aute
+                                nostrud est reprehenderit. Laboris occaecat ad sit fugiat occaecat labore voluptate. Id
+                                consectetur dolore dolore fugiat ea excepteur deserunt pariatur culpa ipsum. Amet
+                                incididunt cillum pariatur nostrud est laboris ullamco sit adipisicing incididunt.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-18.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_inspiration"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Et irure anim anim ex eiusmod incididunt reprehenderit
+                                    voluptate dolore est eiusmod excepteur qui est</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Occaecat ipsum do Lorem sint quis occaecat eu commodo consectetur
+                                sit ipsum aute. Enim esse adipisicing do velit ex est in incididunt qui. Cillum in
+                                cupidatat duis officia fugiat culpa mollit. Amet dolor et magna adipisicing ullamco.
+                                Eiusmod dolore dolor fugiat in cillum irure excepteur.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-33.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_nutrition"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Labore ut voluptate in consectetur exercitation Lorem
+                                    consequat exercitation cupidatat ipsum esse</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Nisi eu proident mollit mollit fugiat ut non aute ullamco in
+                                commodo est. Lorem duis tempor duis id elit eu labore. Commodo minim ad enim elit
+                                deserunt cillum labore velit reprehenderit deserunt dolore occaecat ad. Excepteur sit
+                                veniam consequat excepteur. Ut tempor non magna fugiat est aute.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-19.jpg" alt="" class="img-wrap__img">
+                            </a>
+                            <a href="#" class="img-wrap__tag tag tag_lifestyle"></a>
+                        </div>
+                        <div class="txt-wrap">
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Dolor commodo ipsum eiusmod id proident Lorem enim eu et
+                                    in culpa adipisicing non aute</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Adipisicing nostrud et commodo consectetur eiusmod. Mollit sint et
+                                exercitation do ad veniam voluptate dolor ipsum. Qui anim est irure dolor nostrud dolor
+                                cillum sint qui in aliqua laboris pariatur ex. Cupidatat sint est et Lorem amet magna
+                                aliqua nostrud laboris id quis ut.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn btn_center">
+                    <a href="#" class="btn__link">Load More</a>
+                </div>
+                <aside class="aside">
+                    <section class="aside-section">
+                        <h4 class="title title_d">Stay Connected</h4>
+                        <div class="social">
+                            <a href="#" class="social__link social__link_fb">
+                                <svg class="social__icon">
+                                    <use xlink:href="#icon-fb" />
+                                </svg>
+                                <span class="social__numb">228.8k</span>
+                                <span class="social__name">Fans</span>
+                            </a>
+                            <a href="#" class="social__link social__link_yt">
+                                <svg class="social__icon">
+                                    <use xlink:href="#icon-yt" />
+                                </svg>
+                                <span class="social__numb">65.5k</span>
+                                <span class="social__name">Subscribers</span>
+                            </a>
+                            <a href="#" class="social__link social__link_tw">
+                                <svg class="social__icon">
+                                    <use xlink:href="#icon-tw" />
+                                </svg>
+                                <span class="social__numb">240</span>
+                                <span class="social__name">Subscribers</span>
+                            </a>
+                            <a href="#" class="social__link social__link_pi">
+                                <svg class="social__icon">
+                                    <use xlink:href="#icon-pi" />
+                                </svg>
+                                <span class="social__numb">9.87k</span>
+                                <span class="social__name">Followers</span>
+                            </a>
+                        </div>
+                    </section>
+                    <section class="aside-section">
+                        <h4 class="title title_d">Sports & Competitions</h4>
+                        <ul class="blog blog_horizontal">
+                            <li class="blog__item">
+                                <div class="img-wrap">
+                                    <a href="#" class="img-wrap__link">
+                                        <img src="./images/img-34.jpg" alt="" class="img-wrap__img">
+                                    </a>
+                                </div>
+                                <div class="txt-wrap">
+                                    <h3 class="title title_c">
+                                        <a class="title__link" href="#">Dolor commodo ipsum eiusmod id proident Lorem
+                                            enim eu et
+                                            in culpa adipisicing non aute</a>
+                                    </h3>
+                                    <div class="info">
+                                        <div class="info__item">
+                                            <a href="#" class="info__item-link">
+                                                <svg class="info__icon">
+                                                    <use xlink:href="#icon-author" />
+                                                </svg>
+                                                Author
+                                            </a>
+                                        </div>
+                                        <div class="info__item">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-pencil" />
+                                            </svg>
+                                            November 25, 2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="blog__item">
+                                <div class="img-wrap">
+                                    <a href="#" class="img-wrap__link">
+                                        <img src="./images/img-35.jpg" alt="" class="img-wrap__img">
+                                    </a>
+                                </div>
+                                <div class="txt-wrap">
+                                    <h3 class="title title_c">
+                                        <a class="title__link" href="#">Minim aliquip sint sint amet eiusmod incididunt
+                                            laboris amet irure veniam</a>
+                                    </h3>
+                                    <div class="info">
+                                        <div class="info__item">
+                                            <a href="#" class="info__item-link">
+                                                <svg class="info__icon">
+                                                    <use xlink:href="#icon-author" />
+                                                </svg>
+                                                Author
+                                            </a>
+                                        </div>
+                                        <div class="info__item">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-pencil" />
+                                            </svg>
+                                            November 25, 2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="blog__item">
+                                <div class="img-wrap">
+                                    <a href="#" class="img-wrap__link">
+                                        <img src="./images/img-36.jpg" alt="" class="img-wrap__img">
+                                    </a>
+                                </div>
+                                <div class="txt-wrap">
+                                    <h3 class="title title_c">
+                                        <a class="title__link" href="#">Qui magna officia velit duis eu amet laborum
+                                            incididunt veniam ad amet esse magna nulla</a>
+                                    </h3>
+                                    <div class="info">
+                                        <div class="info__item">
+                                            <a href="#" class="info__item-link">
+                                                <svg class="info__icon">
+                                                    <use xlink:href="#icon-author" />
+                                                </svg>
+                                                Author
+                                            </a>
+                                        </div>
+                                        <div class="info__item">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-pencil" />
+                                            </svg>
+                                            November 25, 2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="blog__item">
+                                <div class="img-wrap">
+                                    <a href="#" class="img-wrap__link">
+                                        <img src="./images/img-37.jpg" alt="" class="img-wrap__img">
+                                    </a>
+                                </div>
+                                <div class="txt-wrap">
+                                    <h3 class="title title_c">
+                                        <a class="title__link" href="#">Et veniam velit irure sint veniam incididunt qui
+                                            duis</a>
+                                    </h3>
+                                    <div class="info">
+                                        <div class="info__item">
+                                            <a href="#" class="info__item-link">
+                                                <svg class="info__icon">
+                                                    <use xlink:href="#icon-author" />
+                                                </svg>
+                                                Author
+                                            </a>
+                                        </div>
+                                        <div class="info__item">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-pencil" />
+                                            </svg>
+                                            November 25, 2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="blog__item">
+                                <div class="img-wrap">
+                                    <a href="#" class="img-wrap__link">
+                                        <img src="./images/img-38.jpg" alt="" class="img-wrap__img">
+                                    </a>
+                                </div>
+                                <div class="txt-wrap">
+                                    <h3 class="title title_c">
+                                        <a class="title__link" href="#">Exercitation aute in anim Lorem do consequat
+                                            enim id sunt</a>
+                                    </h3>
+                                    <div class="info">
+                                        <div class="info__item">
+                                            <a href="#" class="info__item-link">
+                                                <svg class="info__icon">
+                                                    <use xlink:href="#icon-author" />
+                                                </svg>
+                                                Author
+                                            </a>
+                                        </div>
+                                        <div class="info__item">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-pencil" />
+                                            </svg>
+                                            November 25, 2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="blog__item">
+                                <div class="img-wrap">
+                                    <a href="#" class="img-wrap__link">
+                                        <img src="./images/img-39.jpg" alt="" class="img-wrap__img">
+                                    </a>
+                                </div>
+                                <div class="txt-wrap">
+                                    <h3 class="title title_c">
+                                        <a class="title__link" href="#">Aliqua consequat mollit eu consequat deserunt
+                                            consequat officia culpa officia</a>
+                                    </h3>
+                                    <div class="info">
+                                        <div class="info__item">
+                                            <a href="#" class="info__item-link">
+                                                <svg class="info__icon">
+                                                    <use xlink:href="#icon-author" />
+                                                </svg>
+                                                Author
+                                            </a>
+                                        </div>
+                                        <div class="info__item">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-pencil" />
+                                            </svg>
+                                            November 25, 2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="blog__item">
+                                <div class="img-wrap">
+                                    <a href="#" class="img-wrap__link">
+                                        <img src="./images/img-41.jpg" alt="" class="img-wrap__img">
+                                    </a>
+                                </div>
+                                <div class="txt-wrap">
+                                    <h3 class="title title_c">
+                                        <a class="title__link" href="#">Et laboris nulla ex sunt est duis nulla laboris
+                                            proident est.</a>
+                                    </h3>
+                                    <div class="info">
+                                        <div class="info__item">
+                                            <a href="#" class="info__item-link">
+                                                <svg class="info__icon">
+                                                    <use xlink:href="#icon-author" />
+                                                </svg>
+                                                Author
+                                            </a>
+                                        </div>
+                                        <div class="info__item">
+                                            <svg class="info__icon">
+                                                <use xlink:href="#icon-pencil" />
+                                            </svg>
+                                            November 25, 2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="aside-section ad">
+                        <h4 class="title title_d">Advertisement</h4>
+                        <div class="ad__wrap">
+                            <a class="ad__link" href="#">
+                                <img src="./images/img-40.jpg" alt="" class="ad__img">
+                            </a>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="title title_b">Today Stories</h2>
+                    <p class="subtitle">This is an optional subtitle for post section</p>
+                </header>
+                <ul class="blog blog_col-2 blog_horizontal">
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-13.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_health"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Voluptate aliqua aliquip id eiusmod anim et</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Velit enim dolor eiusmod enim ut exercitation officia officia.
+                                Occaecat aliquip ipsum ex sint dolor voluptate officia nostrud. Dolor veniam mollit
+                                irure veniam ad occaecat.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-16.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_lifestyle"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Ut labore nisi est velit irure</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Occaecat excepteur laborum velit elit enim do reprehenderit non
+                                adipisicing qui consectetur adipisicing. Nisi elit qui qui consectetur anim mollit
+                                proident. Magna laboris nulla qui elit excepteur sint commodo voluptate. Duis labore
+                                consectetur amet adipisicing incididunt sunt nisi. Velit velit occaecat et anim proident
+                                veniam officia labore non ullamco ipsum. Commodo in veniam ad commodo ea nulla ullamco
+                                deserunt enim enim magna id veniam consequat.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-17.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_fitness"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Dolor quis deserunt eiusmod nostrud</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Veniam labore non ullamco deserunt ex. Aute commodo nisi velit
+                                nulla reprehenderit cillum ut incididunt veniam. Deserunt ipsum veniam anim proident do.
+                                Minim adipisicing tempor mollit reprehenderit. Duis esse do in do nisi cupidatat irure
+                                id anim proident incididunt qui.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-23.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_inspiration"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Exercitation in duis id ipsum elit aute laborum
+                                    reprehenderit duis mollit duis sit</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Adipisicing adipisicing occaecat nisi aliquip qui eiusmod ex duis
+                                tempor veniam irure Lorem mollit incididunt. Ex reprehenderit elit ex adipisicing ipsum
+                                anim officia velit est nulla ad commodo. Pariatur irure incididunt esse id nostrud
+                                aliqua. Laborum cupidatat duis et quis eiusmod exercitation eu consectetur magna. Veniam
+                                magna cillum sit consectetur occaecat magna non laboris culpa elit occaecat anim duis.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-42.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_health"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Sint proident ad labore minim cupidatat in excepteur
+                                    laborum pariatur est consectetur tempor officia magna</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">In anim ipsum enim consectetur sint anim irure magna elit. Lorem
+                                ullamco deserunt exercitation dolore. In ullamco do nulla non id laboris.</p>
+                        </div>
+                    </li>
+                    <li class="blog__item">
+                        <div class="img-wrap">
+                            <a href="#" class="img-wrap__link">
+                                <img src="./images/img-28.jpg" alt="" class="img-wrap__img">
+                            </a>
+                        </div>
+                        <div class="txt-wrap">
+                            <a href="#" class="tag tag_nutrition"></a>
+                            <h3 class="title title_c">
+                                <a class="title__link" href="#">Excepteur dolore quis ullamco cupidatat et enim sunt
+                                    commodo ex laborum veniam nulla</a>
+                            </h3>
+                            <div class="info">
+                                <div class="info__item">
+                                    <a href="#" class="info__item-link">
+                                        <svg class="info__icon">
+                                            <use xlink:href="#icon-author" />
+                                        </svg>
+                                        Author
+                                    </a>
+                                </div>
+                                <div class="info__item">
+                                    <svg class="info__icon">
+                                        <use xlink:href="#icon-pencil" />
+                                    </svg>
+                                    November 25, 2021
+                                </div>
+                            </div>
+                            <p class="txt-wrap__txt">Do id aliqua nisi proident anim laborum qui laborum consectetur
+                                proident pariatur reprehenderit do. Fugiat ut magna voluptate veniam minim cillum.
+                                Voluptate consequat dolore tempor duis. Velit sit enim do pariatur exercitation nulla
+                                duis sunt et cupidatat aute.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__item footer__item_col-3">
+                <section class="footer__section">
+                    <h4 class="title title_d">About Us</h4>
+                    <p class="footer__txt">Eiusmod nostrud mollit culpa ullamco minim pariatur proident nisi. Dolore
+                        laborum nulla ut magna dolore tempor laboris veniam elit mollit occaecat occaecat. Nulla
+                        proident cupidatat voluptate sint ullamco pariatur excepteur mollit esse excepteur. Eu esse nisi
+                        est do et. Cupidatat eiusmod fugiat voluptate sint voluptate laborum laboris veniam adipisicing.
+                    </p>
+                </section>
+                <section class="footer__section">
+                    <h4 class="title title_d">Tag Cloud</h4>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag-cloud__tag tag tag_fitness"></a>
+                        <a href="#" class="tag-cloud__tag tag tag_nutrition"></a>
+                        <a href="#" class="tag-cloud__tag tag tag_inspiration"></a>
+                        <a href="#" class="tag-cloud__tag tag tag_health"></a>
+                        <a href="#" class="tag-cloud__tag tag tag_lifestyle"></a>
+                    </div>
+                </section>
+                <section class="footer__section">
+                    <h4 class="title title_d">Newsletter</h4>
+                    <p class="footer__txt">Subscribe to our newsletter and get our newest uspdates right on your indbox.
+                    </p>
+                    <form class="footer__form form" action="./" method="post">
+                        <input class="form__email" type="email" name="email" placeholder="Enter your email" required>
+                        <button class="form__btn">Subscribe</button>
+                        <input class="form__check" id="form__check" type="checkbox" value="agree" required>
+                        <label class="form__label" for="form__check">I agree to the terms & conditions</label>
+                    </form>
+                </section>
+            </div>
+            <div class="footer__item footer__item_copyright">
+                <p class="footer__txt">&copy;&nbsp;2021 Lorem Ipsum Dolor</p>
+            </div>
+        </div>
+    </footer>
+    <svg class="sprite">
+        <symbol id="icon-author" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z">
+            </path>
+        </symbol>
+        <symbol id="icon-pencil" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z">
+            </path>
+        </symbol>
+        <symbol id="icon-fb" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
+            </path>
+        </symbol>
+        <symbol id="icon-yt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+                d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z">
+            </path>
+        </symbol>
+        <symbol id="icon-tw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+                d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z">
+            </path>
+        </symbol>
+        <symbol id="icon-pi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+                d="M448 80v352c0 26.5-21.5 48-48 48H154.4c9.8-16.4 22.4-40 27.4-59.3 3-11.5 15.3-58.4 15.3-58.4 8 15.3 31.4 28.2 56.3 28.2 74.1 0 127.4-68.1 127.4-152.7 0-81.1-66.2-141.8-151.4-141.8-106 0-162.2 71.1-162.2 148.6 0 36 19.2 80.8 49.8 95.1 4.7 2.2 7.1 1.2 8.2-3.3.8-3.4 5-20.1 6.8-27.8.6-2.5.3-4.6-1.7-7-10.1-12.3-18.3-34.9-18.3-56 0-54.2 41-106.6 110.9-106.6 60.3 0 102.6 41.1 102.6 99.9 0 66.4-33.5 112.4-77.2 112.4-24.1 0-42.1-19.9-36.4-44.4 6.9-29.2 20.3-60.7 20.3-81.8 0-53-75.5-45.7-75.5 25 0 21.7 7.3 36.5 7.3 36.5-31.4 132.8-36.1 134.5-29.6 192.6l2.2.8H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z">
+            </path>
+        </symbol>
+        <symbol id="icon-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+            </path>
+        </symbol>
+    </svg>
+    <script>
+        // Look for .hamburger
+        var hamburger = document.querySelector(".hamburger");
+        var menu = document.querySelector(".menu");
+
+        function openMenu() {
+            menu.style.transform = (menu.style.transform == 'translateX(-100%)') ? 'translateX(0%)' : 'translateX(-100%)';
+        };
+
+        // On click
+        hamburger.addEventListener("click", function () {
+            // Toggle class "is-active"
+            hamburger.classList.toggle("is-active");
+            // Do something else, like open/close menu
+            openMenu();
+        });
+
+
+
+    </script>
+</body>
+
+</html>

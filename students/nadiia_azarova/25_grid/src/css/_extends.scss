@@ -1,0 +1,17 @@
+%two-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // количество строк
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+%three-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; // количество строк
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+%round-corners {
+    border-radius: 5px;
+}

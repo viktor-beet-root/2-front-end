@@ -39,13 +39,17 @@
 }
 
 .page,
-.default-txt {
+h2 .default-txt {
     font-family: Poppins, Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 1.625;
     color: #544837;
+}
+
+h2 .default-txt {
+    display: block;
 }
 
 a {

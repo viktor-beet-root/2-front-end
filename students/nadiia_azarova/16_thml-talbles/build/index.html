@@ -15,17 +15,17 @@
             <div class="col-12">
                 <form class="data-form" action="./" method="post" id="form-tbl">
                 </form>
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-0" id="row-0">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-1" id="row-1">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-2" id="row-2">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-3" id="row-3">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-4" id="row-4">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-5" id="row-5">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-6" id="row-6">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-7" id="row-7">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-8" id="row-8">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-9" id="row-9">
-                <input class="checkbox" type="checkbox" form="form-tbl" name="row-10" id="row-10">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-0" id="row-0" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-1" id="row-1" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-2" id="row-2" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-3" id="row-3" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-4" id="row-4" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-5" id="row-5" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-6" id="row-6" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-7" id="row-7" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-8" id="row-8" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-9" id="row-9" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-10" id="row-10" tabindex="-1">
                 <table class="data-tbl">
                     <colgroup class="data-tbl__colgroup">
                         <col class="data-tbl__col data-tbl__col_auto">
@@ -42,25 +42,24 @@
                     <thead class="data-tbl__head">
                         <tr class="data-tbl__head-row">
                             <td class="data-tbl__head-cell">
-                                <span class="filter">
+                                <a href="#" class="filter" tabindex="1">
                                     <svg class="filter__img">
                                         <use xlink:href="#filter" />
                                     </svg>
-                                </span>
+                                </a>
                             </td>
                             <td colspan="3" class="data-tbl__head-cell">
                                 <form action="./" method="post" class="search-form">
-                                    <button class="search-form__btn" type="submit">
+                                    <button class="search-form__btn" type="submit" tabindex="3">
                                         <svg class="search-form__img">
                                             <use xlink:href="#search-icon" />
                                         </svg>
                                     </button>
-                                    <input class="search-form__input" type="serch" placeholder="Search">
+                                    <input class="search-form__input" type="serch" placeholder="Search" tabindex="2">
                                 </form>
                             </td>
                             <td colspan="7" class="data-tbl__head-cell">
-                                <button class="add-btn">
-
+                                <button class="add-btn" tabindex="4">
                                     <span>
                                         <svg class="add-btn__img">
                                             <use xlink:href="#add-icon" />
@@ -72,17 +71,17 @@
                         </tr>
                         <tr class="data-tbl__head-row">
                             <th class="data-tbl__head-cell" scope="col">
-                                <label class="label" for="row-0">
+                                <label class="label" for="row-0" tabindex="5">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </th>
                             <th class="data-tbl__head-cell" scope="col">
                                 <p class="data-tbl__head-p">Name
-                                    <span class="sort">
+                                    <a href="#" class="sort" tabindex="6">
                                         <svg class="sort__img">
                                             <use xlink:href="#sort" />
                                         </svg>
-                                    </span>
+                                    </a>
                                 </p>
                             </th>
                             <th class="data-tbl__head-cell" scope="col">
@@ -99,15 +98,15 @@
                             </th>
                             <th class="data-tbl__head-cell" scope="col">
                                 <p class="data-tbl__head-p">Status
-                                    <span class="sort">
+                                    <a href="#" class="sort" tabindex="7">
                                         <svg class="sort__img">
                                             <use xlink:href="#sort" />
                                         </svg>
-                                    </span>
+                                    </a>
                                 </p>
                             </th>
                             <th colspan="3" class="data-tbl__head-cell" scope="col">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="8">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -118,7 +117,7 @@
                     <tbody class="data-tbl__body">
                         <tr class="data-tbl__row data-tbl__row_row-1">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-1">
+                                <label class="label" for="row-1" tabindex="9">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -148,21 +147,21 @@
                                 <span class="data-tbl__status data-tbl__status_active"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="10">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="11">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="12">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -171,7 +170,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-2">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-2">
+                                <label class="label" for="row-2" tabindex="13">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -201,21 +200,21 @@
                                 <span class="data-tbl__status data-tbl__status_active"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="14">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="15">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="16">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -224,7 +223,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-3">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-3">
+                                <label class="label" for="row-3" tabindex="17">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -254,21 +253,21 @@
                                 <span class="data-tbl__status data-tbl__status_paid"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="18">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="19">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="20">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -277,7 +276,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-4">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-4">
+                                <label class="label" for="row-4" tabindex="21">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -307,21 +306,21 @@
                                 <span class="data-tbl__status data-tbl__status_open"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="22">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="23">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="24">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -330,7 +329,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-5">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-5">
+                                <label class="label" for="row-5" tabindex="25">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -360,21 +359,21 @@
                                 <span class="data-tbl__status data-tbl__status_ordered"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="26">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="27">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="28">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -383,7 +382,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-6">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-6">
+                                <label class="label" for="row-6" tabindex="29">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -413,21 +412,21 @@
                                 <span class="data-tbl__status data-tbl__status_active"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="30">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="31">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="32">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -436,7 +435,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-7">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-7">
+                                <label class="label" for="row-7" tabindex="33">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -466,21 +465,21 @@
                                 <span class="data-tbl__status data-tbl__status_active"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="34">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="35">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="36">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -489,7 +488,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-8">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-8">
+                                <label class="label" for="row-8" tabindex="37">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -519,21 +518,21 @@
                                 <span class="data-tbl__status data-tbl__status_inactive"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="38">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="39">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="40">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -542,7 +541,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-9">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-9">
+                                <label class="label" for="row-9" tabindex="41">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -572,21 +571,21 @@
                                 <span class="data-tbl__status data-tbl__status_inactive"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="42">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="43">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="44">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -595,7 +594,7 @@
                         </tr>
                         <tr class="data-tbl__row data-tbl__row_row-10">
                             <td class="data-tbl__cell">
-                                <label class="label" for="row-10">
+                                <label class="label" for="row-10" tabindex="45">
                                     <span class="label__checkbox"></span>
                                 </label>
                             </td>
@@ -625,21 +624,21 @@
                                 <span class="data-tbl__status data-tbl__status_active"></span>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="46">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#icon-edit" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="47">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#delete-icon" />
                                     </svg>
                                 </button>
                             </td>
                             <td class="data-tbl__cell">
-                                <button class="data-tbl__btn data-tbl__btn btn-action">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="48">
                                     <svg class="btn-action__icon">
                                         <use xlink:href="#more-icon" />
                                     </svg>
@@ -654,24 +653,25 @@
                                         class="data-tbl__foot-span data-tbl__foot-span_bold-fs-x">479</span>/706</p>
                             </td>
                             <td class="data-tbl__foot-cell" colspan="2">
-                                <p class="data-tbl__foot-p">Rows per page: 10
-                                    <button class="data-tbl__rows-number rows-number" href="#">
-                                        <svg class="rows-number__img">
-                                            <use xlink:href="#triangle-down" />
-                                        </svg>
-                                    </button>
+                                <p class="data-tbl__foot-p">Rows per page:
+                                    <select class="data-tbl__row-number row-number" name="row-number" id="row-number"
+                                        size="1" tabindex="49">
+                                        <option class="row-number__number" value="10">10</option>
+                                        <option class="row-number__number" value="20">20</option>
+                                        <option class="row-number__number" value="30">30</option>
+                                    </select>
                                 </p>
                             </td>
                             <td class="data-tbl__foot-cell">
                                 <p class="data-tbl__foot-p">1-10 of 706</p>
                             </td>
                             <td class="data-tbl__foot-cell" colspan="3">
-                                <button href="#" class="data-tbl__nav-btn nav-btn">
+                                <button href="#" class="data-tbl__nav-btn nav-btn" tabindex="50">
                                     <svg class="nav-btn__img">
                                         <use xlink:href="#arrow-lt" />
                                     </svg>
                                 </button>
-                                <button href="#" class="data-tbl__nav-btn nav-btn">
+                                <button href="#" class="data-tbl__nav-btn nav-btn" tabindex="51">
                                     <svg class="nav-btn__img">
                                         <use xlink:href="#arrow-rt" />
                                     </svg>

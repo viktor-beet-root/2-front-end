@@ -288,18 +288,23 @@ $tbl-gap: 20px;
     .data-tbl__foot-span_bold-fs-x {
         @extend %fs-s;
     }
+
+
 }
 
-.rows-number {
-    @extend %btn-reset;
-
-    &__img {
-        width: 8px;
-        height: 5px;
-        position: relative;
-        bottom: 1px;
-        @extend %foot-btn;
-    }
+.row-number {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-right: calc(8px + .3em);
+    padding-left: .5em;
+    appearance: none;
+    border: none;
+    color: inherit;
+    background-image: url('#{$img-path}triangle-down.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 8px 5px;
 }
 
 .nav-btn {
@@ -313,9 +318,7 @@ $tbl-gap: 20px;
     }
 
     &:first-child {
-        .nav-btn__img {
-            margin-right: 50px;
-        }
+        margin-right: 50px;
     }
 }
 
@@ -345,7 +348,6 @@ $tbl-gap: 20px;
 .sort {
     display: inline-block;
     margin-left: 0.5em;
-    cursor: pointer;
 
     &__img {
         width: 8px;
@@ -357,7 +359,7 @@ $tbl-gap: 20px;
 }
 
 .filter {
-    cursor: pointer;
+    display: block;
 
     .filter__img {
         width: 20px;

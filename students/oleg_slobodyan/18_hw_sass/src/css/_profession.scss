@@ -1,0 +1,70 @@
+.profession {
+    padding-bottom: 105px;
+    font-weight: 500;
+
+    &__subtitle {
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+
+    &__title {
+        margin: 0 0 22px;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+    }
+}
+
+
+.profession-advantage {
+    &__title {
+        font-weight: bold;
+    }
+
+    &__text {
+
+        margin-bottom: 25px;
+    }
+}
+
+
+.profession-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-width: 430px;
+
+    &__item {
+        margin-bottom: 30px;
+        position: relative;
+        margin-left: 65px;
+
+        &::before {
+            content: '';
+            height: 35px;
+            width: 35px;
+            border-radius: 14px;
+            background-color: $main-color;
+            display: inline-block;
+            position: absolute;
+            top: 6px;
+            left: -65px;
+        }
+
+        &::after {
+            content: '';
+            height: 12px;
+            width: 5px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            position: absolute;
+            left: -51px;
+            top: 14px;
+            transform: rotate(45deg);
+            display: inline-block;
+        }
+    }
+
+
+}

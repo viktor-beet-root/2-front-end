@@ -1,0 +1,1 @@
+https://resolushion.github.io/2-front-end/students/dima_lieshchyn/24_css_graphics/build/

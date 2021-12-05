@@ -1,0 +1,43 @@
+$white-color: #fff;
+$gray-700-color: #565656;
+$black-color: #000;
+
+
+$main-color: $gray-700-color;
+$main-text-color: $gray-700-color;
+// $title-bg-color: $gray-8-color;
+// $title-text-color: $white-color;
+$border-color: $gray-700-color;
+// $form-icno-color: $grey-7-color;
+// $valide-color: $green-color;
+
+$default-border: 1px solid $border-color;
+
+$container-width: 1110px;
+$default-gap: 15px;
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Lato';
+$additional-font-name: 'Red Hat Display';
+$path-fonts: '../fonts/';
+
+$main-font: $main-font-name,
+$font-follback;
+$additional-font: $additional-font-name,
+$font-follback;
+$base-font-size: 19px;
+$base-line-height: 1.68;
+$base-font-weight: 400;
+
+$form-border-radius: 5px;
+$form-border: $default-border;
+$form-padding: 0 10px;
+$textarea-padding: 10px;
+$form-input-height: 50px;
+
+$beack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

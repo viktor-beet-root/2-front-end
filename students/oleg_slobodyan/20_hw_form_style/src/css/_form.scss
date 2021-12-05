@@ -1,0 +1,156 @@
+@import './social-list';
+
+.form {
+    &__row {
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        position: relative;
+    }
+}
+
+.label {
+    display: block;
+    background-color: $title-bg-color;
+    color: $title-text-color;
+    padding: 5px 10px;
+    font-size: 20px;
+
+    .required & {
+        &::after {
+            content: ' *';
+            display: inline;
+        }
+    }
+}
+
+
+
+.input-text {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    padding: $form-padding;
+    height: $form-input-height;
+    outline: none;
+
+    &:focus,
+    &[required]:valid:focus {
+        &+.icon>.icon__img {
+            fill: $main-color;
+        }
+    }
+
+    &[required]:valid {
+        &+.icon>.icon__img {
+            fill: $valide-color;
+        }
+    }
+
+    &:focus {
+        &+.input-group__icon::after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &[name="url-facebook"]:valid {
+        &+.icon>.icon__img {
+            fill: #3b5998;
+        }
+    }
+
+    &[name="url-instagram"]:valid {
+        &+.icon>.icon__img {
+            fill: #fd1d1d;
+        }
+    }
+
+    &[name="url-linkedin"]:valid {
+        &+.icon>.icon__img {
+            fill: #006192;
+        }
+    }
+
+    &[name="url-googleplus"]:valid {
+        &+.icon>.icon__img {
+            fill: #db4a39;
+        }
+    }
+
+    &[name="url-twitter"]:valid {
+        &+.icon>.icon__img {
+            fill: #1DA1F2;
+        }
+    }
+}
+
+.textarea {
+    @extend .input-text;
+    resize: none;
+    height: 150px;
+    padding: 10px;
+
+    &+.icon {
+        height: auto;
+    }
+}
+
+.input-group {
+    display: flex;
+
+    &_left {
+        flex-direction: row-reverse;
+    }
+
+    &__icon {
+        &::after {
+            content: "";
+            display: block;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: $default-gap;
+            right: $default-gap;
+            box-shadow: 0 0 10px $gray-8-color;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .5s ease-in-out;
+        }
+    }
+}
+
+.social-list__url-item .input-group .input-group__icon::after {
+    left: 0;
+    right: 0;
+}
+
+.icon {
+
+    width: $form-input-height;
+    height: $form-input-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray-3-color;
+
+    &__img {
+        max-width: math.div($form-input-height, 2);
+        max-height: math.div($form-input-height, 2);
+        fill: $form-icno-color;
+    }
+}
+
+.inpit-hiiden {
+    @include visuality-hidden;
+}
+
+.form__action {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: $title-bg-color;
+}

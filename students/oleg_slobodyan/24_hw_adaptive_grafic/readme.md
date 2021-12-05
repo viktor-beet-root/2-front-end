@@ -1,0 +1,1 @@
+https://teddi90.github.io/2-front-end/students/oleg_slobodyan/24_hw_adaptive_grafic/build/

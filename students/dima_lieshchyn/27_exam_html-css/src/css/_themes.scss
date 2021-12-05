@@ -1,0 +1,67 @@
+.theme-switcher {
+    @include visuality-hidden;
+
+    &:checked {
+        &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(1) {
+            display: none;
+        }
+
+        &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(2) {
+            display: block;
+            z-index: 10;
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            cursor: pointer;
+        }
+
+        &+.page-wrapper {
+
+            background-color: $color-dark-blue-global;
+
+            background-image: url(../images/first-screen-image-dark.jpg);
+
+            & .menu>.menu__link>.menu__item {
+                color: $white-color;
+            }
+
+            & .text_global,
+            .title_global {
+                color: $white-color;
+            }
+
+            & .title_alt-global {
+                color: $color-blue;
+            }
+
+            & .button-link_global {
+                color: $color-light-green;
+
+                &::before {
+                    background-color: rgba(83, 243, 205, .3);
+                }
+            }
+
+            & .contact-sales-block__text-block {
+                background-color: rgba(22, 25, 38, .9);
+            }
+
+            & .contact-sales-block__text-block .text-block__title-alt {
+                color: $white-color;
+            }
+
+            & .third-block__text-block {
+                &::before {
+                    background-color: $color-gray-v2;
+                }
+            }
+
+            & .solis-block__text:nth-child(1)::before {
+                content: url(../images/quote-icon-dark.svg);
+            }
+        }
+
+
+    }
+
+}

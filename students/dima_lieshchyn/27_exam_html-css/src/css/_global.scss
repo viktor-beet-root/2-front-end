@@ -32,3 +32,41 @@
     backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, .25);
 }
+
+.button-link_global {
+    text-decoration: none;
+    color: $color-coral;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    &::before {
+        content: '';
+        width: 14.5%;
+        height: 13px;
+        background-color: rgba(241, 137, 123, .3);
+        position: absolute;
+        top: 15px;
+        left: 9px;
+        right: 0;
+    }
+}
+
+.title_global {
+    font-family: $additional-font;
+    font-style: normal;
+}
+
+.title_alt-global {
+    font-style: italic;
+    color: $color-green;
+}
+
+.text_global {
+    font-family: $main-font;
+    font-weight: 300;
+}

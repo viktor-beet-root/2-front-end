@@ -1,0 +1,14 @@
+.powerful-block {
+    &__tablet-wrapper {}
+
+    &__video {
+        display: block;
+        background-image: url(../../images/tablet.svg);
+    }
+
+    &__title {}
+
+    &__title-alt {}
+
+    &__text {}
+}

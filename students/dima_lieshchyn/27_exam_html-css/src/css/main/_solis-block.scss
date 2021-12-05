@@ -1,0 +1,41 @@
+.solis-block {
+    background-image: url(../../images/third-image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 400px;
+    color: $white-color;
+
+    &_text-wrapper {
+        max-width: 715px;
+        padding: 101px 129px;
+    }
+
+    &__text {
+        display: block;
+    }
+
+    &__text:nth-child(1) {
+        font-size: 32px;
+        line-height: 46px;
+        letter-spacing: 2px;
+        font-weight: 400;
+        position: relative;
+        z-index: 10;
+
+        &::before {
+            content: url(../../images/quote-icon.svg);
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: -($default-gap)*2.5;
+            left: -($default-gap)*3.9;
+        }
+    }
+
+    &__text:nth-child(2) {
+        padding-top: 40px;
+        font-size: 20px;
+        font-style: italic;
+        letter-spacing: 2px;
+    }
+}

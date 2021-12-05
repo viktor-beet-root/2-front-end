@@ -1,0 +1,109 @@
+/* lato-regular - latin */
+// @font-face {
+//     font-family: 'Lato';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: local(''),
+//         url('../fonts/lato-v20-latin-regular.woff2') format('woff2'),
+//         url('../fonts/lato-v20-latin-regular.woff') format('woff');
+// }
+// @font-face {
+//     font-family: 'Red Hat Display';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: local(''),
+//          url('../fonts/red-hat-display-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+//          url('../fonts/red-hat-display-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+//   }
+
+@include font-face("Lato", lato-v20-latin-regular);
+@include font-face("Red Hat Display", red-hat-display-v7-latin-regular);
+
+@include grid();
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: $main-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}
+
+.row {
+    margin: 0 (-$default-gap);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*="col-"] {
+    padding: 0 $default-gap;
+    box-sizing: border-box;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-3 {
+    width: calc(100% / 12 *3);
+}
+
+.page {
+    font-family: $main-font-text, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: $main-font-size;
+    line-height: $main-font-line-height;
+    font-style: normal;
+}
+
+.btn {
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #fff;
+    background-color: #FF9900;
+    border-radius: 4px;
+    padding: 13.5px 10px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    min-width: 175px;
+}
+
+.btn:hover {
+    text-decoration: underline;
+}
+
+.main-title {
+    font-family: $main-font-title, Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: normal;
+    margin-bottom: 64px;
+
+    @include media('sm') {
+        font-size: 33px;
+        margin-bottom: 52px;
+    }
+}
+
+.title {
+    font-family: $main-font-title, Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    margin-bottom: 40px;
+    font-weight: normal;
+    margin-top: 0;
+
+    @include media('sm') {
+        margin-bottom: 16px;
+    }
+
+}

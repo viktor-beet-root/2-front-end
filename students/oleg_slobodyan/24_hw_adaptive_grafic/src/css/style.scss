@@ -1,0 +1,46 @@
+@use 'sass:math';
+@import "./normalize";
+@import "./vars";
+@import "./extends";
+@import "./mixins";
+@import "./global";
+
+.block:first-child {
+    .block__img {
+        margin-bottom: 130px;
+
+        @include media('sm') {
+            margin-bottom: 56px;
+        }
+
+        @include media('xs') {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.block__img {
+    margin-bottom: 50px;
+    object-fit: cover;
+
+
+    @include media('sm') {
+        margin-bottom: 56px;
+    }
+}
+
+.text {
+    margin-bottom: 45px;
+    margin-top: 0;
+
+    @include media('sm') {
+        margin-bottom: 40px;
+    }
+
+}
+
+.text_mr {
+    @include mob-media('sm') {
+        margin-right: 52px;
+    }
+}

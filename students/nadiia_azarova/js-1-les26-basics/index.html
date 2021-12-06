@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-1-les26-basics</title>
+</head>
+
+<body>
+    <script>
+        // What's your name?
+        let userName = prompt('Як тебе звати?', '');
+        alert('Привіт,' + ' ' + userName + '!');
+
+        // How old are you?
+        const CURRENT_YEAR = 2021;
+        let userYear = +prompt('В якому році ти народилась?', '');
+        let userAge = CURRENT_YEAR - userYear;
+        alert('Зараз тобі' + ' ' + userAge + ' ' + 'років');
+
+        // Square perimeter
+        let squareEdge = +prompt('Назови будь-яку довжину сторони квадрата', '');
+        let squarePerimeter = squareEdge * 4;
+        alert('Периметр цього квадрату дорівнює' + ' ' + squarePerimeter);
+
+        // Circle Area
+        let circleRadius = +prompt('Назови будь-який радіус кола', '');
+        let circleArea = Math.pow(circleRadius, 2) * Math.PI;
+        let circleAreaRound = Math.round(circleArea * 100) / 100;
+        alert('Площа цього кола приблизно' + ' ' + circleAreaRound + ' ' + 'квадратних папуг');
+
+        // Velocity to get in time
+        let distance = +prompt('Яка відстань між твоїм містом і тим, до якого ти бажаєшь дістатися? Вкажи в кілометрах.', '');
+        let time = +prompt('За який час ти бажаєшь до туда дістатися?', '');
+        let velocity = Math.round(distance / time * 100) / 100;
+        alert('Тобі потрібно рухатись із швидкістю' + ' ' + velocity + 'км/год, щоб дістатися вчасно');
+
+        // Currency convertor
+        let dollars = +prompt('Назви будь-яку суму у \$');
+        const CURRENCY = 0.89;
+        let euro = Math.round(dollars * CURRENCY * 100) / 100;
+        alert('Ця сума дорівнює' + ' ' + euro + ' ' + 'у €.');
+    </script>
+</body>
+
+</html>

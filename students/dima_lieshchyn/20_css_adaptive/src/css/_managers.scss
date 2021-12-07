@@ -8,6 +8,7 @@
 
     @include media('md') {
         align-items: flex-start;
+        padding-top: $default-gap;
     }
 
     &__icon {
@@ -38,4 +39,12 @@
 .icon_tick::after {
     content: url(#{$path-img}tick.svg);
     margin-left: 15px;
+}
+
+.col_p {
+    padding-left: 100px;
+
+    @include media('sm') {
+        padding: $default-gap 0px 0px $default-gap;
+    }
 }

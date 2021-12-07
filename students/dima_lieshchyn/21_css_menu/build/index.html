@@ -14,7 +14,7 @@
     <header class="header page__header">
         <div class="container">
             <div class="row">
-                <div class="col row__col col-12 col-sm-12 header__content">
+                <div class="col row__col col-12 header__content">
                     <div class="logo">
                         <a class="logo__link" href="#">
                             <img width="185" height="30" class="logo__image" src="images/Logo.png" title="Productly"
@@ -28,6 +28,25 @@
                         </label>
                         <ul class="menu menu-wrapper__menu">
                             <li class="menu__item">
+                                <!-- <input type="checkbox" class="sub-menu-open-input-btn" id="subMenuOpenInputBtn">
+                                <label class="sub-menu-open-btn" for="subMenuOpenInputBtn"></label>
+                                <ul class="menu__sub-menu sub-menu">
+                                    <li class="sub-menu__item mobile-only">
+                                        <label class="sub-menu-close-btn" for="subMenuOpenInputBtn">Back</label>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a href="#" class="sub-menu__link">1</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a href="#" class="sub-menu__link">2</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a href="#" class="sub-menu__link">3</a>
+                                    </li>
+                                    <li class="sub-menu__item">
+                                        <a href="#" class="sub-menu__link">4</a>
+                                    </li>
+                                </ul> -->
                                 <a href="#" class="menu__link">Product</a>
                             </li>
                             <li class="menu__item">
@@ -196,17 +215,17 @@
     </main>
     <footer class="footer page__footer">
         <div class="container footer__container">
-            <ul class="row container__row footer-list">
-                <li class="footer-list__item col-3 col-xs-12 col_w row__col">
+            <div class="row container__row footer-block">
+                <div class="footer-block__item col-3 col-sm-1 col-xs-12 col_w row__col p_zero">
                     <div class="logo logo_footer">
                         <a class="logo__link" href="#">
                             <img width="185" height="30" class="logo__image" src="images/Logo.png" title="Productly"
                                 alt="Productly">
                         </a>
                     </div>
-                </li>
-                <li class="footer-list__item col-3 col-xs-12 col_w row__col">
-                    <ul class="footer-list__footer-menu footer-menu">
+                </div>
+                <div class="footer-block__item col-3 col-xs-12 col_w row__col">
+                    <ul class="footer-block__footer-menu footer-menu">
                         <li class="footer-menu__item">
                             <a class="footer-menu__link" href="#">About Us</a>
                         </li>
@@ -220,9 +239,9 @@
                             <a class="footer-menu__link" href="#">FAQ</a>
                         </li>
                     </ul>
-                </li>
-                <li class="footer-list__item col-3 col-xs-12 col_w row__col">
-                    <ul class="footer-list__footer-menu footer-menu">
+                </div>
+                <div class="footer-block__item col-3 col-xs-12 col_w row__col">
+                    <ul class="footer-block__footer-menu footer-menu">
                         <li class="footer-menu__item">
                             <a class="footer-menu__link" href="#">Disclaimer</a>
                         </li>
@@ -236,9 +255,9 @@
                             <a class="footer-menu__link" href="#">Terms of Service</a>
                         </li>
                     </ul>
-                </li>
-                <li class="footer-list__item col-3 col-lg-12 row__col">
-                    <form class="footer-list__form form">
+                </div>
+                <div class="footer-block__item col-3 col-lg-12 row__col">
+                    <form class="footer-block__form form">
                         <label class="search-area">
                             <input class="form__search-area" type="text" name="search">
                         </label>
@@ -246,8 +265,8 @@
                             <a class="form__link" href="#">Sign up now</a>
                         </button>
                     </form>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </footer>
 </body>

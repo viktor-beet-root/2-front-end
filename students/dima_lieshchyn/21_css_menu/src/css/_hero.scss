@@ -14,6 +14,11 @@
         margin-left: 50px;
         font-weight: 600;
         color: $color-orange;
+
+        @include media('xs') {
+            margin-left: 0;
+            padding-top: $default-gap;
+        }
     }
 }
 
@@ -34,15 +39,23 @@
 }
 
 .info-wrapper {
+
     &__main-title {
         margin-top: 65px;
     }
 
     &__btn-wrapper {
+
         padding-top: 29px;
 
         @include media('md') {
             text-align: center;
+
+        }
+
+        @include media('xs') {
+            display: flex;
+            flex-direction: column;
         }
     }
 }

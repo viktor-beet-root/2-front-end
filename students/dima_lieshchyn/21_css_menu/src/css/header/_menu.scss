@@ -27,6 +27,7 @@
     &__item {
         margin-right: $default-gap;
 
+
         @include media('sm') {
             border: $border-color;
             border-top: none;
@@ -50,6 +51,7 @@
         }
     }
 }
+
 
 .menu-open-input-btn {
     @include visuality-hidden;
@@ -102,5 +104,16 @@
         &::after {
             right: -9.5px;
         }
+    }
+}
+
+
+
+
+.mobile-only {
+    display: none;
+
+    @include media('sm') {
+        display: block;
     }
 }

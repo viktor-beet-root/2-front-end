@@ -7,21 +7,18 @@
     }
 }
 
-.footer-menu,
-.footer-privecy {
+.footer-menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.footer-menu__link,
-.footer-privecy__link {
+.footer-menu__link {
     color: #544837;
     display: inline-block;
 }
 
-.footer-menu__item,
-.footer-privecy__item {
+.footer-menu__item {
     margin-bottom: 12px;
 }
 
@@ -49,14 +46,12 @@
 
 }
 
-.footer-menu,
-.footer-privecy {
+.footer-menu {
     @include media('sm') {
         margin-bottom: 20px;
     }
 }
 
-.footer-privecy,
 .footer__form {
     display: flex;
     flex-direction: column;

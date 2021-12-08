@@ -1,0 +1,13 @@
+.menu {
+    display: flex;
+
+    &__item {
+        margin-right: 50px;
+        display: inline-block;
+    }
+
+    &__link {
+        padding: 10px 20px;
+        display: inline-block;
+    }
+}

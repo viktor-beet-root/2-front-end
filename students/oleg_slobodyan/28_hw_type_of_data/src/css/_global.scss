@@ -1,0 +1,89 @@
+@include font-face($main-font-name, 'rubik-v14-latin-regular');
+@include font-face($main-font-name, 'rubik-v14-latin-700', 700);
+@include grid();
+
+.sprite {
+    @include visuality-hidden;
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+
+.page {
+    display: grid;
+    grid-template-columns: minmax(100px 25%) 1fr;
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer"
+    ;
+
+    @include media('sm') {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header "
+            "aside main"
+            "footer"
+        ;
+    }
+}
+
+.logo {
+    height: 150px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.header {
+    grid-area: header;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.header,
+.footer {
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aside {
+    border-right: 1px solid black;
+
+    @include media('sm') {
+        border-right: none;
+
+    }
+}
+
+.header,
+.footer,
+.footer,
+.aside {
+    padding: 15px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

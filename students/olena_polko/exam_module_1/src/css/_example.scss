@@ -1,0 +1,44 @@
+.example-wrapper-first {
+    background-image: url(../images/spain1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.example-wrapper-second {
+    background-image: url(../images/spain2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.example {
+    min-height: 700px;
+    padding: 0;
+
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: $main-text-color;
+        background-color: $gray-dark-color;
+        max-width: 540px;
+        height: 370px;
+
+    }
+
+    &__destination,
+    &__title {
+        margin: 15px 0;
+        font-size: $second-title-size;
+
+    }
+
+    &__title {
+        text-transform: uppercase;
+
+    }
+
+    &__button {
+        margin: 50px 0;
+    }
+}

@@ -1,0 +1,125 @@
+.header {
+    background-image: url(../images/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__info-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 80px);
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.2;
+        letter-spacing: 4.8px;
+        color: $white-color;
+    }
+
+    &__title-span {
+        font-family: $main-font;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 6.82px;
+        color: $white-color;
+    }
+
+    // &__search-wrapper {
+    //     width: 650px;
+    // }
+
+    &__search {
+        display: flex;
+        justify-content: center;
+        background-color: $white-color;
+        padding: 2px;
+        height: 60px;
+        margin-top: 48px;
+    }
+
+    &__search-input {
+        flex-grow: 1;
+        border: none;
+        width: 500px;
+
+        &::placeholder {
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 2.8px;
+        }
+    }
+
+    &__search-button {
+        width: 150px;
+        height: 100%;
+        border: none;
+        background-color: $blue-light-color;
+        color: $white-color;
+        text-transform: uppercase;
+        font-family: $second-font-name;
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 1.4px;
+        line-height: 26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+            content: url(../images/zoomwhite.svg);
+            position: absolute;
+            top: 30%;
+            right: 15px;
+
+        }
+
+    }
+
+}
+
+.menu {
+    background-color: $blue-light-color;
+
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80px;
+    }
+
+    &__logo {
+        text-transform: uppercase;
+        font-size: 24px;
+        text-decoration: none;
+        color: $white-color;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__item:not(:last-child) {
+        padding-right: 42px;
+    }
+
+    &__link {
+        font-family: $second-font-name;
+        text-decoration: none;
+        color: $white-color;
+        text-transform: uppercase;
+        font-size: 14px;
+
+    }
+
+
+}

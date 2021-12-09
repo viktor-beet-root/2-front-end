@@ -1,0 +1,68 @@
+.choose-us-wrapper {
+    background-image: url(../images/citybg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.choose-us {
+
+    &__title {
+        font-family: $second-font-name;
+        font-size: 36px;
+        margin-bottom: 50px;
+
+    }
+
+    &__info {
+        min-height: 685px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        color: $white-color;
+
+
+    }
+
+    &__text {
+        letter-spacing: 1.6px;
+        font-size: 16px;
+        margin-bottom: 30px;
+        color: $main-text-color;
+    }
+
+    &__img-wrapper {
+        min-height: 685px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img {
+        margin-bottom: 10px;
+
+        &:last-child {
+            align-self: flex-end;
+        }
+    }
+
+}
+
+.button {
+    background-color: $blue-light-color;
+    color: $white-color;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $second-font-name;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 225px;
+    height: 63px;
+    margin-top: 20px;
+}

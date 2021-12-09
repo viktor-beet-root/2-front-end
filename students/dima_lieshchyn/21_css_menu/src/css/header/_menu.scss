@@ -15,7 +15,7 @@
         bottom: 0;
         overflow-y: auto;
         top: 108px;
-        z-index: 10;
+        z-index: 9;
         box-sizing: border-box;
         transform: translateX(-100%);
         transition: transform .5s ease-in-out;
@@ -26,7 +26,21 @@
 
     &__item {
         margin-right: $default-gap;
+        position: relative;
 
+        &:hover {
+
+            &>.menu__sub-menu {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+
+                &>.sub-menu__item>.sub-menu__link:hover {
+                    color: $color-light-yellow;
+                    text-decoration: none;
+                }
+            }
+        }
 
         @include media('sm') {
             border: $border-color;
@@ -50,13 +64,136 @@
             margin-left: 5px;
         }
     }
+
+    &__sub-menu {
+        position: absolute;
+        display: block;
+        top: 100%;
+        left: -100%;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all .5s ease-in-out;
+
+
+    }
 }
+
+.sub-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all .5s ease-in-out;
+
+    @include media ('sm') {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        position: fixed;
+        top: 0;
+        left: -40px;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        width: 100%;
+        background-color: $color-white;
+        transform: translateY(-100%);
+    }
+
+    &__item {
+        position: relative;
+        list-style-type: none;
+        text-align: center;
+        width: 100%;
+
+        &:hover {
+
+            &>.sub-menu__menu-lvl-2 {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+
+                @include media ('sm') {
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                }
+
+                &>.menu-lvl-2__item>.menu-lvl-2__link:hover {
+                    color: $color-light-yellow;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        background-color: $color-orange;
+        border-radius: 4px;
+        border: 2px solid $color-white;
+        padding: 5px $default-gap;
+        text-decoration: none;
+        color: $color-orange-dark;
+
+        @include media ('sm') {
+            padding: $default-gap;
+            font-size: 18px;
+        }
+    }
+
+    &__menu-lvl-2 {
+        @extend .menu__sub-menu;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 65%;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all .5s ease-in-out;
+
+        @include media ('sm') {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            position: fixed;
+            top: 0;
+            left: -30px;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            width: 100%;
+            background-color: $color-white;
+            transform: translateY(-100%);
+        }
+    }
+}
+
+.menu-lvl-2 {
+
+
+
+    &__item {
+        @extend .sub-menu__item;
+    }
+
+    &__link {
+        @extend .sub-menu__link;
+
+    }
+}
+
 
 
 .menu-open-input-btn {
     @include visuality-hidden;
 
     &:checked {
+
         &~.menu {
             transform: translateX(0);
         }
@@ -107,8 +244,112 @@
     }
 }
 
+.sub-menu-open-btn {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+
+    @include media ('sm') {
+
+        &::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-bottom: 3px solid $color-light-yellow;
+            border-right: 3px solid $color-light-yellow;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: rotate(45deg) translateY(-50%);
+            transition: transform .5s ease-in-out;
+            transform-origin: top;
+
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            border-radius: 4px;
+            background-color: $color-orange-v2;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.lvl-2-menu-open-btn {
+    @extend .sub-menu-open-btn;
+
+    @include media ('sm') {
+
+        &::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-bottom: 3px solid $color-light-yellow;
+            border-right: 3px solid $color-light-yellow;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: rotate(45deg) translateY(-50%);
+            transition: transform .5s ease-in-out;
+            transform-origin: top;
+
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            border-radius: 4px;
+            background-color: $color-orange-v2;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
 
 
+.sub-menu-open-input-btn {
+    @include visuality-hidden;
+
+    &:checked~.menu__sub-menu {
+        transform: translate(0);
+
+        &:checked~.menu-lvl-2 {
+            transform: translateY(0);
+        }
+    }
+
+
+}
+
+.lvl-2-menu-open-input-btn {
+    @include visuality-hidden;
+
+
+}
+
+.sub-menu-close-btn {
+    display: block;
+    background-color: $color-orange-dark;
+    font-size: 16px;
+    color: $color-white;
+    padding: 17px;
+    font-weight: bold;
+}
 
 .mobile-only {
     display: none;

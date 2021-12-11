@@ -1,5 +1,6 @@
 .theme-switcher {
     @include visuality-hidden;
+    transition: all .5s ease-in-out;
 
     &:checked {
         &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(1) {
@@ -20,9 +21,11 @@
             background-color: $color-dark-blue-global;
 
             background-image: url(../images/first-screen-image-dark.jpg);
+            transition: all .5s ease-in-out;
 
             & .menu>.menu__link>.menu__item {
                 color: $white-color;
+                transition: color .5s ease-in-out;
             }
 
             & .text_global,
@@ -38,12 +41,14 @@
                 color: $color-light-green;
 
                 &::before {
+                    transition: background-color .5s ease-in-out;
                     background-color: rgba(83, 243, 205, .3);
                 }
             }
 
             & .contact-sales-block__text-block {
                 background-color: rgba(22, 25, 38, .9);
+                transition: background-color .5s ease-in-out;
             }
 
             & .contact-sales-block__text-block .text-block__title-alt {
@@ -53,6 +58,7 @@
             & .third-block__text-block {
                 &::before {
                     background-color: $color-gray-v2;
+                    transition: background-color .5s ease-in-out;
                 }
             }
 

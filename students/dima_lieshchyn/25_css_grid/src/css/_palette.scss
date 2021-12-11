@@ -1,4 +1,4 @@
-.palette {
+.page {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 122px);
@@ -6,34 +6,25 @@
     padding: 15px;
     position: relative;
 
-
-
-
-
     &__item {
         &:hover {
             box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
             background-color: $border-color;
         }
     }
-
 }
 
 .item {
-    &_1-2 {
-        display: grid;
-        gap: $default-gap;
-        grid-column: 1 / span 2;
-        grid-row: 1 / span 3;
-
-    }
-
     &_1 {
         background-color: $color-violet;
+        grid-column: 1 / span 2;
+        grid-row: 3;
+        grid-template-rows: 2fr;
     }
 
     &_2 {
         background-color: $color-deep-purple;
+        grid-column: 1 / span 2;
     }
 
     &_3 {
@@ -93,6 +84,7 @@
 .info {
     &__wrapper {
         background-color: $color-base-green;
+        grid-column: 1 / span 6;
     }
 
     &__title {
@@ -104,6 +96,7 @@
 
     &__text-wrapper {
         padding-top: 10px;
+        grid-column: 1 / span 4;
     }
 
     &__description {

@@ -6,18 +6,27 @@
 //Також напиши до 5 неправильних імен 
 //(неправильні імена повинні бути закоментовані);
 
-// Неправильні
-let name;
-let surname;
-let firstName;
-let lastName;
-
 // Правильні
-// let Name;
-// let SuRnAmE;
-// let first Name;
-// let last-Name;
-// let 1name;
+//const userName;
+//const userSurname;
+//const FirstName;
+//const last_name;
+
+// Неправильні
+// const Name - в переменных использование некоторых слов может вызвать ошибку,
+//так как их заведомо использует браузер.
+
+// const First+name; - использование математических операторов запрещаеться.
+// const last-Name; 
+
+// const SuRnAmE; - не рациональное использование Camel Case.
+//Необходимо логически использовать верхний регистр. 
+//Чаще всего верхний регистр используют для заглавной
+//буквы следущего слова в названиее переменной.
+
+// const first Name; - пробелов в переменной не должно быть.
+
+// const 1name; - переменная не должна начинаться с цифер.
 
 /*---------------------------------------*/
 
@@ -41,52 +50,50 @@ let lastName;
 // snake_case
 // let first_name;
 
-//PascalCase
-// let FirstName;
 /*---------------------------------------*/
 //-----Norma-----
 /*---------------------------------------*/
 //Задание 1
 //Запитай ім’я користувача та виведи у відповідь “Привіт, *ім’я*”;
-let userName = prompt('Enter your name');
-let nameResult = alert('Hello, '+ userName);
+const userName = prompt('Enter your name');
+console.log('Hello, ' + userName);
 /*---------------------------------------*/
 //Задание 2
 //Запитай рік народження користувача, порахуй його/її вік 
 //і виведи результат. Поточний рік вкажи в коді як константу;
-let userYearOfBirht = +prompt('Enter year of your birth');
+const userYearOfBirht = +prompt('Enter year of your birth');
 const currentYear = 2021;
 let userAge = currentYear - userYearOfBirht;
-let ageResult = alert('Your age is ' + userAge + ' years.');
+console.log('Your age is ' + userAge + ' years.');
 /*---------------------------------------*/
 //Задание 3
 //Запитай у користувача довжину сторони квадрату і виведи периметр цього квадрата
-let userSquareLength = +prompt('Enter a length of your square');
+const userSquareLength = +prompt('Enter a length of your square');
 const sideCount = 4;
 let squarePerimetr = userSquareLength * sideCount;
-let perimetrResult = alert('Perimetr of your sqare is ' + squarePerimetr);
+console.log('Perimetr of your sqare is ' + squarePerimetr);
 /*---------------------------------------*/
 //-----Maximum-----
 /*---------------------------------------*/
 //Задание 1
 //Запитай у користувача радіус кола і виведи площу такої окружності.
-let userRadius = +prompt('Enter your radius');
-let area = Math.PI * Math.pow(userRadius,2);
-let areaResult = alert('Your area is ' + area);
+const userRadius = +prompt('Enter your radius');
+let area = Math.PI * Math.pow(userRadius, 2);
+console.log('Your area is ' + area);
 /*---------------------------------------*/
 //Задание 2
 //Запитай у користувача відстань в кілометрах між двома містами і за скільки
 //годин він хоче дістатися. Порахуй швидкість, з якою необхідно рухатися, щоб встигнути вчасно.
-let userDistance = +prompt('Enter your distance in kilometres');
-let userTime = +prompt('Enter how many hours you have');
+const userDistance = +prompt('Enter your distance in kilometres');
+const userTime = +prompt('Enter how many hours you have');
 let currentSpeed = userDistance / userTime;
-let resultUserSpeed = alert('Speed which you need is ' + currentSpeed + ' km/h');
+console.log('Speed which you need is ' + currentSpeed + ' km/h');
 /*---------------------------------------*/
 //Задание 3
 //Реалізуй конвертор валют. Користувач вводить долари, програма переводить їх в євро.
 //Курс валют зберігається в константі.
 const euroLatency = 0.881;
-let userDollars = +prompt('Enter dollars amount');
+const userDollars = +prompt('Enter dollars amount');
 let userEuro = userDollars * euroLatency;
-let resultEuro = alert(userDollars + ' $ ' + ' = ' + userEuro + ' euro');
+console.log(userDollars + ' $ ' + ' = ' + userEuro + ' euro');
 /*---------------------------------------*/

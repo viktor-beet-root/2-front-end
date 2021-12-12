@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form class="data-form" action="./" method="post" id="form-tbl">
+                </form>
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-0" id="row-0" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-1" id="row-1" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-2" id="row-2" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-3" id="row-3" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-4" id="row-4" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-5" id="row-5" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-6" id="row-6" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-7" id="row-7" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-8" id="row-8" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-9" id="row-9" tabindex="-1">
+                <input class="checkbox" type="checkbox" form="form-tbl" name="row-10" id="row-10" tabindex="-1">
+                <table class="data-tbl">
+                    <colgroup class="data-tbl__colgroup">
+                        <col class="data-tbl__col data-tbl__col_auto">
+                        <col class="data-tbl__col data-tbl__col_150">
+                        <col class="data-tbl__col data-tbl__col_150">
+                        <col class="data-tbl__col data-tbl__col_100">
+                        <col class="data-tbl__col data-tbl__col_100">
+                        <col class="data-tbl__col data-tbl__col_100">
+                        <col class="data-tbl__col data-tbl__col_auto">
+                        <col class="data-tbl__col data-tbl__col_auto">
+                        <col class="data-tbl__col data-tbl__col_auto">
+                        <col class="data-tbl__col data-tbl__col_auto">
+                    </colgroup>
+                    <thead class="data-tbl__head">
+                        <tr class="data-tbl__head-row">
+                            <td class="data-tbl__head-cell">
+                                <a href="#" class="filter" tabindex="1">
+                                    <svg class="filter__img">
+                                        <use xlink:href="#filter" />
+                                    </svg>
+                                </a>
+                            </td>
+                            <td colspan="3" class="data-tbl__head-cell">
+                                <form action="./" method="post" class="search-form">
+                                    <button class="search-form__btn" type="submit" tabindex="3">
+                                        <svg class="search-form__img">
+                                            <use xlink:href="#search-icon" />
+                                        </svg>
+                                    </button>
+                                    <input class="search-form__input" type="serch" placeholder="Search" tabindex="2">
+                                </form>
+                            </td>
+                            <td colspan="7" class="data-tbl__head-cell">
+                                <button class="add-btn" tabindex="4">
+                                    <span>
+                                        <svg class="add-btn__img">
+                                            <use xlink:href="#add-icon" />
+                                        </svg>
+                                    </span>
+                                    <span class="add-btn__txt">Add customer</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__head-row">
+                            <th class="data-tbl__head-cell" scope="col">
+                                <label class="label" for="row-0" tabindex="5">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </th>
+                            <th class="data-tbl__head-cell" scope="col">
+                                <p class="data-tbl__head-p">Name
+                                    <a href="#" class="sort" tabindex="6">
+                                        <svg class="sort__img">
+                                            <use xlink:href="#sort" />
+                                        </svg>
+                                    </a>
+                                </p>
+                            </th>
+                            <th class="data-tbl__head-cell" scope="col">
+                                <p class="data-tbl__head-p">Description</p>
+                            </th>
+                            <th class="data-tbl__head-cell" scope="col">
+                                <p class="data-tbl__head-p">Rate</p>
+                            </th>
+                            <th class="data-tbl__head-cell" scope="col">
+                                <p class="data-tbl__head-p">Balance</p>
+                            </th>
+                            <th class="data-tbl__head-cell" scope="col">
+                                <p class="data-tbl__head-p">Deposit</p>
+                            </th>
+                            <th class="data-tbl__head-cell" scope="col">
+                                <p class="data-tbl__head-p">Status
+                                    <a href="#" class="sort" tabindex="7">
+                                        <svg class="sort__img">
+                                            <use xlink:href="#sort" />
+                                        </svg>
+                                    </a>
+                                </p>
+                            </th>
+                            <th colspan="3" class="data-tbl__head-cell" scope="col">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="8">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="data-tbl__body">
+                        <tr class="data-tbl__row data-tbl__row_row-1">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-1" tabindex="9">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Kadin Herwitz</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-negative">-270.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_active"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="10">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="11">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="12">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-2">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-2" tabindex="13">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Cristofer Korsgaard</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-positive">270.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_active"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="14">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="15">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="16">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-3">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-3" tabindex="17">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Omar Workman</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">80.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-negative">-20.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_paid"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="18">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="19">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="20">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-4">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-4" tabindex="21">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Tatiana Westervelt</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-positive">600.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_open"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="22">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="23">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="24">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-5">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-5" tabindex="25">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Mira Dokidis</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-negative">-350.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_ordered"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="26">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="27">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="28">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-6">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-6" tabindex="29">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Jakob Bergson</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">75.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-negative">-270.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_active"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="30">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="31">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="32">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-7">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-7" tabindex="33">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Carter Rosser</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-negative">-2070.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_active"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="34">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="35">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="36">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-8">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-8" tabindex="37">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Miracle Septimus</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-negative">-270.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_inactive"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="38">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="39">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="40">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-9">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-9" tabindex="41">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Kianna Baptista</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-positive">460.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_inactive"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="42">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="43">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="44">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="data-tbl__row data-tbl__row_row-10">
+                            <td class="data-tbl__cell">
+                                <label class="label" for="row-10" tabindex="45">
+                                    <span class="label__checkbox"></span>
+                                </label>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_medium">Haylie Rosser</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary ">5684236583</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus iste
+                                    asperiores amet repudiandae natus molestiae eius rem tempore sint ipsam vero
+                                    consequuntur incidunt deleniti provident, mollitia, architecto, similique doloribus!
+                                </p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">70.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p data-tbl__p_color-neutral">00.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <p class="data-tbl__p">500.00</p>
+                                <p class="data-tbl__p data-tbl__p_fs-s data-tbl__p_color-secondary">INR</p>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <span class="data-tbl__status data-tbl__status_active"></span>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="46">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#icon-edit" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="47">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#delete-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                            <td class="data-tbl__cell">
+                                <button class="data-tbl__btn data-tbl__btn btn-action" tabindex="48">
+                                    <svg class="btn-action__icon">
+                                        <use xlink:href="#more-icon" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="data-tbl__foot">
+                        <tr class="data-tbl__foot-row">
+                            <td class="data-tbl__foot-cell foot-cell" colspan="4">
+                                <p class="data-tbl__foot-p">Active customers: <span
+                                        class="data-tbl__foot-span data-tbl__foot-span_bold-fs-x">479</span>/706</p>
+                            </td>
+                            <td class="data-tbl__foot-cell" colspan="2">
+                                <p class="data-tbl__foot-p">Rows per page:
+                                    <select class="data-tbl__row-number row-number" name="row-number" id="row-number"
+                                        size="1" tabindex="49">
+                                        <option class="row-number__number" value="10">10</option>
+                                        <option class="row-number__number" value="20">20</option>
+                                        <option class="row-number__number" value="30">30</option>
+                                    </select>
+                                </p>
+                            </td>
+                            <td class="data-tbl__foot-cell">
+                                <p class="data-tbl__foot-p">1-10 of 706</p>
+                            </td>
+                            <td class="data-tbl__foot-cell" colspan="3">
+                                <button href="#" class="data-tbl__nav-btn nav-btn" tabindex="50">
+                                    <svg class="nav-btn__img">
+                                        <use xlink:href="#arrow-lt" />
+                                    </svg>
+                                </button>
+                                <button href="#" class="data-tbl__nav-btn nav-btn" tabindex="51">
+                                    <svg class="nav-btn__img">
+                                        <use xlink:href="#arrow-rt" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <svg class="sprite">
+        <symbol id="icon-edit" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M18.6342 0.605251C17.8284 -0.20175 16.5149 -0.20175 15.7091 0.605251L15.2852 1.02211L19.0162 4.75249L19.3668 4.39976C19.775 3.99359 20 3.4538 20 2.87127C20 2.28873 19.775 1.74895 19.3721 1.34278L18.6342 0.605251Z" />
+            <path d="M13.4118 2.88729L17.1428 6.61765L18.2679 5.50068L14.5369 1.77032L13.4118 2.88729Z" />
+            <path d="M1.76871 14.4899L0 20L5.5102 18.2043L16.3946 7.36589L12.6635 3.63551L1.76871 14.4899Z" />
+        </symbol>
+        <symbol id="delete-icon" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.1872 1.47368H12.9091V1.43158C12.9091 0.631579 12.2674 0 11.4545 0H8.54545C7.73262 0 7.09091 0.631579 7.09091 1.43158V1.47368H2.81283C2.36364 1.47368 2 1.83158 2 2.27368V3.07368C2 3.51579 2.36364 3.87368 2.81283 3.87368H17.1872C17.6364 3.87368 18 3.51579 18 3.07368V2.27368C18 1.83158 17.6364 1.47368 17.1872 1.47368Z" />
+            <path
+                d="M16.1177 4.96841H3.88238C3.64708 4.96841 3.47596 5.15789 3.49735 5.38947L4.09628 17.5789C4.16045 18.9263 5.29414 20 6.66313 20H13.3155C14.6845 20 15.8182 18.9474 15.8824 17.5789L16.4813 5.38947C16.5241 5.17894 16.3316 4.96841 16.1177 4.96841ZM8.67382 16.7368C8.67382 17.1158 8.37435 17.4105 7.98933 17.4105C7.6043 17.4105 7.30484 17.1158 7.30484 16.7368V8.25262C7.30484 7.87368 7.6043 7.57894 7.98933 7.57894C8.37435 7.57894 8.67382 7.87368 8.67382 8.25262V16.7368ZM12.6952 16.7368C12.6952 17.1158 12.3957 17.4105 12.0107 17.4105C11.6257 17.4105 11.3262 17.1158 11.3262 16.7368V8.25262C11.3262 7.87368 11.6257 7.57894 12.0107 7.57894C12.3957 7.57894 12.6952 7.87368 12.6952 8.25262V16.7368Z" />
+        </symbol>
+        <symbol id="more-icon" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12.1951 10.1429C12.1951 11.3333 11.2195 12.2857 10 12.2857C8.78049 12.2857 7.80488 11.3333 7.80488 10.1429C7.80488 8.95238 8.78049 8 10 8C11.2195 8 12.1951 8.95238 12.1951 10.1429ZM17.8049 8C16.5854 8 15.6098 8.95238 15.6098 10.1429C15.6098 11.3333 16.5854 12.2857 17.8049 12.2857C19.0244 12.2857 20 11.3333 20 10.1429C20 8.95238 19.0244 8 17.8049 8ZM2.19512 8C0.97561 8 0 8.95238 0 10.1429C0 11.3333 0.97561 12.2857 2.19512 12.2857C3.41463 12.2857 4.39024 11.3333 4.39024 10.1429C4.39024 8.95238 3.41463 8 2.19512 8Z" />
+        </symbol>
+        <symbol id="arrow-lt" viewbox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M5.79971 1.10636C6.42812 0.51287 5.43313 -0.426818 4.80472 0.216126L0.196378 4.51891C-0.0654595 4.7662 -0.0654595 5.21131 0.196378 5.4586L4.80472 9.81084C5.43313 10.4043 6.42812 9.46464 5.79971 8.87115L1.71504 5.01348L5.79971 1.10636Z" />
+        </symbol>
+        <symbol id="arrow-rt" viewbox="0 0 6 10" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0.200293 1.10636C-0.428118 0.51287 0.566865 -0.426818 1.19528 0.216126L5.80362 4.51891C6.06546 4.7662 6.06546 5.21131 5.80362 5.4586L1.19528 9.81084C0.566865 10.4043 -0.428118 9.46464 0.200293 8.87115L4.28496 5.01348L0.200293 1.10636Z" />
+        </symbol>
+        <symbol id="triangle-down" viewbox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 5L0 0H8L4 5Z" />
+        </symbol>
+        <symbol id="sort" viewbox="0 0 8 11" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 11L0 6H8L4 11Z" />
+            <path d="M4 0L0 5H8L4 0Z" />
+        </symbol>
+        <symbol id="filter" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M14 18.5C14 17.6716 13.3284 17 12.5 17H7.5C6.67157 17 6 17.6716 6 18.5C6 19.3284 6.67157 20 7.5 20H12.5C13.3284 20 14 19.3284 14 18.5Z" />
+            <path
+                d="M17 11C17 9.89543 16.1046 9 15 9H5C3.89543 9 3 9.89543 3 11C3 12.1046 3.89543 13 5 13H15C16.1046 13 17 12.1046 17 11Z" />
+            <path
+                d="M0 2.5C0 3.88071 1.11929 5 2.5 5H17.5C18.8807 5 20 3.88071 20 2.5C20 1.11929 18.8807 0 17.5 0H2.5C1.11929 0 0 1.11929 0 2.5Z" />
+        </symbol>
+        <symbol id="search-icon" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M13.4097 14.8822C11.7399 16.1799 9.63851 16.7922 7.53338 16.5942C5.42824 16.3963 3.47766 15.403 2.07881 13.8166C0.679961 12.2303 -0.0619809 10.1701 0.00405863 8.05565C0.0700982 5.94118 0.939153 3.9314 2.43427 2.43552C3.92939 0.939633 5.93814 0.0701341 8.05152 0.00406071C10.1649 -0.0620127 12.224 0.680308 13.8096 2.07987C15.3951 3.47944 16.3879 5.43102 16.5857 7.53723C16.7836 9.64345 16.1717 11.7459 14.8745 13.4166L19.6936 18.2201C20.1016 18.6267 20.1022 19.2872 19.695 19.6946C19.2878 20.1021 18.6273 20.1017 18.2204 19.6939L13.4201 14.8822H13.4097ZM8.31916 14.5495C9.13773 14.5495 9.94829 14.3882 10.7045 14.0748C11.4608 13.7614 12.148 13.302 12.7268 12.7229C13.3056 12.1438 13.7647 11.4563 14.078 10.6996C14.3913 9.94298 14.5525 9.13201 14.5525 8.31302C14.5525 7.49403 14.3913 6.68306 14.078 5.92641C13.7647 5.16976 13.3056 4.48225 12.7268 3.90314C12.148 3.32402 11.4608 2.86465 10.7045 2.55123C9.94829 2.23782 9.13773 2.07651 8.31916 2.07651C6.66598 2.07651 5.08051 2.73356 3.91153 3.90314C2.74256 5.07271 2.08583 6.659 2.08583 8.31302C2.08583 9.96705 2.74256 11.5533 3.91153 12.7229C5.08051 13.8925 6.66598 14.5495 8.31916 14.5495Z" />
+        </symbol>
+        <symbol id="add-icon" viewbox="0 0 20 20" mlns="http://www.w3.org/2000/svg">
+            <path
+                d="M11 9H15V11H11V15H9V11H5V9H9V5H11V9ZM10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20ZM10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18Z" />
+        </symbol>
+    </svg>
+</body>
+
+</html>

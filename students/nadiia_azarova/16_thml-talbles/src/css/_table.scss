@@ -1,0 +1,429 @@
+$tbl-gap: 20px;
+
+.data-tbl {
+    background-color: $bg-color;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(75, 81, 91, 0.15);
+}
+
+.data-tbl__col {
+    &_auto {
+        width: auto;
+    }
+
+    &_150 {
+        width: 150px;
+    }
+
+    &_100 {
+        width: 100px;
+    }
+}
+
+
+.data-tbl__row {
+    position: relative;
+    box-shadow: 0 0 0 transparent;
+    background-color: transparent;
+    transition: all $animation;
+
+    &:hover {
+        box-shadow: $box-shadow;
+    }
+}
+
+.data-tbl__cell {
+    padding: 10px;
+
+    &:first-child {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(2) {
+        @extend %align-left;
+    }
+
+    &:nth-child(3) {
+        @extend %align-left;
+
+        p {
+            @extend %two-lines-elipsis;
+        }
+
+    }
+
+    &:nth-child(4) {
+        @extend %align-right;
+    }
+
+    &:nth-child(5) {
+        @extend %align-right;
+    }
+
+    &:nth-child(6) {
+        @extend %align-right;
+    }
+
+    &:nth-child(7) {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(8) {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(9) {
+        @extend %align-center;
+        @extend %valign-middle;
+    }
+
+    &:nth-child(10) {
+        @extend %align-center;
+        @extend %valign-middle;
+        padding-right: 30px;
+    }
+}
+
+.label {
+    cursor: pointer;
+
+    &__checkbox {
+        display: block;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        border: 1px solid $icon-stroke;
+        border-radius: 3px;
+        margin: 0 10px 0 20px;
+        line-height: 20px;
+        outline: 1px solid transparent;
+        outline-offset: -2px;
+        transition: all $animation;
+
+        .label:hover & {
+            outline-color: $primary-color;
+            border-color: $primary-color;
+        }
+
+        .data-tbl__row &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: transparent;
+            transition: box-shadow $animation;
+        }
+
+        &::after {
+            content: url('#{$img-path}checkbox.svg');
+            display: inline;
+            visibility: hidden;
+            opacity: 0;
+            transition: all $animation;
+        }
+    }
+}
+
+.data-tbl__p {
+    &_medium {
+        @extend %weight-500;
+    }
+
+    &_fs-s {
+        @extend %fs-s;
+    }
+
+    &_color-secondary {
+        color: $font-secondary-color;
+    }
+
+    &_color-negative {
+        color: $negative-color;
+    }
+
+    &_color-positive {
+        color: $positive-color;
+    }
+
+    &_color-neutral {
+        color: $font-secondary-color;
+    }
+}
+
+.data-tbl__status {
+    @extend %fs-xs;
+    @extend %all-caps;
+    @extend %weight-500;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0 25px;
+
+    &_active {
+        color: $bg-color;
+        background-color: $primary-color;
+
+        &::after {
+            content: 'Active';
+            display: inline;
+        }
+    }
+
+    &_paid {
+        color: $bg-color;
+        background-color: $positive-color;
+
+        &::after {
+            content: 'Paid';
+            display: inline;
+        }
+    }
+
+    &_open {
+        color: $warning-color;
+        border: 1px solid $warning-color;
+
+        &::after {
+            content: 'Open';
+            display: inline;
+        }
+    }
+
+    &_ordered {
+        color: $bg-color;
+        background-color: $positive-color;
+
+        &::after {
+            content: 'Ordered';
+            display: inline;
+        }
+    }
+
+    &_inactive {
+        color: $font-secondary-color;
+        border: 1px solid $font-secondary-color;
+
+        &::after {
+            content: 'Inactive';
+            display: inline;
+        }
+    }
+}
+
+.data-tbl__btn {
+    @extend %btn-reset;
+}
+
+.btn-action {
+    &__icon {
+        max-width: 20px;
+        max-height: 20px;
+        @include color-change(fill, $icon-stroke, $font-primary-color);
+    }
+}
+
+@include ckecked-row(row-1);
+@include ckecked-row(row-2);
+@include ckecked-row(row-3);
+@include ckecked-row(row-4);
+@include ckecked-row(row-5);
+@include ckecked-row(row-6);
+@include ckecked-row(row-7);
+@include ckecked-row(row-8);
+@include ckecked-row(row-9);
+@include ckecked-row(row-10);
+
+.checkbox[id="row-0"]:checked {
+    &~.data-tbl .data-tbl__row {
+        background-color: $selected-color;
+    }
+
+    &~.data-tbl label span {
+        background-color: $primary-color;
+        border-color: $primary-color;
+    }
+
+    &~.data-tbl label span::before {
+        background-color: $primary-color;
+    }
+
+    &~.data-tbl label span::after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.data-form,
+.checkbox {
+    @include visuality-hidden;
+
+}
+
+.data-tbl__foot-cell {
+    @extend %valign-middle,
+    %fs-s,
+    %weight-600,
+    %align-right;
+    padding: 15px 10px;
+    color: $font-secondary-color;
+
+    &:first-child {
+        @extend %align-left,
+        %all-caps,
+        %fs-xs;
+        padding-left: 30px;
+    }
+
+    &:last-child {
+        padding-right: 30px;
+    }
+
+    .data-tbl__foot-span_bold-fs-x {
+        @extend %fs-s;
+    }
+
+
+}
+
+.row-number {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-right: calc(8px + .3em);
+    padding-left: .5em;
+    appearance: none;
+    border: none;
+    color: inherit;
+    background-image: url('#{$img-path}triangle-down.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 8px 5px;
+}
+
+.nav-btn {
+    @extend %btn-reset;
+
+    &__img {
+        width: 6px;
+        height: 10px;
+        display: inline-block;
+        @extend %foot-btn;
+    }
+
+    &:first-child {
+        margin-right: 50px;
+    }
+}
+
+
+.data-tbl__head-cell {
+    @extend .data-tbl__cell;
+    @extend %valign-middle;
+    @extend %all-caps;
+    @extend %fs-s;
+    @extend %weight-600;
+    color: $font-secondary-color;
+
+    &:last-child {
+        @extend .data-tbl__cell,
+        :nth-child(10);
+    }
+
+    .data-tbl__head-row:first-child & {
+        padding-top: 30px;
+
+        &:last-child {
+            @extend %align-right;
+        }
+    }
+}
+
+.sort {
+    display: inline-block;
+    margin-left: 0.5em;
+
+    &__img {
+        width: 8px;
+        height: 11px;
+        position: relative;
+        top: 1px;
+        @include color-change(fill, $icon-stroke, $font-primary-color);
+    }
+}
+
+.filter {
+    display: block;
+
+    .filter__img {
+        width: 20px;
+        height: 20px;
+        @include color-change(fill, $primary-color, $btn-hover-color);
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
+.search-form {
+    background-color: $input-color;
+    border-radius: 4px;
+    width: 300px;
+    height: 40px;
+    position: relative;
+
+    &__btn {
+        @extend %btn-reset;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    &__input {
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 10px 10px 10px 40px;
+        font-weight: $body-font-weight;
+        font-size: $body-font-size;
+        color: $font-primary-color;
+    }
+
+    &__img {
+        width: 20px;
+        height: 20px;
+        @include color-change(fill, $icon-stroke, $icon-hover)
+    }
+}
+
+.add-btn {
+    @extend %btn-reset;
+    @include color-change(background-color, $primary-color, $btn-hover-color);
+    color: $bg-color;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: $body-font-size;
+
+    &__img {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        fill: $bg-color;
+    }
+
+    &__txt {
+        display: inline-block;
+        overflow: hidden;
+        line-height: 20px;
+    }
+}

@@ -1,0 +1,62 @@
+@mixin font-face ($font-family, $font-file, $font-weight: 400, $font-style: normal) {
+    @font-face {
+        font-family: $body-font;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        src: local(''),
+        url('#{$font-path}#{$font-file}.woff2') format('woff2'),
+        url('#{$font-path}#{$font-file}.woff') format('woff');
+    }
+}
+
+@mixin ckecked-row($row-number) {
+    .checkbox[id="#{$row-number}"]:checked {
+        &~.data-tbl .data-tbl__row_#{$row-number} {
+            background-color: $selected-color;
+        }
+
+        &~.data-tbl label[for="#{$row-number}"] span {
+            background-color: $primary-color;
+            border-color: $primary-color;
+        }
+
+        &~.data-tbl label[for="#{$row-number}"] span::before {
+            background-color: $primary-color;
+        }
+
+        &~.data-tbl label[for="#{$row-number}"] span::after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .checkbox[id="#{$row-number}"]:focus {
+        &~.data-tbl .data-tbl__row_#{$row-number} {
+            box-shadow: $box-shadow;
+        }
+    }
+}
+
+@mixin visuality-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin weight-500 {
+    font-weight: 500;
+}
+
+@mixin color-change($definition, $base-color, $hover-color) {
+    #{$definition}: #{$base-color};
+    transition: $definition $animation;
+
+    &:hover {
+        #{$definition}: #{$hover-color};
+    }
+}

@@ -1,0 +1,97 @@
+// Colors
+$font-primary-color: #2E3B52;
+$font-secondary-color: #606F89;
+$stripes-color: #F4F7FC;
+$input-color: #DAE1EC;
+$selected-color: #EBF2FF;
+$parent-bg-color: #DAE1EC;
+$bg-color: #FFFFFF;
+$primary-color: #0A65FF;
+$btn-hover-color: #0052DB;
+$positive-color: #008400;
+$negative-color: #E01A1A;
+$infor-color: #0276BA;
+$warning-color: #BA5300;
+$icon-stroke: #7D90B2;
+$icon-hover: #6F809E;
+
+
+$body-bg-color: $parent-bg-color;
+
+// Container & Grid
+$container-width: 1020px;
+$grid-gap: 15px;
+
+// Pathes
+$font-path: '../fonts/';
+$img-path: '../images/';
+
+// Font Stacks
+$humanist: "Myriad Pro",
+Seravek,
+Ember,
+"Trebuchet MS",
+"BN Trebuchet MS",
+"PT Sans",
+"Frutiger Neue",
+Roboto,
+sans-serif;
+$geometric: Futura,
+"Century Gothic",
+"Apple SD Gothic Neo",
+AppleGothic,
+sans-serif;
+
+$oldstyle: "Minion Pro",
+"Iowan Old Style",
+Palatino,
+"Palatino Linotype",
+"Palatino Nova",
+"BN Amasis",
+Cambria,
+FreeSerif,
+"Times New Roman",
+serif;
+
+$modern: Athelas,
+Literata,
+Bookerly,
+"Merriweather Serif",
+Malabar,
+"BN Malabar",
+Georgia,
+"Droid Serif",
+serif;
+
+$monospace: Consolas,
+"Andale Mono WT",
+"Andale Mono",
+"Lucida Console",
+"Lucida Sans Typewriter",
+"DejaVu Sans Mono",
+"Bitstream Vera Sans Mono",
+"Liberation Mono",
+"Nimbus Mono L",
+Monaco,
+"Courier New",
+Courier,
+monospace;
+
+// Fonts
+$body-font: 'Iris';
+$file-regular: inter-v7-latin-regular;
+$file-500: inter-v7-latin-500;
+$file-600: inter-v7-latin-600;
+
+// Typography
+$body-font-size: 14px;
+$body-line-height: 1.2;
+$body-font-weight: 400;
+$fs-s: 12px;
+$fs-xs: 10px;
+
+// Animation
+$animation: .5s ease-in-out;
+
+// Box shodow
+$box-shadow: 0px 0px 6px rgba(40, 67, 115, 0.6);

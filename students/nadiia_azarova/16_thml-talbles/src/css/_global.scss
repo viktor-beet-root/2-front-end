@@ -1,0 +1,28 @@
+@include font-face($body-font, $file-regular);
+@include font-face($body-font, $file-500, 500);
+@include font-face($body-font, $file-600, 600);
+
+html {
+    height: 100%;
+}
+
+.page {
+    min-height: 100%;
+    font-family: #{$body-font},
+    #{$humanist};
+    font-size: $body-font-size;
+    font-weight: $body-font-weight;
+    font-style: normal;
+    line-height: $body-line-height;
+    color: $font-primary-color;
+    background-color: $body-bg-color;
+}
+
+.sprite {
+    @include visuality-hidden;
+}
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

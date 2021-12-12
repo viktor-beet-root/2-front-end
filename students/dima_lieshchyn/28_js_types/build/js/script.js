@@ -11,39 +11,42 @@ console.log(resultFloat); //2. Виконай додавання рядка "1" 
 
 var firstString = "1";
 var secondInt = 2;
-var resultStrInt = parseInt(firstString + secondInt);
+var resultStrInt = Number(firstString) + secondInt;
 console.log(resultStrInt); //3. Користувач вказує обсяг флешки в Гб. Програма повинна порахувати скільки файлів розміром в 820 Мб поміщається на флешку.
-//let userGB = prompt('Enter capasity of your flash in GB');
-// const FileSize = 820;
-// const mbAmount = 1024;
-// let filesResult = parseInt((userGB * mbAmount) / FileSize);
-//alert(filesResult + ' files');
-// --Норма--
+
+var userGB = prompt('Enter capasity of your flash in GB');
+var FileSize = 820;
+var mbAmount = 1024;
+var filesResult = parseInt(userGB * mbAmount / FileSize);
+console.log(filesResult + ' files'); // --Норма--
 //1. Користувач вводить суму грошей в гаманці і ціну однієї шоколадки.
 //Програма виводить скільки шоколадок може купити користувач і скільки здачі у нього залишиться.
-// let userMoneyAmount = prompt('Enter money amount');
-// let userChocolatePrice = prompt('Enter price for one chocolate');
-// let resultChocolate = parseInt(userMoneyAmount / userChocolatePrice);
-// let resultMoneyChange = parseInt(userMoneyAmount % userChocolatePrice);
-// alert('You can buy ' + resultChocolate + 'chocolates and your money change is ' + resultMoneyChange + ' griven');
-//2. Запитай у користувача тризначне число і виведи його задом наперед.
+
+var userMoneyAmount = +prompt('Enter money amount');
+var userChocolatePrice = +prompt('Enter price for one chocolate');
+var resultChocolate = parseInt(userMoneyAmount / userChocolatePrice);
+var resultMoneyChange = parseInt(userMoneyAmount % userChocolatePrice);
+console.log('You can buy ' + resultChocolate + ' chocolates and your money change is ' + resultMoneyChange + ' griven'); //2. Запитай у користувача тризначне число і виведи його задом наперед.
 //Для вирішення завдання тобі знадобиться оператор% (залишок від ділення).
-// let userNumber = prompt('Enter three-digit number');
-// const TEN = 10;
-// const Hundred = 100;
-// let resultReverse = ((userNumber % TEN) * Hundred) + (userNumber % Hundred - userNumber % TEN) + (userNumber - userNumber % Hundred)/Hundred;
-// alert(resultReverse);
-// --Максимум--
+
+var userNumber = +prompt('Enter three-digit number');
+var TEN = 10;
+var Hundred = 100;
+var resultReverse = userNumber % TEN * Hundred + (userNumber % Hundred - userNumber % TEN) + (userNumber - userNumber % Hundred) / Hundred;
+console.log(resultReverse); // --Максимум--
 //1. Користувач вводить суму вкладу в банк на 2 місяці,
 //з процентною ставкою депозиту 5% річних. Вивести суму нарахованих відсотків.
-// let userMoney = prompt('Enter money amount to deposit');
-// const month = 12;
-// const currentMonth = 2;
-// const percents = 0.05;
-// let resultPercents = parseInt((userMoney * percents) / month * currentMonth);
-// console.log(resultPercents);  
-//Що повернуть вираження:
+
+var userMoney = +prompt('Enter money amount to deposit');
+var month = 12;
+var currentMonth = 2;
+var percents = 0.05;
+var resultPercents = parseInt(userMoney * percents / month * currentMonth);
+console.log(resultPercents + ' griven'); //Що повернуть вираження:
 // 2 && 0 && 3
 
-console.log(2 && 0 || 3); // 2 || 0 || 3
-// 2 && 0 || 3
+console.log('Ноль'); // 2 || 0 || 3
+
+console.log('Два'); // 2 && 0 || 3
+
+console.log('Три');

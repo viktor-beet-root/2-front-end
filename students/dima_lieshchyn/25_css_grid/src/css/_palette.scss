@@ -1,0 +1,116 @@
+.page {
+    display: grid;
+    grid-template-columns: $default-gap repeat(6, 1fr) $default-gap;
+    grid-template-rows: repeat(10, 30.5px) repeat(2, 1fr);
+    gap: 30px;
+    padding: $default-gap;
+
+
+}
+
+.palette__item {
+    transform: rotate(0);
+
+    &:hover {
+        box-shadow: 2px 3px 22px 7px rgba(0, 0, 0, 0.75);
+        transition: box-shadow .5s ease-in-out;
+        filter: saturate(548%);
+        transform: rotate(180deg);
+        transition: transform 1s ease-in-out;
+    }
+}
+
+.item {
+    &_1 {
+        background-color: $color-violet;
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 3;
+    }
+
+    &_2 {
+        background-color: $color-deep-purple;
+        grid-column: 2 / span 2;
+        grid-row: 4 / span 3;
+    }
+
+    &_3 {
+        background-color: $color-purple;
+        grid-column: 4 / span 2;
+        grid-row: 1 / span 6;
+    }
+
+    &_4 {
+        background-color: $color-black-v1;
+        grid-column: 6 / span 2;
+        grid-row: 1 / span 2;
+    }
+
+    &_5 {
+        background-color: $color-green;
+        grid-column: 6 / span 2;
+        grid-row: 3 / span 2;
+    }
+
+    &_6 {
+        background-color: $color-magenta;
+        grid-column: 6 / span 2;
+        grid-row: 5 / span 2;
+    }
+
+    &_7 {
+        background-color: $color-cyan-green;
+        grid-column: 2 / span 2;
+        grid-row: 7 / span 4;
+    }
+
+    &_8 {
+        background-color: $color-grey-green;
+        grid-column: 4 / span 1;
+        grid-row: 7 / span 2;
+    }
+
+    &_9 {
+        background-color: $color-violet;
+        grid-column: 4 / span 1;
+        grid-row: 9 / span 2;
+    }
+
+    &_10 {
+        background-color: $color-light-green;
+        grid-column: 5 / span 2;
+        grid-row: 7 / span 4;
+    }
+
+    &_11 {
+        background-color: $color-black-v2;
+        grid-column: 7 / span 1;
+        grid-row: 7 / span 4;
+    }
+}
+
+.info {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        background-color: $color-base-green;
+        grid-column: 1 / span 8;
+        grid-row: 11 / span 1;
+    }
+
+    &__title {
+        font-family: $additional-font;
+        font-size: 64px;
+        text-transform: uppercase;
+        padding: 10px;
+    }
+
+    &__text-wrapper {
+        padding-top: 10px;
+        grid-column: 1 / span 5;
+        grid-row: 12 / span 1;
+    }
+
+    &__description {
+        padding-bottom: 5px;
+    }
+}

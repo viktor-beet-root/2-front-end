@@ -1,0 +1,16 @@
+@include font-face($main-font-name, 'roboto-v29-latin-regular');
+@include font-face($additional-font-name, 'HelveticaNeueCyr-Bold', 700);
+@include grid();
+
+.page {
+    font-family: $main-font;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}

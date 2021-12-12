@@ -1,0 +1,46 @@
+$white-color: #fff;
+
+$color-violet:#ADA7C9;
+$color-purple:#EAC4D5;
+$color-deep-purple:#D7B9D5;
+$color-black-v1:#1D3236;
+$color-black-v2:#2F323A;
+$color-green:#89B6A5;
+$color-magenta:#4C3B4D;
+$color-cyan-green:#729EA1;
+$color-grey-green:#93A8AC;
+$color-light-green:#BAD4AA;
+$color-base-green:#9BC1BC;
+
+$border-color: #000;
+
+$default-border: 1px solid $border-color;
+
+$container-width: 1110px;
+$default-gap: 15px;
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Roboto';
+$additional-font-name: 'Helvetica Neue';
+$path-fonts: '../fonts/';
+
+$main-font: $main-font-name,
+$font-follback;
+$additional-font:$additional-font-name,
+$font-follback;
+$base-font-size: 36px;
+$base-line-height: 1.5;
+$base-font-weight: 400;
+
+$form-border-radius: 5px;
+$form-border: $default-border;
+$form-padding: 0 10px;
+$textarea-padding: 10px;
+$form-input-height: 50px;
+
+$beack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

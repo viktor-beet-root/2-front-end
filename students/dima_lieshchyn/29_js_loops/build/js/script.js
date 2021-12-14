@@ -95,10 +95,8 @@ var result = null;
 while (tempFirst != 0 && tempSecond != 0) {
   if (tempFirst > tempSecond) {
     tempFirst = tempFirst % tempSecond;
-    console.log(tempFirst);
   } else {
     tempSecond = tempSecond % tempFirst;
-    console.log(tempSecond);
   }
 }
 
@@ -194,7 +192,8 @@ for (var _i2 = 0; _i2 < maxNumbers; _i2++) {
   }
 }
 
-console.log('Додатніх: ' + positiv + '\nВід`ємних: ' + negativ + '\nНулів: ' + countZero + '\nПарних: ' + countPaired + '\nНепарних: ' + countUnpaired); //4.Зацикли висновок днів тижня таким чином: «День тижня.
+var resultat = 'Додатніх: ' + positiv + '\nВід`ємних: ' + negativ + '\nНулів: ' + countZero + '\nПарних: ' + countPaired + '\nНепарних: ' + countUnpaired;
+console.log(resultat); //4.Зацикли висновок днів тижня таким чином: «День тижня.
 //Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
 
 var dayOfWeek = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота', 'Неділя'];
@@ -202,7 +201,7 @@ var tempZero = 0;
 var userDay = '';
 
 while (true) {
-  userDay = confirm(dayOfWeek[temp] + ". Хочеш побачити наступний день?");
+  userDay = confirm(dayOfWeek[tempZero] + ". Хочеш побачити наступний день?");
   tempZero++;
 
   if (tempZero > 6) {

@@ -80,10 +80,8 @@ let result = null;
 while (tempFirst != 0 && tempSecond != 0) {
     if (tempFirst > tempSecond) {
         tempFirst = tempFirst % tempSecond;
-        console.log(tempFirst);
     } else {
         tempSecond = tempSecond % tempFirst;
-        console.log(tempSecond);
     }
 }
 result = tempFirst + tempSecond;
@@ -126,9 +124,9 @@ if (fiveDigits <= 100000 && fiveDigits > 10001) {
 //2. від 300 до 500 - 5%;
 //3. від 500 і вище - 7%.
 const userPrice = +prompt('Введіть суму покупки');
-let twoH = 200;
-let threeH = 300;
-let fiveH = 500;
+const twoH = 200;
+const threeH = 300;
+const fiveH = 500;
 let priceResult = null;
 if (userPrice >= twoH) {
     if (userPrice >= twoH && userPrice < threeH + 1) {
@@ -175,8 +173,9 @@ for (let i = 0; i < maxNumbers; i++) {
         countZero++;
     }
 }
-console.log('Додатніх: ' + positiv + '\nВід`ємних: ' + negativ +
-    '\nНулів: ' + countZero + '\nПарних: ' + countPaired + '\nНепарних: ' + countUnpaired);
+const resultat = 'Додатніх: ' + positiv + '\nВід`ємних: ' + negativ +
+    '\nНулів: ' + countZero + '\nПарних: ' + countPaired + '\nНепарних: ' + countUnpaired
+console.log(resultat);
 
 //4.Зацикли висновок днів тижня таким чином: «День тижня.
 //Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.

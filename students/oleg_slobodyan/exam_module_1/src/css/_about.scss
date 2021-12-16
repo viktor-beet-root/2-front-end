@@ -1,0 +1,107 @@
+.about {
+    &__title {
+        font-family: $main-font-title;
+        font-size: 66px;
+        font-weight: normal;
+        font-style: normal;
+        margin: 0;
+        margin-bottom: 12px;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1.2;
+
+        @include media('sm') {
+            font-size: 35px;
+        }
+
+        &_color {
+            color: $primery-grey;
+            font-size: 40px;
+        }
+    }
+
+    .text {
+        margin-bottom: 33px;
+    }
+
+    &__subtitle {
+        font-weight: 300;
+        position: relative;
+        margin-bottom: 81px;
+        margin-top: 10px;
+
+        @include media('xs') {
+            margin-bottom: 40px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 82px;
+            border-bottom: 1px solid #85BBB1;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -44px;
+
+            @include media('xs') {
+                bottom: -25px;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+
+            &::after {
+                content: unset;
+            }
+
+        }
+
+    }
+
+    &__info {
+        width: 761px;
+        padding: 42px 20px 42px 0;
+        background-color: rgba(255, 255, 255, .9);
+        position: relative;
+        right: calc(-67% - 18px);
+        box-sizing: border-box;
+
+
+        @include media('lg') {
+            right: calc(-36% - 18px);
+        }
+
+        @include media('md') {
+            right: calc(-16% - 18px);
+            width: 132%;
+        }
+
+        @include media('sm') {
+            right: unset;
+            width: 100%;
+        }
+
+        @include media('xs') {
+            padding: 0 0 30px 0;
+        }
+    }
+}
+
+.about-wrapper__bg {
+    padding: 51px 0;
+    background-image: url(../images/about-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include media('sm') {
+        padding: 0;
+    }
+}
+
+.about__pad {
+    @include media('xs') {
+        padding: 0 15px;
+    }
+}

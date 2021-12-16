@@ -1,0 +1,213 @@
+.exchange-form {
+    position: absolute;
+    background-color: #161926;
+    padding: 20px 23px 16px 19px;
+    color: rgba(255, 255, 255, .3);
+    background: #161926;
+    box-shadow: 0px 8px 12px rgba(38, 42, 63, 0.24), 0px 32px 64px rgba(38, 42, 63, 0.24);
+    border-radius: 12px;
+    left: 90px;
+    top: 50%;
+    z-index: 1;
+
+    @include media('md') {
+        left: 6%;
+    }
+
+    @include media('sm') {
+        left: unset;
+        right: 15px;
+        top: 239px;
+    }
+
+    @include mob-media('xs') {
+
+        transform: translateY(-50%);
+    }
+
+    @include media('xs') {
+        position: static;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+
+    &__currency {
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.71;
+        display: flex;
+        align-items: center;
+        margin-bottom: 14px;
+    }
+
+    &__img {
+        margin-left: 6px;
+
+
+    }
+
+    &-rate {
+        padding: 10px 0 10px;
+        border-top: 2px solid rgba(255, 255, 255, .1);
+        border-bottom: 2px solid rgba(255, 255, 255, .1);
+        margin-bottom: 10px;
+    }
+
+    &__arrow {
+        margin: 0 13px;
+    }
+
+
+    &__title {
+        font-size: 12px;
+        line-height: 2;
+        margin: 0;
+    }
+
+
+    &__pay {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+
+    &__receive {
+        display: inline-block;
+    }
+
+
+    &__fees {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3px;
+    }
+}
+
+.exchange-form-rate {
+
+    &__int {
+        color: rgba(255, 255, 255, .7);
+        font-size: 20px;
+        margin-left: 10px;
+        font-weight: 600;
+    }
+
+
+    &__float {
+        color: rgba(255, 255, 255, .9);
+        font-size: 56px;
+        line-height: 0.22;
+        margin-left: 6px;
+        font-weight: bold;
+    }
+}
+
+.exchange-input-pay,
+.exchange-input-receive {
+    width: 80px;
+    height: 25px;
+    background: rgba(255, 255, 255, .1);
+    display: block;
+    border-radius: 4px;
+    border: none;
+    position: relative;
+    font-size: 14px;
+    color: #fff;
+    padding-left: 10px;
+    margin-bottom: 21px;
+
+
+}
+
+.exchange-form-fees {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.exchange-input-wrapper {
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: .4;
+    }
+}
+
+.exchange-input-wrapper_pay {
+    &::after {
+        background-image: url('../images/bitcoin-icon.svg');
+    }
+}
+
+.exchange-input-wrapper_receive {
+    &::after {
+        background-image: url('../images/tcoin-icon.svg');
+    }
+}
+
+.exchange-input-fees {
+    width: 41px;
+    height: 14px;
+    border: none;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.exchange-form-radio {
+    @include visuality-hidden;
+
+    &:checked+.exchange-form-label {
+        &::before {
+            content: '';
+        }
+
+        &::after {
+            content: '';
+        }
+    }
+}
+
+.exchange-form-label {
+    position: relative;
+    padding: 0 8px;
+    margin-left: 16px;
+    cursor: pointer;
+
+    &::before {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        position: absolute;
+        left: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+    &::after {
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+        background: #fff;
+        position: absolute;
+        border-radius: 50%;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

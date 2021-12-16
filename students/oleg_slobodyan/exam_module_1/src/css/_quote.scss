@@ -1,0 +1,78 @@
+.quote {
+
+
+    &__text {
+        font-size: 32px;
+        font-weight: normal;
+        margin: 0 0 37px 0;
+        letter-spacing: 1.3px;
+
+        @include media('sm') {
+            font-size: 27px;
+        }
+    }
+
+
+    &__signature {
+        font-family: $main-font-title;
+        font-size: 20px;
+        font-weight: normal;
+        font-style: italic;
+        margin-bottom: 0;
+        letter-spacing: 1.4px;
+
+        @include media('sm') {
+            font-size: 18px;
+        }
+    }
+
+
+    &__img {
+        position: absolute;
+        top: -32px;
+        left: -62px;
+        background-image: url(../images/quote-icon.png);
+        height: 84px;
+        width: 102px;
+
+        @include media('sm') {
+            font-size: 18px;
+            top: -42px;
+            left: -42px;
+        }
+
+        @include media('xs') {
+
+            top: -42px;
+            left: 0px;
+        }
+    }
+}
+
+.quote-wrapper {
+    &__bg {
+        background-image: url(../images/quote-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        padding: 98px 0;
+
+        @include media('xs') {
+            padding: 50px 0;
+        }
+    }
+
+    &__margin {
+        position: relative;
+        margin-left: 129px;
+        max-width: 710px;
+
+        @include media('md') {
+            margin-left: 12%;
+        }
+
+        @include media('xs') {
+            margin: 0 15px;
+        }
+    }
+}

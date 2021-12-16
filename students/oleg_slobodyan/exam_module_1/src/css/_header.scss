@@ -1,0 +1,250 @@
+.header {
+    padding: 24px 0;
+
+    z-index: 9999999;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.244636) 24.1%, rgba(255, 255, 255, 0) 47.19%),
+            rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(9px);
+        z-index: -1;
+    }
+
+    @include media('sm') {
+        padding: 12px 0;
+    }
+
+    &__conteiner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo {
+
+    &__link {
+        display: block;
+    }
+
+    &__img {
+        display: block;
+    }
+}
+
+.menu-wrapper {
+    @include media('sm') {
+        position: fixed;
+        z-index: 99;
+        padding: 30px 20px 20px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 56px;
+        background-color: rgba(0, 0, 0, .9);
+        transition: transform .5s ease-out;
+        transform: translateX(-100%);
+    }
+}
+
+.humbeurger-lable-btn {
+    @include mob-media('sm') {
+        display: none;
+    }
+
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.humbeurger__line {
+    height: 4px;
+    width: 24px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    transition: background-color .5s ease-in-out;
+
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        border-radius: 5px;
+        transition: transform .5s ease-in-out;
+    }
+
+    &::before {
+        top: 7px;
+    }
+
+    &::after {
+        top: -7px;
+    }
+}
+
+.humbeurger-input-btn {
+    @include visuality-hidden;
+
+    &:checked {
+        &~.menu-wrapper {
+            transform: translateY(0);
+        }
+
+        &+.humbeurger-lable-btn .humbeurger__line {
+            background-color: transparent;
+        }
+
+        &+.humbeurger-lable-btn .humbeurger__line::before {
+            transform: translateY(-7px) rotate(45deg);
+            transform-origin: center;
+        }
+
+        &+.humbeurger-lable-btn .humbeurger__line::after {
+            transform: translateY(7px) rotate(-45deg);
+            transform-origin: center;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include media('sm') {
+        flex-direction: column;
+    }
+
+    @include mob-media('sm') {
+
+        align-items: center;
+    }
+
+
+    &__item {
+        margin-right: 34px;
+
+        @include media('sm') {
+            margin-right: 0px;
+            margin-bottom: 10px;
+
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            & .menu__link::after {
+                content: unset;
+            }
+        }
+    }
+
+    &__link {
+        color: $text-color;
+        font-size: 14px;
+        display: inline-block;
+        font-weight: 400;
+        transition: all .5s ease-in-out;
+        position: relative;
+        display: block;
+        letter-spacing: .9px;
+
+        @include media('sm') {
+            color: #fff;
+            font-size: 20px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 3px;
+            height: 1px;
+            background-color: $text-color;
+            transition: all .5s ease-in-out;
+            transform-origin: center;
+            bottom: -2px;
+            left: 50%;
+            visibility: hidden;
+        }
+
+
+        @include mob-media('sm') {
+            &:hover {
+                color: $text-color;
+
+                &::after {
+                    width: 100%;
+                    visibility: visible;
+                    left: 0;
+                }
+
+            }
+        }
+
+
+    }
+}
+
+.label-theme-btn {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    display: block;
+    // background: url(../images/icon-moon.svg) no-repeat center;
+    background-color: #8f949d;
+    transition: background-color .4s ease-in-out;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(../images/icon-moon.svg) no-repeat center;
+        transition: transform .4s ease-in-out;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(../images/sun-icon.png) no-repeat center;
+        transform: translateY(31px);
+        transition: transform .4s ease-in-out;
+    }
+
+    @include media('sm') {
+        position: absolute;
+        right: 0;
+        top: -320px;
+    }
+
+    &:hover {
+        background-color: #83858d;
+    }
+}

@@ -1,0 +1,12 @@
+.header {
+    padding: 35px 0 30px;
+    position: relative;
+    border-bottom: $border-color;
+
+    position: relative;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+}

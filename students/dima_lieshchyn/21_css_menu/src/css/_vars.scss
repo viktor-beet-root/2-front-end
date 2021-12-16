@@ -1,0 +1,40 @@
+//colors
+$color-orange-dark:#2F281E;
+$color-orange: #FF9900;
+$color-gray: #BCD0E5;
+$color-light-yellow:#fff4ec;
+$color-white: #fff;
+$color-dark-blue:#173A56;
+//additional colors
+$color-violet:#7752BE;
+$color-orange-v2:#FAB005;
+$color-red:#F03E3D;
+$color-blue:#4DADF7;
+$color-brown: #544837;
+
+$border-color: 1px solid $color-gray;
+
+$container-width: 1110px;
+
+$default-gap: 15px;
+
+$default-box-sizing: border-box;
+
+$path-img: '../images/';
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Popins';
+$path-fonts: '../fonts/';
+$main-font: $main-font-name,
+$font-follback;
+
+$base-font-size: 16px;
+$base-font-weight: 500;
+$default-line-height: 1.625;
+
+$beack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

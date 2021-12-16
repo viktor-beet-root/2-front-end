@@ -1,0 +1,128 @@
+.footer {
+    padding-bottom: 83px;
+
+    &__container {
+        border-top: $border-color;
+        padding: 0;
+    }
+
+
+}
+
+.footer-block {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    @include media('lg') {
+        justify-content: center;
+
+    }
+
+    @include media('xs') {
+        flex-wrap: wrap;
+        display: block;
+        text-align: center;
+    }
+
+    &,
+    &__footer-menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        box-sizing: $default-box-sizing;
+        line-height: 35px;
+
+        @include media('xs') {
+            padding-top: 5px;
+        }
+    }
+
+    &__item {
+        padding-top: 100px;
+        display: flex;
+        align-items: flex-end;
+
+        @include media('sm') {
+            padding-top: $default-gap*2;
+        }
+
+        @include media('lg') {
+            justify-content: center;
+        }
+
+        @include media('xs') {
+            padding-top: $default-gap;
+
+            &:nth-child(1) {
+                padding-top: $default-gap*2;
+            }
+        }
+    }
+
+    &__footer-menu {
+        padding-top: 67px;
+
+        @include media('sm') {
+            flex-grow: 2;
+        }
+
+        @include media('xs') {
+            padding-top: $default-gap;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__btn {
+        border: none;
+        min-width: 131px;
+        margin-top: 21px;
+    }
+
+    &__link {
+        color: $color-white;
+    }
+
+    &__search-area {
+        width: 325px;
+        height: 48px;
+        border: $border-color;
+        border-radius: 4px;
+    }
+}
+
+.logo_footer {
+    align-self: flex-start;
+
+    @include media('sm') {
+        position: absolute;
+        top: $default-gap*2;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+}
+
+.footer-menu__link {
+    font-weight: 400;
+    color: $color-brown;
+}
+
+
+.footer-block__footer-menu,
+.form {
+    align-items: flex-end;
+}
+
+.p_zero {
+    @include media ('sm') {
+        padding: 0;
+        width: 0;
+        overflow: hidden;
+    }
+}

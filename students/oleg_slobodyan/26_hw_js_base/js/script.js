@@ -15,13 +15,14 @@ const personSurname = "Пупкін";
 
 // 4. Які стилі написання імен змінних ти знаєш?
 // 1 camelCase
-// 2 person_name - кебаб кейс
+// 2 person_name - снейк_кейс
 
 
 // Норма
 //  1. Запитай ім’я користувача та виведи у відповідь “Привіт, *ім’я*”;
 const personName = prompt("Введіть ваше Ім'я:");
-console.log("Привіт " + personName + "!");
+const personHi = "Привіт " + personName + "!";
+console.log(personHi);
 // 2. Запитай рік народження користувача, порахуй його/її вік і виведи результат. Поточний рік вкажи в коді як константу;
 const personBirthYear = prompt("Введіть рік вашого народження:");
 const curentYear = 2021;

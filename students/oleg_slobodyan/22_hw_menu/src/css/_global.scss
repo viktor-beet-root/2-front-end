@@ -1,35 +1,5 @@
-@include font-face($main-font-name, 'rubik-v14-latin-regular');
-@include font-face($main-font-name, 'rubik-v14-latin-700', 700);
-@include grid();
-
-.sprite {
-    @include visuality-hidden;
-}
-
-.main-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 50px;
-    font-weight: 700;
-}
-
-.title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 150px;
-
-    @media screen and (max-width: 992px) {
-        font-size: 100px;
-    }
-
-}
-
 .container {
     max-width: $container-width;
     margin: 0 auto;
     padding: 0 $default-gap;
-}
-
-.header {
-    border-bottom: 1px solid gray;
 }

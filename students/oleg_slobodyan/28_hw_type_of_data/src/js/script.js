@@ -2,7 +2,7 @@
 // 1. Виконай додавання 0,1 і 0,2 добийся математично правильної відповіді.
 const num1 = 0.1;
 const num2 = 0.2;
-const result = (num1 + num2).toFixed(1);
+const result = (num1 * 10 + num2 * 10) / 10;
 console.log(result);
 
 // 2. Виконай додавання рядка "1" і цифри 2 (обидві операнди повинні бути в змінних), добийся математично правильної відповіді.
@@ -24,8 +24,8 @@ const personMoney = +prompt("Вкажіть Вашу суму грошей в г
 const personPrice = +prompt("Вкажіть ціну шоколадки: ");
 const amountChoclade = parseInt(personMoney / personPrice);
 const restMoney = personMoney - personPrice * amountChoclade
-console.log(amountChoclade); // - кількість шоколадок
-console.log(restMoney); //-здача
+const resConcat = "Ви можете придбати " + amountChoclade + " шоколадок. Ваша здача " + restMoney;
+console.log(resConcat);
 
 // 2. Запитай у користувача тризначне число і виведи його задом наперед. Для вирішення завдання тобі знадобиться оператор% (залишок від ділення).
 const personNumber = +prompt("Вкажіть тризначне число: ");

@@ -1,0 +1,1 @@
+https://teddi90.github.io/2-front-end/students/oleg_slobodyan/28_hw_type_of_data/build/

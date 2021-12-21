@@ -1,24 +1,21 @@
 // --Мінімум--
 
-//1.Запитай у користувача його вік і визначи, ким він є: дитиною (0-2),
-//підлітком (12-18), дорослим (18_60) або пенсіонером (60 ...),
+//1.Запитай у користувача його вік і визначи, ким він є: дитиною (0-11),
+//підлітком (12-17), дорослим (18-59) або пенсіонером (60 ...),
 //передбач можливість введення невірних даних.
 const userAge = +prompt('Enter your age');
-const maxAge = 125;
-//http://cgon.rospotrebnadzor.ru/content/62/140 - ссылка на максимальный возраст:)
 let ageResult = '';
+
 if (userAge >= 0 && userAge < 3) {
     ageResult = 'Дитина';
-} else if (userAge >= 12 && userAge < 19) {
+} else if (userAge >= 12 && userAge < 18) {
     ageResult = 'Підліток';
-} else if (userAge >= 18 && userAge < 61) {
+} else if (userAge >= 18 && userAge < 60) {
     ageResult = 'Дорослий';
-} else if (userAge >= 61 && userAge < maxAge + 1) {
+} else if (userAge >= 61) {
     ageResult = 'Пенсіонер';
-} else if (userAge < 0 || userAge > maxAge) {
+} else if (userAge < 0) {
     ageResult = 'Неверный ввод';
-} else if (userAge >= 3 && userAge < 11) {
-    ageResult = 'Щось поміж дитиною та підлітком:)';
 } else {
     ageResult = 'Введите цифры';
 }
@@ -60,7 +57,7 @@ switch (userNum) {
         console.log('(');
         break;
     default:
-        console.log('Невірний ввод');
+        console.error('Невірний ввод');
 }
 
 //3.Підрахуй суму всіх чисел в заданому користувачем діапазоні.
@@ -77,7 +74,7 @@ const userSNum = +prompt('Введіть друге число');
 let tempFirst = userFNum;
 let tempSecond = userSNum;
 let result = null;
-while (tempFirst != 0 && tempSecond != 0) {
+while (tempFirst !== 0 && tempSecond !== 0) {
     if (tempFirst > tempSecond) {
         tempFirst = tempFirst % tempSecond;
     } else {
@@ -105,7 +102,7 @@ let firstNum = null;
 let secondNum = null;
 let fourNum = null;
 let fiveNum = null;
-if (fiveDigits <= 100000 && fiveDigits > 10001) {
+if (fiveDigits <= 100000 && fiveDigits > 9999) {
     firstNum = fiveDigits / 10000;
     secondNum = (fiveDigits / 1000) % 10;
     fourNum = (fiveDigits / 10) % 10;
@@ -117,7 +114,7 @@ if (fiveDigits <= 100000 && fiveDigits > 10001) {
         console.log('Число не паліндром');
     }
 } else {
-    console.log('Число не п`ятизначне');
+    console.error('Число не п`ятизначне');
 }
 //2.Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
 //1. від 200 до 300 - знижка буде 3%;
@@ -135,9 +132,9 @@ if (userPrice >= twoH) {
         priceResult = userPrice - (userPrice * 5 / 100);
     } else if (userPrice > fiveH) {
         priceResult = userPrice - (userPrice * 7 / 100);
+    } else {
+        priceResult = userPrice;
     }
-} else {
-    console.log('Ваша сума менша за 200');
 }
 console.log(priceResult);
 
@@ -153,25 +150,12 @@ let countPaired = 0;
 let countUnpaired = 0;
 for (let i = 0; i < maxNumbers; i++) {
     tenNumbers = prompt('Введіть ' + (i + 1) + ' число');
-    if (tenNumbers > 0) {
-        if (tenNumbers % 2 == 0) {
-            countPaired++;
-            positiv++;
-        } else if (tenNumbers % 2 !== 0) {
-            countUnpaired++;
-            positiv++;
-        }
-    } else if (tenNumbers < 0) {
-        if (tenNumbers % 2 == 0) {
-            countPaired++;
-            negativ++;
-        } else if (tenNumbers % 2 !== 0) {
-            countUnpaired++;
-            negativ++;
-        }
-    } else {
-        countZero++;
-    }
+    console.log(tenNumbers)
+    if (tenNumbers === '0') countZero++;
+    if (tenNumbers % 2 === 0 && tenNumbers !== 0) countPaired++;
+    if (tenNumbers % 2 !== 0 && tenNumbers !== 0) countUnpaired++;
+    if (tenNumbers > 0 && tenNumbers !== 0) positiv++;
+    if (tenNumbers < 0 && tenNumbers !== 0) negativ++;
 }
 const resultat = 'Додатніх: ' + positiv + '\nВід`ємних: ' + negativ +
     '\nНулів: ' + countZero + '\nПарних: ' + countPaired + '\nНепарних: ' + countUnpaired
@@ -179,46 +163,14 @@ console.log(resultat);
 
 //4.Зацикли висновок днів тижня таким чином: «День тижня.
 //Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
-const dayOfWeek = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота', 'Неділя'];
-let tempZero = 0;
+const dayOfWeek = 'День тижня. Хочеш побачити наступний день?';
 let userDay = '';
-while (true) {
-    userDay = confirm(dayOfWeek[tempZero] + ". Хочеш побачити наступний день?");
-    tempZero++;
-    if (tempZero > 6) {
-        tempZero = 0;
-    } else if (!userDay) {
-        break;
-    }
-}
+do {
+    userDay = confirm(dayOfWeek);
+} while (userDay);
+
 
 // --Максимум--
-
-//1.Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай
-//його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл,
-//записуй результат в N і питай у користувача «Ваше число> N, <N або == N?».
-//Залежно від того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100,
-//поділи навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на від 51 до 100.
-//І так до тих пір, поки користувач не вибере == N.
-// alert('Загадай число від 0 до 100');
-// let temp = 100;
-// let res = '';
-// while (res) {
-//     temp = temp / 2;
-//     let userQuestion = confirm('Ваше число більше за ' + temp);
-//     if (userQuestion) {
-//         res = confirm('Ваше число ' + temp + ' ?');
-//         temp = temp + temp / 2;
-//         userQuestion = confirm('Ваше число більше за ' + temp);
-//         res = confirm('Ваше число ' + temp + ' ?');
-//         if (userQuestion) {
-
-//             userQuestion = confirm('Ваше число більше за ' + temp);
-//         }
-//     }
-// }
-
-
 //2.Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
 for (let i = 2; i <= 9; i++) {
     for (let j = 1; j <= 10; j++) {
@@ -252,7 +204,7 @@ for (let i = 0; i < userNumFigure; i++) {
     for (let j = tempUse - 1; j > 0; j--) {
         temp = temp + userSpace;
     }
-    for (let m = tempUse - 1; m < userNumFigure; m++) {
+    for (let z = tempUse - 1; z < userNumFigure; z++) {
         temp = temp + userSymbol;
     }
     console.log(temp);
@@ -264,22 +216,24 @@ temp = '';
 //    # #
 //   ## ##
 //  ### ###
-
-// for (let i = 0; i < userNumFigure; i++) {
-//     for (let j = tempUse - 1; j > 0; j--) {
-//         temp = temp + userSpace;
-//     }
-//     for (let m = tempUse - 1; m < userNumFigure; m++) {
-//         temp = temp + userSymbol;
-//     }
-//     for (let s = 0; s < 1; s++) {
-//         temp = temp + userSpace;
-//     }
-//     for (let l = tempUse - 1; l < userNumFigure; l++) {
-//         temp = temp + userSymbol;
-//     }
-//     console.log(temp);
-//     tempUse--;
-//     temp = '';
-// }
+const userNumFigure1 = +prompt('Введите число');
+let tempUse1 = userNumFigure1;
+let temp1 = '';
+for (let k = 0; k < userNumFigure1; k++) {
+    for (let x = tempUse1 - 1; x > 0; x--) {
+        temp1 = temp1 + userSpace;
+    }
+    for (let m = tempUse1 - 1; m < userNumFigure1; m++) {
+        temp1 = temp1 + userSymbol;
+    }
+    for (let s = 0; s < 1; s++) {
+        temp1 = temp1 + userSpace;
+    }
+    for (let l = tempUse - 1; l < userNumFigure1; l++) {
+        temp1 = temp1 + userSymbol;
+    }
+    console.log(temp1);
+    tempUse--;
+    temp1 = '';
+}
 

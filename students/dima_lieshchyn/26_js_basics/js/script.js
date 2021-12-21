@@ -57,7 +57,7 @@
 //Запитай ім’я користувача та виведи у відповідь “Привіт, *ім’я*”;
 const userName = prompt('Enter your name');
 const userResult = ('Hello, ' + userName);
-console.log('Hello, ' + userName);
+console.log(userResult);
 /*---------------------------------------*/
 //Задание 2
 //Запитай рік народження користувача, порахуй його/її вік 

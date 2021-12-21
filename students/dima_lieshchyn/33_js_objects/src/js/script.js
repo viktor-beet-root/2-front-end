@@ -97,15 +97,15 @@ Fuel average for 100 km: ${this.fuelAverage100} km/h
                                 return hoursTrip;
                             }
                         } else {
-                            //условие если нехватит топлива на поездку
+                            //ошибка если нехватит топлива на поездку
                             console.log('Need refueling a car');
                         }
                     } else {
-                        //неправильный ввод дистанции
+                        //ошибка неправильный ввод дистанции
                         console.log('Need distance');
                     }
                 } else {
-                    //у водителя нет прав
+                    //ошибка, у водителя нет прав
                     console.log('Need licence');
                 }
             }
@@ -114,29 +114,4 @@ Fuel average for 100 km: ${this.fuelAverage100} km/h
 
     car.carInfo();
     car.calculateTrip(800, 'Andrey');
-
-    // const timeHelper = {
-    //     hours: 0,
-    //     minutes: 0,
-    //     seconds: 0,
-    //     showTime() {
-    //         console.log(this.timeConvert(this.hours) + ':' + this.timeConvert(this.minutes) + ':' + this.timeConvert(this.seconds));
-    //     },
-    //     timeConvert(timeCheckItem) {
-    //         if (timeCheckItem >= 0 && timeCheckItem < 10) {
-    //             return '0' + timeCheckItem;
-    //         }
-    //     },
-    //     timeAddBySeconds(secondsChange) {
-    //         if (secondsChange % 3600 == 0) {
-    //             this.hours = this.hours + Math.floor(secondsChange / 3600);
-    //         } else {
-    //             this.hours = this.hours + Math.floor(secondsChange / 3600);
-
-    //         }
-    //     }
-
-    // }
-    // timeHelper.timeAddBySeconds(7200)
-    // timeHelper.showTime()
 })();

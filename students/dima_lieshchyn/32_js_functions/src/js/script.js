@@ -1,14 +1,10 @@
 (function () {
     // ------------------------------------------------------------------------
     //Help starter-pack
-    const maxMS = 60;
-    const maxH = 23;
-    const secH = 3600;
-    const zero = '0';
-    const dots = ':';
     function timeHelp(timeNum) {
-        if (timeNum < 10) return zero + timeNum;
-        return timeNum;
+        const zero = '0';
+        return (timeNum < 10) ? zero + timeNum : timeNum;
+
     }
     // ------------------------------------------------------------------------
     // --Мінімум--
@@ -18,9 +14,12 @@
 
     function timeFunc(hours = 0, minutes = 0, seconds = 0) {
         let timeResult = '';
-        if (hours < 0 || minutes < 0 || seconds < 0) return 'Время не может быть отрицательным';
-        else if (hours > maxH) return 'Часы не могут быль больше 23';
-        else if (minutes > maxMS || seconds > maxMS) return 'Значение не может быть больше 60';
+        const dots = ':';
+        const maxMS = 60;
+        const maxH = 23;
+        if (hours < 0 || minutes < 0 || seconds < 0) return console.error('Время не может быть отрицательным');
+        else if (hours > maxH) return console.error('Часы не могут быль больше 23');
+        else if (minutes > maxMS || seconds > maxMS) return console.error('Значение не может быть больше 60');
         timeResult = timeHelp(hours) + dots + timeHelp(minutes) + dots + timeHelp(seconds);
         return timeResult;
     }
@@ -33,9 +32,9 @@
         sec = +sec;
         const dayH = 12;
         let secResult = 0;
-        if (h < 0 || min < 0 || sec < 0) return 'Время не может быть отрицательным';
-        else if (h > maxH) return 'Часы не могут быль больше 23';
-        else if (min > maxMS || sec > maxMS) return 'Значение не может быть больше 60';
+        if (h < 0 || min < 0 || sec < 0) return console.error('Время не может быть отрицательным');
+        else if (h > maxH) return console.error('Часы не могут быль больше 23');
+        else if (min > maxMS || sec > maxMS) return console.error('Значение не может быть больше 60');
         if (h > dayH) h = h - dayH;
         secResult = h * (secH) + min * maxMS + sec;
         return secResult;
@@ -45,9 +44,12 @@
     // 3.Напиши функцію, яка приймає кількість секунд, переводить їх у години,
     // хвилини і секунди і повертає у вигляді рядка «гг: хв: сс».
     function timeSeconds(secnds) {
+        const secH = 3600;
+        const maxMS = 60;
+        const dots = ':';
         let timeResult = '';
         secnds = +secnds;
-        if (secnds < 0) return 'Время не может быть отрицательным';
+        if (secnds < 0) return console.error('Время не может быть отрицательным');
         if (secnds % secH == 0) {
             return secnds / secH;
         } else {

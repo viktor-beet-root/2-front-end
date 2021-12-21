@@ -29,14 +29,10 @@
 
 
   function argcount() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return args;
+    return arguments.length;
   }
 
-  show(argcount(3, 4, 5)); //--------------------------------------------------------------------------------
+  show(argcount(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); //--------------------------------------------------------------------------------
   //3. Напиши функцію, яка приймає 2 числа і повертає :
   //1. -1, якщо перше число менше, ніж друге;
   //2.  1 - якщо перше число більше, ніж друге;
@@ -50,21 +46,17 @@
 
     if (a < b) {
       return -1;
-    }
-
-    if (a > b) {
-      return 1;
     } else {
-      return 0;
+      return a > b ? 1 : 0;
     }
   }
 
-  show(foo('1', 2)); //--------------------------------------------------------------------------------
+  show(foo('3', 2)); //--------------------------------------------------------------------------------
   //4. Напиши функцію, яка обчислює факторіал переданого їй числа.
 
   function factorial() {
     var c = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-    if (c <= 0) return 'Число должно быть положительным\nили больше нуля';
+    if (c <= 0) return console.error('Число должно быть положительным\nили больше нуля');
 
     for (var i = c - 1; i > 0; i--) {
       c = c * i;
@@ -78,10 +70,10 @@
   //Наприклад: цифри 1, 4, 9 перетворяться в число 149.
 
   function trinum() {
-    var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-    var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-    var c = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
-    return String(a) + String(b) + String(c);
+    var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    var c = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+    return a * 100 + b * 10 + c;
   }
 
   show(trinum(1, 2, 3)); //--------------------------------------------------------------------------------
@@ -96,10 +88,8 @@
 
     if (a === 0) {
       return b * b;
-    } else if (b === 0) {
-      return a * a;
     } else {
-      return a * b;
+      return b === 0 ? a * a : a * b;
     }
   }
 
@@ -108,56 +98,56 @@
   //1. Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”.
   //Досконале число - це число, яке дорівнює сумі всіх своїх дільників.
 
-  function perfect(a) {
+  function checkPerfectNum(a) {
     a = +a;
 
     if (a > 0) {
-      var sum = 0;
+      var temp = 0;
+      var counter = 0;
 
-      for (var i = a; i >= 0; i--) {
-        if (a % i == 0) {
-          sum = sum + a / i;
-        }
+      for (var i = 1; i < a - 1; i++) {
+        counter = a % i;
+        if (counter === 0) temp = temp + i;
       }
 
-      sum = sum - a;
-
-      if (sum === a) {
-        return 'Perfect number';
-      } else {
-        return 'Not perfect';
-      }
+      if (a === temp) return true;
+      return false;
     } else {
-      return 'Need bigger number';
+      return console.error('Need bigger number');
     }
   }
 
-  show(perfect(6)); //--------------------------------------------------------------------------------
+  show('asdasd');
+  show(checkPerfectNum(4)); //--------------------------------------------------------------------------------
   //2.Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону,
-  //і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися,
-  //чи є це число досконалим.
+  // і виводить тільки ті числа з діапазону, які є досконалими.Використовуй написану раніше функцію, щоб дізнатися,
+  // чи є це число досконалим.
 
   function perfectnums() {
-    var minN = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    var maxN = arguments.length > 1 ? arguments[1] : undefined;
-    minN = +minN;
-    maxN = +maxN;
-    var count = '';
+    var firstNum = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    var secondNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    firstNum = +firstNum;
+    secondNum = +secondNum;
+    var counter = '';
 
-    if (maxN < minN) {
-      return 'Максимальное число должно быть больше';
+    if (firstNum < secondNum) {
+      for (var i = firstNum; i < secondNum; i++) {
+        if (checkPerfectNum(i)) {
+          counter = counter + i + ' | ';
+        }
+      }
     } else {
-      for (var i = minN; i <= maxN; i++) {
-        if (perfect(i) === 'Perfect number') {
-          count = count + String(i) + ' | ';
+      for (var _i = secondNum; _i < firstNum; _i++) {
+        if (checkPerfectNum(_i)) {
+          counter = counter + _i + ' | ';
         }
       }
     }
 
-    return count;
+    return counter;
   }
 
-  show(perfectnums(2, 29)); //--------------------------------------------------------------------------------
+  show(perfectnums(29, 2)); // //--------------------------------------------------------------------------------
 
   function show(a) {
     console.log(a);

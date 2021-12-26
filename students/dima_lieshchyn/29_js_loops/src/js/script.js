@@ -128,13 +128,15 @@ let priceResult = null;
 if (userPrice >= twoH) {
     if (userPrice >= twoH && userPrice < threeH + 1) {
         priceResult = userPrice - (userPrice * 3 / 100);
-    } else if (userPrice >= threeH && userPrice < fiveH + 1) {
-        priceResult = userPrice - (userPrice * 5 / 100);
-    } else if (userPrice > fiveH) {
-        priceResult = userPrice - (userPrice * 7 / 100);
-    } else {
-        priceResult = userPrice;
     }
+    if (userPrice >= threeH && userPrice < fiveH + 1) {
+        priceResult = userPrice - (userPrice * 5 / 100);
+    }
+    if (userPrice > fiveH) {
+        priceResult = userPrice - (userPrice * 7 / 100);
+    }
+} else {
+    priceResult = userPrice;
 }
 console.log(priceResult);
 
@@ -177,63 +179,5 @@ for (let i = 2; i <= 9; i++) {
         console.log(i + ' x ' + j + ' = ' + (i * j));
     }
     console.log('------------');
-}
-
-//3.Запитай дату (день, місяць, рік) і виведи наступну за нею дату.
-//Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
-
-//Задание на вывод решеток
-const userNumFigure = +prompt('Введите число');
-let tempUse = userNumFigure;
-let temp = '';
-const userSymbol = '#';
-const userSpace = ' ';
-// #
-// ##
-// ### 
-//   #
-//  ##
-// ###
-
-for (let i = 0; i < userNumFigure; i++) {
-    temp = temp + userSymbol;
-    console.log(temp);
-}
-temp = '';
-for (let i = 0; i < userNumFigure; i++) {
-    for (let j = tempUse - 1; j > 0; j--) {
-        temp = temp + userSpace;
-    }
-    for (let z = tempUse - 1; z < userNumFigure; z++) {
-        temp = temp + userSymbol;
-    }
-    console.log(temp);
-    tempUse--;
-    temp = '';
-}
-temp = '';
-
-//    # #
-//   ## ##
-//  ### ###
-const userNumFigure1 = +prompt('Введите число');
-let tempUse1 = userNumFigure1;
-let temp1 = '';
-for (let k = 0; k < userNumFigure1; k++) {
-    for (let x = tempUse1 - 1; x > 0; x--) {
-        temp1 = temp1 + userSpace;
-    }
-    for (let m = tempUse1 - 1; m < userNumFigure1; m++) {
-        temp1 = temp1 + userSymbol;
-    }
-    for (let s = 0; s < 1; s++) {
-        temp1 = temp1 + userSpace;
-    }
-    for (let l = tempUse - 1; l < userNumFigure1; l++) {
-        temp1 = temp1 + userSymbol;
-    }
-    console.log(temp1);
-    tempUse--;
-    temp1 = '';
 }
 

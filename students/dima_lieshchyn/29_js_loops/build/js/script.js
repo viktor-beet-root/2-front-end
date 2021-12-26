@@ -143,13 +143,17 @@ var priceResult = null;
 if (userPrice >= twoH) {
   if (userPrice >= twoH && userPrice < threeH + 1) {
     priceResult = userPrice - userPrice * 3 / 100;
-  } else if (userPrice >= threeH && userPrice < fiveH + 1) {
-    priceResult = userPrice - userPrice * 5 / 100;
-  } else if (userPrice > fiveH) {
-    priceResult = userPrice - userPrice * 7 / 100;
-  } else {
-    priceResult = userPrice;
   }
+
+  if (userPrice >= threeH && userPrice < fiveH + 1) {
+    priceResult = userPrice - userPrice * 5 / 100;
+  }
+
+  if (userPrice > fiveH) {
+    priceResult = userPrice - userPrice * 7 / 100;
+  }
+} else {
+  priceResult = userPrice;
 }
 
 console.log(priceResult); //3.Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх,
@@ -193,69 +197,4 @@ for (var _i3 = 2; _i3 <= 9; _i3++) {
   }
 
   console.log('------------');
-} //3.Запитай дату (день, місяць, рік) і виведи наступну за нею дату.
-//Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
-//Задание на вывод решеток
-
-
-var userNumFigure = +prompt('Введите число');
-var tempUse = userNumFigure;
-var temp = '';
-var userSymbol = '#';
-var userSpace = ' '; // #
-// ##
-// ### 
-//   #
-//  ##
-// ###
-
-for (var _i4 = 0; _i4 < userNumFigure; _i4++) {
-  temp = temp + userSymbol;
-  console.log(temp);
-}
-
-temp = '';
-
-for (var _i5 = 0; _i5 < userNumFigure; _i5++) {
-  for (var _j = tempUse - 1; _j > 0; _j--) {
-    temp = temp + userSpace;
-  }
-
-  for (var z = tempUse - 1; z < userNumFigure; z++) {
-    temp = temp + userSymbol;
-  }
-
-  console.log(temp);
-  tempUse--;
-  temp = '';
-}
-
-temp = ''; //    # #
-//   ## ##
-//  ### ###
-
-var userNumFigure1 = +prompt('Введите число');
-var tempUse1 = userNumFigure1;
-var temp1 = '';
-
-for (var k = 0; k < userNumFigure1; k++) {
-  for (var x = tempUse1 - 1; x > 0; x--) {
-    temp1 = temp1 + userSpace;
-  }
-
-  for (var m = tempUse1 - 1; m < userNumFigure1; m++) {
-    temp1 = temp1 + userSymbol;
-  }
-
-  for (var s = 0; s < 1; s++) {
-    temp1 = temp1 + userSpace;
-  }
-
-  for (var l = tempUse - 1; l < userNumFigure1; l++) {
-    temp1 = temp1 + userSymbol;
-  }
-
-  console.log(temp1);
-  tempUse--;
-  temp1 = '';
 }

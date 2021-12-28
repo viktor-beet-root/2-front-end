@@ -18,8 +18,8 @@ console.log(resultStrInt);
 const userGB = prompt('Enter capasity of your flash in GB');
 const fileSize = 820;
 const mbAmount = 1024;
-const filesResult = Math.round((userGB * mbAmount) / fileSize);
-console.log(filesResult + ' files');
+const filesResult = Math.round((userGB * mbAmount) / fileSize) + ' files';
+console.log(filesResult);
 
 // --Норма--
 //1. Користувач вводить суму грошей в гаманці і ціну однієї шоколадки.
@@ -28,7 +28,8 @@ const userMoneyAmount = +prompt('Enter money amount');
 const userChocolatePrice = +prompt('Enter price for one chocolate');
 const resultChocolate = Math.floor(userMoneyAmount / userChocolatePrice);
 const resultMoneyChange = userMoneyAmount % userChocolatePrice;
-const buyResult = 'You can buy ' + resultChocolate + ' chocolates and your money change is ' + resultMoneyChange + ' griven';
+const buyResult = 'You can buy ' + resultChocolate
+    + ' chocolates and your money change is ' + resultMoneyChange + ' griven';
 console.log(buyResult);
 
 //2. Запитай у користувача тризначне число і виведи його задом наперед.
@@ -36,7 +37,9 @@ console.log(buyResult);
 const userNumber = +prompt('Enter three-digit number');
 const ten = 10;
 const hundred = 100;
-const resultReverse = ((userNumber % ten) * hundred) + (userNumber % hundred - userNumber % ten) + (userNumber - userNumber % hundred) / hundred;
+const resultReverse = ((userNumber % ten) * hundred)
+    + (userNumber % hundred - userNumber % ten)
+    + (userNumber - userNumber % hundred) / hundred;
 console.log(resultReverse);
 // --Максимум--
 
@@ -46,7 +49,8 @@ const userMoney = +prompt('Enter money amount to deposit');
 const month = 12;
 const currentMonth = 2;
 const percents = 0.05;
-const resultPercents = Math.round((userMoney * percents) / month * currentMonth) + ' griven';
+const resultPercents = Math.round((userMoney * percents)
+    / month * currentMonth) + ' griven';
 console.log(resultPercents);
 
 //Що повернуть вираження:

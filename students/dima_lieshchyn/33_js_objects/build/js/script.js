@@ -17,36 +17,19 @@
     },
     //функция вывода информации по водителю по имени
     showDriver: function showDriver(driverName) {
-      //воспомагательные переменные
-      var dName = 0;
-      var lName = 0;
-      var nameRes = '';
-      var licenceRes = 0; //проверка на правильность ввода имени водителя
-
-      if (typeof driverName === 'string' && driverName !== '') {
-        //запись индекса начала имени в строке имен
-        dName = this.drivers.names.indexOf(driverName); //итоговая запись имени путём вырезания из строки
-
-        nameRes = 'Driver: ' + this.drivers.names.slice(dName, dName + driverName.length); //запись индекса начала лицензии прав в строке licence
-
-        lName = this.drivers.licence.indexOf(driverName); //итоговая запись лицензии на вождение путём вырезания из строки
-
-        licenceRes = 'Licence: ' + this.drivers.licence.slice(lName + driverName.length + 1, lName + driverName.length + 2); //вывод информации
-
-        console.log(nameRes + '\n' + licenceRes); //возврат для дальнешего использования
-
-        return licenceRes;
+      if (this.isDriver(driverName)) {
+        console.log(this.getName(driverName) + '\n' + 'Licence: ' + this.getLicence(driverName));
       }
     },
     addDriver: function addDriver(driverName) {
       var driverLicence = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
       //проверка на правильность ввода имени водителя
-      if (typeof driverName === 'string' && driverName !== '') {
+      if (this.isDriver(driverName)) {
         //конкатенация строки, добавление водителя
         this.drivers.names = this.drivers.names + ', ' + driverName; //проверка на правильность ввода прав для водителя
 
-        if (typeof driverLicence === 'boolean') {
+        if (this.isLicence(driverLicence)) {
           //конкатенция если есть права
           if (driverLicence) {
             this.drivers.licence = this.drivers.licence + ',' + driverName + ' ' + '1'; //конкатенция если нет прав
@@ -62,53 +45,69 @@
       }
     },
     calculateTrip: function calculateTrip(distance, driverName) {
-      //переменная для записи результата
-      var hoursTrip = 0; //константа значения максимальной безпрерывной поездки
-
-      var maxTrip = 4; //константа максимальной дистанции на полном баке
-
-      var maxTripKm = this.tankVolume / this.fuelAverage100 * 100; //проверка на правильность ввода имени водителя
-
-      if (typeof driverName === 'string' && driverName !== '') {
-        //если у водителя права
-        if (this.showDriver(driverName)) {
-          //проверка на правильность ввода дистанции
-          if (typeof distance === 'number' && distance > 0) {
-            //если дистанция меньше чем дистанция максимальной поездки на полном баке
-            if (distance < maxTripKm) {
-              //просчет колличества часов на поездку
-              hoursTrip = distance / this.speedAverage; //проверка и просчет сколько нужно пауз на каждые 4 часа
-
-              if (hoursTrip > maxTrip) {
-                //цикл на проверку для каждых четырех часов
-                for (var i = 1; i < hoursTrip; i++) {
-                  if (i % 4 == 0) {
-                    ++hoursTrip;
-                  }
-                }
-
-                console.log('Need ' + hoursTrip + ' hours');
-                return hoursTrip;
-              } else {
-                //условие если поездка меньше 4 часов
-                console.log('Need ' + hoursTrip + ' hours');
-                return hoursTrip;
-              }
-            } else {
-              //ошибка если нехватит топлива на поездку
-              console.log('Need refueling a car');
-            }
-          } else {
-            //ошибка неправильный ввод дистанции
-            console.log('Need distance');
-          }
-        } else {
-          //ошибка, у водителя нет прав
-          console.log('Need licence');
-        }
+      if (this.validateTrip(driverName, distance)) {
+        return this.getTripTime(distance);
       }
+    },
+    isDriver: function isDriver(driverName) {
+      return typeof driverName === 'string' && driverName !== '';
+    },
+    isDistance: function isDistance(distance) {
+      if (typeof distance === 'number' && distance > 0) return true;
+      return console.log('Need distance');
+    },
+    isLicence: function isLicence(licence) {
+      return typeof licence === 'boolean';
+    },
+    getName: function getName(driverName) {
+      var dName = 0;
+      var nameRes = '';
+      dName = this.drivers.names.indexOf(driverName);
+      nameRes = 'Driver: ' + this.drivers.names.slice(dName, dName + driverName.length);
+      return nameRes;
+    },
+    getLicence: function getLicence(driverName) {
+      var lName = 0;
+      var licenceRes = 0;
+      lName = this.drivers.licence.indexOf(driverName);
+      licenceRes = this.drivers.licence.slice(lName + driverName.length + 1, lName + driverName.length + 2);
+      return +licenceRes;
+    },
+    validateLicence: function validateLicence(driverName) {
+      return this.getLicence(driverName) ? 1 : console.log('Need licence');
+    },
+    isMaxDistance: function isMaxDistance(distance) {
+      if (distance < this.tankVolume / this.fuelAverage100 * 100) return true;
+      return console.log('Need refueling a car');
+    },
+    getTripTime: function getTripTime(distance) {
+      var temp = 0;
+      var maxTrip = 4;
+      temp = distance / this.speedAverage; //проверка и просчет сколько нужно пауз на каждые 4 часа
+
+      if (temp > maxTrip) {
+        //цикл на проверку для каждых четырех часов
+        for (var i = 1; i < temp; i++) {
+          if (i % 4 == 0) {
+            ++temp;
+          }
+        }
+
+        console.log('Need ' + temp + ' hours');
+        return temp;
+      } else {
+        //условие если поездка меньше 4 часов
+        console.log('Need ' + temp + ' hours');
+        return temp;
+      }
+    },
+    validateTrip: function validateTrip(driverName, distance) {
+      return this.isDriver(driverName) && this.isDistance(distance) && this.isMaxDistance(distance) && this.validateLicence(driverName);
     }
   };
   car.carInfo();
-  car.calculateTrip(800, 'Andrey');
+  car.calculateTrip(500, 'Andrey');
+  car.showDriver('Andrey');
+  car.addDriver('asd', 1);
+  car.showDriver('asd');
 })();

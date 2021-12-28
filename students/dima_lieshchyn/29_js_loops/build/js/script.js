@@ -102,7 +102,7 @@ console.log(result); //5.Запитай у користувача число і 
 var userNumber = +prompt('Введіть число');
 
 for (var _i = 0; _i <= userNumber; _i++) {
-  if (userNumber % _i == 0 && _i !== 1) {
+  if (userNumber % _i == 0) {
     console.log(_i);
   }
 } // --Норма--
@@ -116,12 +116,12 @@ var fourNum = null;
 var fiveNum = null;
 
 if (fiveDigits <= 100000 && fiveDigits > 9999) {
-  firstNum = fiveDigits / 10000;
-  secondNum = fiveDigits / 1000 % 10;
-  fourNum = fiveDigits / 10 % 10;
-  fiveNum = fiveDigits % 10;
+  firstNum = Math.floor(fiveDigits / 10000);
+  secondNum = Math.floor(fiveDigits / 1000 % 10);
+  fourNum = Math.floor(fiveDigits / 10 % 10);
+  fiveNum = Math.floor(fiveDigits % 10);
 
-  if (parseInt(firstNum) === parseInt(fiveNum) && parseInt(secondNum) === parseInt(fourNum)) {
+  if (firstNum === fiveNum && secondNum === fourNum) {
     console.log('Число паліндром');
   } else {
     console.log('Число не паліндром');
@@ -139,21 +139,18 @@ var twoH = 200;
 var threeH = 300;
 var fiveH = 500;
 var priceResult = null;
+if (userPrice < twoH) priceResult = userPrice;
 
-if (userPrice >= twoH) {
-  if (userPrice >= twoH && userPrice < threeH + 1) {
-    priceResult = userPrice - userPrice * 3 / 100;
-  }
+if (userPrice >= twoH && userPrice < threeH + 1) {
+  priceResult = userPrice - userPrice * 3 / 100;
+}
 
-  if (userPrice >= threeH && userPrice < fiveH + 1) {
-    priceResult = userPrice - userPrice * 5 / 100;
-  }
+if (userPrice >= threeH && userPrice < fiveH + 1) {
+  priceResult = userPrice - userPrice * 5 / 100;
+}
 
-  if (userPrice > fiveH) {
-    priceResult = userPrice - userPrice * 7 / 100;
-  }
-} else {
-  priceResult = userPrice;
+if (userPrice > fiveH) {
+  priceResult = userPrice - userPrice * 7 / 100;
 }
 
 console.log(priceResult); //3.Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх,

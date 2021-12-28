@@ -88,7 +88,7 @@ console.log(result);
 const userNumber = +prompt('Введіть число');
 
 for (let i = 0; i <= userNumber; i++) {
-    if (userNumber % i == 0 && i !== 1) {
+    if (userNumber % i == 0) {
         console.log(i);
     }
 }
@@ -103,12 +103,12 @@ let secondNum = null;
 let fourNum = null;
 let fiveNum = null;
 if (fiveDigits <= 100000 && fiveDigits > 9999) {
-    firstNum = fiveDigits / 10000;
-    secondNum = (fiveDigits / 1000) % 10;
-    fourNum = (fiveDigits / 10) % 10;
-    fiveNum = fiveDigits % 10;
-    if (parseInt(firstNum) === parseInt(fiveNum) &&
-        parseInt(secondNum) === parseInt(fourNum)) {
+    firstNum = Math.floor(fiveDigits / 10000);
+    secondNum = Math.floor((fiveDigits / 1000) % 10);
+    fourNum = Math.floor((fiveDigits / 10) % 10);
+    fiveNum = Math.floor(fiveDigits % 10);
+    if (firstNum === fiveNum &&
+        secondNum === fourNum) {
         console.log('Число паліндром');
     } else {
         console.log('Число не паліндром');
@@ -116,6 +116,7 @@ if (fiveDigits <= 100000 && fiveDigits > 9999) {
 } else {
     console.error('Число не п`ятизначне');
 }
+
 //2.Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
 //1. від 200 до 300 - знижка буде 3%;
 //2. від 300 до 500 - 5%;
@@ -125,19 +126,21 @@ const twoH = 200;
 const threeH = 300;
 const fiveH = 500;
 let priceResult = null;
-if (userPrice >= twoH) {
-    if (userPrice >= twoH && userPrice < threeH + 1) {
-        priceResult = userPrice - (userPrice * 3 / 100);
-    }
-    if (userPrice >= threeH && userPrice < fiveH + 1) {
-        priceResult = userPrice - (userPrice * 5 / 100);
-    }
-    if (userPrice > fiveH) {
-        priceResult = userPrice - (userPrice * 7 / 100);
-    }
-} else {
-    priceResult = userPrice;
+if (userPrice < twoH) priceResult = userPrice;
+
+if (userPrice >= twoH && userPrice < threeH + 1) {
+    priceResult = userPrice - (userPrice * 3 / 100);
 }
+
+if (userPrice >= threeH && userPrice < fiveH + 1) {
+    priceResult = userPrice - (userPrice * 5 / 100);
+}
+
+if (userPrice > fiveH) {
+    priceResult = userPrice - (userPrice * 7 / 100);
+}
+
+
 console.log(priceResult);
 
 //3.Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх,

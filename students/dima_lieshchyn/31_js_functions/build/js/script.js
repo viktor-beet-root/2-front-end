@@ -81,16 +81,7 @@
   //Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
 
   function flength() {
-    var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-    a = +a;
-    b = +b;
-
-    if (a === 0) {
-      return b * b;
-    } else {
-      return b === 0 ? a * a : a * b;
-    }
+    return arguments.length === 1 ? (arguments.length <= 0 ? undefined : arguments[0]) * (arguments.length <= 0 ? undefined : arguments[0]) : (arguments.length <= 0 ? undefined : arguments[0]) * (arguments.length <= 1 ? undefined : arguments[1]);
   }
 
   show(flength(2)); //--------------------------------------------------------------------------------
@@ -100,6 +91,7 @@
 
   function checkPerfectNum(a) {
     a = +a;
+    var err = Error('Need bigger number');
 
     if (a > 0) {
       var temp = 0;
@@ -110,15 +102,13 @@
         if (counter === 0) temp = temp + i;
       }
 
-      if (a === temp) return true;
-      return false;
+      return a === temp;
     } else {
-      return console.error('Need bigger number');
+      return err;
     }
   }
 
-  show('asdasd');
-  show(checkPerfectNum(4)); //--------------------------------------------------------------------------------
+  show(checkPerfectNum(28)); //--------------------------------------------------------------------------------
   //2.Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону,
   // і виводить тільки ті числа з діапазону, які є досконалими.Використовуй написану раніше функцію, щоб дізнатися,
   // чи є це число досконалим.

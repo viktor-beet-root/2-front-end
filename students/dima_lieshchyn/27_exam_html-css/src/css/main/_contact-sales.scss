@@ -63,13 +63,11 @@
         padding-bottom: 54px;
     }
 
-    &__btn {}
-
     &__btn-link {
         padding-left: $default-gap;
+
+        &::before {
+            left: $default-gap * 2;
+        }
     }
 }
-
-.title {}
-
-.text {}

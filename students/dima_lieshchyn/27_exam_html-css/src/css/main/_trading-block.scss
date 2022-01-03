@@ -1,0 +1,129 @@
+.trading-block {
+
+    // .trading-block__trading-wrapper
+
+    &__trading-wrapper {}
+
+    // .trading-block__text-block
+
+    &__text-block {}
+}
+
+.trading-wrapper {
+
+    // .trading-wrapper__trading-form-wrapper
+
+    &__trading-form-wrapper {}
+}
+
+.trading-form-wrapper {
+
+    // .trading-form-wrapper__trading-img-wrapper
+
+    &__trading-img-wrapper {}
+
+    // .trading-form-wrapper__trading-form
+
+    &__trading-form {}
+}
+
+.trading-form {
+
+    // .trading-form__1lvl
+
+    &__1lvl {
+        &__link {}
+
+        // .1lvl__icon
+
+        &__icon {}
+    }
+
+    // .trading-form__2lvl
+
+    &__2lvl {
+        &__title {}
+
+        // .2lvl__value
+
+        &__value {}
+
+        // .2lvl__alt-value
+
+        &__alt-value {}
+    }
+
+    // .trading-form__3lvl
+
+    &__3lvl {
+        &__input {}
+    }
+
+    // .trading-form__4lvl
+
+    &__4lvl {
+
+        &__input {}
+    }
+
+    // .trading-form__5lvl
+
+    &__5lvl {
+        &__input {}
+    }
+}
+
+.text-block {
+
+    // .text-block__text-section
+
+    &__text-section {}
+
+    // .text-block__trading-title
+
+    &__trading-title {}
+
+    // .text-block__text
+
+    &__text {}
+
+    // .text-block__btn
+
+    &__btn {}
+
+    // .text-block__btn-link
+
+    &__btn-link {}
+}
+
+.col-6 {}
+
+.title {
+
+    // .title_global
+
+    &_global {}
+}
+
+.text {
+
+    // .text_global
+
+    &_global {}
+}
+
+.button {
+
+    // .button_global
+
+    &_global {}
+}
+
+.button-wrapper {}
+
+.button-link {
+
+    // .button-link_global
+
+    &_global {}
+}

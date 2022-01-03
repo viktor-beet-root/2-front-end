@@ -5,6 +5,11 @@
     &:checked {
         &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(1) {
             display: none;
+            transform: rotate(0);
+
+            &:hover {
+                transform: scale(2);
+            }
         }
 
         &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(2) {
@@ -14,6 +19,11 @@
             left: -1px;
             top: -1px;
             cursor: pointer;
+            transform: rotate(0);
+
+            &:hover {
+                transform: rotate(45deg);
+            }
         }
 
         &+.page-wrapper {

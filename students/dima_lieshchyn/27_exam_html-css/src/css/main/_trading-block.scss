@@ -1,129 +1,246 @@
 .trading-block {
+    display: flex;
+    align-items: center;
+    position: relative;
 
-    // .trading-block__trading-wrapper
+    &__img-wrapper {}
 
-    &__trading-wrapper {}
+    &__trading-form {
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        background-color: $color-dark-blue-v2;
+        width: 240px;
+        height: 70%;
+    }
 
-    // .trading-block__text-block
-
-    &__text-block {}
-}
-
-.trading-wrapper {
-
-    // .trading-wrapper__trading-form-wrapper
-
-    &__trading-form-wrapper {}
-}
-
-.trading-form-wrapper {
-
-    // .trading-form-wrapper__trading-img-wrapper
-
-    &__trading-img-wrapper {}
-
-    // .trading-form-wrapper__trading-form
-
-    &__trading-form {}
+    &__trading-text-block {
+        background-color: rgba(255, 255, 255, .9);
+    }
 }
 
 .trading-form {
+    border-radius: 12px;
+    color: $white-color;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-left: 19px;
+    font-size: 12px;
 
-    // .trading-form__1lvl
+    &__lvl-4,
+    &__lvl-5 {
+        opacity: 0.3;
 
-    &__1lvl {
-        &__link {}
-
-        // .1lvl__icon
-
-        &__icon {}
+        & input {
+            border-radius: 4px;
+        }
     }
 
-    // .trading-form__2lvl
+    &__lvl-1,
+    &__lvl-4 {
 
-    &__2lvl {
-        &__title {}
 
-        // .2lvl__value
-
-        &__value {}
-
-        // .2lvl__alt-value
-
-        &__alt-value {}
+        // &::after {
+        //     content: "";
+        //     width: 80%;
+        //     position: absolute;
+        //     border-bottom: 1px solid white;
+        //     left: 19px;
+        //     padding-top: 35px;
+        // }
     }
 
-    // .trading-form__3lvl
+}
 
-    &__3lvl {
-        &__input {}
+.lvl-1 {
+
+    &__link {
+        text-decoration: none;
+        color: $white-color;
+        letter-spacing: 2px;
     }
 
-    // .trading-form__4lvl
+    &__icon {
 
-    &__4lvl {
-
-        &__input {}
+        margin-right: 13px;
     }
 
-    // .trading-form__5lvl
-
-    &__5lvl {
-        &__input {}
+    &__link,
+    &__icon {
+        vertical-align: middle;
     }
 }
 
-.text-block {
+.lvl-2 {
+    width: 100%;
 
-    // .text-block__text-section
+    &__title {
+        opacity: 0.3;
 
-    &__text-section {}
+    }
 
-    // .text-block__trading-title
+    &__value {
+        display: inline;
+        font-size: 20px;
+        opacity: 0.3;
+        font-style: italic;
+        font-weight: 600;
+    }
 
-    &__trading-title {}
+    &__alt-value {
+        font-size: 56px;
+        opacity: 1;
+        font-style: normal;
+        font-weight: 700;
+        color: $white-color;
+        line-height: 0.5;
 
-    // .text-block__text
-
-    &__text {}
-
-    // .text-block__btn
-
-    &__btn {}
-
-    // .text-block__btn-link
-
-    &__btn-link {}
+    }
 }
 
-.col-6 {}
-
-.title {
-
-    // .title_global
-
-    &_global {}
+.alt {
+    &_title {}
 }
 
-.text {
+.lvl-3 {
+    display: flex;
+    position: relative;
 
-    // .text_global
+    &__title {
+        opacity: 0.3;
 
-    &_global {}
+    }
+
+    &__wrapper {
+        padding-top: 8px;
+
+        &:nth-child(1) {
+            padding-right: 10px;
+        }
+    }
+
+    &__input {
+        width: 94px;
+        height: 28px;
+        background-color: rgba(255, 255, 255, .15);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+
+
+        &::placeholder {
+            padding-left: 3px;
+            color: $white-color;
+        }
+    }
+
+    &__pholder-1,
+    &__pholder-2 {
+        display: block;
+        position: absolute;
+        top: 42px;
+    }
+
+    &__pholder-1 {
+        left: 73px;
+    }
+
+    &__pholder-2 {
+        right: 8px;
+    }
 }
 
-.button {
 
-    // .button_global
 
-    &_global {}
+.lvl-4 {
+    width: 90%;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__input {
+
+        width: 51px;
+        height: 21px;
+        opacity: 0.15;
+    }
 }
 
-.button-wrapper {}
+.lvl-5 {
+    &__input {
+        @include visuality-hidden;
 
-.button-link {
+    }
 
-    // .button-link_global
+    &__label {
+        padding-right: $default-gap;
 
-    &_global {}
+        &::after {
+            content: url("../../images/circle-radio-inside.svg");
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            // position: absolute;
+            // top: 0;
+            // left: $default-gap + 7.5px;
+        }
+
+
+        &::before {
+            content: url("../../images/circle-radio.svg");
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+    }
+}
+
+.trading-text-block {
+    display: flex;
+    height: 85%;
+    margin-left: -175px;
+    flex-wrap: wrap;
+    width: 50%;
+
+    &__text-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 40%;
+        padding-left: 50px;
+    }
+
+    &__trading-title {
+        font-size: 24px;
+        padding-bottom: $default-gap - 1px;
+
+    }
+
+    &__text {
+        font-size: 18px;
+        padding-bottom: 5px;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $color-gray;
+        width: 80%;
+        height: 35%;
+    }
+
+    &__btn-link {
+        text-align: center;
+
+        &::before {
+            left: 35%;
+            width: 36%;
+        }
+    }
 }

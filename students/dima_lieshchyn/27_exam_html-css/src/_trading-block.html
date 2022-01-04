@@ -2,71 +2,78 @@
     <div class="container">
         <div class="row">
             <div class="trading-block">
-                <div class="trading-block__trading-wrapper trading-wrapper">
-                    <div class="trading-wrapper__trading-form-wrapper trading-form-wrapper">
-                        <div class="trading-form-wrapper__trading-img-wrapper">
-                            <img src="./images/trading-image.jpg" alt="" srcset="">
+                <div class="trading-block__img-wrapper">
+                    <img src="./images/trading-image.jpg" alt="" srcset="">
+                </div>
+                <div class="trading-block__trading-form trading-form">
+                    <div class="trading-form__lvl-1 lvl-1">
+                        <a href="#" class="lvl-1__link">Sell</a>
+                        <img class="lvl-1__icon" src="images/bitcoin-icon.svg" alt="" srcset="">
+                        <img class="lvl-1__icon" src="images/arrow-right.svg" alt="" srcset="">
+                        <a href="#" class="lvl-1__link">Buy</a>
+                        <img class="lvl-1__icon" src="images/t-light.svg" alt="" srcset="">
+                    </div>
+                    <div class="trading-form__lvl-2 lvl-2">
+                        <p class="lvl-2__title alt_title">Rate:</p>
+                        <p class="lvl-2__value text_global">10127.&nbsp;</p>
+                        <span class="lvl-2__alt-value text_global">49</span>
+                    </div>
+                    <div class="trading-form__lvl-3 lvl-3">
+                        <div class="lvl-3__wrapper">
+                            <p class="lvl-3__title alt_title">Pay:</p>
+                            <label for="pay">
+                                <input id="pay" class="lvl-3__input" type="text" placeholder="1">
+                                <img src="images/btc-gray.svg" class="lvl-3__pholder-1" alt="btc_gray" srcset="">
+                            </label>
                         </div>
-                        <div class="trading-form-wrapper__trading-form trading-form">
-                            <div class="trading-form__1lvl 1lvl">
-                                <a href="#" class="1lvl__link">Sell</a>
-                                <img class="1lvl__icon" src="images/bitcoin-icon.svg" alt="" srcset="">
-                                <img class="1lvl__icon" src="images/arrow-right.svg" alt="" srcset="">
-                                <a href="#" class="1lvl__link">Buy</a>
-                                <img class="1lvl__icon" src="images/t-light.svg" alt="" srcset="">
-                            </div>
-                            <div class="trading-form__2lvl 2lvl">
-                                <p class="2lvl__title alt_title">Rate:</p>
-                                <p class="2lvl__value">10127.<span class="2lvl__alt-value">49</span></p>
-                            </div>
-                            <div class="trading-form__3lvl 3lvl">
-                                <label for="pay">Pay:
-                                    <input id="pay" class="3lvl__input" type="text">
-                                </label>
-                                <label for="receive">Receive:
-                                    <input id="receive" class="3lvl__input" type="text">
-                                </label>
-                            </div>
-                            <div class="trading-form__4lvl 4lvl">
-                                <label for="">Maker fees:
-                                    <input id="" class="4lvl__input" type="text">
-                                </label>
-                                <label for="">Exchange fees:
-                                    <input id="" class="4lvl__input" type="text">
-                                </label>
-                            </div>
-                            <div class="trading-form__5lvl">
-                                <label for="OnExchange">
-                                    <input type="checkbox" class="5lvl__input" name="On Exchange" id="OnExchange">
-                                    On Exchange
-                                </label>
-                                <label for="OnWallet">
-                                    <input type="checkbox" class="5lvl__input" name="On Wallet" id="OnWallet">
-                                    On Wallet
-                                </label>
-                            </div>
+                        <div class="lvl-3__wrapper">
+                            <p class="lvl-3__title alt_title">Receive:</p>
+                            <label for="receive">
+                                <input id="receive" class="lvl-3__input" type="text" placeholder="0">
+                                <img src="images/t-gray.svg" class="lvl-3__pholder-2" alt="btc_gray" srcset="">
+                            </label>
                         </div>
+                    </div>
+                    <div class="trading-form__lvl-4 lvl-4">
+                        <div class="lvl-4__wrapper">
+                            <p class="lvl-4__title alt_title">Maker fees:</p>
+                            <label for="maker">
+                                <input id="maker" class="lvl-4__input" type="text">
+                            </label>
+                        </div>
+                        <div class="lvl-4__wrapper">
+                            <p class="lvl-4__title alt_title">Exchange fees:</p>
+                            <label for="exchange">
+                                <input id="exchange" class="lvl-4__input" type="text">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="trading-form__lvl-5 lvl-5">
+                        <input type="checkbox" class="lvl-5__input" name="On Exchange" id="OnExchange">
+                        <label class="lvl-5__label" for="OnExchange">On Exchange</label>
+                        <input type="checkbox" class="lvl-5__input" name="On Wallet" id="OnWallet">
+                        <label for="OnWallet" class="lvl-5__label">On Wallet</label>
                     </div>
                 </div>
-                <div class="trading-block__text-block text-block col-6">
-                    <div class="text-block__text-section">
-                        <h3 class="text-block__trading-title title_global">On-Exchange Trading</h3>
-                        <p class="text-block__text text_global">Instant</p>
-                        <p class="text-block__text text_global">Passive Inventory earns fees</p>
+                <div class="col-12 trading-block__trading-text-block trading-text-block">
+                    <div class="trading-text-block__text-section">
+                        <h3 class="trading-text-block__trading-title title_global">On-Exchange Trading</h3>
+                        <p class="trading-text-block__text text_global">Instant</p>
+                        <p class="trading-text-block__text text_global">Passive Inventory earns fees</p>
                     </div>
-                    <div class="text-block__text-section">
-                        <h3 class="text-block__trading-title title_global">On-Chain Swaps</h3>
-                        <p class="text-block__text text_global">Low Counterparty risk</p>
-                        <p class="text-block__text text_global">Direct transfers</p>
+                    <div class="trading-text-block__text-section">
+                        <h3 class="trading-text-block__trading-title title_global">On-Chain Swaps</h3>
+                        <p class="trading-text-block__text text_global">Low Counterparty risk</p>
+                        <p class="trading-text-block__text text_global">Direct transfers</p>
                     </div>
-                    <div class="text-block__text-section">
-                        <h3 class="text-block__trading-title title_global">Time Settlement Swaps</h3>
-                        <p class="text-block__text text_global">LBTC / Lightning and other sidechain</p>
-                        <p class="text-block__text text_global">swaps</p>
+                    <div class="trading-text-block__text-section">
+                        <h3 class="trading-text-block__trading-title title_global">Time Settlement Swaps</h3>
+                        <p class="trading-text-block__text text_global">LBTC / Lightning and other sidechain</p>
+                        <p class="trading-text-block__text text_global">swaps</p>
                     </div>
-                    <div class="text-block__text-section">
-                        <div class="text-block__btn button_global button-wrapper">
-                            <a href="#" class="text-block__btn-link button-link_global">Join now</a>
+                    <div class="trading-text-block__text-section">
+                        <div class="trading-text-block__btn button_global">
+                            <a href="#" class="trading-text-block__btn-link button-link_global">Join now</a>
                         </div>
                     </div>
                 </div>

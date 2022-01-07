@@ -243,6 +243,30 @@
     color: #606F89;
 }
 
+.table_footnav {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #606F89;
+}
+
+.activity {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-left: 45px;
+}
+
+.activity span {
+    font-weight: 600;
+}
+
+.rowcount {
+    color: #606F89;
+    border: none;
+}
+
 /* color
 #606F89
 */

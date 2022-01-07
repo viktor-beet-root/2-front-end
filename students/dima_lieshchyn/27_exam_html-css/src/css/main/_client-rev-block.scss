@@ -1,0 +1,68 @@
+.client-rev-block {
+    position: relative;
+    padding-top: 151px;
+    border: 1px solid red;
+
+    &__client-info {}
+
+    &__slider-wrapper {}
+}
+
+.client-info {
+
+    &__title {}
+
+    &__title-alt {}
+
+    &__text {}
+}
+
+.title {
+
+    &_global {}
+
+    &_alt-global {}
+}
+
+.text {
+
+    &_global {}
+}
+
+.client-slider {
+    width: 468px;
+    height: 333px;
+    overflow: hidden;
+    position: absolute;
+    top: 35%;
+    left: 61%;
+
+    &__slider-controls {}
+
+    &__slide {}
+
+    &__img {}
+}
+
+.slider-controls {
+
+    &__switchers {}
+
+    &__slider-navigation {}
+}
+
+.slide1 {}
+
+.slide2 {}
+
+.slide3 {}
+
+.slide4 {}
+
+.slider-navigation {
+    &__text {}
+
+    &__num {}
+
+    &__label {}
+}

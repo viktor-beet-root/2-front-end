@@ -1,0 +1,61 @@
+.contact-us-block {
+    display: flex;
+    padding-top: 120px;
+
+    &__contact-us-info {}
+
+    &__contact-form-wrapper {}
+}
+
+.contact-us-info {
+    &__title {
+        font-size: 40px;
+        padding-bottom: 20px;
+    }
+
+    &__title-alt {}
+
+    &__text {
+        width: 70%;
+        font-size: 18px;
+    }
+}
+
+.title {
+    &_global {}
+
+    &_alt-global {}
+}
+
+.text {
+    &_global {}
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+
+    border: none;
+
+    &_wrapper {}
+
+    &__label {}
+
+    &__input {}
+
+    &__btn {}
+
+    &__btn-link {}
+}
+
+.contact-form_wrapper {
+    &__contact-form {}
+}
+
+.button {
+    &_global {}
+}
+
+.button-link {
+    &_global {}
+}

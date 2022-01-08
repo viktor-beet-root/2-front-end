@@ -34,6 +34,22 @@
     z-index: 9999;
 }
 
+.footer {
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 78%;
+        height: 1px;
+        background-color: $color-gray;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // right: 0;
+        transform: translateX(15%);
+    }
+}
+
 .button-link_global {
     text-decoration: none;
     color: $color-coral;

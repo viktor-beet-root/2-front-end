@@ -1,14 +1,22 @@
 .solis-block {
     background-image: url(../../images/third-image.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    min-height: 400px;
+    background-size: cover;
+    min-height: 320px;
     color: $white-color;
-    padding-bottom: 121px;
+    // padding-bottom: 121px;
+
+    // @include media('sm') {
+    //     padding-bottom: 5%;
+    // }
 
     &_text-wrapper {
         max-width: 715px;
         padding: 101px 129px;
+
+        @include media('md') {
+            padding: 10% 10%;
+        }
     }
 
     &__text {
@@ -23,13 +31,30 @@
         position: relative;
         z-index: 10;
 
+
         &::before {
             content: url(../../images/quote-icon.svg);
             display: block;
             position: absolute;
             z-index: 1;
-            top: -($default-gap)*2.5;
-            left: -($default-gap)*3.9;
+            top: -26%;
+            left: -9%;
+
+            @include media('xs') {
+                top: -10%;
+            }
+
+        }
+
+        @include media('sm') {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        @include media('xs') {
+            font-size: 18px;
+            line-height: 1.3;
+            width: 100%;
         }
     }
 
@@ -38,5 +63,14 @@
         font-size: 20px;
         font-style: italic;
         letter-spacing: 2px;
+        opacity: 0.8;
+
+        @include media('sm') {
+            font-size: 18px;
+        }
+
+        @include media('xs') {
+            font-size: 12px;
+        }
     }
 }

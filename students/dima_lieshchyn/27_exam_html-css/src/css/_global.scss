@@ -86,4 +86,8 @@
     font-family: $main-font;
     font-weight: 300;
     opacity: 0.8;
+
+    @include media('sm') {
+        font-size: 14px;
+    }
 }

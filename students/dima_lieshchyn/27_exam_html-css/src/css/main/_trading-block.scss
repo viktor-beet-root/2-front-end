@@ -2,6 +2,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    width: 100%;
+
+    @include media('sm') {
+
+        justify-content: center;
+
+    }
+
 
 
     &__img-wrapper {}
@@ -13,6 +21,17 @@
         background-color: $color-dark-blue-v2;
         width: 240px;
         height: 70%;
+
+        @include media('sm') {
+            top: 5%;
+            left: 30%;
+        }
+
+        @include media('xs') {
+            top: 5%;
+            left: 10%;
+            // margin-left: 25%;
+        }
     }
 
     &__trading-text-block {
@@ -209,33 +228,94 @@
     flex-wrap: wrap;
     width: 50%;
 
+    @include media('sm') {
+        position: absolute;
+        top: 80%;
+        right: 0;
+        width: 100%;
+
+    }
+
+    @include media('xs') {
+        top: 110%;
+        height: 50%;
+
+    }
+
+
 
     &__text-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        width: 40%;
+        width: 39%;
         padding-left: 50px;
+
+
 
         &:nth-child(2) {
             padding-left: 100px;
+
+            @include media('md') {
+                padding: 0;
+            }
         }
 
         &:nth-child(4) {
             padding-left: 80px;
+
+            @include media('lg') {
+                padding-left: 100px;
+            }
+
+            @include media('md') {
+                padding: 0;
+            }
         }
+
+        @include media('lg') {
+            width: 35%;
+        }
+
+        @include media('md') {
+            width: 100%;
+            align-items: center;
+            padding: 0;
+        }
+
+        @include media('xs') {
+            height: 25%;
+            width: 33%;
+
+        }
+
+
+
     }
 
     &__trading-title {
         font-size: 24px;
         padding-bottom: $default-gap - 1px;
 
+        @include media('xs') {
+            font-size: 13px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
     }
 
     &__text {
         font-size: 18px;
         padding-bottom: 5px;
+
+        @include media('xs') {
+
+            font-size: 10px;
+            line-height: 1;
+            text-align: center;
+        }
     }
 
     &__btn {
@@ -243,8 +323,13 @@
         justify-content: center;
         align-items: center;
         border: 1px solid $color-gray;
-        width: 80%;
-        height: 35%;
+        width: 308px;
+        height: 93px;
+
+        @include media('xs') {
+            margin-left: 200%;
+            margin-bottom: 5%;
+        }
     }
 
     &__btn-link {

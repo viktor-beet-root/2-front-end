@@ -4,6 +4,11 @@
     padding-top: 151px;
     padding-bottom: 196px;
 
+    @include media('sm') {
+        padding-top: 70%;
+    }
+
+
     &__client-info {}
 
     &__slider-wrapper {}

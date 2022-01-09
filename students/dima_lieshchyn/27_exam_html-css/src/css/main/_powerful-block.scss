@@ -1,5 +1,9 @@
 .powerful-block {
+    padding-top: 121px;
 
+    @include media('sm') {
+        padding-top: 5%;
+    }
 
     &__tablet-wrapper {
         width: 100%;
@@ -17,10 +21,11 @@
 
     &__video {
         position: absolute;
-        left: 75px;
-        top: 25px;
+        left: 8%;
+        top: 10%;
         width: 83%;
-        height: 93%;
+        height: 90%;
+        padding-bottom: 6%;
         border-radius: 4px;
 
     }
@@ -30,6 +35,21 @@
         font-size: 40px;
         line-height: 48px;
         padding-left: 55px;
+
+        @include media('md') {
+            font-size: 36px;
+        }
+
+        @include media('sm') {
+            padding: 0;
+            text-align: center;
+            padding-top: 5%;
+            font-size: 28px;
+        }
+
+        @include media('xs') {
+            font-size: 22px;
+        }
     }
 
     &__text {
@@ -37,5 +57,12 @@
         padding-left: 55px;
         width: 75%;
         padding-bottom: 120px;
+
+        @include media('sm') {
+            padding: 0;
+            text-align: center;
+            padding-top: 3%;
+            width: 100%;
+        }
     }
 }

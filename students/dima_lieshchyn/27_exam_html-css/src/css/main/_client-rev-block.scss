@@ -24,7 +24,7 @@
 
     &__text-wrap {
         position: absolute;
-        bottom: 10px;
+        bottom: -110px;
     }
 
     &__text-alt {
@@ -63,7 +63,6 @@
 .slider {
     &__slides {
         padding: 10px;
-        background: #fff;
         position: relative;
         z-index: 1;
 
@@ -100,6 +99,7 @@
 
     &__overflow {
         width: 100%;
+        overflow: hidden;
     }
 
     &__slide {

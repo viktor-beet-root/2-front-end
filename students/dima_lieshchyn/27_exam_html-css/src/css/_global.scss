@@ -45,7 +45,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        // right: 0;
         transform: translateX(15%);
     }
 }
@@ -86,4 +85,5 @@
 .text_global {
     font-family: $main-font;
     font-weight: 300;
+    opacity: 0.8;
 }

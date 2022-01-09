@@ -75,6 +75,26 @@
             & .solis-block__text:nth-child(1)::before {
                 content: url(../images/quote-icon-dark.svg);
             }
+
+            & .trading-block__trading-text-block {
+                background-color: rgba(22, 25, 38, .9);
+                transition: background-color .5s ease-in-out;
+            }
+
+            & .contact-form__input {
+                background-color: rgba(22, 25, 38, -0.1);
+                transition: background-color .5s ease-in-out;
+
+                &::placeholder {
+                    opacity: 1;
+                }
+            }
+
+            & .contact-form__btn {
+                background-color: rgba(22, 25, 38, -0.1);
+                transition: background-color .5s ease-in-out;
+
+            }
         }
 
 

@@ -1,6 +1,7 @@
 .contact-us-block {
     display: flex;
     padding-top: 120px;
+    padding-bottom: 132px;
 
     &__contact-us-info {}
 
@@ -16,8 +17,8 @@
     &__title-alt {}
 
     &__text {
-        width: 70%;
         font-size: 18px;
+
     }
 }
 
@@ -35,17 +36,44 @@
     display: flex;
     flex-direction: column;
 
-    border: none;
 
-    &_wrapper {}
+
+    &_wrapper {
+        padding-top: 20px;
+    }
 
     &__label {}
 
-    &__input {}
+    &__input {
+        border: none;
+        border-bottom: 1px solid $color-gray;
+        height: 32px;
+        margin-bottom: 40px;
 
-    &__btn {}
+        &::placeholder {
+            font-family: $additional-font;
+            font-style: italic;
+            font-size: 20px;
+            letter-spacing: 0.08em;
+            line-height: 20px;
+            color: $color-dark-blue;
+            opacity: 0.5;
 
-    &__btn-link {}
+        }
+    }
+
+    &__btn {
+        border: none;
+        background-color: $white-color;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    &__btn-link {
+        &::before {
+            width: 30%;
+        }
+    }
 }
 
 .contact-form_wrapper {

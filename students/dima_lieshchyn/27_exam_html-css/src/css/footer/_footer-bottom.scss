@@ -4,6 +4,11 @@
     width: 100%;
     position: relative;
 
+    @include media('sm') {
+        flex-direction: column;
+        align-items: center;
+    }
+
     &::after {
         content: "";
         width: 100%;
@@ -21,12 +26,27 @@
         display: flex;
         justify-content: center;
 
+        @include media('sm') {
+            width: 100%;
+            padding: $default-gap 0px $default-gap 0px;
+        }
+
         &:nth-child(1) {
             justify-content: flex-start;
+
+            @include media('sm') {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         &:nth-child(3) {
             justify-content: flex-end;
+
+            @include media('sm') {
+                width: 100%;
+                justify-content: center;
+            }
         }
     }
 }

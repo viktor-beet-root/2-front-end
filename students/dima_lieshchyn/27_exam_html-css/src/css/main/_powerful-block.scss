@@ -49,6 +49,7 @@
 
         @include media('xs') {
             font-size: 22px;
+            line-height: 1.5;
         }
     }
 
@@ -62,6 +63,7 @@
             padding: 0;
             text-align: center;
             padding-top: 3%;
+            padding-bottom: 5%;
             width: 100%;
         }
     }

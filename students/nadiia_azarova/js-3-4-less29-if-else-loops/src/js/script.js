@@ -2,118 +2,118 @@
 
 /* 1. Запитай у користувача його вік і визначи, ким він є: дитиною (0-2), підлітком (12-18), дорослим (18-60) або пенсіонером (60 ...), передбач можливість введення невірних даних.*/
 
-// const userAge = +prompt('How old are you?', '');
+const userAge = +prompt('How old are you?', '');
 
-// if (userAge >=0 && userAge < 3) {
-//     console.log('You are a baby');
-// } else if (userAge >=3 && userAge < 12) {
-//     console.log('You are a child');
-// } else if (userAge >= 12 && userAge < 18) {
-//     console.log('You are a teenager');
-// } else if (userAge >=18 && userAge < 60) {
-//     console.log('You are an adult');
-// } else if (userAge >= 60) {
-//     console.log('You are an elder');
-// } else {
-//     console.log('The number you\'ve entered is incoreect');
-// }
+if (userAge >=0 && userAge < 3) {
+    console.log('You are a baby');
+} else if (userAge >=3 && userAge < 12) {
+    console.log('You are a child');
+} else if (userAge >= 12 && userAge < 18) {
+    console.log('You are a teenager');
+} else if (userAge >=18 && userAge < 60) {
+    console.log('You are an adult');
+} else if (userAge >= 60) {
+    console.log('You are an elder');
+} else {
+    console.log('The number you\'ve entered is incoreect');
+}
 
 console.log('===============================================');
 
 // 2. Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).
 
-// const specialNumber = +prompt('Enter a number form 0 to 9', '');
+const specialNumber = +prompt('Enter a number form 0 to 9', '');
 
-// switch (specialNumber) {
-//     case 0:
-//         console.log(')');
-//         break;
-//     case 1: 
-//         console.log('!');
-//         break;
-//     case 2:
-//         console.log('@');
-//         break;
-//     case 3:
-//         console.log('#');
-//         break;
-//     case 4:
-//         console.log('$');
-//         break;
-//     case 5:
-//         console.log('%');
-//         break;
-//     case 6:
-//         console.log('^');
-//         break;
-//     case 7:
-//         console.log('&');
-//         break;
-//     case 8:
-//         console.log('*');
-//         break;
-//     case 9:
-//         console.log('(');
-//         break;
-//     default:
-//         console.log('Your entry is incorrect. Please enter a number from 0 to 9');
-// }
+switch (specialNumber) {
+    case 0:
+        console.log(')');
+        break;
+    case 1: 
+        console.log('!');
+        break;
+    case 2:
+        console.log('@');
+        break;
+    case 3:
+        console.log('#');
+        break;
+    case 4:
+        console.log('$');
+        break;
+    case 5:
+        console.log('%');
+        break;
+    case 6:
+        console.log('^');
+        break;
+    case 7:
+        console.log('&');
+        break;
+    case 8:
+        console.log('*');
+        break;
+    case 9:
+        console.log('(');
+        break;
+    default:
+        console.log('Your entry is incorrect. Please enter a number from 0 to 9');
+}
 
 console.log('===============================================');
 
 /* 3. Підрахуй суму всіх чисел в заданому користувачем діапазоні.*/
 
-// const number1 = +prompt('Enter first number', '');
-// const number2 = +prompt('Enter second number', '');
-// let sumOfNumbers = 0;
+const number1 = +prompt('Enter first number', '');
+const number2 = +prompt('Enter second number', '');
+let sumOfNumbers = 0;
 
-// if (number1 !== number1 || number2 !== number2) {
+if (number1 !== number1 || number2 !== number2) {
 
-//     for (let i = number1; i <= number2; i++) {
+    for (let i = number1; i <= number2; i++) {
 
-//         sumOfNumbers = sumOfNumbers + i;
-//     }
+        sumOfNumbers = sumOfNumbers + i;
+    }
 
-// } else {
-//     console.log('Your entry is incorrect');
-// }
+} else {
+    console.log('Your entry is incorrect');
+}
 
-// const resultSum = 'The sum of all the numbers in the range from ' + number1 + ' to ' + number2 + ' is ' + sumOfNumbers;
+const resultSum = 'The sum of all the numbers in the range from ' + number1 + ' to ' + number2 + ' is ' + sumOfNumbers;
 
-// console.log(resultSum);
+console.log(resultSum);
 
 console.log('===============================================');
 
 /* 4. Запитай у користувача 2 числа і знайди найбільший спільний дільник.*/
 
-// const userNumber1 = +prompt('Please enter a number', '');
-// const userNumber2 = +prompt('Please enter another number', '');
+const userNumber1 = +prompt('Please enter a number', '');
+const userNumber2 = +prompt('Please enter another number', '');
 
-// let a = userNumber1;
-// let b = userNumber2;
+let a = userNumber1;
+let b = userNumber2;
 
-// if (userNumber1 != userNumber1 || userNumber2 != userNumber2) {
+if (userNumber1 != userNumber1 || userNumber2 != userNumber2) {
 
-//     console.log('These are not numbers. Please enter correct numbers!');
+    console.log('These are not numbers. Please enter correct numbers!');
 
-// } else if (userNumber1 === 0 || userNumber2 === 0) {
+} else if (userNumber1 === 0 || userNumber2 === 0) {
 
-//     console.log('You cannot divide by zero!');
+    console.log('You cannot divide by zero!');
 
-// } else {
+} else {
 
-//     while (a !== 0 && b !== 0) {
-//         if (a >= b) {
-//             a = a%b;
-//         } else {
-//             b = b%a;
-//         }
-//     };
+    while (a !== 0 && b !== 0) {
+        if (a >= b) {
+            a = a%b;
+        } else {
+            b = b%a;
+        }
+    };
     
-//     const gcd = a + b;
+    const gcd = a + b;
     
-//     console.log(gcd);
-// }
+    console.log(gcd);
+}
 
 
 
@@ -121,22 +121,22 @@ console.log('===============================================');
 
 /* 5. Запитай у користувача число і виведи всі дільники цього числа.*/
 
-// const userNumber3 = +prompt('Enter a number', '');
+const userNumber3 = +prompt('Enter a number', '');
 
-// let numberDeviders;
+let numberDeviders;
 
-// if (userNumber3 != userNumber3) {
+if (userNumber3 != userNumber3) {
 
-//     console.log('Please enter a correct number!');
-// } else {
-//     for (let i = 1; i <= userNumber3; i++) {
-//         if (userNumber3 % i == 0) {
+    console.log('Please enter a correct number!');
+} else {
+    for (let i = 1; i <= userNumber3; i++) {
+        if (userNumber3 % i == 0) {
 
-//             numberDeviders = i;
-//             console.log(numberDeviders);
-//         }
-//     }
-// }
+            numberDeviders = i;
+            console.log(numberDeviders);
+        }
+    }
+}
 
 console.log('===============================================');
 
@@ -144,17 +144,17 @@ console.log('===============================================');
 
 /* 1. Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.*/
 
-// const userNumber = prompt('Please enter a five-digit number', '');
+const userNumber = prompt('Please enter a five-digit number', '');
 
-// if (+userNumber != +userNumber) {
-//     console.log('This is not a number. Please, enter a number!');
-// } else if (userNumber.length != 5) {
-//     console.log('Please, enter a FIVE-digit number!');
-// } else if (userNumber[0] == userNumber[4] && userNumber[1] == userNumber[3]) {
-//     console.log('Congrats! This number is a palindrome!');
-// } else {
-//     console.log('Alas! This number is not a palindrome!');
-// }
+if (+userNumber != +userNumber) {
+    console.log('This is not a number. Please, enter a number!');
+} else if (userNumber.length != 5) {
+    console.log('Please, enter a FIVE-digit number!');
+} else if (userNumber[0] == userNumber[4] && userNumber[1] == userNumber[3]) {
+    console.log('Congrats! This number is a palindrome!');
+} else {
+    console.log('Alas! This number is not a palindrome!');
+}
 
 console.log('===============================================');
 
@@ -164,134 +164,134 @@ console.log('===============================================');
         від 500 і вище - 7%.
 */
 
-// const purchaseAmount = +prompt('Enter your purchase amount please', '');
+const purchaseAmount = +prompt('Enter your purchase amount please', '');
 
-// let discoutMessage;
-// let discountValue;
+let discoutMessage;
+let discountValue;
 
-// if (purchaseAmount != purchaseAmount) {
+if (purchaseAmount != purchaseAmount) {
 
-//     discoutMessage = 'This is not a correct number. Please enter a correct number!';
+    discoutMessage = 'This is not a correct number. Please enter a correct number!';
 
-// } else if (purchaseAmount < 200) {
+} else if (purchaseAmount < 200) {
 
-//     discoutMessage = 'Alas, you get no discount. Your sum is ' + purchaseAmount;
+    discoutMessage = 'Alas, you get no discount. Your sum is ' + purchaseAmount;
 
-// } else if (purchaseAmount >= 200 && purchaseAmount < 300) {
+} else if (purchaseAmount >= 200 && purchaseAmount < 300) {
 
-//     discountValue = purchaseAmount - purchaseAmount * 3 / 100;
-//     discoutMessage = 'Сongrats! You get 3% discount. Your total sum is ' + discountValue;
+    discountValue = purchaseAmount - purchaseAmount * 3 / 100;
+    discoutMessage = 'Сongrats! You get 3% discount. Your total sum is ' + discountValue;
 
-// } else if (purchaseAmount >= 300 && purchaseAmount < 500) {
+} else if (purchaseAmount >= 300 && purchaseAmount < 500) {
 
-//     discountValue = purchaseAmount - purchaseAmount * 5 / 100;
-//     discoutMessage = 'Сongrats! You get 5% discount. Your total sum is ' + discountValue;
+    discountValue = purchaseAmount - purchaseAmount * 5 / 100;
+    discoutMessage = 'Сongrats! You get 5% discount. Your total sum is ' + discountValue;
 
-// }  else if (purchaseAmount >= 500) {
+}  else if (purchaseAmount >= 500) {
 
-//     discountValue = purchaseAmount - purchaseAmount * 7 / 100;
-//     discoutMessage = 'Сongrats! You get 7% discount. Your total sum is ' + discountValue;
-// }
+    discountValue = purchaseAmount - purchaseAmount * 7 / 100;
+    discoutMessage = 'Сongrats! You get 7% discount. Your total sum is ' + discountValue;
+}
 
-// console.log(discoutMessage);
+console.log(discoutMessage);
 
 console.log('===============================================');
         
 /* 3. Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.*/
 
-// const tenNumbers = prompt('Please enter 10 numbers. Divide them with white spaces', '');
-// const splitedNumbers = tenNumbers.split(' ');
+const tenNumbers = prompt('Please enter 10 numbers. Divide them with white spaces', '');
+const splitedNumbers = tenNumbers.split(' ');
 
-// let positiveNumbers = 0;
-// let negativeNumbers = 0;
-// let zeroNumbers = 0;
-// let evenNumbers = 0;
-// let oddNumbers = 0;
+let positiveNumbers = 0;
+let negativeNumbers = 0;
+let zeroNumbers = 0;
+let evenNumbers = 0;
+let oddNumbers = 0;
 
-// if (+tenNumbers != +tenNumbers) {
-//     for (let i = 0; i < 10; i++) {
+if (+tenNumbers != +tenNumbers) {
+    for (let i = 0; i < 10; i++) {
 
-//         if (Math.sign(+splitedNumbers[i]) == 1) {
+        if (Math.sign(+splitedNumbers[i]) == 1) {
     
-//             positiveNumbers++;
+            positiveNumbers++;
     
-//         } else if (Math.sign(+splitedNumbers[i]) == -1) {
+        } else if (Math.sign(+splitedNumbers[i]) == -1) {
     
-//             negativeNumbers++;
+            negativeNumbers++;
     
-//         } else {
+        } else {
     
-//             zeroNumbers++;
-//         }
+            zeroNumbers++;
+        }
     
-//         if (+splitedNumbers[i] % 2 == 0) {
+        if (+splitedNumbers[i] % 2 == 0) {
             
-//             evenNumbers++;
+            evenNumbers++;
     
-//         } else if (+splitedNumbers[i] % 2 == 1) {
+        } else if (+splitedNumbers[i] % 2 == 1) {
             
-//             oddNumbers++;
-//         }
-//     }
-// } else if (tenNumbers.length != 10) {
+            oddNumbers++;
+        }
+    }
+} else if (tenNumbers.length != 10) {
 
-//     console.log('Plese enter TEN numbers!');
+    console.log('Plese enter TEN numbers!');
 
-// } else {
+} else {
 
-//     console.log('Please enter 10 NUMBERS!');
-// }
+    console.log('Please enter 10 NUMBERS!');
+}
 
-// console.log('positive numbers — ' + positiveNumbers + '\n' + 'negavive numbers — ' + negativeNumbers + '\n' + 'zeros — ' + zeroNumbers + '\n' + 'even numbers — ' + evenNumbers + '\n' + 'odd numbers — ' + oddNumbers);
+console.log('positive numbers — ' + positiveNumbers + '\n' + 'negavive numbers — ' + negativeNumbers + '\n' + 'zeros — ' + zeroNumbers + '\n' + 'even numbers — ' + evenNumbers + '\n' + 'odd numbers — ' + oddNumbers);
 
 console.log('===============================================');
 
 /* 4. Зацикли висновок днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.*/
 
-// let currentDay = new Date();
+let currentDay = new Date();
 
-// let currentDayNumber = currentDay.getDay();
+let currentDayNumber = currentDay.getDay();
 
-// let dayName;
+let dayName;
 
-// switch (currentDayNumber) {
-//     case 0: dayName = 'Sunday';
-//     break;
-//     case 1: dayName = 'Monday';
-//     break;
-//     case 2: dayName = 'Tuesday';
-//     break;
-//     case 3: dayName = 'Wednesday';
-//     break;
-//     case 4: dayName = 'Thursday';
-//     break;
-//     case 5: dayName = 'Friday';
-//     break;
-//     case 6: dayName = 'Saturday';
-// }
+switch (currentDayNumber) {
+    case 0: dayName = 'Sunday';
+    break;
+    case 1: dayName = 'Monday';
+    break;
+    case 2: dayName = 'Tuesday';
+    break;
+    case 3: dayName = 'Wednesday';
+    break;
+    case 4: dayName = 'Thursday';
+    break;
+    case 5: dayName = 'Friday';
+    break;
+    case 6: dayName = 'Saturday';
+}
 
-// while (confirm('Today is ' + dayName + '. Do you want to see the next day?')) {
+while (confirm('Today is ' + dayName + '. Do you want to see the next day?')) {
 
-//     switch ((currentDayNumber + 1) % 7) {
-//         case 0: dayName = 'Sunday';
-//         break;
-//         case 1: dayName = 'Monday';
-//         break;
-//         case 2: dayName = 'Tuesday';
-//         break;
-//         case 3: dayName = 'Wednesday';
-//         break;
-//         case 4: dayName = 'Thursday';
-//         break;
-//         case 5: dayName = 'Friday';
-//         break;
-//         case 6: dayName = 'Saturday';
-//     }
+    switch ((currentDayNumber + 1) % 7) {
+        case 0: dayName = 'Sunday';
+        break;
+        case 1: dayName = 'Monday';
+        break;
+        case 2: dayName = 'Tuesday';
+        break;
+        case 3: dayName = 'Wednesday';
+        break;
+        case 4: dayName = 'Thursday';
+        break;
+        case 5: dayName = 'Friday';
+        break;
+        case 6: dayName = 'Saturday';
+    }
 
-//     currentDayNumber = (currentDayNumber + 1) % 7;
+    currentDayNumber = (currentDayNumber + 1) % 7;
 
-//     console.log(dayName);
-// }
+    console.log(dayName);
+}
 
 
 console.log('===============================================');

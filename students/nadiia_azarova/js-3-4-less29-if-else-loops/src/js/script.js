@@ -69,13 +69,21 @@ let sumOfNumbers = 0;
 
 if (number1 !== number1 || number2 !== number2) {
 
-    for (let i = number1; i <= number2; i++) {
+    console.log('Your entry is incorrect');
+
+} else if (number2 < number1) {
+
+    for (let i = number2; i <= number1; i++) {
 
         sumOfNumbers = sumOfNumbers + i;
     }
 
 } else {
-    console.log('Your entry is incorrect');
+
+    for (let i = number1; i <= number2; i++) {
+
+        sumOfNumbers = sumOfNumbers + i;
+    }
 }
 
 const resultSum = 'The sum of all the numbers in the range from ' + number1 + ' to ' + number2 + ' is ' + sumOfNumbers;
@@ -111,8 +119,10 @@ if (userNumber1 != userNumber1 || userNumber2 != userNumber2) {
     };
     
     const gcd = a + b;
+
+    const messageDiv = 'The greatest common diviser is ' + gcd;
     
-    console.log(gcd);
+    console.log(messageDiv);
 }
 
 
@@ -123,7 +133,7 @@ console.log('===============================================');
 
 const userNumber3 = +prompt('Enter a number', '');
 
-let numberDeviders;
+let numberDividers;
 
 if (userNumber3 != userNumber3) {
 
@@ -132,8 +142,11 @@ if (userNumber3 != userNumber3) {
     for (let i = 1; i <= userNumber3; i++) {
         if (userNumber3 % i == 0) {
 
-            numberDeviders = i;
-            console.log(numberDeviders);
+            numberDividers = i;
+
+            const messageAllDiv = 'The common dividers of these numbers are: ' + numberDividers;
+
+            console.log(messageAllDiv);
         }
     }
 }
@@ -224,7 +237,7 @@ if (+tenNumbers != +tenNumbers) {
             zeroNumbers++;
         }
     
-        if (+splitedNumbers[i] % 2 == 0) {
+        if (+splitedNumbers[i] % 2 == 0 && +splitedNumbers[i] != 0) {
             
             evenNumbers++;
     
@@ -296,35 +309,31 @@ while (confirm('Today is ' + dayName + '. Do you want to see the next day?')) {
 
 console.log('===============================================');
 
+
 // Максимум
 
 /* 1. Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл, записуй результат в N і питай у користувача «Ваше число> N, <N або == N?». Залежно від того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100, поділи навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на від 51 до 100. І так до тих пір, поки користувач не вибере == N.*/
 
-console.log('Think of a number');
-
+console.log('Think of a number between 0 and 100');
 
 let rangeStart = 0;
 let rangeEnd = 100;
 
-while (rangeEnd <= 100 && rangeStart >= 0) {
+let rangeMiddle;
 
-    let middleNumber = Math.trunc((rangeStart + rangeEnd) / 2);
+do {
+    rangeMiddle = Math.trunc((rangeEnd + rangeStart) / 2);
 
-    if (confirm('Your number is ' + middleNumber + '?')) {
-
-        console.log('Hoorah! I guessed!');
+    if (confirm('Your number is greater than ' + rangeMiddle + '?')) {
+        rangeStart = rangeMiddle;
+    } else if (confirm('Your number is smaller than ' + rangeMiddle + '?')) {
+        rangeEnd = rangeMiddle;
+    } else if (confirm('Then your number is ' + rangeMiddle + '?')) {
+        console.log('Hoorah! I guessed your number. It is ' + rangeMiddle + '!');
         break;
-
-    } else if (confirm('Your namber is smaller than ' + middleNumber + '?')) {
-
-        rangeEnd = rangeEnd - middleNumber - 1;
-
-    } else if (confirm('Your number is greater than ' + middleNumber + '?')) {
-
-        rangeStart = middleNumber + 1;
     }
-}
 
+} while (rangeMiddle >= 0 && rangeMiddle <= 100);
 
 
 

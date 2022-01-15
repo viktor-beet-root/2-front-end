@@ -1,0 +1,71 @@
+.superpowers__title {
+    @include media('xs') {
+        font-size: 22px;
+    }
+}
+
+.superpowers-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 54px;
+}
+
+.superpowers__btn {
+    margin-top: 38px;
+}
+
+.superpowers-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include media('sm') {
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__item span {
+        @include media('sm') {
+            margin: 0 auto;
+        }
+
+        &__title {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+
+
+    .icon_v1 {
+        background-color: $color-violet;
+    }
+
+    .icon_v2 {
+        background-color: $color-orange-v2;
+    }
+
+    .icon_v3 {
+        background-color: $color-red;
+    }
+
+    .icon_v4 {
+        background-color: $color-blue;
+    }
+
+    .icon_arrow::after {
+        content: url(#{$path-img}arrow.svg);
+    }
+
+    .icon_snake::after {
+        content: url(#{$path-img}snake.svg);
+        vertical-align: -13px;
+    }
+
+    .icon_heart::after {
+        content: url(#{$path-img}heart.svg);
+    }
+
+    .icon_clock::after {
+        content: url(#{$path-img}clock.svg);
+    }
+}

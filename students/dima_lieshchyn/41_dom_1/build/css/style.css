@@ -1143,6 +1143,7 @@ a:hover {
   margin-left: 50px;
   font-weight: 600;
   color: #FF9900;
+  background-color: #fff !important;
 }
 @media screen and (max-width: 576px) {
   .hero .link {

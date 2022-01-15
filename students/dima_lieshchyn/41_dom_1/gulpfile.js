@@ -48,6 +48,11 @@ function images() {
         .pipe(gulp.dest(path.build.images));
 }
 
+function fonts() {
+    return gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts));
+}
+
 
 function server(cb) {
     browserSync.init({
@@ -77,17 +82,18 @@ exports.js = js;
 exports.clean = clean;
 exports.style = style;
 exports.images = images;
-
+exports.fonts = fonts;
 
 if (isDev) {
     exports.default = gulp.series(
         html,
         js,
+        fonts,
         images,
         style,
         gulp.parallel(watch, server)
     );
 } else {
-    exports.default = gulp.series(clean, html, js, images, style);
+    exports.default = gulp.series(clean, html, js, fonts, images, style);
 }
 

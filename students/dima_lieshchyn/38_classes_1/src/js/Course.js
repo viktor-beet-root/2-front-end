@@ -68,16 +68,16 @@ Course.prototype.getUniqSkillList = function () {
 //4. Сортировать студентов в зависимости 
 //от их скила(кол-во скилов length) принимает true false.
 Course.prototype.sortStudentsBySkill = function (switcher) {
-    switcher ?
-        this.studentsList.sort(
+    if (switcher) {
+        return this.studentsList.sort(
             (a, b) => a.skillList.length - b.skillList.length
-        )
-        :
-        this.studentsList.sort(
+        );
+    } else {
+        return this.studentsList.sort(
             (a, b) => b.skillList.length - a.skillList.length
         );
+    }
 };
-
 
 //5. Метод возвращает студента по возрасту самого старого.
 Course.prototype.getOldestStudent = function () {

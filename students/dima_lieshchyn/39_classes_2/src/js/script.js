@@ -1,30 +1,29 @@
 import Course from "./Course";
 
-
 const frontend = new Course({
     courseName: 'Frontend',
     duration: new Date(2022, 4, 15).getTime(),
     start: new Date(2022, 0, 11).getTime(),
 });
 
-frontend.addStudent({
+frontend.addStudent = {
     name: 'Vasya',
     email: 'vasya@gmail.com',
     age: 26,
     skillList: ['html', 'js', 'git']
-});
-frontend.addStudent({
+};
+frontend.addStudent = {
     name: 'Denn',
     email: 'denn@gmail.com',
     age: 45,
     skillList: ['html', 'js', 'nodeJs', 'git', 'scss', 'css']
-});
-frontend.addStudent({
+};
+frontend.addStudent = {
     name: 'Kolya',
     email: 'kolya@gmail.com',
     age: 24,
     skillList: ['html', 'js']
-});
+};
 
 
 console.log(frontend.changeStudentById(1, {

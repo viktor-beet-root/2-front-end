@@ -1,96 +1,102 @@
-let idStudent = 0;
-
-function Course(options) {
-    this.studentsList = [];
-    this.courseName = options.courseName;
-    this.duration = options.duration;
-    this.start = options.start;
+function getIdfunc() {
+    let counter = 0;
+    return () => counter++;
 }
 
-Course.prototype.getStudentsList = function () {
-    return this.studentsList;
-};
+class Course {
+    constructor(options) {
+        this.studentsList = [];
+        this.courseName = options.courseName;
+        this.duration = options.duration;
+        this.start = options.start;
+    }
 
-Course.prototype.addStudent = function (student) {
-    student.id = idStudent++;
-    this.studentsList.push(student);
-};
+    getStudentId = getIdfunc();
 
-Course.prototype.getTimeToEnd = function () {
-    return this.duration - new Date().getTime();
-};
+    getStudentsList() {
+        return this.studentsList;
+    };
 
-Course.prototype.removeStudent = function (idStudent) {
-    const indexStudent = this.getStudentIndexById(idStudent);
+    set addStudent(student) {
+        if (!student) return;
+        student.id = this.getStudentId();
+        this.studentsList.push(student);
+    };
 
-    if (!~indexStudent) return {};
+    getTimeToEnd() {
+        return this.duration - new Date().getTime();
+    };
 
-    return this.studentsList.splice(indexStudent, 1)[0];
-};
+    removeStudent(idStudent) {
+        const indexStudent = this.getStudentIndexById(idStudent);
 
-Course.prototype.getStudentIndexById = function (idStudent) {
-    return this.studentsList.map(student => student.id).indexOf(idStudent);
-};
+        if (!~indexStudent) return {};
 
-Course.prototype.getStudentById = function (idStudent) {
-    return this.studentsList.find(student => student.id === idStudent);
-};
+        return this.studentsList.splice(indexStudent, 1)[0];
+    };
 
-//1. Заменяет студента на другого (id,{student}).
-Course.prototype.changeStudentById = function (idStudent, student) {
-    const indexStudent = this.getStudentIndexById(idStudent);
+    getStudentIndexById(idStudent) {
+        return this.studentsList.map(student => student.id).indexOf(idStudent);
+    };
 
-    if (!~indexStudent) return {};
+    getStudentById(idStudent) {
+        return this.studentsList.find(student => student.id === idStudent);
+    };
 
-    return this.studentsList.splice(indexStudent, 1, student);
-};
+    //1. Заменяет студента на другого (id,{student}).
+    changeStudentById(idStudent, student) {
+        const indexStudent = this.getStudentIndexById(idStudent);
 
-//2. Возвращает масив всех скилов студентов skillList => fullSkillList.
+        if (!~indexStudent) return {};
 
-Course.prototype.getFullSkillList = function () {
-    let fullSkillList = '';
-    this.studentsList.map(
-        student => fullSkillList = fullSkillList + student.skillList + ','
-    );
-    return fullSkillList;
-};
+        return this.studentsList.splice(indexStudent, 1, student);
+    };
 
-
-//3. Возвращает масив всех скилов студентов skillList уникальный uniqSkillList.
-Course.prototype.getUniqSkillList = function () {
-    return this.getFullSkillList()
-        .split(',')
-        .filter((skill, index, arr) => arr.indexOf(skill) === index)
-        .join(', ')
-        .slice(0, -2);
-}
-
-//4. Сортировать студентов в зависимости 
-//от их скила(кол-во скилов length) принимает true false.
-Course.prototype.sortStudentsBySkill = function (switcher) {
-    switcher ?
-        this.studentsList.sort(
-            (a, b) => a.skillList.length - b.skillList.length
-        )
-        :
-        this.studentsList.sort(
-            (a, b) => b.skillList.length - a.skillList.length
+    //2. Возвращает масив всех скилов студентов skillList => fullSkillList.
+    getFullSkillList() {
+        let fullSkillList = '';
+        this.studentsList.map(
+            student => fullSkillList = fullSkillList + student.skillList + ','
         );
-};
+        return fullSkillList;
+    };
 
+    //3. Возвращает масив всех скилов студентов skillList уникальный uniqSkillList.
+    getUniqSkillList() {
+        return this.getFullSkillList()
+            .split(',')
+            .filter((skill, index, arr) => arr.indexOf(skill) === index)
+            .join(', ')
+            .slice(0, -2);
+    }
 
-//5. Метод возвращает студента по возрасту самого старого.
-Course.prototype.getOldestStudent = function () {
-    const temp = this.studentsList.slice();
-    return temp.sort((a, b) => b.age - a.age)[0];
-};
+    //4. Сортировать студентов в зависимости 
+    //от их скила(кол-во скилов length) принимает true false.
+    sortStudentsBySkill(switcher) {
+        if (switcher) {
+            return this.studentsList.sort(
+                (a, b) => a.skillList.length - b.skillList.length
+            );
+        } else {
+            return this.studentsList.sort(
+                (a, b) => b.skillList.length - a.skillList.length
+            );
+        }
+    };
 
+    //5. Метод возвращает студента по возрасту самого старого.
+    getOldestStudent() {
+        const temp = this.studentsList.slice();
+        return temp.sort((a, b) => b.age - a.age)[0];
+    };
 
-//6. Метод молодого.
-Course.prototype.getYoungerStudent = function () {
-    const temp = this.studentsList.slice();
-    return temp.sort((a, b) => a.age - b.age)[0];
-};
+    //6. Метод молодого.
+    getYoungerStudent() {
+        const temp = this.studentsList.slice();
+        return temp.sort((a, b) => a.age - b.age)[0];
+    };
+
+}
 
 export default Course;
 

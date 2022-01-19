@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal__wrapper {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, .75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal__window {
+            background-color: white;
+            max-width: 400px;
+            width: 100%;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav id="menu" title="ffff">
+        <h2>previous</h2>
+        <ul class="menu ffff" title="my menu" data-menu-custom="#1-#22-#7">
+            <li class="menu__item"><a href="https://www.google.com.ua/" class="menu__link"><span>Home</span></a></li>
+            <li class="menu__item"><a href="#22" class="menu__link"><span>Text</span></a></li>
+            <li class="menu__item"><a href="#7" class="menu__link"><span>Form</span></a></li>
+            <li class="menu__item"><a href="#4" class="menu__link"><span>Sing <span>in</span></span></a></li>
+            <li class="menu__item"><a href="#8" class="menu__link"><span>Sing <span>up</span></span></a></li>
+        </ul>
+        <h2>next</h2>
+    </nav>
+    <button class="my-first-button">button</button>
+    <div class="modal">
+        <div class="modal__wrapper">
+            <div class="modal__window">
+                <p>sdfgdf</p>
+                <button class="close" type="button">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

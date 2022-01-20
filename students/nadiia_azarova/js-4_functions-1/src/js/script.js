@@ -29,20 +29,22 @@
     //     return result;
     // }
 
+console.log('===============================================');
+
 // 2. Створи функцію, яка буде виводити кількість переданих їй аргументів.
 
-/* function showAgrumentsNumber() {
+function showAgrumentsNumber() {
     console.log(arguments.length);
 }
 
-showAgrumentsNumber(1, 5, 8); */
+showAgrumentsNumber(1, 5, 8);
 
 /* 3. Напиши функцію, яка приймає 2 числа і повертає :
     1. -1, якщо перше число менше, ніж друге; 
     2. 1 - якщо перше число більше, ніж друге; 
     3. 0 - якщо числа рівні.
 */
-/*
+
 const firstNumber = +prompt('Enter first number', '');
 const secondNumber = +prompt('Enter second number', '');
 
@@ -56,7 +58,9 @@ function showNumber(a, b) {
     }
 }
 
-console.log(showNumber(firstNumber, secondNumber)); */
+console.log(showNumber(firstNumber, secondNumber));
+
+console.log('===============================================');
 
 // 4. Напиши функцію, яка обчислює факторіал переданого їй числа.
 
@@ -95,6 +99,8 @@ const factorialMessage = factorialNumber + '! = ' + calcFactorial(factorialNumbe
 
 console.log(factorialMessage);
 
+console.log('===============================================');
+
 // 5. Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри 1, 4, 9 перетворяться в число 149.
 
 let concatResult;
@@ -107,6 +113,8 @@ concatThreeNumbers(1, 4, 9);
 
 console.log(concatResult);
 
+console.log('===============================================');
+
 // 6. Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
 
 
@@ -117,11 +125,71 @@ function calcSquare(a, b = a) {
 console.log(calcSquare(16, 12));
 console.log(calcSquare(18));
 
+console.log('===============================================');
+
 
 // Норма
 
 // 1. Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число - це число, яке дорівнює сумі всіх своїх дільників.
 
+const perfectNumber = +prompt('Enter a number you want to check', '');
+
+function isPerfectNumber(n) {
+
+    let sumOfDividers = 0;
+
+    for (let i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            sumOfDividers = sumOfDividers + i;
+        }
+    }
+
+    if (n == sumOfDividers) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+if (perfectNumber != perfectNumber) {
+    console.log('Please enter a correct number!');
+} else {
+    let perfectResult = isPerfectNumber(perfectNumber);
+    if (perfectResult) {
+        console.log('Congrats! This is a perfect number');
+    } else {
+       console.log('Alas! This is not  perfect number'); 
+    }
+}
+
+console.log('===============================================');
 
 
 // 2. Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
+
+let perfectNumbersList = '';
+
+function perfectFromRange(a, b) {
+    let maxN;
+    let minN;
+    if (a > b) {
+        maxN = a;
+        minN = b;
+    } else {
+        maxN = b;
+        minN = a;
+    }
+
+    for (let i = 0; i < maxN; i++) {
+
+        let perfectNumbers = isPerfectNumber(i);
+        
+        if(perfectNumbers) {
+            perfectNumbersList = perfectNumbersList + i + ', ';
+        }
+    }
+
+    return perfectNumbersList;
+}
+
+console.log(perfectFromRange(1, 29));

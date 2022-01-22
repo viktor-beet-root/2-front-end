@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        textarea {
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .required label::after {
+            content: '*';
+            color: red;
+        }
+
+        .error input,
+        .error textarea {
+            border-color: red;
+        }
+
+        label {
+            display: block;
+        }
+
+        .form__control {
+            position: relative;
+        }
+
+        .message-counter {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: inline;
+        }
+
+        .message-counter::after {
+            content: attr(data-max-content);
+        }
+
+        .message-counter::before {
+            content: attr(data-current-count);
+        }
+
+        .form__control,
+        .form__action {
+            margin-bottom: 20px;
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
+
+        .form__action {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form__control *:not(span) {
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form class="form" action="./" method="post">
+        <div class="form__control required">
+            <label for="" class="form__label">Full Name</label>
+            <input class="form__input required letters-only" type="text" maxlength="25" name="fullName">
+        </div>
+        <div class="form__control">
+            <label for="" class="form__label">Phone number</label>
+            <input class="form__input" type="text" name="phone">
+        </div>
+        <div class="form__control required">
+            <label for="" class="form__label">Message</label>
+            <textarea data-max-content="50" class="form__input form__input_textarea required" name="message"></textarea>
+            <span class="message-counter" data-max-content="50" data-current-count="0">/</span>
+        </div>
+        <div class="form__action">
+            <button type="reset">Cansel</button>
+            <button type="submit">Ok</button>
+        </div>
+    </form>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

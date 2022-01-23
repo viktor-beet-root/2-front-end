@@ -1,0 +1,213 @@
+// Colors:
+$grey-700: #565656;
+$head-color: #000000;
+
+// File Pathes
+$path-fonts: '../fonts/';
+$path-img: '../images/';
+
+// Container
+$container-width: 1120px; // Change this!
+
+// For Responsive Grid Mixin
+$grid-gap: 16px; // Change this!
+
+$breack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);
+
+// Styles for .page
+$body-font-family: Lato;
+$body-font-size: 19px;
+$body-font-weight: 400;
+$body-line-height: 32px;
+$body-color: $grey-700;
+
+// Typography
+$head-font-family: 'Red Hat Display';
+$h1-font-size: 48px;
+$h1-line-height: 64px;
+$h1-letter-spacing: 0.005em;
+$h2-font-size: 24px;
+$h2-line-height: 1.66;
+$h2-letter-spacing: 0.01em;
+
+// Font Stacks
+$humanist: "Myriad Pro",
+Seravek,
+Ember,
+"Trebuchet MS",
+"BN Trebuchet MS",
+"PT Sans",
+"Frutiger Neue",
+Roboto,
+sans-serif;
+$geometric: Futura,
+"Century Gothic",
+"Apple SD Gothic Neo",
+AppleGothic,
+sans-serif;
+
+$oldstyle: "Minion Pro",
+"Iowan Old Style",
+Palatino,
+"Palatino Linotype",
+"Palatino Nova",
+"BN Amasis",
+Cambria,
+FreeSerif,
+"Times New Roman",
+serif;
+
+$modern: Athelas,
+Literata,
+Bookerly,
+"Merriweather Serif",
+Malabar,
+"BN Malabar",
+Georgia,
+"Droid Serif",
+serif;
+
+// The monospace
+$monospace: Consolas,
+"Andale Mono WT",
+"Andale Mono",
+"Lucida Console",
+"Lucida Sans Typewriter",
+"DejaVu Sans Mono",
+"Bitstream Vera Sans Mono",
+"Liberation Mono",
+"Nimbus Mono L",
+Monaco,
+"Courier New",
+Courier,
+monospace;
+
+//  Other Modern Font Stacks
+
+// System
+$system-font: system,
+-apple-system,
+".SFNSText-Regular",
+"San Francisco",
+"Roboto",
+"Segoe UI",
+"Helvetica Neue",
+"Lucida Grande",
+sans-serif;
+
+// Times New Roman-based serif
+$timenewroman-based: Cambria,
+"Hoefler Text",
+Utopia,
+"Liberation Serif",
+"Nimbus Roman No9 L Regular",
+Times,
+"Times New Roman",
+serif;
+
+// A modern Georgia-based serif
+$georgia-based: Constantia,
+"Lucida Bright",
+Lucidabright,
+"Lucida Serif",
+Lucida,
+"DejaVu Serif",
+"Bitstream Vera Serif",
+"Liberation Serif",
+Georgia,
+serif;
+
+// A more traditional Garamond-based serif 
+$garamond-based: "Palatino Linotype",
+Palatino,
+Palladio,
+"URW Palladio L",
+"Book Antiqua",
+Baskerville,
+"Bookman Old Style",
+"Bitstream Charter",
+"Nimbus Roman No9 L",
+Garamond,
+"Apple Garamond",
+"ITC Garamond Narrow",
+"New Century Schoolbook",
+"Century Schoolbook",
+"Century Schoolbook L",
+Georgia,
+serif;
+
+// The Helvetica/Arial-based sans serif
+$arial-based: Frutiger,
+"Frutiger Linotype",
+Univers,
+Calibri,
+"Gill Sans",
+"Gill Sans MT",
+"Myriad Pro",
+Myriad,
+"DejaVu Sans Condensed",
+"Liberation Sans",
+"Nimbus Sans L",
+Tahoma,
+Geneva,
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+
+// The Verdana-based sans serif 
+$verdana-based: Corbel,
+"Lucida Grande",
+"Lucida Sans Unicode",
+"Lucida Sans",
+"DejaVu Sans",
+"Bitstream Vera Sans",
+"Liberation Sans",
+Verdana,
+"Verdana Ref",
+sans-serif;
+
+// The Trebuchet-based sans serif 
+$trebuchet-based: "Segoe UI",
+Candara,
+"DejaVu Sans",
+"Bitstream Vera Sans",
+"Trebuchet MS",
+Verdana,
+"Verdana Ref",
+sans-serif;
+
+// The heavier "Impact" sans serif
+$impact-based: Impact,
+Haettenschweiler,
+"Franklin Gothic Bold",
+Charcoal,
+"Helvetica Inserat",
+"Bitstream Vera Sans Bold",
+"Arial Black",
+sans-serif;
+
+// Flat colors DELETE THIS
+$turquoise: #1abc9c;
+$emerald: #2ecc71;
+$peter-river: #3498db;
+$amethyst: #9b59b6;
+$wet-asphalt: #34495e;
+$green-sea: #16a085;
+$nephritis: #27ae60;
+$belize-hole: #2980b9;
+$wisteria: #8e44ad;
+$midnight-blue: #2c3e50;
+$sunflower: #f1c40f;
+$carrot: #e67e22;
+$alizarin: #e74c3c;
+$clouds: #ecf0f1;
+$concrete:#95a5a6;
+$orange: #f39c12;
+$pumpkin: #d35400;
+$pomegranate: #c0392b;
+$silver: #bdc3c7;
+$asbestos: #7f8c8d;

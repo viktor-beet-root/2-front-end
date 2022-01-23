@@ -1,0 +1,106 @@
+@include font-face(Lato, lato-v20-latin-regular);
+@include font-face('Red Hat Display', red-hat-display-v7-latin-regular);
+
+// Global
+.page {
+    font-family: $body-font-family, $humanist;
+    font-size: $body-font-size;
+    font-weight: $body-font-weight;
+    line-height: $body-line-height;
+    letter-spacing: 0.01em;
+    color: $body-color;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.header {
+    padding: 48px 0;
+}
+
+.section,
+.hero-section {
+    padding: 64px 0;
+}
+
+// Typography
+.head-a,
+.head-b {
+    font-family: $head-font-family, $humanist;
+    color: $head-color;
+}
+
+.head-a {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    letter-spacing: $h1-letter-spacing;
+}
+
+.head-b {
+    font-size: $h2-font-size;
+    line-height: $h1-line-height;
+    letter-spacing: $h1-letter-spacing;
+}
+
+.hero-section__head-a {
+    margin-bottom: 64px;
+}
+
+.section__head-b {
+    margin-bottom: 40px;
+}
+
+.header__txt {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    color: $head-color;
+}
+
+.section__body-txt:not(:last-of-type) {
+    margin-bottom: 32px;
+}
+
+// Images and wrappers
+.txt-wrap {
+    max-width: 496px;
+}
+
+.section__pic,
+.hero-section__pic {
+    margin-bottom: 48px;
+}
+
+.section__img,
+.hero-section__img {
+    width: 100%;
+}
+
+// Responsive
+@include media('sm') {
+
+    .section,
+    .hero-section {
+        padding: 32px 0;
+    }
+
+    .head-a {
+        font-size: 33px;
+        line-height: 50px;
+    }
+
+    .hero-section__head-a {
+        margin-bottom: 52px;
+    }
+}
+
+@include media('xs') {
+
+    .section,
+    .hero-section {
+        padding: 24px 0;
+    }
+}

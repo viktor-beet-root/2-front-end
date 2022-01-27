@@ -5,13 +5,13 @@
 var personAge = +prompt('Скільки Вам років');
 var res = '';
 
-if (0 < personAge && personAge <= 12) {
+if (0 < personAge && personAge < 12) {
   res = "Дитина";
-} else if (12 < personAge && personAge < 18) {
+} else if (12 <= personAge && personAge < 18) {
   res = "Підліток";
-} else if (18 <= personAge && personAge <= 60) {
+} else if (18 <= personAge && personAge < 60) {
   res = "Дорослий";
-} else if (personAge > 60) {
+} else if (personAge >= 60) {
   res = "Пенсіонер";
 } else {
   res = 'Вказано неправельно вік!';
@@ -66,10 +66,12 @@ switch (personNum) {
 
 console.log(personSymbol); // 3. Підрахуй суму всіх чисел в заданому користувачем діапазоні.
 
-var startNum = +prompt("Введіть початкове число діапазону");
-var endtNum = +prompt("Введіть кінцеве число діапазону");
+var firstNum = +prompt("Введіть початкове число діапазону");
+var secondNum = +prompt("Введіть кінцеве число діапазону");
+var startNum = firstNum < secondNum ? firstNum : secondNum;
+var endtNum = firstNum < secondNum ? secondNum : firstNum;
 var i = startNum;
-var sumNum = null;
+var sumNum = 0;
 
 while (i <= endtNum) {
   sumNum = sumNum + i;
@@ -80,8 +82,8 @@ console.log(sumNum); // 4. Запитай у користувача 2 числа
 
 var personNum1 = +prompt("Вкажіть перше число");
 var personNum2 = +prompt("Вкажіть друге число");
-var max = personNum1 > personNum2 ? max = personNum1 : max = personNum2;
-var min = personNum1 < personNum2 ? min = personNum1 : min = personNum2;
+var max = personNum1 > personNum2 ? personNum1 : personNum2;
+var min = personNum1 < personNum2 ? personNum1 : personNum2;
 var j = min;
 var resDiv = null;
 
@@ -111,22 +113,31 @@ while (e <= personNum3) {
 
 console.log(resDivision); //Норма
 // 1.Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.
+// const personNum5 = +prompt('Введіть 5 значне число'); 
+// let num5 = personNum5;
+// let str5 = '';
+// let resaltNum5 = '';
+// for (const g = 0; 0 < num5; num5--) {
+//     str5 = num5 + '';
+//     if (str5[0] === str5[4] && str5[1] === str5[3]) {
+//         resaltNum5 = str5;
+//         break;
+//     }
+// }
+// let resConctN1 = "Ваше число " + personNum5 + " найближче поліндромне число " + resaltNum5;
+// console.log(resConctN1);
 
 var personNum5 = +prompt('Введіть 5 значне число');
-var num5 = personNum5;
-var str5 = '';
-var resaltNum5 = '';
+var firstPosNum = personNum5 % 10;
+var secondtPosNum = ~~(personNum5 / 10) % 10;
+var forthPosNum = ~~(personNum5 / 1000) % 10;
+var fivthtPosNum = ~~(personNum5 / 10000) % 10;
+var resConctN1 = '';
 
-for (var g = 0; 0 < num5; num5--) {
-  str5 = num5 + '';
+if (firstPosNum === fivthtPosNum && secondtPosNum === forthPosNum) {
+  resConctN1 = 'Ваше чило: ' + personNum5 + ' є поліндромом';
+} else resConctN1 = 'Ваше чило: ' + personNum5 + ' не є поліндромом';
 
-  if (str5[0] === str5[4] && str5[1] === str5[3]) {
-    resaltNum5 = str5;
-    break;
-  }
-}
-
-var resConctN1 = "Ваше число " + personNum5 + " найближче поліндромне число " + resaltNum5;
 console.log(resConctN1); // 2.Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
 // від 200 до 300 - знижка буде 3%;
 // від 300 до 500 - 5%;
@@ -150,11 +161,11 @@ if (personMoney >= 200 && personMoney <= 300) {
 resConctN2 = personMoney >= 200 ? "Сумма до оплати :" + discont : personMoney + ' ' + resConctN22;
 console.log(resConctN2); // 3.Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
 
-var dotNum = null;
-var vidNum = null;
-var zeroNum = null;
-var parNum = null;
-var neparNum = null;
+var dotNum = 0;
+var vidNum = 0;
+var zeroNum = 0;
+var parNum = 0;
+var neparNum = 0;
 var personTenNum;
 var personStr = '';
 var resConctN3 = '';
@@ -182,11 +193,16 @@ resConctN3 = personStr + "\n" + "Додатніх чисел: " + dotNum + '\n' 
 console.log(resConctN3); //4.Зацикли висновок днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
 
 var ok = true;
-var k = 1;
+var k = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П*ятниця', 'Субота', 'Неділя'];
+var z = 0;
 
 do {
-  ok = confirm(k + " День тижня. Хочеш побачити наступний день?");
-  k++;
+  if (z > 6) {
+    z = 0;
+  }
+
+  ok = confirm(k[z] + ". Хочеш побачити наступний день?");
+  z++;
 } while (ok); // Максимум
 // 2.Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
 
@@ -195,9 +211,9 @@ var mult1 = null;
 var resConctE2 = '';
 
 for (var x = 2; x <= 9; x++) {
-  for (var z = 1; z <= 10; z++) {
-    mult1 = x * z;
-    resConctE2 = resConctE2 + x + "x" + z + "=" + mult1 + "\n";
+  for (var _z = 1; _z <= 10; _z++) {
+    mult1 = x * _z;
+    resConctE2 = resConctE2 + x + "x" + _z + "=" + mult1 + "\n";
   }
 }
 
@@ -206,9 +222,12 @@ console.log(resConctE2); //Піраміда
 var piremid = '';
 var t = '#';
 
-for (var q = 0; q < 5; q++) {
-  piremid = piremid + t;
-  console.log(piremid);
+for (var q = 0; q < 6; q++) {
+  for (var o = 0; o <= q; o++) {
+    if (o === q) {
+      piremid = piremid + t + '\n';
+    } else piremid = piremid + t;
+  }
 }
 
 console.log(piremid);

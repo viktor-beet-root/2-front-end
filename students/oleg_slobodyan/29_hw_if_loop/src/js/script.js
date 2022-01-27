@@ -2,13 +2,13 @@
 // 1. Запитай у користувача його вік і визначи, ким він є: дитиною (0-2), підлітком (12-18), дорослим (18_60) або пенсіонером (60 ...), передбач можливість введення невірних даних.
 const personAge = +prompt('Скільки Вам років');
 let res = '';
-if (0 < personAge && personAge <= 12) {
+if (0 < personAge && personAge < 12) {
     res = "Дитина";
-} else if (12 < personAge && personAge < 18) {
+} else if (12 <= personAge && personAge < 18) {
     res = "Підліток";
-} else if (18 <= personAge && personAge <= 60) {
+} else if (18 <= personAge && personAge < 60) {
     res = "Дорослий";
-} else if (personAge > 60) {
+} else if (personAge >= 60) {
     res = "Пенсіонер";
 } else {
     res = 'Вказано неправельно вік!';
@@ -54,10 +54,13 @@ switch (personNum) {
 console.log(personSymbol);
 
 // 3. Підрахуй суму всіх чисел в заданому користувачем діапазоні.
-const startNum = +prompt("Введіть початкове число діапазону");
-const endtNum = +prompt("Введіть кінцеве число діапазону");
+const firstNum = +prompt("Введіть початкове число діапазону");
+const secondNum = +prompt("Введіть кінцеве число діапазону");
+const startNum = firstNum < secondNum ? firstNum : secondNum;
+const endtNum = firstNum < secondNum ? secondNum : firstNum;
+
 let i = startNum;
-let sumNum = null;
+let sumNum = 0;
 while (i <= endtNum) {
     sumNum = sumNum + i;
     i++;
@@ -67,8 +70,8 @@ console.log(sumNum);
 // 4. Запитай у користувача 2 числа і знайди найбільший спільний дільник.
 const personNum1 = +prompt("Вкажіть перше число");
 const personNum2 = +prompt("Вкажіть друге число");
-let max = (personNum1 > personNum2) ? max = personNum1 : max = personNum2;
-let min = (personNum1 < personNum2) ? min = personNum1 : min = personNum2;
+let max = (personNum1 > personNum2) ? personNum1 : personNum2;
+let min = (personNum1 < personNum2) ? personNum1 : personNum2;
 let j = min;
 let resDiv = null;
 while (j > 0) {
@@ -98,19 +101,33 @@ console.log(resDivision);
 
 //Норма
 // 1.Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.
+// const personNum5 = +prompt('Введіть 5 значне число'); 
+// let num5 = personNum5;
+// let str5 = '';
+// let resaltNum5 = '';
+// for (const g = 0; 0 < num5; num5--) {
+//     str5 = num5 + '';
+//     if (str5[0] === str5[4] && str5[1] === str5[3]) {
+//         resaltNum5 = str5;
+//         break;
+//     }
+// }
+// let resConctN1 = "Ваше число " + personNum5 + " найближче поліндромне число " + resaltNum5;
+// console.log(resConctN1);
+
 const personNum5 = +prompt('Введіть 5 значне число');
-let num5 = personNum5;
-let str5 = '';
-let resaltNum5 = '';
-for (const g = 0; 0 < num5; num5--) {
-    str5 = num5 + '';
-    if (str5[0] === str5[4] && str5[1] === str5[3]) {
-        resaltNum5 = str5;
-        break;
-    }
-}
-let resConctN1 = "Ваше число " + personNum5 + " найближче поліндромне число " + resaltNum5;
+const firstPosNum = (personNum5 % 10);
+const secondtPosNum = (~~(personNum5 / 10) % 10);
+const forthPosNum = (~~(personNum5 / 1000) % 10);
+const fivthtPosNum = (~~(personNum5 / 10000) % 10);
+let resConctN1 = '';
+
+if (firstPosNum === fivthtPosNum && secondtPosNum === forthPosNum) {
+    resConctN1 = 'Ваше чило: ' + personNum5 + ' є поліндромом';
+} else resConctN1 = 'Ваше чило: ' + personNum5 + ' не є поліндромом'
+
 console.log(resConctN1);
+
 
 // 2.Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
 // від 200 до 300 - знижка буде 3%;
@@ -134,11 +151,11 @@ resConctN2 = (personMoney >= 200) ? "Сумма до оплати :" + discont :
 console.log(resConctN2);
 
 // 3.Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
-let dotNum = null;
-let vidNum = null;
-let zeroNum = null;
-let parNum = null;
-let neparNum = null;
+let dotNum = 0;
+let vidNum = 0;
+let zeroNum = 0;
+let parNum = 0;
+let neparNum = 0;
 let personTenNum;
 let personStr = '';
 let resConctN3 = '';
@@ -164,10 +181,14 @@ console.log(resConctN3);
 
 //4.Зацикли висновок днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
 let ok = true;
-let k = 1;
+let k = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П*ятниця', 'Субота', 'Неділя'];
+let z = 0;
 do {
-    ok = confirm(k + " День тижня. Хочеш побачити наступний день?");
-    k++;
+    if (z > 6) {
+        z = 0;
+    }
+    ok = confirm(k[z] + ". Хочеш побачити наступний день?");
+    z++;
 } while (ok);
 
 
@@ -187,11 +208,15 @@ console.log(resConctE2);
 //Піраміда
 let piremid = '';
 const t = '#';
-for (let q = 0; q < 5; q++) {
-    piremid = piremid + t;
-    console.log(piremid);
+for (let q = 0; q < 6; q++) {
+    for (let o = 0; o <= q; o++) {
+        if (o === q) {
+            piremid = piremid + t + '\n';
+        } else piremid = piremid + t
+    }
 }
 console.log(piremid);
+
 
 
 

@@ -1,27 +1,22 @@
 (function () {
     // Мінімум
     // 1. Напиши функцію, яка приймає час (години, хвилини, секунди) і виводить його на екран у форматі «гг: хв: сс» .Якщо при виконанні функції хвилини і / або секунди не були надані, то виводити їх як 00.
-    function dispTime(h, m, s) {
-        m = m ?? 0;
-        s = s ?? 0;
-        if (h >= 0 && h < 10) {
-            h = "0" + h;
-        } else if (h >= 10 && h <= 24) {
-            h = h;
-        } else h = "Error"
-        if (m >= 0 && m < 10) {
-            m = "0" + m;
-        } else if (m >= 10 && m <= 60) {
-            m = m;
-        } else m = "Error"
-        if (s >= 0 && s < 10) {
-            s = "0" + s;
-        } else if (s >= 10 && s <= 60) {
-            s = s;
-        } else s = "Error"
-        return h + ":" + m + ":" + s
+    function dispTime(h, m = 0, s = 0) {
+        const hour = checkTime(h) > 23 ? "00" : checkTime(h);
+        const min = checkTime(m);
+        const sec = checkTime(s);
+        const res = hour + ":" + min + ":" + sec
+        return res;
     }
-    console.log(dispTime(24, 9));
+    function checkTime(num) {
+        if (num >= 0 && num < 10) {
+            num = "0" + num;
+        } else if (num >= 10 && num < 60) {
+            num = num;
+        } else num = "00"
+        return num
+    }
+    console.log(dispTime(23, 9, 1));
 
     // 2. Напиши функцію, яка приймає години, хвилини і секунди і повертає цей час в секундах.
     function timeConToSec(h, m, s) {
@@ -32,29 +27,23 @@
     // 3. Напиши функцію, яка приймає кількість секунд, переводить їх у години, хвилини і секунди і повертає у вигляді рядка «гг: хв: сс».
     function h(sec) {
         let h = parseInt(sec / 3600);
-        if (h >= 0 && h < 10) {
-            return "0" + h;
-        }
+        h = (h >= 0 && h < 10) ? "0" + h : h;
         return h;
     }
     function m(sec) {
-        const m = parseInt((sec - (h(sec) * 3600)) / 60);
-        if (m >= 0 && m < 10) {
-            return "0" + m;
-        }
+        let m = parseInt((sec - (h(sec) * 3600)) / 60);
+        m = (m >= 0 && m < 10) ? "0" + m : m;
         return m;
     }
     function s(sec) {
-        const s = sec - (h(sec) * 3600) - (m(sec) * 60);
-        if (s >= 0 && s < 10) {
-            return "0" + s;
-        }
+        let s = sec % ((h(sec) * 3600) + (m(sec) * 60));
+        s = (s >= 0 && s < 10) ? "0" + s : s;
         return s;
     }
     function secConToTime(sec) {
         return h(sec) + ":" + m(sec) + ":" + s(sec)
     }
-    console.log(secConToTime(3609));
+    console.log(secConToTime(3660));
 
     // Норма
     // Напиши функцію, яка рахує різницю між датами. Функція приймає 6 параметрів, які описують 2 дати, і повертає результат у вигляді рядка «гг: хв: сс». При виконанні завдання використовуй функції з попередніх 2-х завдань: спочатку обидві дати переведи в секунди, дізнайся різницю в секундах, а потім різницю переведи назад в «гг: хв: сс».
@@ -63,7 +52,8 @@
         const sec2 = timeConToSec(h2, m2, s2);
         if (sec1 > sec2) {
             return secConToTime(sec1 - sec2);
-        } else return secConToTime(sec2 - sec1);
+        } else
+            return secConToTime(sec2 - sec1);
 
     }
     console.log(diffTime(2, 30, 2, 4, 26, 30));

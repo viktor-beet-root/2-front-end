@@ -13,16 +13,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
   // let func = (a,b) => a+b;
   // 2. Створи функцію, яка буде виводити кількість переданих їй аргументів.
   function amountArg() {
-    var resM2 = null;
-
-    for (var i = 0; i <= arguments.length; i++) {
-      resM2 = resM2 + 1;
-    }
-
+    var resM2 = arguments.length;
     return resM2;
   }
 
-  console.log(amountArg(1, 2, 4, 5, 6, 7, 90)); // 3. Напиши функцію, яка приймає 2 числа і повертає :
+  console.log(amountArg(1, 2, 4, 5, 6, 7, 90, 2)); // 3. Напиши функцію, яка приймає 2 числа і повертає :
   // -1, якщо перше число менше, ніж друге;
   // 1 - якщо перше число більше, ніж друге;
   // 0 - якщо числа рівні.
@@ -80,8 +75,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 
 
   function perfectNum(num) {
+    var resN1 = '';
     var i = num;
-    var res = null;
+    var res = 0;
 
     while (i > 0) {
       if (!(num % i) && num !== i) {
@@ -92,20 +88,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     }
 
     if (res === num) {
-      return "Число " + num + " є ідеальним";
-    } else return false;
+      return true; //resN1 = "Число " + num + " є ідеальним";
+    } else return false; //resN1 = "Число " + num + " не ідеальне";
 
-    "Число " + num + " не ідеальне";
   }
 
-  var resN1 = perfectNum(28);
-  console.log(resN1); //2.Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
+  console.log(perfectNum(28)); //2.Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
 
   function perfectNum2(num1, num2) {
     num1 = +num1;
     num2 = +num2;
-    var min = num1 < num2 ? min = num1 : min = num2;
-    var max = num1 > num2 ? max = num1 : max = num2;
+    var min = num1 < num2 ? num1 : num2;
+    var max = num1 > num2 ? num1 : num2;
 
     while (min <= max) {
       if (perfectNum(min)) {

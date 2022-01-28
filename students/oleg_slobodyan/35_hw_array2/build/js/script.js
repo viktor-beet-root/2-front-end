@@ -43,29 +43,6 @@ module.exports = function (argument) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/array-for-each.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js/internals/array-for-each.js ***!
-  \**********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var $forEach = (__webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").forEach);
-var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
-
-var STRICT_METHOD = arrayMethodIsStrict('forEach');
-
-// `Array.prototype.forEach` method implementation
-// https://tc39.es/ecma262/#sec-array.prototype.foreach
-module.exports = !STRICT_METHOD ? function forEach(callbackfn /* , thisArg */) {
-  return $forEach(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
-// eslint-disable-next-line es/no-array-prototype-foreach -- safe
-} : [].forEach;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/array-includes.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/internals/array-includes.js ***!
@@ -237,6 +214,87 @@ module.exports = function (METHOD_NAME, argument) {
     method.call(null, argument || function () { throw 1; }, 1);
   });
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-slice-simple.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/internals/array-slice-simple.js ***!
+  \**************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var toAbsoluteIndex = __webpack_require__(/*! ../internals/to-absolute-index */ "./node_modules/core-js/internals/to-absolute-index.js");
+var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
+var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js/internals/create-property.js");
+
+var Array = global.Array;
+var max = Math.max;
+
+module.exports = function (O, start, end) {
+  var length = lengthOfArrayLike(O);
+  var k = toAbsoluteIndex(start, length);
+  var fin = toAbsoluteIndex(end === undefined ? length : end, length);
+  var result = Array(max(fin - k, 0));
+  for (var n = 0; k < fin; k++, n++) createProperty(result, n, O[k]);
+  result.length = n;
+  return result;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-sort.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/internals/array-sort.js ***!
+  \******************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var arraySlice = __webpack_require__(/*! ../internals/array-slice-simple */ "./node_modules/core-js/internals/array-slice-simple.js");
+
+var floor = Math.floor;
+
+var mergeSort = function (array, comparefn) {
+  var length = array.length;
+  var middle = floor(length / 2);
+  return length < 8 ? insertionSort(array, comparefn) : merge(
+    array,
+    mergeSort(arraySlice(array, 0, middle), comparefn),
+    mergeSort(arraySlice(array, middle), comparefn),
+    comparefn
+  );
+};
+
+var insertionSort = function (array, comparefn) {
+  var length = array.length;
+  var i = 1;
+  var element, j;
+
+  while (i < length) {
+    j = i;
+    element = array[i];
+    while (j && comparefn(array[j - 1], element) > 0) {
+      array[j] = array[--j];
+    }
+    if (j !== i++) array[j] = element;
+  } return array;
+};
+
+var merge = function (array, left, right, comparefn) {
+  var llength = left.length;
+  var rlength = right.length;
+  var lindex = 0;
+  var rindex = 0;
+
+  while (lindex < llength || rindex < rlength) {
+    array[lindex + rindex] = (lindex < llength && rindex < rlength)
+      ? comparefn(left[lindex], right[rindex]) <= 0 ? left[lindex++] : right[rindex++]
+      : lindex < llength ? left[lindex++] : right[rindex++];
+  } return array;
+};
+
+module.exports = mergeSort;
 
 
 /***/ }),
@@ -471,64 +529,30 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/dom-iterables.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/internals/dom-iterables.js ***!
-  \*********************************************************/
-/***/ (function(module) {
+/***/ "./node_modules/core-js/internals/engine-ff-version.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-ff-version.js ***!
+  \*************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-// iterable DOM collections
-// flag - `iterable` interface - 'entries', 'keys', 'values', 'forEach' methods
-module.exports = {
-  CSSRuleList: 0,
-  CSSStyleDeclaration: 0,
-  CSSValueList: 0,
-  ClientRectList: 0,
-  DOMRectList: 0,
-  DOMStringList: 0,
-  DOMTokenList: 1,
-  DataTransferItemList: 0,
-  FileList: 0,
-  HTMLAllCollection: 0,
-  HTMLCollection: 0,
-  HTMLFormElement: 0,
-  HTMLSelectElement: 0,
-  MediaList: 0,
-  MimeTypeArray: 0,
-  NamedNodeMap: 0,
-  NodeList: 1,
-  PaintRequestList: 0,
-  Plugin: 0,
-  PluginArray: 0,
-  SVGLengthList: 0,
-  SVGNumberList: 0,
-  SVGPathSegList: 0,
-  SVGPointList: 0,
-  SVGStringList: 0,
-  SVGTransformList: 0,
-  SourceBufferList: 0,
-  StyleSheetList: 0,
-  TextTrackCueList: 0,
-  TextTrackList: 0,
-  TouchList: 0
-};
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+
+var firefox = userAgent.match(/firefox\/(\d+)/i);
+
+module.exports = !!firefox && +firefox[1];
 
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/dom-token-list-prototype.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/dom-token-list-prototype.js ***!
-  \********************************************************************/
+/***/ "./node_modules/core-js/internals/engine-is-ie-or-edge.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-is-ie-or-edge.js ***!
+  \****************************************************************/
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-// in old WebKit versions, `element.classList` is not an instance of global `DOMTokenList`
-var documentCreateElement = __webpack_require__(/*! ../internals/document-create-element */ "./node_modules/core-js/internals/document-create-element.js");
+var UA = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
 
-var classList = documentCreateElement('span').classList;
-var DOMTokenListPrototype = classList && classList.constructor && classList.constructor.prototype;
-
-module.exports = DOMTokenListPrototype === Object.prototype ? undefined : DOMTokenListPrototype;
+module.exports = /MSIE|Trident/.test(UA);
 
 
 /***/ }),
@@ -579,6 +603,21 @@ if (!version && userAgent) {
 }
 
 module.exports = version;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/engine-webkit-version.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-webkit-version.js ***!
+  \*****************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+
+var webkit = userAgent.match(/AppleWebKit\/(\d+)\./);
+
+module.exports = !!webkit && +webkit[1];
 
 
 /***/ }),
@@ -693,16 +732,34 @@ module.exports = function (exec) {
 
 var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
 var aCallable = __webpack_require__(/*! ../internals/a-callable */ "./node_modules/core-js/internals/a-callable.js");
+var NATIVE_BIND = __webpack_require__(/*! ../internals/function-bind-native */ "./node_modules/core-js/internals/function-bind-native.js");
 
 var bind = uncurryThis(uncurryThis.bind);
 
 // optional / simple context binding
 module.exports = function (fn, that) {
   aCallable(fn);
-  return that === undefined ? fn : bind ? bind(fn, that) : function (/* ...args */) {
+  return that === undefined ? fn : NATIVE_BIND ? bind(fn, that) : function (/* ...args */) {
     return fn.apply(that, arguments);
   };
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/function-bind-native.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/internals/function-bind-native.js ***!
+  \****************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+
+module.exports = !fails(function () {
+  var test = (function () { /* empty */ }).bind();
+  // eslint-disable-next-line no-prototype-builtins -- safe
+  return typeof test != 'function' || test.hasOwnProperty('prototype');
+});
 
 
 /***/ }),
@@ -711,11 +768,13 @@ module.exports = function (fn, that) {
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/internals/function-call.js ***!
   \*********************************************************/
-/***/ (function(module) {
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var NATIVE_BIND = __webpack_require__(/*! ../internals/function-bind-native */ "./node_modules/core-js/internals/function-bind-native.js");
 
 var call = Function.prototype.call;
 
-module.exports = call.bind ? call.bind(call) : function () {
+module.exports = NATIVE_BIND ? call.bind(call) : function () {
   return call.apply(call, arguments);
 };
 
@@ -753,14 +812,16 @@ module.exports = {
 /*!*****************************************************************!*\
   !*** ./node_modules/core-js/internals/function-uncurry-this.js ***!
   \*****************************************************************/
-/***/ (function(module) {
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var NATIVE_BIND = __webpack_require__(/*! ../internals/function-bind-native */ "./node_modules/core-js/internals/function-bind-native.js");
 
 var FunctionPrototype = Function.prototype;
 var bind = FunctionPrototype.bind;
 var call = FunctionPrototype.call;
-var uncurryThis = bind && bind.bind(call, call);
+var uncurryThis = NATIVE_BIND && bind.bind(call, call);
 
-module.exports = bind ? function (fn) {
+module.exports = NATIVE_BIND ? function (fn) {
   return fn && uncurryThis(fn);
 } : function (fn) {
   return fn && function () {
@@ -874,7 +935,7 @@ var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_mo
 var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
 var createElement = __webpack_require__(/*! ../internals/document-create-element */ "./node_modules/core-js/internals/document-create-element.js");
 
-// Thank's IE8 for his funny defineProperty
+// Thanks to IE8 for its funny defineProperty
 module.exports = !DESCRIPTORS && !fails(function () {
   // eslint-disable-next-line es/no-object-defineproperty -- required for testing
   return Object.defineProperty(createElement('div'), 'a', {
@@ -1248,6 +1309,74 @@ module.exports = isCallable(WeakMap) && /native code/.test(inspectSource(WeakMap
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-assign.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/internals/object-assign.js ***!
+  \*********************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
+var call = __webpack_require__(/*! ../internals/function-call */ "./node_modules/core-js/internals/function-call.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
+var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js/internals/object-get-own-property-symbols.js");
+var propertyIsEnumerableModule = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var IndexedObject = __webpack_require__(/*! ../internals/indexed-object */ "./node_modules/core-js/internals/indexed-object.js");
+
+// eslint-disable-next-line es/no-object-assign -- safe
+var $assign = Object.assign;
+// eslint-disable-next-line es/no-object-defineproperty -- required for testing
+var defineProperty = Object.defineProperty;
+var concat = uncurryThis([].concat);
+
+// `Object.assign` method
+// https://tc39.es/ecma262/#sec-object.assign
+module.exports = !$assign || fails(function () {
+  // should have correct order of operations (Edge bug)
+  if (DESCRIPTORS && $assign({ b: 1 }, $assign(defineProperty({}, 'a', {
+    enumerable: true,
+    get: function () {
+      defineProperty(this, 'b', {
+        value: 3,
+        enumerable: false
+      });
+    }
+  }), { b: 2 })).b !== 1) return true;
+  // should work with symbols and should have deterministic property order (V8 bug)
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line es/no-symbol -- safe
+  var symbol = Symbol();
+  var alphabet = 'abcdefghijklmnopqrst';
+  A[symbol] = 7;
+  alphabet.split('').forEach(function (chr) { B[chr] = chr; });
+  return $assign({}, A)[symbol] != 7 || objectKeys($assign({}, B)).join('') != alphabet;
+}) ? function assign(target, source) { // eslint-disable-line no-unused-vars -- required for `.length`
+  var T = toObject(target);
+  var argumentsLength = arguments.length;
+  var index = 1;
+  var getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
+  var propertyIsEnumerable = propertyIsEnumerableModule.f;
+  while (argumentsLength > index) {
+    var S = IndexedObject(arguments[index++]);
+    var keys = getOwnPropertySymbols ? concat(objectKeys(S), getOwnPropertySymbols(S)) : objectKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) {
+      key = keys[j++];
+      if (!DESCRIPTORS || call(propertyIsEnumerable, S, key)) T[key] = S[key];
+    }
+  } return T;
+} : $assign;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/object-define-property.js":
 /*!******************************************************************!*\
   !*** ./node_modules/core-js/internals/object-define-property.js ***!
@@ -1405,6 +1534,25 @@ module.exports = function (object, names) {
     ~indexOf(result, key) || push(result, key);
   }
   return result;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/object-keys.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/object-keys.js ***!
+  \*******************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js/internals/object-keys-internal.js");
+var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
+
+// `Object.keys` method
+// https://tc39.es/ecma262/#sec-object.keys
+// eslint-disable-next-line es/no-object-keys -- safe
+module.exports = Object.keys || function keys(O) {
+  return internalObjectKeys(O, enumBugKeys);
 };
 
 
@@ -1650,9 +1798,11 @@ var store = __webpack_require__(/*! ../internals/shared-store */ "./node_modules
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: '3.20.2',
+  version: '3.20.3',
   mode: IS_PURE ? 'pure' : 'global',
-  copyright: '© 2022 Denis Pushkarev (zloirock.ru)'
+  copyright: '© 2014-2022 Denis Pushkarev (zloirock.ru)',
+  license: 'https://github.com/zloirock/core-js/blob/v3.20.3/LICENSE',
+  source: 'https://github.com/zloirock/core-js'
 });
 
 
@@ -1829,6 +1979,25 @@ module.exports = String(test) === '[object z]';
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/to-string.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/core-js/internals/to-string.js ***!
+  \*****************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var classof = __webpack_require__(/*! ../internals/classof */ "./node_modules/core-js/internals/classof.js");
+
+var String = global.String;
+
+module.exports = function (argument) {
+  if (classof(argument) === 'Symbol') throw TypeError('Cannot convert a Symbol value to a string');
+  return String(argument);
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/try-to-string.js":
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/internals/try-to-string.js ***!
@@ -1941,80 +2110,6 @@ module.exports = function (name) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/modules/es.array.concat.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/modules/es.array.concat.js ***!
-  \*********************************************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
-var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
-var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js/internals/create-property.js");
-var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js/internals/array-species-create.js");
-var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var V8_VERSION = __webpack_require__(/*! ../internals/engine-v8-version */ "./node_modules/core-js/internals/engine-v8-version.js");
-
-var IS_CONCAT_SPREADABLE = wellKnownSymbol('isConcatSpreadable');
-var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
-var MAXIMUM_ALLOWED_INDEX_EXCEEDED = 'Maximum allowed index exceeded';
-var TypeError = global.TypeError;
-
-// We can't use this feature detection in V8 since it causes
-// deoptimization and serious performance degradation
-// https://github.com/zloirock/core-js/issues/679
-var IS_CONCAT_SPREADABLE_SUPPORT = V8_VERSION >= 51 || !fails(function () {
-  var array = [];
-  array[IS_CONCAT_SPREADABLE] = false;
-  return array.concat()[0] !== array;
-});
-
-var SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('concat');
-
-var isConcatSpreadable = function (O) {
-  if (!isObject(O)) return false;
-  var spreadable = O[IS_CONCAT_SPREADABLE];
-  return spreadable !== undefined ? !!spreadable : isArray(O);
-};
-
-var FORCED = !IS_CONCAT_SPREADABLE_SUPPORT || !SPECIES_SUPPORT;
-
-// `Array.prototype.concat` method
-// https://tc39.es/ecma262/#sec-array.prototype.concat
-// with adding support of @@isConcatSpreadable and @@species
-$({ target: 'Array', proto: true, forced: FORCED }, {
-  // eslint-disable-next-line no-unused-vars -- required for `.length`
-  concat: function concat(arg) {
-    var O = toObject(this);
-    var A = arraySpeciesCreate(O, 0);
-    var n = 0;
-    var i, k, length, len, E;
-    for (i = -1, length = arguments.length; i < length; i++) {
-      E = i === -1 ? O : arguments[i];
-      if (isConcatSpreadable(E)) {
-        len = lengthOfArrayLike(E);
-        if (n + len > MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
-        for (k = 0; k < len; k++, n++) if (k in E) createProperty(A, n, E[k]);
-      } else {
-        if (n >= MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
-        createProperty(A, n++, E);
-      }
-    }
-    A.length = n;
-    return A;
-  }
-});
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/modules/es.array.map.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/modules/es.array.map.js ***!
@@ -2041,6 +2136,222 @@ $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.sort.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.sort.js ***!
+  \*******************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
+var aCallable = __webpack_require__(/*! ../internals/a-callable */ "./node_modules/core-js/internals/a-callable.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
+var toString = __webpack_require__(/*! ../internals/to-string */ "./node_modules/core-js/internals/to-string.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var internalSort = __webpack_require__(/*! ../internals/array-sort */ "./node_modules/core-js/internals/array-sort.js");
+var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
+var FF = __webpack_require__(/*! ../internals/engine-ff-version */ "./node_modules/core-js/internals/engine-ff-version.js");
+var IE_OR_EDGE = __webpack_require__(/*! ../internals/engine-is-ie-or-edge */ "./node_modules/core-js/internals/engine-is-ie-or-edge.js");
+var V8 = __webpack_require__(/*! ../internals/engine-v8-version */ "./node_modules/core-js/internals/engine-v8-version.js");
+var WEBKIT = __webpack_require__(/*! ../internals/engine-webkit-version */ "./node_modules/core-js/internals/engine-webkit-version.js");
+
+var test = [];
+var un$Sort = uncurryThis(test.sort);
+var push = uncurryThis(test.push);
+
+// IE8-
+var FAILS_ON_UNDEFINED = fails(function () {
+  test.sort(undefined);
+});
+// V8 bug
+var FAILS_ON_NULL = fails(function () {
+  test.sort(null);
+});
+// Old WebKit
+var STRICT_METHOD = arrayMethodIsStrict('sort');
+
+var STABLE_SORT = !fails(function () {
+  // feature detection can be too slow, so check engines versions
+  if (V8) return V8 < 70;
+  if (FF && FF > 3) return;
+  if (IE_OR_EDGE) return true;
+  if (WEBKIT) return WEBKIT < 603;
+
+  var result = '';
+  var code, chr, value, index;
+
+  // generate an array with more 512 elements (Chakra and old V8 fails only in this case)
+  for (code = 65; code < 76; code++) {
+    chr = String.fromCharCode(code);
+
+    switch (code) {
+      case 66: case 69: case 70: case 72: value = 3; break;
+      case 68: case 71: value = 4; break;
+      default: value = 2;
+    }
+
+    for (index = 0; index < 47; index++) {
+      test.push({ k: chr + index, v: value });
+    }
+  }
+
+  test.sort(function (a, b) { return b.v - a.v; });
+
+  for (index = 0; index < test.length; index++) {
+    chr = test[index].k.charAt(0);
+    if (result.charAt(result.length - 1) !== chr) result += chr;
+  }
+
+  return result !== 'DGBEFHACIJK';
+});
+
+var FORCED = FAILS_ON_UNDEFINED || !FAILS_ON_NULL || !STRICT_METHOD || !STABLE_SORT;
+
+var getSortCompare = function (comparefn) {
+  return function (x, y) {
+    if (y === undefined) return -1;
+    if (x === undefined) return 1;
+    if (comparefn !== undefined) return +comparefn(x, y) || 0;
+    return toString(x) > toString(y) ? 1 : -1;
+  };
+};
+
+// `Array.prototype.sort` method
+// https://tc39.es/ecma262/#sec-array.prototype.sort
+$({ target: 'Array', proto: true, forced: FORCED }, {
+  sort: function sort(comparefn) {
+    if (comparefn !== undefined) aCallable(comparefn);
+
+    var array = toObject(this);
+
+    if (STABLE_SORT) return comparefn === undefined ? un$Sort(array) : un$Sort(array, comparefn);
+
+    var items = [];
+    var arrayLength = lengthOfArrayLike(array);
+    var itemsLength, index;
+
+    for (index = 0; index < arrayLength; index++) {
+      if (index in array) push(items, array[index]);
+    }
+
+    internalSort(items, getSortCompare(comparefn));
+
+    itemsLength = items.length;
+    index = 0;
+
+    while (index < itemsLength) array[index] = items[index++];
+    while (index < arrayLength) delete array[index++];
+
+    return array;
+  }
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.array.splice.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.splice.js ***!
+  \*********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var toAbsoluteIndex = __webpack_require__(/*! ../internals/to-absolute-index */ "./node_modules/core-js/internals/to-absolute-index.js");
+var toIntegerOrInfinity = __webpack_require__(/*! ../internals/to-integer-or-infinity */ "./node_modules/core-js/internals/to-integer-or-infinity.js");
+var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js/internals/array-species-create.js");
+var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js/internals/create-property.js");
+var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
+
+var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('splice');
+
+var TypeError = global.TypeError;
+var max = Math.max;
+var min = Math.min;
+var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
+var MAXIMUM_ALLOWED_LENGTH_EXCEEDED = 'Maximum allowed length exceeded';
+
+// `Array.prototype.splice` method
+// https://tc39.es/ecma262/#sec-array.prototype.splice
+// with adding support of @@species
+$({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
+  splice: function splice(start, deleteCount /* , ...items */) {
+    var O = toObject(this);
+    var len = lengthOfArrayLike(O);
+    var actualStart = toAbsoluteIndex(start, len);
+    var argumentsLength = arguments.length;
+    var insertCount, actualDeleteCount, A, k, from, to;
+    if (argumentsLength === 0) {
+      insertCount = actualDeleteCount = 0;
+    } else if (argumentsLength === 1) {
+      insertCount = 0;
+      actualDeleteCount = len - actualStart;
+    } else {
+      insertCount = argumentsLength - 2;
+      actualDeleteCount = min(max(toIntegerOrInfinity(deleteCount), 0), len - actualStart);
+    }
+    if (len + insertCount - actualDeleteCount > MAX_SAFE_INTEGER) {
+      throw TypeError(MAXIMUM_ALLOWED_LENGTH_EXCEEDED);
+    }
+    A = arraySpeciesCreate(O, actualDeleteCount);
+    for (k = 0; k < actualDeleteCount; k++) {
+      from = actualStart + k;
+      if (from in O) createProperty(A, k, O[from]);
+    }
+    A.length = actualDeleteCount;
+    if (insertCount < actualDeleteCount) {
+      for (k = actualStart; k < len - actualDeleteCount; k++) {
+        from = k + actualDeleteCount;
+        to = k + insertCount;
+        if (from in O) O[to] = O[from];
+        else delete O[to];
+      }
+      for (k = len; k > len - actualDeleteCount + insertCount; k--) delete O[k - 1];
+    } else if (insertCount > actualDeleteCount) {
+      for (k = len - actualDeleteCount; k > actualStart; k--) {
+        from = k + actualDeleteCount - 1;
+        to = k + insertCount - 1;
+        if (from in O) O[to] = O[from];
+        else delete O[to];
+      }
+    }
+    for (k = 0; k < insertCount; k++) {
+      O[k + actualStart] = arguments[k + 2];
+    }
+    O.length = len - actualDeleteCount + insertCount;
+    return A;
+  }
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.object.assign.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.object.assign.js ***!
+  \**********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var assign = __webpack_require__(/*! ../internals/object-assign */ "./node_modules/core-js/internals/object-assign.js");
+
+// `Object.assign` method
+// https://tc39.es/ecma262/#sec-object.assign
+// eslint-disable-next-line es/no-object-assign -- required for testing
+$({ target: 'Object', stat: true, forced: Object.assign !== assign }, {
+  assign: assign
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.object.to-string.js":
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/modules/es.object.to-string.js ***!
@@ -2056,38 +2367,6 @@ var toString = __webpack_require__(/*! ../internals/object-to-string */ "./node_
 if (!TO_STRING_TAG_SUPPORT) {
   redefine(Object.prototype, 'toString', toString, { unsafe: true });
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/web.dom-collections.for-each.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/core-js/modules/web.dom-collections.for-each.js ***!
-  \**********************************************************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var DOMIterables = __webpack_require__(/*! ../internals/dom-iterables */ "./node_modules/core-js/internals/dom-iterables.js");
-var DOMTokenListPrototype = __webpack_require__(/*! ../internals/dom-token-list-prototype */ "./node_modules/core-js/internals/dom-token-list-prototype.js");
-var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_modules/core-js/internals/array-for-each.js");
-var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
-
-var handlePrototype = function (CollectionPrototype) {
-  // some Chrome versions have non-configurable methods on DOMTokenList
-  if (CollectionPrototype && CollectionPrototype.forEach !== forEach) try {
-    createNonEnumerableProperty(CollectionPrototype, 'forEach', forEach);
-  } catch (error) {
-    CollectionPrototype.forEach = forEach;
-  }
-};
-
-for (var COLLECTION_NAME in DOMIterables) {
-  if (DOMIterables[COLLECTION_NAME]) {
-    handlePrototype(global[COLLECTION_NAME] && global[COLLECTION_NAME].prototype);
-  }
-}
-
-handlePrototype(DOMTokenListPrototype);
 
 
 /***/ })
@@ -2180,164 +2459,134 @@ var __webpack_exports__ = {};
   !*** ./src/js/script.js ***!
   \**************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.assign.js */ "./node_modules/core-js/modules/es.object.assign.js");
+/* harmony import */ var core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
 
 
 (function () {
-  // Мінімум
-  // Створи масив, що описує чек в магазині. Кожен елемент масиву складається з назви товару, кількості і ціни за одиницю товару. Написати наступні функції.
-  var receipt = [{
-    productName: "Milk",
+  function cart() {
+    var cart = [];
+    var productId = 1;
+    return {
+      addCart: function addCart(product) {
+        if (!product) return;
+        var indexProductSku = this.findIndexProductBySku(product.sku);
+
+        if (indexProductSku === -1) {
+          product.id = productId++;
+          cart.push(product);
+        } else {
+          this.icrecQty(product, indexProductSku);
+        }
+      },
+      findIndexProductBySku: function findIndexProductBySku(sku) {
+        return cart.map(function (item) {
+          return item.sku;
+        }).indexOf(sku);
+      },
+      icrecQty: function icrecQty(product, indexProductSku) {
+        cart[indexProductSku].qty = cart[indexProductSku].qty + product.qty;
+      },
+      getCart: function getCart() {
+        return cart.map(function (product) {
+          return Object.assign({}, product);
+        });
+      },
+      // 1. Виадалення продукту по sku
+      removeProductbySku: function removeProductbySku(sku) {
+        if (typeof sku !== "number") return;
+        var indxRemoveProd = this.findIndexProductBySku(sku);
+
+        if (~indxRemoveProd) {
+          cart.splice(indxRemoveProd, 1);
+        }
+      },
+      // 2. Метод рахує заалтну сума карзини
+      totalPriceCart: function totalPriceCart() {
+        return cart.reduce(function (acc, currVal) {
+          return acc = acc + currVal.qty * currVal.price;
+        }, 0);
+      },
+      // 3. Метод рахує заалтну кількість товарів у корзині 
+      totalProductQty: function totalProductQty() {
+        return cart.reduce(function (acc, currVal) {
+          return acc = acc + currVal.qty;
+        }, 0);
+      },
+      // 4. Метод сортує товари в корзині по ціні (метод приймає параметр сортування true/false)
+      sortProductByPrice: function sortProductByPrice() {
+        var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+        var res = JSON.parse(JSON.stringify(cart));
+        res.sort(function (a, b) {
+          if (a.price > b.price) {
+            return 1;
+          }
+
+          if (b.price > a.price) {
+            return -1;
+          }
+
+          if (a.price === b.price) {
+            return 0;
+          }
+        });
+
+        if (param) {
+          return res;
+        } else return res.reverse();
+      }
+    };
+  }
+
+  var pageCart = cart();
+  pageCart.addCart({
+    productName: "Product-1",
+    sku: 1234,
+    qty: 1,
+    price: 50
+  });
+  pageCart.addCart({
+    productName: "Product-1",
+    sku: 1234,
     qty: 2,
-    price: 22
-  }, {
-    productName: "Meat",
+    price: 50
+  });
+  pageCart.addCart({
+    productName: "Product-2",
+    sku: 3442,
     qty: 2,
-    price: 200
-  }, {
-    productName: "Bread",
+    price: 150
+  });
+  pageCart.addCart({
+    productName: "Product-3",
+    sku: 3872,
+    qty: 5,
+    price: 125
+  });
+  pageCart.addCart({
+    productName: "Product-4",
+    sku: 3093,
     qty: 2,
-    price: 18
-  }, {
-    productName: "Eggs",
-    qty: 20,
-    price: 3.5
-  }, {
-    productName: "Beer",
-    qty: 12,
-    price: 27
-  }]; // 1. Роздруківка чека на екран.
-
-  function printReceip(arr) {
-    var res = ' ';
-    arr.forEach(function (item, index) {
-      res = "".concat(res).concat(item.productName, "--------\u043A\u043B.").concat(item.qty, "---\u0446/\u043E\u0434 ").concat(item.price, "\u0433\u0440\u043D \n ");
-
-      if (arr.length - 1 === index) {
-        res = "".concat(res, "\u0421\u0443\u043C\u043C\u0430 \u0434\u043E \u043E\u043F\u043B\u0430\u0442\u0438----------").concat(totalPriceReceip(arr), "\u0433\u0440\u043D");
-      }
-    });
-    return res;
-  }
-
-  console.log(printReceip(receipt)); // 2. Підрахунок загальної суми покупки.
-
-  function totalPriceReceip(arr) {
-    return arr.reduce(function (acc, currVel) {
-      return acc = acc + currVel.price * currVel.qty;
-    }, 0);
-  }
-
-  console.log("Загальна сума покупки", totalPriceReceip(receipt)); // 3. Отримання найдорожчої покупки в чеку.
-
-  function getSumProduct(arr) {
-    arr.forEach(function (item, index) {
-      arr[index].totalProductPrice = arr[index].price * arr[index].qty;
-    });
-  }
-
-  getSumProduct(receipt);
-
-  function getMaxSumPrice(arr) {
-    var prodTotalPriceList = arr.map(function (item) {
-      return item.totalProductPrice;
-    });
-    var res = prodTotalPriceList[0];
-    prodTotalPriceList.forEach(function (item, index) {
-      if (item > res) {
-        res = item;
-      }
-    });
-    return res;
-  }
-
-  console.log("Найдорожча покупка в чеку", getMaxSumPrice(receipt)); //    4. Підрахунок середньої вартості одного товару в чеку.
-
-  function averageProdPrice(arr) {
-    var prodPriceList = arr.map(function (item) {
-      return item.price;
-    });
-    var res = null;
-    var sumPrice = prodPriceList.reduce(function (acc, currVal) {
-      return acc + currVal;
-    }, 0);
-    return sumPrice / arr.length;
-  }
-
-  console.log("Середня вартість одного товару", averageProdPrice(receipt)); // Норма
-  // Створити масив аудиторій академії. Об'єкт-аудиторія складається з
-  // 1. назви 
-  // 2. кількості місць для посадки (від 10 до 20)
-  // 3. назви факультету, для якого вона призначена
-  // 4. вільна аудиторія чи ні
-  // 5. список з назвами груп, які можуть займатися в даній аудиторії.
-
-  var classroomList = [{
-    classroomNum: "101",
-    amountOfSeats: 12,
-    availableForFacultet: ["математики", "фізики", "інформатики"],
-    isEmpty: true,
-    availableForGroup: ["ki-21", "pi-20", "d-19"]
-  }, {
-    classroomNum: "205",
-    amountOfSeats: 15,
-    availableForFacultet: ["історії", "фізики"],
-    isEmpty: true,
-    availableForGroup: ["ki-21", "pi-20", "d-19"]
-  }, {
-    classroomNum: "312",
-    amountOfSeats: 20,
-    availableForFacultet: ["інформатики"],
-    isEmpty: true,
-    availableForGroup: ["pi-20", "d-19"]
-  }]; // 1. Виводити список всіх аудиторій.
-
-  function audutoriList(arr) {
-    console.log(arr.map(function (item) {
-      return item.classroomNum;
-    }));
-  }
-
-  console.log(audutoriList(classroomList)); // 2. Виводити список аудиторій для зазначеного факультету.
-
-  function audutorForFacultet(arr, facultet) {
-    for (var i = 0; i < arr.length; i++) {
-      for (var j = 0; j < arr[i].availableForFacultet.length; j++) {
-        if (~arr[i].availableForFacultet[j].indexOf(facultet)) console.log(classroomList[i]);
-      }
-    }
-  }
-
-  console.log(audutorForFacultet(classroomList, "інформатики")); // Максимум
-  // Виводити тільки ті аудиторії, які підходять для переданої групи. Об'єкт-група складається з назви, кількості студентів і назви факультету.
-
-  function audutoriaAvailable(arr, obj) {
-    for (var i = 0; i < arr.length; i++) {
-      var group = arr[i].availableForGroup.indexOf(obj.group);
-      var facultet = arr[i].availableForFacultet.indexOf(obj.facultet);
-      var amountSeats = arr[i].amountOfSeats;
-
-      if (~facultet && ~group && amountSeats >= obj.amountOfStudents) {
-        console.log(arr[i]);
-      }
-    }
-  }
-
-  console.log(audutoriaAvailable(classroomList, {
-    amountOfStudents: 16,
-    group: "d-19",
-    facultet: "інформатики"
-  }));
+    price: 12
+  });
+  pageCart.removeProductbySku(3872);
+  var viewCart = pageCart.getCart();
+  console.log(pageCart.totalPriceCart());
+  console.log(pageCart.totalProductQty());
+  console.log(pageCart.sortProductByPrice(false), "sort price");
+  console.log(viewCart);
 })();
 }();
 /******/ })()

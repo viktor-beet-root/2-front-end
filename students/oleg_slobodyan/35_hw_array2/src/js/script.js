@@ -32,10 +32,13 @@
 
     // 1. Роздруківка чека на екран.
     function printReceip(arr) {
-        const res = [];
+        let res = ' ';
 
         arr.forEach(function (item, index) {
-            res.push(arr[index]);
+            res = `${res}${item.productName}--------кл.${item.qty}---ц/од ${item.price}грн \n `;
+            if (arr.length - 1 === index) {
+                res = `${res}Сумма до оплати----------${totalPriceReceip(arr)}грн`
+            }
         });
 
         return res;
@@ -52,7 +55,7 @@
 
     // 3. Отримання найдорожчої покупки в чеку.
     function getSumProduct(arr) {
-        return arr.forEach(function (item, index) {
+        arr.forEach(function (item, index) {
             arr[index].totalProductPrice = arr[index].price * arr[index].qty;
         });
     }
@@ -77,9 +80,9 @@
         const prodPriceList = arr.map(item => item.price);
         let res = null;
         const sumPrice = prodPriceList.reduce(function (acc, currVal) {
-            return acc = acc + currVal;
+            return acc + currVal;
         }, 0);
-        return res = sumPrice / arr.length;
+        return sumPrice / arr.length;
     }
     console.log("Середня вартість одного товару", averageProdPrice(receipt));
 
@@ -115,39 +118,35 @@
     ];
     // 1. Виводити список всіх аудиторій.
     function audutoriList(arr) {
-        return arr.map(item => item.classroomNum)
+        console.log(arr.map(item => item.classroomNum));
     }
     console.log(audutoriList(classroomList));
 
     // 2. Виводити список аудиторій для зазначеного факультету.
     function audutorForFacultet(arr, facultet) {
-        const res = [];
 
         for (let i = 0; i < arr.length; i++) {
             for (let j = 0; j < arr[i].availableForFacultet.length; j++) {
                 if (~arr[i].availableForFacultet[j].indexOf(facultet))
-                    res.push(classroomList[i]);
+                    console.log(classroomList[i]);
             }
         }
 
-        return res;
     }
     console.log(audutorForFacultet(classroomList, "інформатики"));
 
     // Максимум
     // Виводити тільки ті аудиторії, які підходять для переданої групи. Об'єкт-група складається з назви, кількості студентів і назви факультету.
     function audutoriaAvailable(arr, obj) {
-        const res = [];
         for (let i = 0; i < arr.length; i++) {
             const group = arr[i].availableForGroup.indexOf(obj.group);
             const facultet = arr[i].availableForFacultet.indexOf(obj.facultet);
             const amountSeats = arr[i].amountOfSeats;
 
             if (~facultet && ~group && amountSeats >= obj.amountOfStudents) {
-                res.push(arr[i]);
+                console.log(arr[i]);
             }
         }
-        return res;
     }
     console.log(audutoriaAvailable(classroomList, {
         amountOfStudents: 16,

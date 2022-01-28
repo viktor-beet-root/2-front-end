@@ -1,0 +1,51 @@
+.advantage {
+    margin-bottom: 220px;
+
+    @include media('md') {
+        margin-bottom: 70px;
+    }
+
+    &__title {
+        max-width: 520px;
+
+        @include media('md') {
+            font-size: 32px;
+        }
+
+        &_center {
+            text-align: center;
+            margin: 0 auto 54px;
+        }
+    }
+
+    &__btn_center {
+        text-align: center;
+    }
+
+}
+
+.advantage-info {
+    &__img {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        margin: 0 0 13px 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    &__text {
+        margin-bottom: 34px;
+    }
+
+
+}
+
+
+
+.advantage .btn-orange {
+    padding: 20px 33px 16px 33px;
+    text-transform: uppercase;
+    font-weight: 700;
+}

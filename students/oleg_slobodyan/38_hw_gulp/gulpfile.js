@@ -46,7 +46,6 @@ function images(cb) {
 function fonts(cb) {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
-        .pipe(browserSync.stream());
     cb();
 }
 function server(cb) {

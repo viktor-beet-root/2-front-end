@@ -13,6 +13,7 @@
     font-weight: $base-font-weight;
     line-height: $base-line-height;
     color: $color-dark-blue;
+    transition: all .5s ease-in-out;
 }
 
 .container {
@@ -29,9 +30,11 @@
 }
 
 .header {
-    backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, .25);
+    background-image: url('../images/header-base.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 9999;
+    position: relative;
 }
 
 .footer {
@@ -59,6 +62,7 @@
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
+
 
     &::before {
         content: '';

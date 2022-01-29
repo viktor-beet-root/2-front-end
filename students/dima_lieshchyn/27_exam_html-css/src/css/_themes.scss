@@ -4,26 +4,13 @@
 
     &:checked {
         &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(1) {
-            display: none;
-            transform: rotate(0);
+            opacity: 0;
 
-            &:hover {
-                transform: scale(2);
-            }
         }
 
         &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(2) {
-            display: block;
-            z-index: 10;
-            position: absolute;
-            left: -1px;
-            top: -1px;
-            cursor: pointer;
-            transform: rotate(0);
-
-            &:hover {
-                transform: rotate(45deg);
-            }
+            opacity: 1;
+            transform: translate(30%, 30%);
         }
 
         &+.page-wrapper {
@@ -33,9 +20,31 @@
             background-image: url(../images/first-screen-image-dark.jpg);
             transition: all .5s ease-in-out;
 
+            @include media('sm') {
+                & .menu-wrapper>.menu {
+                    background-color: rgba(22, 25, 38, .9);
+                }
+            }
+
+            & .header {
+                background-image: url('../images/header-base-dark.png');
+            }
+
+            & .menu-wrapper>.menu-open-btn {
+                border: 1px solid $white-color;
+                color: $white-color;
+            }
+
             & .menu>.menu__link>.menu__item {
                 color: $white-color;
                 transition: color .5s ease-in-out;
+            }
+
+            & .menu>.menu__link {
+                @include media('sm') {
+                    border: 1px solid rgba(255, 255, 255, .5);
+                    transition: color .5s ease-in-out;
+                }
             }
 
             & .text_global,
@@ -54,6 +63,15 @@
                     transition: background-color .5s ease-in-out;
                     background-color: rgba(83, 243, 205, .3);
                 }
+            }
+
+            & .hero-block__btn-link {
+                color: $color-light-green;
+            }
+
+            & .hero-block__addon {
+                transition: background-color .5s ease-in-out;
+                background-color: rgba(83, 243, 205, .3);
             }
 
             & .contact-sales-block__text-block {

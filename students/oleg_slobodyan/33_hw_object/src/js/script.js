@@ -17,12 +17,12 @@
     }
     // 1. Висновок на екран з інформацією про автомобіль.
     function carInfo() {
-        return `Виробник: ${car.madeIn}\nМодель: ${car.model}\nРік випуску: ${car.year}\nСередня швидкість: ${car.avaregeSpeed} км/год\nОб*єм баку: ${car.gasTank} л\nРозхід палива на 100 км: ${car.consumption} л`
+        return `Виробник: ${this.madeIn}\nМодель: ${this.model}\nРік випуску: ${this.year}\nСередня швидкість: ${this.avaregeSpeed} км/год\nОб*єм баку: ${this.gasTank} л\nРозхід палива на 100 км: ${this.consumption} л`
     }
-    console.log(carInfo());
+    console.log(car.carInfo());
     // 2. Додавання водія, який має право керувати автомобілем.
     function setDriver(name) {
-        return car.driver = name
+        return this.driver = name
     }
     car.setDriver("Roman");
     console.log(car);
@@ -78,45 +78,50 @@
         if (s < 10) {
             s = "0" + s;
         }
-        return `1.Годинник показує ${h}:${m}:${s}`
+        return `${h}:${m}:${s}`;
     }
     console.log(clock.getTime());
+
     // 2. Зміни часу на передане кількість секунд.
     function changeSec(s) {
-        return clock.seconds = clock.seconds + s;
+        return this.seconds = this.seconds + s;
     }
     clock.changeSec(20);
     console.log(clock);
+
     // 3. Зміни часу на передане кількість хвилин.
     function changeMin(m) {
-        return clock.minutes = clock.minutes + m;
+        return this.minutes = this.minutes + m;
     }
     clock.changeMin(15);
     console.log(clock);
+
     // 4. Зміни часу на передане кількість годин.
     function changeHour(h) {
-        return clock.hour = clock.hour + h;
+        console.log(this)
+        return this.hour = this.hour + h;
     }
     clock.changeHour(5);
     console.log(clock);
+
     // 5. Врахуйте, що в останніх 3-х функціях, при зміні однієї частини часу, може змінитися і інша. Наприклад: якщо до часу «20:59:45» додати 30 секунд, то повинно вийти «21:00:15», а не «20:30:75». Також потрібно передбачити можливість того що користувач може передати 150 секунд, або 75 хвилин.
     function goodClock(gSec, gMin = 0, gHour = 0) {
         let min = null;
         let god = null;
         if (this.seconds + gSec < 60) {
-            return changeSec(gSec);
+            return this.changeSec(gSec);
         } else min = parseInt((gSec + this.seconds) / 60);
         this.minutes = this.minutes + min;
         this.seconds = ((gSec + this.seconds) - min * 60);
 
         if (this.minutes + gMin < 60) {
-            return changeMin(gMin);
+            return this.changeMin(gMin);
         } else god = parseInt((gMin + this.minutes) / 60);
         this.hour = this.hour + god;
         this.minutes = ((gMin + this.minutes) - god * 60);
 
         if (this.hour + gHour < 24) {
-            return changeHour(gHour);
+            return this.changeHour(gHour);
         } else if ((this.hour + gHour === 24)) {
             return this.hour = 0;
         } else god = this.hour + gHour - 24;

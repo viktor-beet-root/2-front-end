@@ -18,13 +18,13 @@
   }; // 1. Висновок на екран з інформацією про автомобіль.
 
   function carInfo() {
-    return "\u0412\u0438\u0440\u043E\u0431\u043D\u0438\u043A: ".concat(car.madeIn, "\n\u041C\u043E\u0434\u0435\u043B\u044C: ").concat(car.model, "\n\u0420\u0456\u043A \u0432\u0438\u043F\u0443\u0441\u043A\u0443: ").concat(car.year, "\n\u0421\u0435\u0440\u0435\u0434\u043D\u044F \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C: ").concat(car.avaregeSpeed, " \u043A\u043C/\u0433\u043E\u0434\n\u041E\u0431*\u0454\u043C \u0431\u0430\u043A\u0443: ").concat(car.gasTank, " \u043B\n\u0420\u043E\u0437\u0445\u0456\u0434 \u043F\u0430\u043B\u0438\u0432\u0430 \u043D\u0430 100 \u043A\u043C: ").concat(car.consumption, " \u043B");
+    return "\u0412\u0438\u0440\u043E\u0431\u043D\u0438\u043A: ".concat(this.madeIn, "\n\u041C\u043E\u0434\u0435\u043B\u044C: ").concat(this.model, "\n\u0420\u0456\u043A \u0432\u0438\u043F\u0443\u0441\u043A\u0443: ").concat(this.year, "\n\u0421\u0435\u0440\u0435\u0434\u043D\u044F \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C: ").concat(this.avaregeSpeed, " \u043A\u043C/\u0433\u043E\u0434\n\u041E\u0431*\u0454\u043C \u0431\u0430\u043A\u0443: ").concat(this.gasTank, " \u043B\n\u0420\u043E\u0437\u0445\u0456\u0434 \u043F\u0430\u043B\u0438\u0432\u0430 \u043D\u0430 100 \u043A\u043C: ").concat(this.consumption, " \u043B");
   }
 
-  console.log(carInfo()); // 2. Додавання водія, який має право керувати автомобілем.
+  console.log(car.carInfo()); // 2. Додавання водія, який має право керувати автомобілем.
 
   function setDriver(name) {
-    return car.driver = name;
+    return this.driver = name;
   }
 
   car.setDriver("Roman");
@@ -86,27 +86,28 @@
       s = "0" + s;
     }
 
-    return "1.\u0413\u043E\u0434\u0438\u043D\u043D\u0438\u043A \u043F\u043E\u043A\u0430\u0437\u0443\u0454 ".concat(h, ":").concat(m, ":").concat(s);
+    return "".concat(h, ":").concat(m, ":").concat(s);
   }
 
   console.log(clock.getTime()); // 2. Зміни часу на передане кількість секунд.
 
   function changeSec(s) {
-    return clock.seconds = clock.seconds + s;
+    return this.seconds = this.seconds + s;
   }
 
   clock.changeSec(20);
   console.log(clock); // 3. Зміни часу на передане кількість хвилин.
 
   function changeMin(m) {
-    return clock.minutes = clock.minutes + m;
+    return this.minutes = this.minutes + m;
   }
 
   clock.changeMin(15);
   console.log(clock); // 4. Зміни часу на передане кількість годин.
 
   function changeHour(h) {
-    return clock.hour = clock.hour + h;
+    console.log(this);
+    return this.hour = this.hour + h;
   }
 
   clock.changeHour(5);
@@ -119,21 +120,21 @@
     var god = null;
 
     if (this.seconds + gSec < 60) {
-      return changeSec(gSec);
+      return this.changeSec(gSec);
     } else min = parseInt((gSec + this.seconds) / 60);
 
     this.minutes = this.minutes + min;
     this.seconds = gSec + this.seconds - min * 60;
 
     if (this.minutes + gMin < 60) {
-      return changeMin(gMin);
+      return this.changeMin(gMin);
     } else god = parseInt((gMin + this.minutes) / 60);
 
     this.hour = this.hour + god;
     this.minutes = gMin + this.minutes - god * 60;
 
     if (this.hour + gHour < 24) {
-      return changeHour(gHour);
+      return this.changeHour(gHour);
     } else if (this.hour + gHour === 24) {
       return this.hour = 0;
     } else god = this.hour + gHour - 24;

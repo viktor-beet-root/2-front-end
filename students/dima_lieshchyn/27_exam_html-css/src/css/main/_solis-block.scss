@@ -1,14 +1,10 @@
 .solis-block {
-    background-image: url(../../images/third-image.jpg);
+    background-image: url('.././images/third-image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 320px;
     color: $white-color;
-    // padding-bottom: 121px;
 
-    // @include media('sm') {
-    //     padding-bottom: 5%;
-    // }
 
     &_text-wrapper {
         max-width: 715px;
@@ -33,7 +29,7 @@
 
 
         &::before {
-            content: url(../../images/quote-icon.svg);
+            content: url(.././images/quote-icon.svg);
             display: block;
             position: absolute;
             z-index: 1;

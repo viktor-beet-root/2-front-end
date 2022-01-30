@@ -1,7 +1,4 @@
 .hero-block {
-    // position: relative;
-    // z-index: 1;
-
     &__title {
         font-size: 44px;
         padding-top: 158px;
@@ -45,7 +42,6 @@
 
     &__btn {
         margin-bottom: 163px;
-        // position: relative;
 
         @include media('xs') {
             margin-bottom: 5%;
@@ -62,17 +58,7 @@
         font-size: 20px;
         font-weight: 700;
         letter-spacing: 1px;
-        // &::before {
-        //     width: 112px;
-        //     content: '';
-        //     width: 42%;
-        //     height: 13px;
-        //     background-color: rgba(241, 137, 123, .3);
-        //     position: absolute;
-        //     top: 15px;
-        //     left: 9px;
-        //     right: 0;
-        // }
+    
     }
 
     &__addon {

@@ -1,5 +1,14 @@
 import Course from "./Course";
+//Добавить методы в класс Course
 
+//1. Заменяет студента на другого (id,{student}).
+//2. Возвращает масив всех скилов студентов skillList => fullSkillList.
+//3. Возвращает масив всех скилов студентов skillList уникальный uniqSkillList.
+//4. Сортировать студентов в зависимости 
+//от их скила(кол-во скилов length) принимает true false.
+//5. Метод возвращает студента по возрасту самого старого.
+
+//Все методы описаны в "Course.js"
 
 const frontend = new Course({
     courseName: 'Frontend',

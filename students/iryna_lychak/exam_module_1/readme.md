@@ -1,1 +1,1 @@
- https://github.com/IrynaLychak/2-front-end/students/iryna_lychack/exam_module_1/build/
+https://irynalychak.github.io/2-front-end/students/iryna_lychack/exam_module_1/build/

@@ -1,0 +1,268 @@
+@font-face {
+    font-family: $main-font-name;
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/work-sans-v13-latin-regular.woff2') format('woff2'),
+        url('../fonts/work-sans-v13-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: $main-font-name;
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+        url('../fonts/work-sans-v13-latin-500.woff2') format('woff2'),
+        url('../fonts/work-sans-v13-latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: $main-font-name;
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('../fonts/work-sans-v13-latin-700.woff2') format('woff2'),
+        url('../fonts/work-sans-v13-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-family: $main-font-name;
+    font-style: normal;
+    font-weight: 800;
+    src: local(''),
+        url('../fonts/work-sans-v13-latin-800.woff2') format('woff2'),
+        url('../fonts/work-sans-v13-latin-800.woff') format('woff');
+}
+
+@font-face {
+    font-family: $main-font-name;
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+        url('../fonts/work-sans-v13-latin-900.woff2') format('woff2'),
+        url('../fonts/work-sans-v13-latin-900.woff') format('woff');
+}
+
+.page {
+    background-color: $background-color;
+    font-family: $main-font-name, Arial, Helvetica, sans-serif;
+    font-size: $base-font-size;
+    font-style: normal;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+    color: $font-color;
+
+    &__header {}
+
+    &__main {}
+
+    &__footer {}
+
+    @include media ('sm') {
+        font-size: 16px;
+    }
+
+    @include media ('xs') {
+        font-size: 18px;
+    }
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: $default-gap;
+
+    &__row {}
+}
+
+.row {
+    margin: 0 -($default-gap);
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media ('xs') {}
+
+    &__col {}
+}
+
+[class*="col_"] {
+    padding: 0 $default-gap;
+    box-sizing: border-box;
+}
+
+.col_1 {
+    width: calc(100% / 12 *1);
+}
+
+.col_2 {
+    width: calc(100% / 12 *2);
+}
+
+.col_3 {
+    width: calc(100% / 12 *3);
+}
+
+.col_4 {
+    width: calc(100% / 12 *4);
+
+    @include media ('xs') {
+        width: 100%;
+    }
+}
+
+.col_5 {
+    width: calc(100% / 12 *5);
+}
+
+.col_6 {
+    width: 50%;
+
+    @include media ('xs') {
+        width: 100%;
+    }
+}
+
+.col_7 {
+    width: calc(100% / 12 *7);
+}
+
+.col_8 {
+    width: calc(100% / 12 *8);
+
+    @include media ('xs') {
+        width: 100%;
+    }
+}
+
+.col_9 {
+    width: calc(100% / 12 *9);
+}
+
+.col_10 {
+    width: calc(100% / 12 *10);
+}
+
+.col_11 {
+    width: calc(100% / 12 *11);
+}
+
+.col_12 {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: $darkblue-color;
+    font-weight: 800;
+}
+
+.hero,
+.block {
+    margin-bottom: 120px;
+
+    @include media ('sm') {
+        margin-bottom: 75px;
+    }
+}
+
+.info-wrapper {
+    @include media ('sm') {
+        padding: 0 15px;
+    }
+
+    &__title {
+        font-size: 40px;
+        line-height: 50px;
+        color: $darkblue-color;
+
+        @include media ('sm') {
+            font-size: 36px;
+            line-height: 36px;
+        }
+    }
+
+    &__item {
+        margin: 0;
+        font-size: 16px;
+
+        @include media ('sm') {
+            font-size: 16px;
+        }
+
+        @include media ('xs') {
+            flex-grow: 2;
+        }
+    }
+
+    &__text {
+        @include media ('sm') {
+            line-height: 25px;
+        }
+
+        @include media ('xs') {
+            font-size: 16px;
+        }
+    }
+
+    &__btn-wrapper {
+        display: flex;
+        flex-grow: 1;
+        align-items: flex-end;
+    }
+
+    &__btn-link {}
+
+    &__btn {}
+
+    &__img {
+
+        @include media ('sm') {
+            width: 200px;
+            height: 200px;
+            align-items: flex-end;
+            align-self: center;
+        }
+
+        @include media ('xs') {
+            top: 0;
+        }
+    }
+
+    &__block {}
+
+    &__block-img {}
+
+    &__block-title {
+        font-weight: 900;
+        color: $darkblue-color;
+
+        @include media ('sm') {
+            font-size: 20px;
+        }
+    }
+
+    &__block-link {
+        font-size: 14px;
+        color: $violet-color;
+    }
+
+    &__block-item {
+        line-height: 32.4px;
+        font-weight: 400;
+
+        @include media ('sm') {
+            line-height: 20px;
+        }
+
+        @include media ('xs') {
+            font-size: 14px;
+        }
+    }
+}

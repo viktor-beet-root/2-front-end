@@ -1,0 +1,37 @@
+.block_pink {
+    background-color: rgba($color: #F063B8, $alpha: 0.15);
+    border-radius: 50px;
+    max-width: 1090px;
+
+    @include media ('sm') {
+        padding: 0;
+        margin: 25px;
+    }
+}
+
+.info-wrapper_center {
+    margin: 125px 50px 0 135px;
+    padding-bottom: 100px;
+
+
+    @include media ('sm') {
+        margin: 45px;
+        padding: 0;
+    }
+
+    @include media ('xs') {
+        padding: 20px 10px 20px 20px;
+        margin: 0;
+    }
+}
+
+.img_pink {
+    @include media ('sm') {
+        width: 275px;
+        height: 300px;
+    }
+
+    @include media ('xs') {
+        margin-left: 100px;
+    }
+}

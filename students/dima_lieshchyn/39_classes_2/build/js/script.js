@@ -136,15 +136,19 @@ var Course = /*#__PURE__*/function () {
   }, {
     key: "sortStudentsBySkill",
     value: function sortStudentsBySkill(switcher) {
-      if (switcher) {
-        return this.studentsList.sort(function (a, b) {
-          return a.skillList.length - b.skillList.length;
-        });
-      } else {
-        return this.studentsList.sort(function (a, b) {
-          return b.skillList.length - a.skillList.length;
-        });
-      }
+      var sortedStudentList = this.studentsList.slice();
+      sortedStudentList.sort(function (a, b) {
+        return a.skillList.length - b.skillList.length;
+      });
+      return switcher ? sortedStudentList : sortedStudentList.reverse(); // if (switcher) {
+      //     return this.studentsList.sort(
+      //         (a, b) => a.skillList.length - b.skillList.length
+      //     );
+      // } else {
+      //     return this.studentsList.sort(
+      //         (a, b) => b.skillList.length - a.skillList.length
+      //     );
+      // }
     }
   }, {
     key: "getOldestStudent",
@@ -182,6 +186,9 @@ var Course = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Course__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Course */ "./src/js/Course.js");
+ //Переписать на новый синтаксис 
+//прошлое занятие по добавлению методов к класу Course. 
+// класс находиться в Course.js
 
 var frontend = new _Course__WEBPACK_IMPORTED_MODULE_0__["default"]({
   courseName: 'Frontend',
@@ -205,18 +212,19 @@ frontend.addStudent = {
   email: 'kolya@gmail.com',
   age: 24,
   skillList: ['html', 'js']
-};
-console.log(frontend.changeStudentById(1, {
-  name: 'Andrey',
-  email: 'andrey@gmail.com',
-  age: 12,
-  skillList: ['windows family']
-})); // console.log(frontend.getUniqSkillList());
+}; // console.log(frontend.changeStudentById(1, {
+//     name: 'Andrey',
+//     email: 'andrey@gmail.com',
+//     age: 12,
+//     skillList: ['windows family']
+// }));
+// console.log(frontend.getUniqSkillList());
 
-console.log(frontend.sortStudentsBySkill(0));
+console.log(frontend.sortStudentsBySkill(1)); // console.log(frontend.getStudentsList());
+// console.log(frontend.getOldestStudent());
+// console.log(frontend.getYoungerStudent())
+
 console.log(frontend.getStudentsList());
-console.log(frontend.getOldestStudent());
-console.log(frontend.getYoungerStudent());
 
 /***/ }),
 

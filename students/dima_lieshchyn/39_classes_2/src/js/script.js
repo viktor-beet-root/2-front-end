@@ -1,5 +1,7 @@
 import Course from "./Course";
-
+//Переписать на новый синтаксис 
+//прошлое занятие по добавлению методов к класу Course. 
+// класс находиться в Course.js
 const frontend = new Course({
     courseName: 'Frontend',
     duration: new Date(2022, 4, 15).getTime(),
@@ -26,15 +28,15 @@ frontend.addStudent = {
 };
 
 
-console.log(frontend.changeStudentById(1, {
-    name: 'Andrey',
-    email: 'andrey@gmail.com',
-    age: 12,
-    skillList: ['windows family']
-}));
+// console.log(frontend.changeStudentById(1, {
+//     name: 'Andrey',
+//     email: 'andrey@gmail.com',
+//     age: 12,
+//     skillList: ['windows family']
+// }));
 // console.log(frontend.getUniqSkillList());
-console.log(frontend.sortStudentsBySkill(0))
+console.log(frontend.sortStudentsBySkill(1))
+// console.log(frontend.getStudentsList());
+// console.log(frontend.getOldestStudent());
+// console.log(frontend.getYoungerStudent())
 console.log(frontend.getStudentsList());
-console.log(frontend.getOldestStudent());
-console.log(frontend.getYoungerStudent())
-

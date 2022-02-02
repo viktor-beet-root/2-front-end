@@ -73,15 +73,11 @@ class Course {
     //4. Сортировать студентов в зависимости 
     //от их скила(кол-во скилов length) принимает true false.
     sortStudentsBySkill(switcher) {
-        if (switcher) {
-            return this.studentsList.sort(
-                (a, b) => a.skillList.length - b.skillList.length
-            );
-        } else {
-            return this.studentsList.sort(
-                (a, b) => b.skillList.length - a.skillList.length
-            );
-        }
+        const sortedStudentList = this.studentsList.slice();
+        sortedStudentList.sort(
+            (a, b) => a.skillList.length - b.skillList.length
+        );
+        return switcher ? sortedStudentList : sortedStudentList.reverse();
     };
 
     //5. Метод возвращает студента по возрасту самого старого.

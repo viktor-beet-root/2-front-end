@@ -4040,31 +4040,117 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var header = document.querySelector('.header');
-var main = header.nextElementSibling;
-var footer = main.nextElementSibling;
-var buttons = document.querySelectorAll('.btn');
-var productlyInput = document.querySelector('[type="text"]');
-var footerLists = footer.querySelectorAll('ul a');
-var productlyForm = productlyInput.closest('.form');
-var menu = header.querySelector('ul');
-var menuList = menu.querySelectorAll('li');
-var logo = document.querySelectorAll('.logo');
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var sections = _toConsumableArray(main.querySelectorAll('section'));
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-var imgs = sections.filter(function (elem) {
-  return elem.querySelector('img') !== null;
-}).map(function (elem) {
-  return elem.querySelector('img');
-});
-var headignsFromImgs = imgs.map(function (elem) {
-  return elem.closest('section').querySelector('h2,h1').textContent;
-});
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var allLinks = _toConsumableArray(header.closest('.page').querySelectorAll('a:not(.logo__link)')).map(function (elem) {
-  return elem.textContent;
+// 1. Создать переменную со всеми кнопками которые лежат на сайте.
+// 2. Переменная с инпутом с сайта.
+// 3. Колекция ссылок из футера
+// 4. Ссылка на форму с футера
+// 5. Переменная на логотип
+// 6. Ссылка на мейн
+// 7. Масив с секциями.
+// 8. Перебирая масив с секциями создать масив с картинками.
+// 9. Ссылка на меню
+// 10. Коллекция всех лишек из меню.
+// 11. Вывести текст конетент заголовка из масива картинок. 
+// Функция перебирает картинку и выводит текст заголовка следущей секции если он есть.
+// 12. Получить масив всех ссылок и вывести текстовое содержимое.
+var Productly = /*#__PURE__*/function () {
+  function Productly(options) {
+    _classCallCheck(this, Productly);
+
+    this.header = document.querySelector(options.header); // 6. Ссылка на мейн
+
+    this.main = this.header.nextElementSibling;
+    this.footer = this.main.nextElementSibling; // 1. Создать переменную со всеми кнопками которые лежат на сайте.
+
+    this.buttons = document.querySelectorAll(options.buttons); // 2. Переменная с инпутом с сайта.
+
+    this.productlyInput = document.querySelector(options.productlyInput); // 3. Колекция ссылок из футера
+
+    this.footerLists = this.footer.querySelectorAll(options.footerLists); // 4. Ссылка на форму с футера
+
+    this.productlyForm = this.footer.querySelector(options.form); // 9. Ссылка на меню
+
+    this.menu = this.header.querySelector(options.menu); // 10. Коллекция всех лишек из меню.
+
+    this.menuList = this.menu.querySelectorAll(options.menuList); // 5. Переменная на логотип
+
+    this.logo = document.querySelectorAll(options.logo); // 7. Масив с секциями.
+
+    this.sections = _toConsumableArray(this.main.querySelectorAll(options.sections));
+    this.imgs = this.getImgs();
+    this.headignsFromImgs = this.getHeadignsFromImgs();
+    this.allLinks = this.getAllLinks();
+  } // 8. Перебирая масив с секциями создать масив с картинками.
+
+
+  _createClass(Productly, [{
+    key: "getImgs",
+    value: function getImgs() {
+      return this.sections.filter(function (elem) {
+        return elem.querySelector('img') !== null;
+      }).map(function (elem) {
+        return elem.querySelector('img');
+      });
+    } // 11. Вывести текст конетент заголовка из масива картинок. 
+
+  }, {
+    key: "getHeadignsFromImgs",
+    value: function getHeadignsFromImgs() {
+      return this.imgs.map(function (elem) {
+        return elem.closest('section').querySelector('h2,h1').textContent;
+      });
+    } // 12. Получить масив всех ссылок и вывести текстовое содержимое.
+
+  }, {
+    key: "getAllLinks",
+    value: function getAllLinks() {
+      return _toConsumableArray(this.header.closest('.page').querySelectorAll('a:not(.logo__link)')).map(function (elem) {
+        return elem.textContent;
+      });
+    }
+  }]);
+
+  return Productly;
+}();
+
+var prod = new Productly({
+  header: '.header',
+  buttons: '.btn',
+  productlyInput: '[type="text"]',
+  footerLists: 'ul a',
+  productlyForm: '.form',
+  menu: 'ul',
+  menuList: 'li',
+  logo: '.logo',
+  sections: 'section'
 });
+console.log(prod); // console.log(prod.getImgs());
+// const header = document.querySelector('.header');
+// const main = header.nextElementSibling;
+// const footer = main.nextElementSibling;
+// const buttons = document.querySelectorAll('.btn');
+// const productlyInput = document.querySelector('[type="text"]');
+// const footerLists = footer.querySelectorAll('ul a');
+// const productlyForm = productlyInput.closest('.form');
+// const menu = header.querySelector('ul');
+// const menuList = menu.querySelectorAll('li');
+// const logo = document.querySelectorAll('.logo');
+// const sections = [...main.querySelectorAll('section')];
+// const imgs = sections
+//     .filter(elem => elem.querySelector('img') !== null)
+//     .map(elem => elem.querySelector('img'));
+// const headignsFromImgs = imgs.map(elem => elem.closest('section')
+//     .querySelector('h2,h1')
+//     .textContent);
+// const allLinks = [...header.closest('.page')
+//     .querySelectorAll('a:not(.logo__link)')]
+//     .map(elem => elem.textContent);
 }();
 /******/ })()
 ;

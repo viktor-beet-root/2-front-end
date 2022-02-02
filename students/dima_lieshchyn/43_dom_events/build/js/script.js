@@ -51,12 +51,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal-window */ "./src/js/modal-window.js");
 /* harmony import */ var _traffic_lights__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./traffic-lights */ "./src/js/traffic-lights.js");
 
+ // Створити HTML-сторінку з кнопкою "Відкрити" і модальним вікном. На модальном вікні
+//повинен бути текст і кнопка "Закрити". Спочатку модальне вікно не відображається.
+//При кліку на кнопку "Відкрити" з'являється модальне вікно, на кнопку "Закрити" — зникає.
+//Також вікно зачиняється при натисканні на overlya вікна.
 
 var modalWindow = new _modal_window__WEBPACK_IMPORTED_MODULE_0__["default"]({
   modal: '.modal',
   overlay: '.modal__wrapper',
   openBtn: '.open'
-});
+}); // Створити HTML-сторінку зі світлофором. Світлофор перемикається на наступний колір кожні 2с.
+
 var trafficLight = new _traffic_lights__WEBPACK_IMPORTED_MODULE_1__["default"]({
   trafficLights: '.light',
   btnStart: '.trafic-lights__start',
@@ -105,7 +110,7 @@ var Lights = /*#__PURE__*/_createClass(function Lights(options) {
       return e.classList[e === currentLight ? 'add' : 'remove'](e.dataset.light);
     });
 
-    _this.timer = setTimeout(_this.startLight, 5000);
+    _this.timer = setTimeout(_this.startLight, 2000);
   });
 
   _defineProperty(this, "stopLight", function () {

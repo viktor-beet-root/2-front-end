@@ -18,7 +18,7 @@ class Lights {
 
         this.trafficLights.forEach(e => e.classList[e === currentLight ? 'add' : 'remove'](e.dataset.light));
 
-        this.timer = setTimeout(this.startLight, 5000);
+        this.timer = setTimeout(this.startLight, 2000);
     }
     stopLight = () => {
         clearTimeout(this.timer);

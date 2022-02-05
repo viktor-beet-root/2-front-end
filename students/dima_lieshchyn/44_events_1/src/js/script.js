@@ -1,7 +1,7 @@
 import Form from "./form";
 
-const frm = new Form({
-    form: '.form',
+const forma = new Form({
+    form: document.querySelector('.form'),
 
     errorClassName: 'error',
 
@@ -15,9 +15,4 @@ const frm = new Form({
 
     maxCountElem: '.message-counter',
 
-    maxContent: 'data-max-content',
-
-    limitIsOver: 'Limit is over',
 });
-
-

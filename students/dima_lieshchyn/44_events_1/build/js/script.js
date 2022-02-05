@@ -9,12 +9,12 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -29,28 +29,82 @@ var Form = /*#__PURE__*/function () {
   function Form(options) {
     _classCallCheck(this, Form);
 
-    this.form = document.querySelector(options.form);
+    this.form = options.form;
     this.errorClassName = options.errorClassName;
     this.errorMessage = options.errorMessage;
     this.requiredElementList = this.form.querySelectorAll(options.requiredElementList);
     this.errorMessageSymbols = options.errorMessageSymbols;
-    this.lettersOnlyClass = options.lettersOnlyClass;
+    this.lettersOnlyClass = options.lettersOnly;
     this.maxCountElem = this.form.querySelector(options.maxCountElem);
-    this.isMaxError = false;
-    this.maxContent = options.maxContent;
-    this.input = options.input;
-    this.limitIsOver = options.limitIsOver;
+    var isMaxError = false;
     this.form.addEventListener('submit', this.submitForm);
-    this.requiredD(this.requiredElementList);
+    this.foo(this.requiredElementList);
   }
 
   _createClass(Form, [{
+    key: "foo",
+    value: function foo(element) {
+      var _this = this;
+
+      element.forEach(function (elem) {
+        _this.showMaxContent(elem);
+
+        _this.showError(elem);
+
+        _this.removeErrorAfterFocus(elem);
+      });
+    }
+  }, {
+    key: "showMaxContent",
+    value: function showMaxContent(elem) {
+      if (elem.getAttribute('data-max-content')) {
+        elem.addEventListener('input', function (e) {
+          var maxCount = +this.dataset.maxContent;
+          var valueLength = +this.value.length;
+          this.maxCountElem.dataset.currentCount = valueLength;
+
+          if (valueLength > maxCount && !isMaxError) {
+            this.setError(this, 'Limit is over');
+            isMaxError = true;
+          } else if (valueLength <= maxCount && isMaxError) {
+            isMaxError = false;
+            this.removeError(this);
+          }
+        });
+      }
+    }
+  }, {
+    key: "showError",
+    value: function showError(elem) {
+      elem.addEventListener('blur', function (e) {
+        var value = this.value;
+
+        if (value === '') {
+          console.log(e.target);
+          this.setError(e.target, this.errorMessage);
+        }
+
+        if (this.classList.contains(this.lettersOnlyClass)) {
+          this.lettersOnly(this);
+        }
+      });
+    }
+  }, {
+    key: "removeErrorAfterFocus",
+    value: function removeErrorAfterFocus(elem) {
+      elem.addEventListener('focus', function (e) {
+        if (this.classList.contains(this.errorClassName)) {
+          this.removeError(this);
+        }
+      });
+    }
+  }, {
     key: "lettersOnly",
     value: function lettersOnly(elemt) {
       var regex = /\d/;
 
       if (regex.test(elemt.value)) {
-        setError(elemt, this.errorMessageSymbols);
+        this.setError(elemt, this.errorMessageSymbols);
       }
     }
   }, {
@@ -58,7 +112,7 @@ var Form = /*#__PURE__*/function () {
     value: function setError(elemt, errorMessage) {
       elemt.parentElement.classList.add(this.errorClassName);
       elemt.classList.add(this.errorClassName);
-      elemt.after(this.createErrorMessage(errorMessage));
+      elemt.after(createErrorMessage(errorMessage));
     }
   }, {
     key: "removeError",
@@ -85,56 +139,6 @@ var Form = /*#__PURE__*/function () {
         console.log(this[i]);
       }
     }
-  }, {
-    key: "maxContentControl",
-    value: function maxContentControl() {
-      var maxCount = +this.dataset.maxContent;
-      var valueLength = +this.value.length;
-      maxCountElem.dataset.currentCount = valueLength;
-
-      if (valueLength > maxCount && !isMaxError) {
-        this.setError(this, this.limitIsOver);
-        this.isMaxError = true;
-      } else if (valueLength <= maxCount && isMaxError) {
-        this.isMaxError = false;
-        this.removeError(this);
-      }
-    }
-  }, {
-    key: "focusOut",
-    value: function focusOut() {
-      var value = this.value;
-
-      if (value === '') {
-        console.log(this.errorMessage);
-        this.setError(this, this.errorMessage);
-      }
-
-      if (this.classList.contains(this.lettersOnlyClass)) {
-        this.lettersOnly(this);
-      }
-    }
-  }, {
-    key: "focusIn",
-    value: function focusIn() {
-      if (this.classList.contains(this.errorClassName)) {
-        this.removeError(this);
-      }
-    }
-  }, {
-    key: "requiredD",
-    value: function requiredD(e) {
-      var _this = this;
-
-      e.forEach(function (elem) {
-        if (elem.getAttribute(_this.maxContent)) {
-          elem.addEventListener('input', _this.maxContentControl);
-        }
-
-        elem.addEventListener('blur', _this.focusOut);
-        elem.addEventListener('focus', _this.focusIn);
-      });
-    }
   }]);
 
   return Form;
@@ -154,16 +158,14 @@ var Form = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
 
-var frm = new _form__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  form: '.form',
+var forma = new _form__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  form: document.querySelector('.form'),
   errorClassName: 'error',
   errorMessage: 'This field is required',
   requiredElementList: '.required:not(div)',
   errorMessageSymbols: 'Only letters',
   lettersOnlyClass: 'letters-only',
-  maxCountElem: '.message-counter',
-  maxContent: 'data-max-content',
-  limitIsOver: 'Limit is over'
+  maxCountElem: '.message-counter'
 });
 
 /***/ }),

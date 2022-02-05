@@ -1,6 +1,6 @@
 class Form {
     constructor(options) {
-        this.form = document.querySelector(options.form);
+        this.form = options.form;
 
         this.errorClassName = options.errorClassName;
 
@@ -10,35 +10,73 @@ class Form {
 
         this.errorMessageSymbols = options.errorMessageSymbols;
 
-        this.lettersOnlyClass = options.lettersOnlyClass;
+        this.lettersOnlyClass = options.lettersOnly;
 
         this.maxCountElem = this.form.querySelector(options.maxCountElem);
 
-        this.isMaxError = false;
-
-        this.maxContent = options.maxContent;
-
-        this.input = options.input;
-
-        this.limitIsOver = options.limitIsOver;
+        let isMaxError = false;
 
         this.form.addEventListener('submit', this.submitForm);
+        this.foo(this.requiredElementList);
+    }
+    foo(element) {
+        element.forEach(elem => {
+            this.showMaxContent(elem);
+            this.showError(elem);
+            this.removeErrorAfterFocus(elem);
+        });
+    }
+    showMaxContent(elem) {
+        if (elem.getAttribute('data-max-content')) {
+            elem.addEventListener('input', function (e) {
+                const maxCount = +this.dataset.maxContent;
+                const valueLength = +this.value.length;
+                this.maxCountElem.dataset.currentCount = valueLength;
 
-        this.requiredD(this.requiredElementList);
+                if (valueLength > maxCount && !isMaxError) {
+                    this.setError(this, 'Limit is over');
+                    isMaxError = true;
+                } else if (valueLength <= maxCount && isMaxError) {
+                    isMaxError = false;
+                    this.removeError(this);
+                }
+            });
+        }
+    }
+    showError(elem) {
+        elem.addEventListener('blur', function (e) {
+            const value = this.value;
+
+            if (value === '') {
+                console.log(e.target);
+                this.setError(e.target, this.errorMessage);
+            }
+            if (this.classList.contains(this.lettersOnlyClass)) {
+                this.lettersOnly(this);
+            }
+        });
+    }
+
+    removeErrorAfterFocus(elem) {
+        elem.addEventListener('focus', function (e) {
+            if (this.classList.contains(this.errorClassName)) {
+                this.removeError(this);
+            }
+        });
     }
 
     lettersOnly(elemt) {
         const regex = /\d/;
 
         if (regex.test(elemt.value)) {
-            setError(elemt, this.errorMessageSymbols);
+            this.setError(elemt, this.errorMessageSymbols);
         }
     }
 
     setError(elemt, errorMessage) {
         elemt.parentElement.classList.add(this.errorClassName);
         elemt.classList.add(this.errorClassName);
-        elemt.after(this.createErrorMessage(errorMessage));
+        elemt.after(createErrorMessage(errorMessage));
     }
 
     removeError(elemt) {
@@ -55,6 +93,7 @@ class Form {
         return tag;
     }
 
+
     submitForm(e) {
         e.preventDefault();
 
@@ -65,51 +104,6 @@ class Form {
         }
     }
 
-    maxContentControl() {
-        const maxCount = +this.dataset.maxContent;
-        const valueLength = +this.value.length;
-        maxCountElem.dataset.currentCount = valueLength;
-
-        if (valueLength > maxCount && !isMaxError) {
-            this.setError(this, this.limitIsOver);
-            this.isMaxError = true;
-        } else if (valueLength <= maxCount && isMaxError) {
-            this.isMaxError = false;
-            this.removeError(this);
-        }
-    }
-
-    focusOut() {
-        const value = this.value;
-
-        if (value === '') {
-            console.log(this.errorMessage);
-            this.setError(this, this.errorMessage);
-        }
-        if (this.classList.contains(this.lettersOnlyClass)) {
-            this.lettersOnly(this);
-        }
-    }
-
-    focusIn() {
-        if (this.classList.contains(this.errorClassName)) {
-            this.removeError(this);
-        }
-    }
-
-    requiredD(e) {
-        e.forEach(elem => {
-            if (elem.getAttribute(this.maxContent)) {
-                elem.addEventListener('input', this.maxContentControl);
-            }
-
-            elem.addEventListener('blur', this.focusOut);
-
-            elem.addEventListener('focus', this.focusIn);
-        });
-
-    }
-
-
 }
+
 export default Form;

@@ -1,175 +1,6 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/form.js":
-/*!************************!*\
-  !*** ./src/js/form.js ***!
-  \************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-var Form = /*#__PURE__*/function () {
-  function Form(options) {
-    _classCallCheck(this, Form);
-
-    this.form = options.form;
-    this.errorClassName = options.errorClassName;
-    this.errorMessage = options.errorMessage;
-    this.requiredElementList = this.form.querySelectorAll(options.requiredElementList);
-    this.errorMessageSymbols = options.errorMessageSymbols;
-    this.lettersOnlyClass = options.lettersOnly;
-    this.maxCountElem = this.form.querySelector(options.maxCountElem);
-    var isMaxError = false;
-    this.form.addEventListener('submit', this.submitForm);
-    this.foo(this.requiredElementList);
-  }
-
-  _createClass(Form, [{
-    key: "foo",
-    value: function foo(element) {
-      var _this = this;
-
-      element.forEach(function (elem) {
-        _this.showMaxContent(elem);
-
-        _this.showError(elem);
-
-        _this.removeErrorAfterFocus(elem);
-      });
-    }
-  }, {
-    key: "showMaxContent",
-    value: function showMaxContent(elem) {
-      if (elem.getAttribute('data-max-content')) {
-        elem.addEventListener('input', function (e) {
-          var maxCount = +this.dataset.maxContent;
-          var valueLength = +this.value.length;
-          this.maxCountElem.dataset.currentCount = valueLength;
-
-          if (valueLength > maxCount && !isMaxError) {
-            this.setError(this, 'Limit is over');
-            isMaxError = true;
-          } else if (valueLength <= maxCount && isMaxError) {
-            isMaxError = false;
-            this.removeError(this);
-          }
-        });
-      }
-    }
-  }, {
-    key: "showError",
-    value: function showError(elem) {
-      elem.addEventListener('blur', function (e) {
-        var value = this.value;
-
-        if (value === '') {
-          console.log(e.target);
-          this.setError(e.target, this.errorMessage);
-        }
-
-        if (this.classList.contains(this.lettersOnlyClass)) {
-          this.lettersOnly(this);
-        }
-      });
-    }
-  }, {
-    key: "removeErrorAfterFocus",
-    value: function removeErrorAfterFocus(elem) {
-      elem.addEventListener('focus', function (e) {
-        if (this.classList.contains(this.errorClassName)) {
-          this.removeError(this);
-        }
-      });
-    }
-  }, {
-    key: "lettersOnly",
-    value: function lettersOnly(elemt) {
-      var regex = /\d/;
-
-      if (regex.test(elemt.value)) {
-        this.setError(elemt, this.errorMessageSymbols);
-      }
-    }
-  }, {
-    key: "setError",
-    value: function setError(elemt, errorMessage) {
-      elemt.parentElement.classList.add(this.errorClassName);
-      elemt.classList.add(this.errorClassName);
-      elemt.after(createErrorMessage(errorMessage));
-    }
-  }, {
-    key: "removeError",
-    value: function removeError(elemt) {
-      elemt.nextElementSibling.remove();
-      elemt.parentElement.classList.remove(this.errorClassName);
-      elemt.classList.remove(this.errorClassName);
-    }
-  }, {
-    key: "createErrorMessage",
-    value: function createErrorMessage(errorMessage) {
-      var tag = document.createElement('div');
-      tag.classList.add(this.errorClassName);
-      tag.textContent = errorMessage;
-      return tag;
-    }
-  }, {
-    key: "submitForm",
-    value: function submitForm(e) {
-      e.preventDefault();
-      console.dir(this);
-
-      for (var i = 0; i < this.length; i++) {
-        console.log(this[i]);
-      }
-    }
-  }]);
-
-  return Form;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (Form);
-
-/***/ }),
-
-/***/ "./src/js/script.js":
-/*!**************************!*\
-  !*** ./src/js/script.js ***!
-  \**************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
-
-var forma = new _form__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  form: document.querySelector('.form'),
-  errorClassName: 'error',
-  errorMessage: 'This field is required',
-  requiredElementList: '.required:not(div)',
-  errorMessageSymbols: 'Only letters',
-  lettersOnlyClass: 'letters-only',
-  maxCountElem: '.message-counter'
-});
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/a-callable.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/a-callable.js ***!
@@ -2644,13 +2475,143 @@ handlePrototype(DOMTokenListPrototype);
 /******/ 	}();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	__webpack_require__("./src/js/form.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/script.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+!function() {
+"use strict";
+/*!**************************!*\
+  !*** ./src/js/script.js ***!
+  \**************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var form = document.querySelector('.form');
+var errorClassName = 'error';
+var errorMessageList = {
+  default: 'This field is required',
+  empty: 'Field is empty',
+  limit: 'Limit is over'
+};
+var requiredElementList = form.querySelectorAll('.required:not(div)');
+var notRequiredElementList = form.querySelectorAll('.email-only,.phone-only,.site-only');
+var errorMessageSymbols = {
+  letters: 'Only letters',
+  email: 'Only email',
+  phone: 'Only phone number'
+};
+var specialClasses = {
+  letters: 'letters-only',
+  emails: 'email-only',
+  phones: 'phone-only'
+};
+var additionalFields = {
+  email: form.querySelector('input[name="email"]'),
+  phone: form.querySelector('input[name="phone"]'),
+  site: form.querySelector('input[name="site"]')
+};
+var maxCountElem = form.querySelector('.message-counter');
+var isMaxError = false; // /[a-zA-Z1-9\-\._]+@[a-z1-9]+(.[a-z1-9]+){1,}/;
+
+notRequiredElementList.forEach(function (elem) {
+  elem.addEventListener('blur', function (e) {
+    if (this.classList.contains(specialClasses.emails)) {
+      emailsOnly(this);
+    }
+  });
+  elem.addEventListener('focus', function (e) {
+    if (this.classList.contains(errorClassName)) {
+      removeError(this);
+    }
+  });
+});
+requiredElementList.forEach(function (elem) {
+  if (elem.getAttribute('data-max-content')) {
+    elem.addEventListener('input', function (e) {
+      var maxCount = +this.dataset.maxContent;
+      var valueLength = +this.value.length;
+      maxCountElem.dataset.currentCount = valueLength;
+
+      if (valueLength > maxCount && !isMaxError) {
+        setError(this, errorMessageList.limit);
+        isMaxError = true;
+      } else if (valueLength <= maxCount && isMaxError) {
+        isMaxError = false;
+        removeError(this);
+      }
+    });
+  }
+
+  elem.addEventListener('blur', function (e) {
+    var value = this.value;
+
+    if (value === '') {
+      setError(this, errorMessageList.default);
+    }
+
+    if (this.classList.contains(specialClasses.letters)) {
+      lettersOnly(this);
+    }
+  });
+  elem.addEventListener('focus', function (e) {
+    if (this.classList.contains(errorClassName)) {
+      removeError(this);
+    }
+  });
+});
+
+function emailsOnly(elemt) {
+  var regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+  if (regex.test(elemt.value)) {
+    setError(elemt, errorMessageSymbols.email);
+  }
+}
+
+function lettersOnly(elemt) {
+  var regex = /\d/;
+
+  if (regex.test(elemt.value)) {
+    setError(elemt, errorMessageSymbols.letters);
+  }
+}
+
+function setError(elemt, errorMessage) {
+  elemt.parentElement.classList.add(errorClassName);
+  elemt.classList.add(errorClassName);
+  elemt.after(createErrorMessage(errorMessage));
+}
+
+function removeError(elemt) {
+  elemt.nextElementSibling.remove();
+  elemt.parentElement.classList.remove(errorClassName);
+  elemt.classList.remove(errorClassName);
+}
+
+function createErrorMessage(errorMessage) {
+  var tag = document.createElement('div');
+  tag.classList.add(errorClassName);
+  tag.textContent = errorMessage;
+  return tag;
+}
+
+form.addEventListener('submit', submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+  console.dir(this);
+
+  for (var i = 0; i < this.length; i++) {
+    console.log(this[i]);
+  }
+}
+}();
 /******/ })()
 ;
 //# sourceMappingURL=script.js.map

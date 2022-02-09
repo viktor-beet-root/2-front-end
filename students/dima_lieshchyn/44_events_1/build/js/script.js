@@ -2500,6 +2500,8 @@ var errorMessageList = {
   limit: 'Limit is over'
 };
 var requiredElementList = form.querySelectorAll('.required:not(div)');
+var formElements = form.querySelectorAll('input,textarea');
+console.log(formElements);
 var notRequiredElementList = form.querySelectorAll('.email-only,.phone-only,.site-only');
 var errorMessageSymbols = {
   letters: 'Only letters',
@@ -2516,48 +2518,29 @@ var additionalFields = {
   phone: form.querySelector('input[name="phone"]'),
   site: form.querySelector('input[name="site"]')
 };
+var regexList = {
+  name: /\d\.[a-zA-Z]\S(.+)/,
+  phone: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+  email: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+};
 var maxCountElem = form.querySelector('.message-counter');
-var isMaxError = false; // /[a-zA-Z1-9\-\._]+@[a-z1-9]+(.[a-z1-9]+){1,}/;
+var isMaxError = false;
 
-notRequiredElementList.forEach(function (elem) {
-  elem.addEventListener('blur', function (e) {
-    if (this.classList.contains(specialClasses.emails)) {
-      emailsOnly(this);
-    }
-  });
-  elem.addEventListener('focus', function (e) {
-    if (this.classList.contains(errorClassName)) {
-      removeError(this);
-    }
-  });
-});
-requiredElementList.forEach(function (elem) {
-  if (elem.getAttribute('data-max-content')) {
-    elem.addEventListener('input', function (e) {
-      var maxCount = +this.dataset.maxContent;
-      var valueLength = +this.value.length;
-      maxCountElem.dataset.currentCount = valueLength;
+function validateItem(item, vType) {
+  var value = item.value;
 
-      if (valueLength > maxCount && !isMaxError) {
-        setError(this, errorMessageList.limit);
-        isMaxError = true;
-      } else if (valueLength <= maxCount && isMaxError) {
-        isMaxError = false;
-        removeError(this);
-      }
-    });
+  if (value === '') {
+    setError(item, errorMessageList.default);
   }
 
+  if (item.classList.contains(vType)) {
+    checkField(item, regexList.email, errorMessageSymbols.email);
+  }
+}
+
+formElements.forEach(function (elem) {
   elem.addEventListener('blur', function (e) {
-    var value = this.value;
-
-    if (value === '') {
-      setError(this, errorMessageList.default);
-    }
-
-    if (this.classList.contains(specialClasses.letters)) {
-      lettersOnly(this);
-    }
+    validateItem(elem, regexList.email);
   });
   elem.addEventListener('focus', function (e) {
     if (this.classList.contains(errorClassName)) {
@@ -2566,21 +2549,62 @@ requiredElementList.forEach(function (elem) {
   });
 });
 
-function emailsOnly(elemt) {
-  var regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+function checkField(elemt, regex, type) {
+  var tempRegex = regex;
 
-  if (regex.test(elemt.value)) {
-    setError(elemt, errorMessageSymbols.email);
+  if (!tempRegex.test(elemt.value)) {
+    setError(elemt, type);
   }
-}
+} // requiredElementList.forEach(elem => {
+//     if (elem.getAttribute('data-max-content')) {
+//         elem.addEventListener('input', function (e) {
+//             const maxCount = +this.dataset.maxContent;
+//             const valueLength = +this.value.length;
+//             maxCountElem.dataset.currentCount = valueLength;
+//             if (valueLength > maxCount && !isMaxError) {
+//                 setError(this, errorMessageList.limit);
+//                 isMaxError = true;
+//             } else if (valueLength <= maxCount && isMaxError) {
+//                 isMaxError = false;
+//                 removeError(this);
+//             }
+//         });
+//     }
+//     //тригнуть событие!!
+//     elem.addEventListener('blur', function (e) {
+//         const value = this.value;
+//         if (value === '') {
+//             setError(this, errorMessageList.default);
+//         }
+//         if (this.classList.contains(specialClasses.letters)) {
+//             lettersOnly(this);
+//         }
+//     });
+//     elem.addEventListener('focus', function (e) {
+//         if (this.classList.contains(errorClassName)) {
+//             removeError(this);
+//         }
+//     });
+// });
+// function emailsOnly(elemt) {
+//     const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+//     if (!regex.test(elemt.value)) {
+//         setError(elemt, errorMessageSymbols.email);
+//     }
+// }
+// function phonesOnly(elemt) {
+//     const regex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+//     if (!regex.test(elemt.value)) {
+//         setError(elemt, errorMessageSymbols.email);
+//     }
+// }
+// function lettersOnly(elemt) {
+//     const regex = /\d\.[a-zA-Z]\S(.+)/;
+//     if (regex.test(elemt.value)) {
+//         setError(elemt, errorMessageSymbols.letters);
+//     }
+// }
 
-function lettersOnly(elemt) {
-  var regex = /\d/;
-
-  if (regex.test(elemt.value)) {
-    setError(elemt, errorMessageSymbols.letters);
-  }
-}
 
 function setError(elemt, errorMessage) {
   elemt.parentElement.classList.add(errorClassName);

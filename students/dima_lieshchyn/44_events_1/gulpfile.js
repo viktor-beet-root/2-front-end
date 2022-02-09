@@ -57,7 +57,7 @@ function server(cb) {
     browserSync.init({
         host: 'localhost',
         port: 3000,
-        tunnel: false,
+        tunnel: true,
         server: path.build.html
     });
 

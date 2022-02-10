@@ -3,27 +3,28 @@ const form = document.querySelector('.form');
 const errorClassName = 'error';
 
 const errorMessageList = {
-    default: 'This field is required',
-    empty: 'Field is empty',
-    limit: 'Limit is over',
+    default: 'Required field',
+    limit: 'To much symbols',
 };
 
 const requiredElementList = form.querySelectorAll('.required:not(div)');
-const formElements = form.querySelectorAll('input,textarea');
-console.log(formElements);
+
+const formElements = form.querySelectorAll('input,textarea,div');
 
 const notRequiredElementList = form.querySelectorAll('.email-only,.phone-only,.site-only');
 
 const errorMessageSymbols = {
-    letters: 'Only letters',
-    email: 'Only email',
+    fullName: 'Only Name',
+    email: 'Only Email',
     phone: 'Only phone number',
+    site: 'Only site adress',
 };
 
 const specialClasses = {
-    letters: 'letters-only',
+    fullName: 'full-name-only',
     emails: 'email-only',
     phones: 'phone-only',
+    site: 'site-only',
 }
 const additionalFields = {
     email: form.querySelector('input[name="email"]'),
@@ -31,35 +32,38 @@ const additionalFields = {
     site: form.querySelector('input[name="site"]'),
 }
 const regexList = {
-    name: /\d\.[a-zA-Z]\S(.+)/,
-    phone: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+    name: /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/,
+    phone: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
     email: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
-
+    site: /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi,
 }
 
 const maxCountElem = form.querySelector('.message-counter');
 
 let isMaxError = false;
 
-function validateItem(item, vType) {
+function validateItem(item) {
     const value = item.value;
-    if (value === '') {
-        setError(item, errorMessageList.default);
-    }
-    if (item.classList.contains(vType)) {
+    if (isSpecClass(item, specialClasses.emails) && value !== '') {
         checkField(item, regexList.email, errorMessageSymbols.email);
+    } else if (isSpecClass(item, specialClasses.phones) && value !== '') {
+        checkField(item, regexList.phone, errorMessageSymbols.phone);
+    } else if (isSpecClass(item, specialClasses.site) && value !== '') {
+        checkField(item, regexList.site, errorMessageSymbols.site);
     }
 }
+function isSpecClass(elem, classN) {
+    return elem.classList.contains(classN);
+}
 
-formElements.forEach(elem => {
-
+notRequiredElementList.forEach(elem => {
     elem.addEventListener('blur', function (e) {
-        validateItem(elem, regexList.email);
+        validateItem(elem);
     });
 
     elem.addEventListener('focus', function (e) {
-        if (this.classList.contains(errorClassName)) {
-            removeError(this);
+        if (isSpecClass(elem, errorClassName)) {
+            removeError(elem);
         }
     });
 });
@@ -71,66 +75,39 @@ function checkField(elemt, regex, type) {
     }
 }
 
-// requiredElementList.forEach(elem => {
-//     if (elem.getAttribute('data-max-content')) {
-//         elem.addEventListener('input', function (e) {
-//             const maxCount = +this.dataset.maxContent;
-//             const valueLength = +this.value.length;
-//             maxCountElem.dataset.currentCount = valueLength;
+requiredElementList.forEach(elem => {
+    if (elem.getAttribute('data-max-content')) {
+        elem.addEventListener('input', function (e) {
+            const maxCount = +this.dataset.maxContent;
+            const valueLength = +this.value.length;
+            maxCountElem.dataset.currentCount = valueLength;
 
-//             if (valueLength > maxCount && !isMaxError) {
-//                 setError(this, errorMessageList.limit);
-//                 isMaxError = true;
-//             } else if (valueLength <= maxCount && isMaxError) {
-//                 isMaxError = false;
-//                 removeError(this);
-//             }
-//         });
-//     }
+            if (valueLength > maxCount && !isMaxError) {
+                setError(this, errorMessageList.limit);
+                isMaxError = true;
+            } else if (valueLength <= maxCount && isMaxError) {
+                isMaxError = false;
+                removeError(this);
+            }
+        });
+    }
+    elem.addEventListener('blur', function (e) {
+        const value = this.value;
+        if (value === '') {
+            setError(this, errorMessageList.default);
+        }
+        if (isSpecClass(this, specialClasses.fullName) && value !== '') {
+            checkField(elem, regexList.name, errorMessageSymbols.fullName);
+        }
+    });
 
-//     //тригнуть событие!!
-//     elem.addEventListener('blur', function (e) {
-//         const value = this.value;
+    elem.addEventListener('focus', function (e) {
+        if (isSpecClass(this, errorClassName)) {
+            removeError(this);
+        }
+    });
+});
 
-//         if (value === '') {
-//             setError(this, errorMessageList.default);
-//         }
-//         if (this.classList.contains(specialClasses.letters)) {
-//             lettersOnly(this);
-//         }
-//     });
-
-//     elem.addEventListener('focus', function (e) {
-//         if (this.classList.contains(errorClassName)) {
-//             removeError(this);
-//         }
-//     });
-// });
-
-
-
-// function emailsOnly(elemt) {
-//     const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-
-//     if (!regex.test(elemt.value)) {
-//         setError(elemt, errorMessageSymbols.email);
-//     }
-// }
-
-// function phonesOnly(elemt) {
-//     const regex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
-
-//     if (!regex.test(elemt.value)) {
-//         setError(elemt, errorMessageSymbols.email);
-//     }
-// }
-// function lettersOnly(elemt) {
-//     const regex = /\d\.[a-zA-Z]\S(.+)/;
-
-//     if (regex.test(elemt.value)) {
-//         setError(elemt, errorMessageSymbols.letters);
-//     }
-// }
 
 function setError(elemt, errorMessage) {
     elemt.parentElement.classList.add(errorClassName);
@@ -152,18 +129,24 @@ function createErrorMessage(errorMessage) {
     return tag;
 }
 
+formElements.forEach(elem => {
 
-form.addEventListener('submit', submitForm)
+    if (typeof elem.value === 'undefined') {
+        console.log('net');
+    } else {
+        form.addEventListener('submit', submitForm)
+    }
+})
+
 
 
 function submitForm(e) {
     e.preventDefault();
 
-    console.dir(this);
-
     for (let i = 0; i < this.length; i++) {
         console.log(this[i]);
     }
+
 }
 
 

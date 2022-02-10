@@ -2324,6 +2324,41 @@ module.exports = function (name) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.function.name.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.function.name.js ***!
+  \**********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var FUNCTION_NAME_EXISTS = (__webpack_require__(/*! ../internals/function-name */ "./node_modules/core-js/internals/function-name.js").EXISTS);
+var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
+var defineProperty = (__webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f);
+
+var FunctionPrototype = Function.prototype;
+var functionToString = uncurryThis(FunctionPrototype.toString);
+var nameRE = /function\b(?:\s|\/\*[\S\s]*?\*\/|\/\/[^\n\r]*[\n\r]+)*([^\s(/]*)/;
+var regExpExec = uncurryThis(nameRE.exec);
+var NAME = 'name';
+
+// Function instances `.name` property
+// https://tc39.es/ecma262/#sec-function-instances-name
+if (DESCRIPTORS && !FUNCTION_NAME_EXISTS) {
+  defineProperty(FunctionPrototype, NAME, {
+    configurable: true,
+    get: function () {
+      try {
+        return regExpExec(nameRE, functionToString(this))[1];
+      } catch (error) {
+        return '';
+      }
+    }
+  });
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.object.to-string.js":
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/modules/es.object.to-string.js ***!
@@ -2489,29 +2524,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
 /* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 var form = document.querySelector('.form');
 var errorClassName = 'error';
 var errorMessageList = {
-  default: 'This field is required',
-  empty: 'Field is empty',
-  limit: 'Limit is over'
+  default: 'Required field',
+  limit: 'To much symbols'
 };
 var requiredElementList = form.querySelectorAll('.required:not(div)');
-var formElements = form.querySelectorAll('input,textarea');
-console.log(formElements);
+var formElements = form.querySelectorAll('input,textarea,div');
 var notRequiredElementList = form.querySelectorAll('.email-only,.phone-only,.site-only');
 var errorMessageSymbols = {
-  letters: 'Only letters',
-  email: 'Only email',
-  phone: 'Only phone number'
+  fullName: 'Only Name',
+  email: 'Only Email',
+  phone: 'Only phone number',
+  site: 'Only site adress'
 };
 var specialClasses = {
-  letters: 'letters-only',
+  fullName: 'full-name-only',
   emails: 'email-only',
-  phones: 'phone-only'
+  phones: 'phone-only',
+  site: 'site-only'
 };
 var additionalFields = {
   email: form.querySelector('input[name="email"]'),
@@ -2519,32 +2557,37 @@ var additionalFields = {
   site: form.querySelector('input[name="site"]')
 };
 var regexList = {
-  name: /\d\.[a-zA-Z]\S(.+)/,
-  phone: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-  email: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+  name: /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/,
+  phone: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+  email: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
+  site: /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
 };
 var maxCountElem = form.querySelector('.message-counter');
 var isMaxError = false;
 
-function validateItem(item, vType) {
+function validateItem(item) {
   var value = item.value;
 
-  if (value === '') {
-    setError(item, errorMessageList.default);
-  }
-
-  if (item.classList.contains(vType)) {
+  if (isSpecClass(item, specialClasses.emails) && value !== '') {
     checkField(item, regexList.email, errorMessageSymbols.email);
+  } else if (isSpecClass(item, specialClasses.phones) && value !== '') {
+    checkField(item, regexList.phone, errorMessageSymbols.phone);
+  } else if (isSpecClass(item, specialClasses.site) && value !== '') {
+    checkField(item, regexList.site, errorMessageSymbols.site);
   }
 }
 
-formElements.forEach(function (elem) {
+function isSpecClass(elem, classN) {
+  return elem.classList.contains(classN);
+}
+
+notRequiredElementList.forEach(function (elem) {
   elem.addEventListener('blur', function (e) {
-    validateItem(elem, regexList.email);
+    validateItem(elem);
   });
   elem.addEventListener('focus', function (e) {
-    if (this.classList.contains(errorClassName)) {
-      removeError(this);
+    if (isSpecClass(elem, errorClassName)) {
+      removeError(elem);
     }
   });
 });
@@ -2555,56 +2598,42 @@ function checkField(elemt, regex, type) {
   if (!tempRegex.test(elemt.value)) {
     setError(elemt, type);
   }
-} // requiredElementList.forEach(elem => {
-//     if (elem.getAttribute('data-max-content')) {
-//         elem.addEventListener('input', function (e) {
-//             const maxCount = +this.dataset.maxContent;
-//             const valueLength = +this.value.length;
-//             maxCountElem.dataset.currentCount = valueLength;
-//             if (valueLength > maxCount && !isMaxError) {
-//                 setError(this, errorMessageList.limit);
-//                 isMaxError = true;
-//             } else if (valueLength <= maxCount && isMaxError) {
-//                 isMaxError = false;
-//                 removeError(this);
-//             }
-//         });
-//     }
-//     //тригнуть событие!!
-//     elem.addEventListener('blur', function (e) {
-//         const value = this.value;
-//         if (value === '') {
-//             setError(this, errorMessageList.default);
-//         }
-//         if (this.classList.contains(specialClasses.letters)) {
-//             lettersOnly(this);
-//         }
-//     });
-//     elem.addEventListener('focus', function (e) {
-//         if (this.classList.contains(errorClassName)) {
-//             removeError(this);
-//         }
-//     });
-// });
-// function emailsOnly(elemt) {
-//     const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-//     if (!regex.test(elemt.value)) {
-//         setError(elemt, errorMessageSymbols.email);
-//     }
-// }
-// function phonesOnly(elemt) {
-//     const regex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
-//     if (!regex.test(elemt.value)) {
-//         setError(elemt, errorMessageSymbols.email);
-//     }
-// }
-// function lettersOnly(elemt) {
-//     const regex = /\d\.[a-zA-Z]\S(.+)/;
-//     if (regex.test(elemt.value)) {
-//         setError(elemt, errorMessageSymbols.letters);
-//     }
-// }
+}
 
+requiredElementList.forEach(function (elem) {
+  if (elem.getAttribute('data-max-content')) {
+    elem.addEventListener('input', function (e) {
+      var maxCount = +this.dataset.maxContent;
+      var valueLength = +this.value.length;
+      maxCountElem.dataset.currentCount = valueLength;
+
+      if (valueLength > maxCount && !isMaxError) {
+        setError(this, errorMessageList.limit);
+        isMaxError = true;
+      } else if (valueLength <= maxCount && isMaxError) {
+        isMaxError = false;
+        removeError(this);
+      }
+    });
+  }
+
+  elem.addEventListener('blur', function (e) {
+    var value = this.value;
+
+    if (value === '') {
+      setError(this, errorMessageList.default);
+    }
+
+    if (isSpecClass(this, specialClasses.fullName) && value !== '') {
+      checkField(elem, regexList.name, errorMessageSymbols.fullName);
+    }
+  });
+  elem.addEventListener('focus', function (e) {
+    if (isSpecClass(this, errorClassName)) {
+      removeError(this);
+    }
+  });
+});
 
 function setError(elemt, errorMessage) {
   elemt.parentElement.classList.add(errorClassName);
@@ -2625,11 +2654,22 @@ function createErrorMessage(errorMessage) {
   return tag;
 }
 
-form.addEventListener('submit', submitForm);
+formElements.forEach(function (elem) {
+  if (typeof elem.value === 'undefined') {
+    console.log('net');
+  } else {
+    form.addEventListener('submit', submitForm);
+  }
+});
+
+function regCheck(regexItem, item) {
+  var value = item;
+  var regex = regexItem;
+  return regex.test(value);
+}
 
 function submitForm(e) {
   e.preventDefault();
-  console.dir(this);
 
   for (var i = 0; i < this.length; i++) {
     console.log(this[i]);

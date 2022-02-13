@@ -1,0 +1,102 @@
+.exchange {
+    &__title {
+        font-family: $main-font-title;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        margin: 0;
+        margin-bottom: 14px;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 2;
+    }
+
+    &-info {
+        width: 761px;
+        padding: 72px 18px 72px 64px;
+        background-color: rgba(255, 255, 255, .9);
+        position: relative;
+        right: calc(-67% - 18px);
+        box-sizing: border-box;
+
+        @include media('lg') {
+            right: calc(-81% - 18px);
+            width: 122%;
+            padding: 45px 18px 45px 57px;
+        }
+
+        @include media('md') {
+            right: calc(-66% - 18px);
+            width: 106%;
+        }
+
+        @include media('sm') {
+            right: unset;
+            width: 100%;
+            padding: 45px 18px 45px 15px;
+        }
+
+        @include media('xs') {
+            padding: 25px 15px;
+            text-align-last: left;
+        }
+    }
+
+    &-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 66px;
+
+        @include media('lg') {
+            margin-bottom: 25px;
+        }
+
+        &__item {
+            margin-bottom: 13px;
+        }
+    }
+
+    &__btn {
+        margin: 35px 92px;
+
+        @include media('xs') {
+            margin: 26px 45px;
+        }
+    }
+}
+
+.exchange-wrapper__bg {
+    padding: 44px 0;
+    background-image: url(../images/exchg-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @include media('sm') {
+        padding: 0;
+    }
+
+    @include media('xs') {
+        padding: 20 0px;
+        background-image: unset;
+        text-align: center;
+    }
+}
+
+.exchange-btn-wrapper {
+    border: 1px solid $primery-grey;
+    display: inline-block;
+}
+
+@include mob-media('lg') {
+    .exchange-info__item:nth-child(3) {
+        .exchange-list {
+            margin-bottom: 0px;
+        }
+
+        .exchange-list__item {
+            margin-bottom: 0;
+        }
+    }
+}

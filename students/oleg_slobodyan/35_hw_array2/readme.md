@@ -1,0 +1,1 @@
+https://teddi90.github.io/2-front-end/students/oleg_slobodyan/35_hw_array2/build/

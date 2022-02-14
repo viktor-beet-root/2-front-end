@@ -1,0 +1,15 @@
+.block {
+    padding: 39px 0;
+
+    &_bp {
+        padding: 60px 0 109px;
+    }
+
+    &_bg {
+        background-color: $color-light-yellow;
+    }
+
+    @include media('sm') {
+        text-align: center;
+    }
+}

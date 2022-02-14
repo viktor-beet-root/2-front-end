@@ -1,0 +1,87 @@
+.trafic-lights {
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    padding-bottom: 20px;
+
+    &__wrapper {
+        background-color: gray;
+        border: 3px solid black;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px 0px;
+        border-radius: 5px;
+    }
+}
+
+.btn {
+    background: white;
+    color: rgb(14, 0, 136);
+    font-weight: bold;
+    padding: 5px 15px;
+    transition: all 0.3s;
+    border-radius: 5px;
+    margin: 5px;
+
+    &:hover {
+        box-shadow: 0px -5px 0 rgb(14, 0, 136) inset;
+    }
+}
+
+.light {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 2px;
+    background-color: rgb(82, 71, 71);
+    border: 2px solid #000;
+}
+
+.light::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+    visibility: hidden;
+}
+
+.red::after,
+.yellow::after,
+.green::after {
+    visibility: visible;
+    animation: blink .5s steps(4, start) 3s infinite;
+}
+
+.red::after {
+    background-color: red;
+    box-shadow: 4px 4px 30px 7px rgba(249, 0, 22, 0.91);
+}
+
+.yellow::after {
+    background-color: yellow;
+    box-shadow: 4px 4px 30px 7px rgba(213, 249, 0, 0.91);
+}
+
+.green::after {
+    background-color: green;
+    box-shadow: 4px 4px 30px 7px rgba(6, 126, 30, 0.91);
+}
+
+@-webkit-keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}

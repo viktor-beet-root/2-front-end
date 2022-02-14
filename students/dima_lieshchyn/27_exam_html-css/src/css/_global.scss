@@ -1,0 +1,97 @@
+@include font-face($main-font-name, 'lato-v20-latin-300', 300);
+@include font-face($main-font-name, 'lato-v20-latin-regular');
+@include font-face($main-font-name, 'lato-v20-latin-italic', 600, italic);
+@include font-face($main-font-name, 'lato-v20-latin-700', 700);
+@include font-face($additional-font-name, 'playfair-display-v25-latin-regular');
+@include font-face($additional-font-name, 'playfair-display-v25-latin-italic', 400, italic);
+
+@include grid();
+
+.page {
+    font-family: $main-font;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+    color: $color-dark-blue;
+    transition: all .5s ease-in-out;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}
+
+.page-wrapper {
+    background-image: url(../images/first-screen-image.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 31px;
+}
+
+.header {
+    background-image: url('../images/header-base.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 9999;
+    position: relative;
+}
+
+.footer {
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 78%;
+        height: 1px;
+        background-color: $color-gray;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(15%);
+    }
+}
+
+.button-link_global {
+    text-decoration: none;
+    color: $color-coral;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+
+    &::before {
+        content: '';
+        width: 42%;
+        height: 13px;
+        background-color: rgba(241, 137, 123, .3);
+        position: absolute;
+        top: 15px;
+        left: 9px;
+        right: 0;
+    }
+}
+
+.title_global {
+    font-family: $additional-font;
+    font-style: normal;
+}
+
+.title_alt-global {
+    font-style: italic;
+    color: $color-green;
+}
+
+.text_global {
+    font-family: $main-font;
+    font-weight: 300;
+    opacity: 0.8;
+
+    @include media('sm') {
+        font-size: 14px;
+    }
+}

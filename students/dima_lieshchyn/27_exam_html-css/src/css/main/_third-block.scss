@@ -1,0 +1,65 @@
+.third-block {
+    @include media('md') {
+        width: 100%;
+    }
+
+    &__text-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__text-block {
+        position: relative;
+
+        &::before {
+            content: '';
+            min-width: 500px;
+            height: 1px;
+            background-color: $color-gray;
+            position: absolute;
+            top: -32px;
+        }
+
+        @include media('md') {
+            &::before {
+                top: -10px;
+                min-width: 95%;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 40px;
+        line-height: 48px;
+
+        @include media('md') {
+            width: 100%;
+        }
+
+        @include media('sm') {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        @include media('xs') {
+            font-size: 24px;
+        }
+
+    }
+
+    &__title-alt {}
+
+    &__text {
+        padding: 24px 0px 136px;
+        max-width: 500px;
+
+        @include media('md') {
+            padding: 24px 0px 24px 0px;
+            max-width: 100%;
+        }
+    }
+}
+
+.title {}
+
+.text {}

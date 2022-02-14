@@ -1,0 +1,139 @@
+.contact-sales-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 163px;
+    position: relative;
+
+    @include media('md') {
+        margin-bottom: 10%;
+    }
+
+    &__img-wrapper {}
+
+    &__text-block {
+        background-color: rgba(255, 255, 255, .9);
+    }
+}
+
+.text-block {
+    display: flex;
+    height: 85%;
+    margin-left: -175px;
+
+
+    @include media('lg') {
+        position: absolute;
+        top: 7.5%;
+        right: 0;
+        left: 50%;
+    }
+
+    @include media('md') {
+
+        left: 30%;
+    }
+
+    @include media('xs') {
+        // flex-direction: column;
+        display: block;
+        left: 150px;
+        height: 100%;
+
+    }
+
+    &__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        width: 100%;
+
+    }
+
+    &__title {
+        font-size: 68px;
+
+        @include media('md') {
+            font-size: 50px;
+        }
+
+        @include media('xs') {
+            font-size: 36px;
+        }
+
+        &:nth-child(1) {
+            padding-top: $default-gap;
+        }
+    }
+
+    &__title-alt {
+        font-size: 40px;
+        color: $color-gray;
+    }
+
+    &__alter-text {
+        position: relative;
+        flex-grow: 2;
+
+        &::after {
+            content: '';
+            width: 82px;
+            height: 1px;
+            background-color: $color-green;
+            position: absolute;
+            top: 70%;
+            left: 39%;
+        }
+
+        @include media('md') {
+            &::after {
+                top: 50%;
+            }
+        }
+
+        @include media('xs') {
+            &::after {
+                width: 30%;
+                top: 110%;
+                left: 35%;
+            }
+        }
+
+    }
+
+    &__text-wrapper {
+        padding-top: 54px;
+
+        @include media('xs') {
+            width: 100%;
+            padding: 40px;
+        }
+    }
+
+    &__text {
+        padding-left: $default-gap;
+    }
+
+    &__text:nth-child(2) {
+        padding-bottom: 54px;
+
+        @include media('xs') {
+            padding-bottom: 5%;
+        }
+    }
+
+    &__btn-link {
+        padding-left: $default-gap;
+
+        &::before {
+            left: $default-gap * 2;
+        }
+
+        @include media('md') {
+            &::before {
+                width: 160px;
+            }
+        }
+    }
+}

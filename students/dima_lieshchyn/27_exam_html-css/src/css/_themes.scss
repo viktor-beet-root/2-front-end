@@ -1,0 +1,121 @@
+.theme-switcher {
+    @include visuality-hidden;
+    transition: all .5s ease-in-out;
+
+    &:checked {
+        &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(1) {
+            opacity: 0;
+
+        }
+
+        &+.page .btn>.btn__btn-link>.btn__btn-img:nth-child(2) {
+            opacity: 1;
+            transform: translate(30%, 30%);
+        }
+
+        &+.page-wrapper {
+
+            background-color: $color-dark-blue-global;
+
+            background-image: url(../images/first-screen-image-dark.jpg);
+            transition: all .5s ease-in-out;
+
+            @include media('sm') {
+                & .menu-wrapper>.menu {
+                    background-color: rgba(22, 25, 38, .9);
+                }
+            }
+
+            & .header {
+                background-image: url('../images/header-base-dark.png');
+            }
+
+            & .menu-wrapper>.menu-open-btn {
+                border: 1px solid $white-color;
+                color: $white-color;
+            }
+
+            & .menu>.menu__link>.menu__item {
+                color: $white-color;
+                transition: color .5s ease-in-out;
+            }
+
+            & .menu>.menu__link {
+                @include media('sm') {
+                    border: 1px solid rgba(255, 255, 255, .5);
+                    transition: color .5s ease-in-out;
+                }
+            }
+
+            & .text_global,
+            .title_global {
+                color: $white-color;
+            }
+
+            & .title_alt-global {
+                color: $color-blue;
+            }
+
+            & .button-link_global {
+                color: $color-light-green;
+
+                &::before {
+                    transition: background-color .5s ease-in-out;
+                    background-color: rgba(83, 243, 205, .3);
+                }
+            }
+
+            & .hero-block__btn-link {
+                color: $color-light-green;
+            }
+
+            & .hero-block__addon {
+                transition: background-color .5s ease-in-out;
+                background-color: rgba(83, 243, 205, .3);
+            }
+
+            & .contact-sales-block__text-block {
+                background-color: rgba(22, 25, 38, .9);
+                transition: background-color .5s ease-in-out;
+            }
+
+            & .contact-sales-block__text-block .text-block__title-alt {
+                color: $white-color;
+            }
+
+            & .third-block__text-block {
+                &::before {
+                    background-color: $color-gray-v2;
+                    transition: background-color .5s ease-in-out;
+                }
+            }
+
+            & .solis-block__text:nth-child(1)::before {
+                content: url(../images/quote-icon-dark.svg);
+            }
+
+            & .trading-block__trading-text-block {
+                background-color: rgba(22, 25, 38, .9);
+                transition: background-color .5s ease-in-out;
+            }
+
+            & .contact-form__input {
+                background-color: rgba(22, 25, 38, -0.1);
+                transition: background-color .5s ease-in-out;
+
+                &::placeholder {
+                    opacity: 1;
+                }
+            }
+
+            & .contact-form__btn {
+                background-color: rgba(22, 25, 38, -0.1);
+                transition: background-color .5s ease-in-out;
+
+            }
+        }
+
+
+    }
+
+}

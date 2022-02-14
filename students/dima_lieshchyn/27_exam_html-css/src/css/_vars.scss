@@ -1,0 +1,46 @@
+$white-color: #fff;
+$color-dark-blue:#262A3F;
+$color-blue:#689FF2;
+$color-green: #85BBB1;
+$color-coral:#F1897B;
+$color-gray: #E4E4E4;
+$color-gray-v2:#515773;
+$color-light-green:#53F3CD;
+$color-dark-blue-global:#0a1324;
+$color-dark-blue-v2:#161926;
+
+$border-color: $color-gray;
+
+$main-text-color: $color-dark-blue;
+$default-border: 1px solid $border-color;
+
+$container-width: 1152px;
+$default-gap: 15px;
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Lato';
+$additional-font-name: 'Playfair Display';
+$path-fonts: '../fonts/';
+
+$main-font: $main-font-name,
+$font-follback;
+
+$additional-font:$additional-font-name,
+$font-follback;
+
+$base-font-size: 18px;
+$base-line-height: 1.5;
+$base-font-weight: 400;
+
+$form-border-radius: 5px;
+$form-border: $default-border;
+$form-padding: 0 10px;
+$textarea-padding: 10px;
+$form-input-height: 50px;
+
+$beack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

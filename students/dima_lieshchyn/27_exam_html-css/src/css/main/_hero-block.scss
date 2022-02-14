@@ -1,0 +1,71 @@
+.hero-block {
+    &__title {
+        font-size: 44px;
+        padding-top: 158px;
+        line-height: 52px;
+        padding-bottom: 24px;
+
+        @include media('md') {
+            font-size: 28px;
+            width: 60%;
+        }
+
+        @include media('sm') {
+            line-height: 1.5;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        @include media('xs') {
+            font-size: 20px;
+        }
+    }
+
+    &__title-alt {
+        font-style: italic;
+        color: $color-green;
+    }
+
+    &__text {
+        opacity: 1;
+        padding-bottom: 48px;
+
+        @include media('sm') {
+            width: 80%;
+        }
+
+        @include media('xs') {
+            padding-bottom: 5%;
+            width: 90%;
+        }
+    }
+
+    &__btn {
+        margin-bottom: 163px;
+
+        @include media('xs') {
+            margin-bottom: 5%;
+        }
+    }
+
+
+    &__btn-link {
+        text-decoration: none;
+        color: $color-coral;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    
+    }
+
+    &__addon {
+        width: 112px;
+        height: 13px;
+        margin-top: -$default-gap;
+        margin-left: 9px;
+        background-color: rgba(241, 137, 123, .3);
+    }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Work 45 Event 2 </title>
+    <style>
+        input,
+        textarea {
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .required label::after {
+            content: '*';
+            color: red;
+        }
+
+        .error input,
+        .error textarea {
+            border-color: red;
+        }
+
+        label {
+            display: block;
+        }
+
+        .form__control {
+            position: relative;
+        }
+
+        .message-counter {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: inline;
+        }
+
+        .message-counter::after {
+            content: attr(data-max-content);
+        }
+
+        .message-counter::before {
+            content: attr(data-current-count);
+        }
+
+        .error {
+            border-color: red;
+        }
+
+        .form__control,
+        .form__action {
+            margin-bottom: 20px;
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
+
+        .form__action {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form__control *:not(span) {
+            width: 100%;
+        }
+
+        .add-student {
+            display: none;
+        }
+
+        .add-student.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <form class="form add-course" action="./" method="post">
+            <h2>Add Course</h2>
+            <div class="form__control required">
+                <label for="" class="form__label">Course name</label>
+                <input class="form__input required letters-only" type="text" maxlength="25" name="courseName">
+            </div>
+            <div class="form__control required">
+                <label for="" class="form__label">Duration</label>
+                <input class="form__input" type="text" name="duration">
+            </div>
+            <div class="form__control required">
+                <label for="" class="form__label">Start date</label>
+                <input class="form__input" type="text" name="start" placeholder="dd.mm.yyyy">
+            </div>
+            <div class="form__action">
+                <button type="reset">Cansel</button>
+                <button type="submit">Ok</button>
+            </div>
+        </form>
+        <form class="form add-student" action="./" method="post">
+            <h2>Add Student</h2>
+            <div class="form__control required">
+                <label for="" class="form__label">Student Name</label>
+                <input class="form__input required letters-only" type="text" maxlength="25" name="fullName">
+            </div>
+            <div class="form__action">
+                <button type="reset">Cansel</button>
+                <button type="submit">Ok</button>
+            </div>
+        </form>
+        <ol class="course-list">
+
+        </ol>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

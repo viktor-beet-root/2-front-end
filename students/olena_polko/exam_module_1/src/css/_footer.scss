@@ -1,0 +1,49 @@
+.footer {
+    padding-top: 100px;
+    background-color: $footer-bg-color;
+
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: $base-line-height;
+        letter-spacing: 3.36px;
+    }
+
+    &__title-description {
+        font-size: $base-font-size;
+        font-weight: $base-font-weight;
+        letter-spacing: 1.6px;
+        line-height: $base-line-height;
+        padding-top: 19px;
+    }
+
+    &__title,
+    &__title-description {
+        display: block;
+        text-align: center;
+        color: $white-color;
+    }
+
+    &__social-list {
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+    }
+
+    &__social-link {
+        text-decoration: none;
+        color: $footer-icons-color;
+        padding: 0 12px;
+        transition: color .5s ease-in-out;
+
+        &>svg {
+            height: 17px;
+            fill: $footer-icons-color;
+        }
+
+        &:hover {
+            color: $blue-light-color;
+        }
+    }
+}

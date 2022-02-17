@@ -9,8 +9,14 @@
 
     &__title {
         font-family: $second-font-name;
-        font-size: 36px;
+        font-size: 38px;
         margin-bottom: 50px;
+
+        @include media ('sm') {
+            font-size: 28px;
+            margin-bottom: 25px;
+            padding-top: 30px;
+        }
 
     }
 
@@ -22,6 +28,12 @@
         align-items: stretch;
         color: $white-color;
 
+        @include media ('sm') {
+            min-height: 450px;
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+
 
     }
 
@@ -30,6 +42,10 @@
         font-size: 16px;
         margin-bottom: 30px;
         color: $main-text-color;
+
+        @include media ('sm') {
+            font-size: 14px;
+        }
     }
 
     &__img-wrapper {
@@ -38,31 +54,44 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+
+        @include media ('sm') {
+            min-height: 450px;
+
+        }
     }
 
     &__img {
         margin-bottom: 10px;
 
+        // @include media ('sm') {
+        //     width: 70%;
+        //     margin-bottom: 30px;
+        // }
+
         &:last-child {
             align-self: flex-end;
+
+            @include media ('sm') {
+                align-self: flex-end;
+            }
+
+            @include media ('xs') {
+                align-self: center;
+                width: 90%;
+            }
         }
+
+        &:first-child {
+            align-self: flex-start;
+
+            @include media ('xs') {
+                align-self: center;
+                width: 90%;
+            }
+        }
+
     }
 
-}
-
-.button {
-    background-color: $blue-light-color;
-    color: $white-color;
-    border: none;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: $second-font-name;
-    font-size: 16px;
-    letter-spacing: 1.2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 225px;
-    height: 63px;
-    margin-top: 20px;
 }

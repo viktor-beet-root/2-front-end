@@ -1,0 +1,92 @@
+.review {
+    background-image: url(../images/touristbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 128px 0;
+
+    @include media ('sm') {
+        padding: 75px 0;
+    }
+
+
+    &__row {
+        display: flex;
+
+        @include media ('sm') {
+            align-items: center;
+        }
+
+    }
+
+
+    &__title {
+        margin-bottom: 93px;
+        text-align: center;
+        font-size: $main-title-size;
+        color: $white-color;
+        font-family: $second-font-name;
+
+        @include media ('sm') {
+            margin-bottom: 55px;
+        }
+    }
+
+
+    &__img {
+        display: block;
+
+    }
+
+    &__quote-bg {
+        background-color: $gray-dark-color;
+        height: 100%;
+        margin-left: - $default-gap * 2;
+
+        @include media ('md') {
+            width: 445px;
+            margin-left: 1px;
+        }
+
+
+    }
+
+    &__quote {
+        padding: 50px 25px 0 60px;
+
+        @include media ('md') {
+            padding: 25px 10px 0 30px;
+        }
+
+    }
+
+    &__name {
+        margin-bottom: 10px;
+        font-size: $second-title-size;
+        color: $white-color;
+        text-transform: uppercase;
+
+        @include media ('sm') {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        color: $gray-light-color;
+        display: block;
+
+        @include media ('sm') {
+            font-size: 14px;
+        }
+
+        &::before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            background-image: url(../images/quote-left-solid-purple.svg);
+            background-repeat: no-repeat;
+            height: 28px;
+            width: 33px;
+
+        }
+    }
+}

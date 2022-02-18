@@ -1,0 +1,61 @@
+#app {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.form {
+  width: 400px;
+}
+.form__control {
+  position: relative;
+}
+.form__action {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.line {
+  position: absolute;
+  bottom: 13px;
+  left: 3px;
+  height: 15px;
+  width: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 7px;
+}
+
+.error {
+  border-color: red;
+}
+
+.error + div {
+  background-color: #eeec71;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+}
+.error + div::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 5px;
+  border: 7px solid transparent;
+  border-bottom: 16px solid #eeec71;
+}
+
+.required label::after {
+  content: "*";
+  color: red;
+}

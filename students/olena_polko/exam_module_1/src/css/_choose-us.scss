@@ -2,11 +2,9 @@
     background-image: url(../images/citybg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 .choose-us {
-
     &__title {
         font-family: $second-font-name;
         font-size: 38px;
@@ -17,7 +15,6 @@
             margin-bottom: 25px;
             padding-top: 30px;
         }
-
     }
 
     &__info {
@@ -27,14 +24,14 @@
         justify-content: center;
         align-items: stretch;
         color: $white-color;
+        padding-right: 40px;
+        padding-left: 40px;
 
         @include media ('sm') {
             min-height: 450px;
-            padding-right: 40px;
-            padding-left: 40px;
+            padding-right: 10%;
+            padding-left: 10%;
         }
-
-
     }
 
     &__text {
@@ -45,6 +42,7 @@
 
         @include media ('sm') {
             font-size: 14px;
+            margin-bottom: 15px;
         }
     }
 
@@ -54,21 +52,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        padding-right: 20px;
 
         @include media ('sm') {
             min-height: 450px;
+            padding-left: 0;
+            padding-right: 0;
 
         }
     }
 
     &__img {
-        margin-bottom: 10px;
-
-        // @include media ('sm') {
-        //     width: 70%;
-        //     margin-bottom: 30px;
-        // }
+        margin-bottom: 20px;
 
         &:last-child {
             align-self: flex-end;
@@ -77,21 +72,19 @@
                 align-self: flex-end;
             }
 
-            @include media ('xs') {
+            @include media ('sm') {
                 align-self: center;
-                width: 90%;
+                width: 80%;
             }
         }
 
         &:first-child {
             align-self: flex-start;
 
-            @include media ('xs') {
+            @include media ('sm') {
                 align-self: center;
-                width: 90%;
+                width: 80%;
             }
         }
-
     }
-
 }

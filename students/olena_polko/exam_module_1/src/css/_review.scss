@@ -4,20 +4,13 @@
     background-size: cover;
     padding: 128px 0;
 
+    @include media ('md') {
+        padding: 95px 0;
+    }
+
     @include media ('sm') {
-        padding: 75px 0;
+        padding: 70px 0;
     }
-
-
-    &__row {
-        display: flex;
-
-        @include media ('sm') {
-            align-items: center;
-        }
-
-    }
-
 
     &__title {
         margin-bottom: 93px;
@@ -28,13 +21,19 @@
 
         @include media ('sm') {
             margin-bottom: 55px;
+            font-size: 28px;
         }
     }
 
-
     &__img {
         display: block;
+        height: 100%;
+        object-fit: cover;
 
+        @include media ('md') {
+            width: 80%;
+            margin: 0 auto;
+        }
     }
 
     &__quote-bg {
@@ -43,20 +42,19 @@
         margin-left: - $default-gap * 2;
 
         @include media ('md') {
-            width: 445px;
-            margin-left: 1px;
+            margin-left: 0;
+            width: 80%;
+            margin: 0 auto;
         }
-
-
     }
 
     &__quote {
-        padding: 50px 25px 0 60px;
+        padding: 43px 43px 25px 58px;
 
-        @include media ('md') {
-            padding: 25px 10px 0 30px;
+        @include media ('sm') {
+            padding: 25px 25px 25px 25px;
+
         }
-
     }
 
     &__name {
@@ -65,8 +63,9 @@
         color: $white-color;
         text-transform: uppercase;
 
-        @include media ('sm') {
+        @include media ('md') {
             font-size: 18px;
+            margin-bottom: 2px;
         }
     }
 
@@ -86,7 +85,6 @@
             background-repeat: no-repeat;
             height: 28px;
             width: 33px;
-
         }
     }
 }

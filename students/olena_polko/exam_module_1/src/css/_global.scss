@@ -1,8 +1,6 @@
 @include font-face($main-font-name, 'josefin-sans-v20-latin-regular', 400);
 @include font-face($main-font-name, 'josefin-sans-v20-latin-700', 700);
 @include font-face($second-font-name, 'aleo-v4-latin-regular');
-
-
 @include grid();
 
 .page {
@@ -11,7 +9,6 @@
     font-weight: $base-font-weight;
     line-height: $base-line-height;
 }
-
 
 .container {
     max-width: $container-width;

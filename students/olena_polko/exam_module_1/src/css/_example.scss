@@ -35,16 +35,16 @@
         padding: 50px 30px;
 
         @include media ('sm') {
-            padding: 40px 25px;
+            padding: 40px 30px;
+            max-width: 80%;
+            margin: 0 auto;
         }
-
     }
 
     &__article-second {
         display: flex;
         justify-content: flex-end;
     }
-
 
     &__country,
     &__title,
@@ -55,7 +55,6 @@
             margin-bottom: 16px;
             font-size: 14px;
         }
-
     }
 
     &__title {
@@ -65,11 +64,9 @@
         @include media ('sm') {
             font-size: 18px;
         }
-
     }
 
     &__button {
         margin-top: 23px;
     }
-
 }

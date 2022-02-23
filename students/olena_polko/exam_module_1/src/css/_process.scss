@@ -8,7 +8,6 @@
         padding-top: 35px;
         padding-bottom: 50px;
     }
-
 }
 
 .process {
@@ -16,7 +15,6 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        // min-height: 340px;
 
         @include media ('xs') {
             flex-direction: column;
@@ -55,7 +53,6 @@
             padding-bottom: 40px;
         }
     }
-
 }
 
 .arrow {
@@ -69,13 +66,10 @@
     content: '';
     position: absolute;
     border: 1px solid white;
-    background-size: 3px 1px;
     border-radius: 100%;
     height: 300px;
     width: 100%;
-    top: -20;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
     opacity: 0.5;
 
     @include media ('xs') {

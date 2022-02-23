@@ -1,0 +1,40 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: 10px;
+  display: inline-block;
+}
+ul li {
+  padding: 7px;
+  border: 1px dotted black;
+  margin-bottom: 10px;
+}
+ul li > div:first-child {
+  font-weight: bold;
+}
+ul li a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  max-width: 400px;
+  padding: 15px;
+  border: 1px solid black;
+}
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+.form__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

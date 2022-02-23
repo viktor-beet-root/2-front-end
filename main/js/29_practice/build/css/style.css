@@ -1,0 +1,117 @@
+.custom-select select {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: none !important;
+}
+
+.select {
+  position: relative;
+}
+.select__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  position: relative;
+  z-index: 100;
+}
+.select__text {
+  padding: 10px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.select__btn {
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-left: 1px solid black;
+}
+.select__btn::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+}
+.select__options-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+  border-top: none;
+  margin-top: -3px;
+  z-index: 90;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+.open .select__options-list {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+.select__option {
+  padding: 10px 5px;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+}
+.select__option:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+.select__option::before {
+  content: "";
+  width: 15px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: aqua;
+}
+.select__option.hidden {
+  display: none;
+}
+.select__option.selected {
+  background-color: coral;
+}
+.select__option.disabled {
+  background-color: lightgrey;
+  color: rgba(0, 0, 0, 0.5);
+}
+.select__option:hover:not(.disabled) {
+  background-color: blanchedalmond;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}

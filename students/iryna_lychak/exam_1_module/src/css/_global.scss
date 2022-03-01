@@ -51,6 +51,9 @@
     font-weight: $base-font-weight;
     line-height: $base-line-height;
     color: $font-color;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
 
     &__header {}
 
@@ -159,8 +162,7 @@ a {
 }
 
 a:hover {
-    color: $darkblue-color;
-    font-weight: 800;
+    text-shadow: 0 0 .7px #212353, 0 0 .7px #212353;
 }
 
 .hero,

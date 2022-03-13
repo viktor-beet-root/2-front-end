@@ -1,0 +1,42 @@
+.design {
+	margin-top: 106px;
+	font-size: 12px;
+
+	&__user {
+		padding-bottom: 24px;
+		color: $light-gray-color;
+	}
+
+	&__title {
+		font-size: 24px;
+		color: $dark-gray-color;
+		padding-bottom: 60px;
+
+		@include media("xs") {
+			padding-bottom: 24px;
+		}
+	}
+
+	&__date {
+		color: $light-gray-color;
+	}
+	&_padding {
+		padding-right: 70px;
+
+		@include media("xs") {
+			padding-right: 21px;
+		}
+	}
+
+	&_border {
+		border-left: 1px solid #dfdfdf;
+	}
+	&-date {
+		display: flex;
+	}
+	&-border {
+		border-left: 1px solid #dfdfdf;
+		height: 12px;
+		padding-right: 12px;
+	}
+}

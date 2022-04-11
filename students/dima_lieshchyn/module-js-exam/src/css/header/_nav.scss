@@ -2,10 +2,9 @@
     padding: 2.5rem 0rem !important;
     position: relative;
     padding-bottom: 96px !important;
-    
+    transition: all 1s ease-out;
 }
-.navbar-brand{
-}
+
 .navbar-nav {
 padding-right: 100px !important;
 margin-block-start:0px;
@@ -76,3 +75,4 @@ margin-block-start:0px;
         right: -7px;
     }
 }
+

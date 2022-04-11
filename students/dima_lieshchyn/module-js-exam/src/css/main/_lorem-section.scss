@@ -1,0 +1,19 @@
+.lorem-block {
+padding-top: 48px;
+
+&__text {
+    font-size: $base-font-size;
+    line-height: 28px;
+    color: $black-color;
+    // padding-bottom: $default-gap*2;
+}
+
+&__title {
+    font-size: 19px;
+    line-height: 32px;
+    padding: $default-gap*2 0;
+    }
+    &__info-wrapper {
+    }
+}
+

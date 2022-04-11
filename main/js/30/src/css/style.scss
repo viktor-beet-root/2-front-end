@@ -1,0 +1,173 @@
+@import "../../node_modules/materialize-css/sass/materialize.scss";
+
+$point: 768px;
+
+body {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.messages-list {
+    list-style-type: none;
+    padding: 0;
+
+    &__item {
+        border-bottom: 1px solid black;
+    }
+}
+
+.comment {
+    &__wrapper {
+        position: relative;
+        padding-left: 100px;
+
+        @media screen and (max-width: $point) {
+            padding-left: 0;
+        }
+    }
+
+    &__header {
+        display: flex;
+        padding: 15px 0;
+    }
+
+    &__ava {
+        position: absolute;
+        left: 0;
+
+        @media screen and (max-width: $point) {
+            position: static;
+            margin-right: 15px;
+        }
+    }
+
+    &__group {
+        display: flex;
+        justify-content: flex-start;
+        flex-grow: 1;
+
+        @media screen and (max-width: $point) {
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        margin: 0 15px 0 0;
+    }
+
+    &__publish-date {}
+
+    &__actions {
+        padding-right: 50px;
+
+        @media screen and (max-width: $point) {
+            padding-right: 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__text {}
+
+    &__like-wrapper {
+        width: 50px;
+
+        @media screen and (max-width: $point) {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            width: auto;
+        }
+    }
+
+    &__footer {
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.ava {
+    text-align: center;
+
+    &__img {
+        width: 70px;
+        height: 70px;
+        background-color: lightblue;
+        border-radius: 10px;
+    }
+
+    &__web {}
+}
+
+.reply {
+    border-top: 1px solid black;
+    padding: 15px 0 15px 100px;
+    position: relative;
+
+    @media screen and (max-width: $point) {
+        padding-left: 38px;
+    }
+
+    &__header {
+        display: flex;
+    }
+
+    &__ava {
+        position: absolute;
+        left: 0;
+
+        @media screen and (max-width: $point) {
+            position: static;
+            margin-right: 15px;
+        }
+    }
+
+    &__group {
+        display: flex;
+
+        @media screen and (max-width: $point) {
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        margin: 0 15px 0 0;
+    }
+
+    &__publish-date {}
+
+    &__content {}
+
+    &__text {}
+
+    &__footer {
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.edit {}
+
+.remove {}
+
+.like {}
+
+.reply {}
+
+.top {}
+
+.top-p {}
+
+.top-m {}

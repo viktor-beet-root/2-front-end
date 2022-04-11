@@ -1,0 +1,27 @@
+@include font-face($main-font-name, 'roboto-mono-v13-latin-regular');
+@include font-face($main-font-name, 'roboto-mono-v13-latin-700', 700);
+
+@include grid();
+
+.page {
+    font-family: $main-font;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+    color: $black-color;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}
+
+.title_global {
+    font-size: $title-main;
+    line-height: 36px;
+}
+.text_global {
+    font-size: 14px;
+    color: $gray-neutral-color;
+}

@@ -1,0 +1,239 @@
+.comments-block {
+   
+display: flex;
+justify-content: center;
+&__wrapper {
+            // border-bottom: 1px solid $gray-basic;
+            width: 70%;
+            @include media('md'){
+                width: 100%;
+            }
+		}
+
+		// .comments-block__title
+
+		&__title {
+            padding-top: 40px;
+            padding-bottom: 10px;
+		}
+
+		// .comments-block__comment
+
+		&__comment {
+           
+		}
+}
+.title {
+
+		// .title_global
+
+		&_global {
+		}
+}
+.comment {
+   
+display: flex;
+		// .comment__avatar-wrapper
+
+		&__avatar-wrapper {
+            width: 70px;
+            display: flex;
+            flex-direction: column;
+            @include media('md'){
+                width: 15%;
+            }
+            @include media('xs'){
+                position: absolute;
+            }
+		}
+
+		// .comment__avatar
+
+		&__avatar {
+            border-radius: 4px;
+            // width: 70px;
+            // height: 70px;
+            @include media('md'){
+                object-fit: contain;
+            }
+		}
+
+		// .comment__avatar-info
+
+		&__avatar-info {
+            margin-top: 5px;
+            font-size: 10px;
+            text-align: center;
+		}
+
+		// .comment__body-wrapper
+
+		&__body-wrapper {
+            margin-left: $default-gap;
+            position: relative;
+            border-bottom: 1px solid $gray-basic;
+		}
+
+		// .comment__info-block
+
+		&__info-block {
+            display: flex;
+            width: 80%;
+            @include media('xs'){
+                flex-direction: column;
+                padding-left: 18%;
+            }
+		}
+
+		// .comment__author-name
+
+		&__author-name {
+            display: block;
+            font-size: 19px;
+		}
+
+		// .comment__post-time
+
+		&__post-time {
+            vertical-align: bottom;
+            line-height: 1.7;
+            color: $gray-neutral-color;
+            margin-left: $default-gap;
+            font-weight: 300;
+            font-size: 16px;
+            @include media('xs'){
+                margin-left: 0;
+            }
+		}
+
+		// .comment__settings
+
+		&__settings {
+		}
+
+		// .comment__text-wrapper
+
+		&__text-wrapper {
+            margin-top: 10px;
+            margin-left: 5px;
+            width: 90%;
+            @include media('xs'){
+                margin-left: -10px;
+                margin-top: 10%;
+                width: 100%;
+            }
+		}
+
+		// .comment__text-info
+
+		&__text-info {
+            @include media('md'){
+                width: 100%;
+                margin-left: -5px;
+            }
+		}
+
+		// .comment__like-block
+
+		&__like-block {
+		}
+
+		// .comment__comment-footer
+
+		&__comment-footer {
+		}
+}
+
+.settings {
+display: flex;
+position: absolute;
+top: 8px;
+right: 10%;
+@include media('xs'){
+    right: 5%;
+
+}
+.settings__item{
+
+    &:nth-child(1){
+        margin-right: 13px;
+    }
+}
+    // .settings__item
+
+  
+}
+.like-block {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:30%;
+    right: 15%;
+    right: $default-gap;
+
+    @include media('xs'){
+    flex-direction: row;
+    top: 30px;
+    right: 5%;
+}
+
+&__img {
+}
+
+// .like-block__info
+
+&__info {
+    text-align: center;
+    @include media('xs'){
+        padding-left: 16px;
+    }
+		}
+}
+.comment-footer {
+    
+padding-bottom: 32px;
+display: flex;
+justify-content: space-between;
+		// .comment-footer__reply-block
+
+		&__reply-block {
+            @include media('xs'){
+                margin-left: -18px;
+            }
+		}
+
+		// .comment-footer__reply-text
+
+		&__reply-text {
+		}
+
+		// .comment-footer__like-dislike
+
+		&__like-dislike {
+            // display: block;
+            
+		}
+}
+.like-dislike {
+    padding-right:10%;
+    // .like-dislike__like-info
+    @include media('xs'){
+    padding-right:4%;
+}
+		&__like-info {
+            font-size: 10px;
+		}
+        
+		// .like-dislike__dislike-info
+        
+		&__dislike-info {
+            font-size: 10px;
+		}
+        
+}
+
+.answer {
+    margin-top: 30px;
+    width: 90%;
+    margin-left: 12%;
+}

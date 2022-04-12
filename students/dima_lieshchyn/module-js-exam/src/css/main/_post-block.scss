@@ -7,10 +7,6 @@
             border-bottom: 1px solid $gray-basic;
 		}
 
-		&__item {
-            
-		}
-
 		&__text {
             font-size: 12px;
             padding: 10px;
@@ -20,10 +16,9 @@
             padding: 10px;
             font-size: 0;
             display: inline-block;
-            margin-left: 20px;
             border-radius: 4px;
             @include media('xs'){
-                margin-left: 10px;
+              
                 margin-bottom: 5px;
             }
             &:hover {

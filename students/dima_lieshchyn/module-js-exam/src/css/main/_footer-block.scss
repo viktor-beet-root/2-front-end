@@ -40,12 +40,18 @@ align-items: center;
 		&__item {
 		}
 
-		// .footer-block__icon
-
+        
 		&__icon {
-            fill: red;
+            fill: $black-color;
+            &:hover{
+                    fill: #FFBA9D;
+                    transition: all .5s ease-in-out;
+            }
 		}
+        &__social-link{
+        }
 }
+
 .footer-bottom-block {
 
 		// .footer-bottom-block__footer-item

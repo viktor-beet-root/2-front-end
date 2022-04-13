@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1> {{ message }}</h1>
+        <br>
+        <p v-text="message"></p>
+        <p v-once>{{ message }}</p>
+        <p v-pre>{{ message }}</p>
+
+        <p>{{ 2 + 2 }}</p>
+        <p>{{ age * 2 }}</p>
+        <p>{{ !(age % 2) ? 'even' : 'odd' }}</p>
+        <p>{{ message.split('').reverse().join('') }}</p>
+
+        <h2>Attributes</h2>
+        <p><a v-bind:href="url">google</a></p>
+        <p>
+            <a :href="url" :title="message">
+                google
+            </a>
+        </p>
+        <button :disabled="disabled">
+            button
+        </button>
+
+        <h2>Computed</h2>
+        <p>
+            <button :disabled="disabled">
+                {{ textBtn }}
+            </button>
+        </p>
+        <p>
+            {{ userInfo }}
+        </p>
+        <!-- так можно, но не нужно -->
+        <p v-html="userInfo"></p>
+
+        <h2>Methods and Events</h2>
+        <!-- not -->
+        <p>{{ getUserInfo() }}</p>
+        <p>
+            <button v-on:click="age++">
+                {{ age }}
+            </button>
+        </p>
+        <!-- <p>
+            <button v-on:click="setAge">
+                {{ age }}
+            </button>
+        </p> -->
+        <!-- <p>
+            <button v-on:click="setAge(5, $event), setLog()">
+                {{ age }} + 5
+            </button>
+        </p> -->
+        <p>
+            <button @click="setAge(5, $event), setLog()">
+                {{ age }} + 5
+            </button>
+        </p>
+        <p><a :href="url" @click.prevent="setGo">{{url}}</a></p>
+        <p><input type="text" @keyup.enter="enter"></p>
+
+        <h2 ref="title">Referense</h2>
+        <button @click="setColor">color</button>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

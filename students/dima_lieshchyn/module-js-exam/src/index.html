@@ -210,21 +210,26 @@
                         <div class="col-12 col-md-12 post-form-block">
                             <div class="post-form-block__wrapper">
                                 <h2 class="post-form-block__title title_global">Add Comment</h2>
-                                <form action="#" class="post-form-block__form post-form" id="form">
+                                <form action="#" name="form" class="post-form-block__form post-form" id="form">
                                     <div class="post-form__items-wrapper">
                                         <div class="post-form__item-wrapper form-item">
                                             <label for="name" class="post-form__label">Name*</label>
-                                            <input type="text" class="post-form__input .required" id="name"
+                                            <input data-type="name" type="text" name="username"
+                                                class="post-form__input _name _required" id="name"
                                                 placeholder="Shane Hobbins">
+                                            <span data-type="name" class="error-msg"></span>
                                         </div>
                                         <div class="post-form__item-wrapper form-item">
                                             <label for="email" class="post-form__label">Email*</label>
-                                            <input type="email" class="post-form__input _email .required" id="email">
+                                            <input data-type="email" type="email" name="email"
+                                                class="post-form__input _email _required" id="email">
+                                            <span data-type="email" class="error-msg"></span>
                                         </div>
                                         <div class="post-form__item-wrapper form-item">
                                             <label for="www" class="post-form__label">Website</label>
-                                            <input type="text" class="post-form__input" id="www"
+                                            <input type="text" name="www" class="post-form__input _www" id="www"
                                                 placeholder="www.interface.com">
+                                            <span data-type="www" class="error-msg"></span>
                                         </div>
                                     </div>
                                     <div class="post-form__switch-wrapper">
@@ -237,20 +242,20 @@
                                     </div>
                                     <div class="post-form__smiles-wrapper smiles">
                                         <label for="" class="post-form__item">Message*</label>
-                                        <a href="#" class="smiles__item"><img src="./images/smiles/smile_1.svg"
-                                                alt="smile" class="smiles-icon"></a>
-                                        <a href="#" class="smiles__item"><img src="./images/smiles/smile_2.svg" alt=""
-                                                class="smiles-icon"></a>
-                                        <a href="#" class="smiles__item"><img src="./images/smiles/smile_3.svg" alt=""
-                                                class="smiles-icon"></a>
-                                        <a href="#" class="smiles__item"><img src="./images/smiles/smile_4.svg" alt=""
-                                                class="smiles-icon"></a>
-                                        <a href="#" class="smiles__item"><img src="./images/smiles/smile_5.svg" alt=""
-                                                class="smiles-icon"></a>
-                                        <a href="#" class="smiles__item"><img src="./images/smiles/smile_6.svg" alt=""
-                                                class="smiles-icon"></a>
-                                        <a href="#" class="smiles__item"><img src="./images/smiles/smile_7.svg" alt=""
-                                                class="smiles-icon"></a>
+                                        <a href="#" class="smiles__item" data-smile="smile"><img
+                                                src="./images/smiles/smile_1.svg" alt="smile" class="smiles-icon"></a>
+                                        <a href="#" class="smiles__item" data-smile="cool"><img
+                                                src="./images/smiles/smile_2.svg" alt="" class="smiles-icon"></a>
+                                        <a href="#" class="smiles__item" data-smile="nice"><img
+                                                src="./images/smiles/smile_3.svg" alt="" class="smiles-icon"></a>
+                                        <a href="#" class="smiles__item" data-smile="hi"><img
+                                                src="./images/smiles/smile_4.svg" alt="" class="smiles-icon"></a>
+                                        <a href="#" class="smiles__item" data-smile="bad"><img
+                                                src="./images/smiles/smile_5.svg" alt="" class="smiles-icon"></a>
+                                        <a href="#" class="smiles__item" data-smile="angry"><img
+                                                src="./images/smiles/smile_6.svg" alt="" class="smiles-icon"></a>
+                                        <a href="#" class="smiles__item" data-smile="sad"><img
+                                                src="./images/smiles/smile_7.svg" alt="" class="smiles-icon"></a>
                                     </div>
                                     <textarea class="textarea" name="chat" id="" cols="10" rows="4"></textarea>
                                     <button class="post-form__cancel btn_cancel post-btn">Cancel</button>

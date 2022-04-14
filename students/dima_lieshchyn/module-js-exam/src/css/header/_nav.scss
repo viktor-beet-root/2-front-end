@@ -16,6 +16,7 @@ margin-block-start:0px;
     &:hover {
         border-bottom: 2px solid $gray-neutral-color;
         border-bottom-width: 2px;
+        transition: all .8s ease-in-out;
         }
         @include media('md') {
             margin: 0;

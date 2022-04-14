@@ -1,57 +1,31 @@
-import $ from 'jquery';
 import scrollSmooth from './scroll';
+import postForm from './post-form'
 
 scrollSmooth('a[href*="#"]');
 
+document.addEventListener('DOMContentLoaded', postForm);
+
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form');
+    const smilesNames = {
+        smile1: 'smile',
+        smile2: 'cool',
+        smile3: 'nice',
+        smile4: 'hi',
+        smile5: 'bad',
+        smile6: 'angry',
+        smile7: 'sad',
+    };
 
-    form.addEventListener('submit', commentSend);
+    const smiles = document.querySelectorAll('.smiles__item');
+    const textarea = document.querySelector('.textarea');
 
-    function commentSend(e) {
-        e.preventDefault();
+    smiles.forEach(elem => {
 
-        let error = formValidate(form);
+        elem.addEventListener('click', pasteSmile);
+    })
+
+    function pasteSmile(e) {
+        // textarea.value = `[::${e.dataset.smile.value}::]`;
+        console.log(e);
     }
-
-    function formValidate(form) {
-        let error = 0;
-        let formReq = document.querySelectorAll('.required');
-        for (let i = 0; i < formReq.length; i++) {
-            const input = formReq[i];
-
-            formRemoveError(input);
-
-
-            if (input.classList.contains('_email')) {
-                if (emailTest(input)) {
-                    console.log('qwe');
-                    formAddError(input);
-                    error++;
-                }
-            } else {
-                if (input.value === '') {
-                    console.log('qwe');
-                    formAddError(input);
-                    error++;
-                }
-            }
-
-        }
-    }
-
-    function formAddError(input) {
-        input.parentElement.classList.add('.error');
-        input.classList.add('.error');
-    }
-
-    function formRemoveError(input) {
-        input.parentElement.classList.remove('.error');
-        input.classList.remove('.error');
-    }
-
-    function emailTest(input) {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    }
-})
-
+});

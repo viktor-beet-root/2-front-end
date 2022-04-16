@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <h2>Духстороннее связывание</h2>
+        {{ input }}
+        <br><input type="text" :value="input" @input="setInput">
+        <br><input type="text" v-model="input">
+        <div>
+            <br>First Name <input type="text" v-model.lazy="firstName">
+            <br>Last Name <input type="text" v-model="lastName">
+            <br>User Name <input type="text" v-model="userName">
+            <br>Email <input type="text" v-model="email">
+            <br>Password <input :type="typePass" v-model="password">
+            <br>Confinm Password <input :type="typePass" v-model="confirmPassword">
+            <br><input type="checkbox" v-model="isTypePass">
+            <div v-if="isFormShow">
+                <br>Your Full Name: {{ fullName }}
+                <br>Your User Name: {{ userName }}
+                <br>Your Email: <a :href="viewEmail">{{ email }}</a>
+                <br>Confirmed Password: {{ isConfirmed }}
+            </div>
+            <div v-else>sdfdsf</div>
+        </div>
+
+        <h2>Watching</h2>
+
+        <h2>Условный рендеринг</h2>
+        <p>
+            <span v-if="!isTypePass">Show</span>
+            <span v-else>Not Show</span>
+        </p>
+        <p>
+            <span v-show="!isTypePass">Show</span>
+            <span v-show="isTypePass">Not Show</span>
+        </p>
+
+        <template v-if="!isTypePass">
+            <h2>111111</h2>
+            <p>111111</p>
+            <p>111111</p>
+        </template>
+        <template v-else>
+            <h2>222222</h2>
+            <p>2222222</p>
+            <p>2222222</p>
+        </template>
+
+        <div v-if="type === 'A'">A</div>
+        <div v-else-if="type === 'B'">B</div>
+        <div v-else-if="type === 'C'">C</div>
+        <div v-else>not</div>
+        <br><input type="text" v-model="type">
+
+        <h2>Отрисовка списков</h2>
+        <ul>
+            <li v-for="(value, index) in list" :key="index">
+                <strong>{{ numerator(index) }}.</strong> {{ value }}
+            </li>
+        </ul>
+        <p>
+            <span v-for="n in 10"> sdfds {{ n }}; </span>
+        </p>
+        <ul>
+            <li v-for="(value, key) in user">
+                {{ key }}: {{ value }}.
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(value, index) in userList" :key="index">
+                First Name: <strong>{{ value.firstName }}</strong>
+                <br>Last Name: <strong>{{ value.lastName }}</strong>
+                <br>Email: <strong>{{ value.email }}</strong>
+                <br>Password: <strong>{{ value.pass }}</strong>
+            </li>
+        </ul>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

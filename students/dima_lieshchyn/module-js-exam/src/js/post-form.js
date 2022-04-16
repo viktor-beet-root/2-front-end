@@ -13,7 +13,14 @@ function postForm() {
         okEmail: 'Email is ok',
         wrongSite: 'Site url is wrong',
         okSite: 'Site is ok'
-    }
+    };
+
+    const cancel = document.querySelector('.btn_cancel');
+    const switchItem = document.querySelector('.switch__item');
+
+
+    cancel.addEventListener('click', cancelInfo);
+
 
 
     const name_regexp = /^([A-Z][a-z]+([ ]?[a-z]?['-]?[A-Z][a-z]+)*)$/;
@@ -26,6 +33,7 @@ function postForm() {
     inputs.forEach(e => {
 
         e.addEventListener('blur', isEmpty);
+
 
         email.addEventListener('input', emailInput);
         userName.addEventListener('input', nameInput);
@@ -113,6 +121,20 @@ function postForm() {
         }
     }
 
+    function cancelInfo() {
+        const textarea = document.querySelector('.textarea');
+        formRemoveError(userName);
+        formRemoveError(email);
+        formRemoveError(www);
+        errorMsg.forEach(elem => {
+            elem.textContent = '';
+        })
+        userName.value = '';
+        email.value = '';
+        www.value = '';
+        textarea.value = '';
+        switchItem.checked = false;
+    }
 
     function formAddError(input) {
         input.parentElement.classList.add('_error');

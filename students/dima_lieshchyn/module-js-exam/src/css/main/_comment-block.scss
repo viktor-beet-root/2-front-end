@@ -178,6 +178,7 @@ cursor: pointer;
 }
 
 &__img {
+    cursor: pointer;
 }
 
 // .like-block__info
@@ -197,6 +198,11 @@ justify-content: space-between;
 		// .comment-footer__reply-block
 
 		&__reply-block {
+            & img {
+                width: 30%;
+            }
+            display: flex;
+            cursor: pointer;
             @include media('xs'){
                 margin-left: -18px;
             }
@@ -205,6 +211,8 @@ justify-content: space-between;
 		// .comment-footer__reply-text
 
 		&__reply-text {
+            display: block;
+            
 		}
 
 		// .comment-footer__like-dislike
@@ -229,7 +237,9 @@ justify-content: space-between;
 		&__dislike-info {
             font-size: 10px;
 		}
-        
+        & img {
+            cursor: pointer;
+        }
 }
 
 .answer {

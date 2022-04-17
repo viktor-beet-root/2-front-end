@@ -127,7 +127,12 @@ display: flex;
 		// .comment__text-info
 
 		&__text-info {
+            word-wrap: normal;
+            min-width: 450px;
+            min-height: 70px;
             @include media('md'){
+                min-width: 100%;
+                min-height: 100%;
                 width: 100%;
                 margin-left: -5px;
             }
@@ -212,7 +217,7 @@ justify-content: space-between;
 
 		&__reply-text {
             display: block;
-            
+            margin-left: 5px;
 		}
 
 		// .comment-footer__like-dislike

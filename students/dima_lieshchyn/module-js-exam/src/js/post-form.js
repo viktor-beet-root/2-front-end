@@ -1,46 +1,23 @@
+import items from "./items";
+import formRemoveError from "./formRemoveError";
+import formAddError from "./formAddError";
+import cancelInfo from "./cancelInfo";
+
 function postForm() {
-    const form = document.getElementById('form');
-    const email = document.getElementById('email');
-    const userName = document.getElementById('name');
-    const www = document.getElementById('www');
-    const inputs = document.querySelectorAll('._required');
-    const errorMsg = document.querySelectorAll('.error-msg');
-    const msg = {
-        empty: 'The field must not be empty',
-        wrongName: 'The name is wrong',
-        okName: 'Name is ok',
-        wrongEmail: 'Email is wrong',
-        okEmail: 'Email is ok',
-        wrongSite: 'Site url is wrong',
-        okSite: 'Site is ok'
-    };
 
-    const cancel = document.querySelector('.btn_cancel');
-    const switchItem = document.querySelector('.switch__item');
-
-
-    cancel.addEventListener('click', cancelInfo);
-
-
-
-    const name_regexp = /^([A-Z][a-z]+([ ]?[a-z]?['-]?[A-Z][a-z]+)*)$/;
-
-    const email_regexp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-
-    const www_regexp = /(((https?: \/\/)|(www\.))[a-zA-Z0-9]{1,256}\.[a-zA-Z0-9]{1,4}\.?[a-zA-Z0-9]?\S+)|((www\.)?[a-zA-Z0-9]{1,256}\.[a-zA-Z0-9]{1,4}\.?[a-zA-Z0-9]?\S+)/;
-
-    form.addEventListener('submit', commentSend);
-    inputs.forEach(e => {
+    items.cancel.addEventListener('click', cancelInfo);
+    items.form.addEventListener('submit', commentSend);
+    items.inputs.forEach(e => {
 
         e.addEventListener('blur', isEmpty);
 
 
-        email.addEventListener('input', emailInput);
-        userName.addEventListener('input', nameInput);
-        www.addEventListener('input', wwwInput);
+        items.email.addEventListener('input', emailInput);
+        items.userName.addEventListener('input', nameInput);
+        items.www.addEventListener('input', wwwInput);
 
         e.addEventListener('focus', function (e) {
-            if (e.target.classList.contains('._error')) {
+            if (e.target.classList.contains(items.errorClassName)) {
                 formRemoveError(e.target);
             }
         })
@@ -53,9 +30,9 @@ function postForm() {
     function isEmpty(e) {
         if (e.currentTarget.value === '') {
             formAddError(e.currentTarget)
-            errorMsg.forEach(elem => {
+            items.errorMsg.forEach(elem => {
                 if (e.currentTarget.dataset.type === elem.dataset.type) {
-                    elem.textContent = msg.empty;
+                    elem.textContent = items.msg.empty;
                 }
             })
         }
@@ -66,86 +43,62 @@ function postForm() {
     }
 
     function emailInput() {
-        if (isValid(email_regexp, email.value)) {
-            errorMsg.forEach(elem => {
-                formRemoveError(email)
+        if (isValid(items.email_regexp, items.email.value)) {
+            items.errorMsg.forEach(elem => {
+                formRemoveError(items.email)
                 if (elem.dataset.type === 'email') {
-                    elem.textContent = msg.okEmail;
-                    localStorage.setItem("email", email.value);
+                    elem.textContent = items.msg.okEmail;
+                    localStorage.setItem("email", items.email.value);
                 }
             })
         } else {
-            errorMsg.forEach(elem => {
-                formAddError(email)
+            items.errorMsg.forEach(elem => {
+                formAddError(items.email)
                 if (elem.dataset.type === 'email') {
-                    elem.textContent = msg.wrongEmail;
+                    elem.textContent = items.msg.wrongEmail;
                 }
             })
         }
     }
     function nameInput() {
-        if (isValid(name_regexp, userName.value)) {
-            errorMsg.forEach(elem => {
-                formRemoveError(userName)
+        if (isValid(items.name_regexp, items.userName.value)) {
+            items.errorMsg.forEach(elem => {
+                formRemoveError(items.userName)
                 if (elem.dataset.type === 'name') {
-                    elem.textContent = msg.okName;
-                    localStorage.setItem("name", userName.value);
+                    elem.textContent = items.msg.okName;
+                    localStorage.setItem("name", items.userName.value);
                 }
             })
         } else {
-            errorMsg.forEach(elem => {
-                formAddError(userName)
+            items.errorMsg.forEach(elem => {
+                formAddError(items.userName)
                 if (elem.dataset.type === 'name') {
-                    elem.textContent = msg.wrongName;
+                    elem.textContent = items.msg.wrongName;
                 }
             })
         }
     }
     function wwwInput() {
-        if (isValid(www_regexp, www.value)) {
-            errorMsg.forEach(elem => {
-                formRemoveError(www)
+        if (isValid(items.www_regexp, items.www.value)) {
+            items.errorMsg.forEach(elem => {
+                formRemoveError(items.www)
                 if (elem.dataset.type === 'www') {
-                    elem.textContent = msg.okSite;
-                    localStorage.setItem("www", www.value);
+                    elem.textContent = items.msg.okSite;
+                    localStorage.setItem("www", items.www.value);
                 }
 
             })
         } else {
-            errorMsg.forEach(elem => {
-                formAddError(www)
+            items.errorMsg.forEach(elem => {
+                formAddError(items.www)
                 if (elem.dataset.type === 'www') {
-                    elem.textContent = msg.wrongSite;
+                    elem.textContent = items.msg.wrongSite;
                 }
             })
         }
     }
 
-    function cancelInfo() {
-        const textarea = document.querySelector('.textarea');
-        formRemoveError(userName);
-        formRemoveError(email);
-        formRemoveError(www);
-        errorMsg.forEach(elem => {
-            elem.textContent = '';
-        })
-        userName.value = '';
-        email.value = '';
-        www.value = '';
-        textarea.value = '';
-        switchItem.checked = false;
-    }
-
-    function formAddError(input) {
-        input.parentElement.classList.add('_error');
-        input.classList.add('_error');
-    }
-
-    function formRemoveError(input) {
-        input.parentElement.classList.remove('_error');
-        input.classList.remove('_error');
-    }
-
+    cancelInfo();
 }
 
 export default postForm;

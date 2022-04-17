@@ -1531,7 +1531,8 @@ input:checked + .slider:before {
   margin-top: 20px;
 }
 
-._error input {
+._error input,
+._error textarea {
   -webkit-box-shadow: 5px 5px 15px 5px red;
   box-shadow: 5px 5px 15px 5px red;
 }
@@ -1666,8 +1667,15 @@ input:checked + .slider:before {
     width: 100%;
   }
 }
+.comment__text-info {
+  word-wrap: normal;
+  min-width: 450px;
+  min-height: 70px;
+}
 @media screen and (max-width: 992px) {
   .comment__text-info {
+    min-width: 100%;
+    min-height: 100%;
     width: 100%;
     margin-left: -5px;
   }
@@ -1752,6 +1760,7 @@ input:checked + .slider:before {
 }
 .comment-footer__reply-text {
   display: block;
+  margin-left: 5px;
 }
 .like-dislike {
   padding-right: 10%;

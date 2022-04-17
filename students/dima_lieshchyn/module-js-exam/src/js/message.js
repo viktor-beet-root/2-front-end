@@ -1,37 +1,41 @@
+import items from "./items";
+import formRemoveError from "./formRemoveError";
+import formAddError from "./formAddError";
+
 function message() {
+    items.textarea.addEventListener("input", countKeyUp);
 
-    const smiles = document.querySelectorAll('.smiles__item');
-    const textarea = document.querySelector('.textarea');
-
-    textarea.addEventListener("input", countKeyUp);
-
-    smiles.forEach(elem => {
+    items.smiles.forEach(elem => {
         elem.addEventListener('click', pasteSmile);
     });
 
-    textarea.addEventListener('input', function () {
-        textarea.addEventListener('blur', function () {
-            localStorage.setItem('text', textarea.value)
+    items.textarea.addEventListener('input', function () {
+        items.textarea.addEventListener('blur', function () {
+            localStorage.setItem('text', items.textarea.value)
         })
     });
 
     function pasteSmile(e) {
-        textarea.value = `${textarea.value} [::${e.currentTarget.dataset.smile}::] `;
-        textarea.focus();
+        items.textarea.value = `${items.textarea.value} [::${e.currentTarget.dataset.smile}::] `;
+        items.textarea.focus();
     }
 
     function countKeyUp(e) {
         const target = e.currentTarget;
-        const maxLength = target.getAttribute("maxlength");
+        const maxLength = e.target.getAttribute("maxlength");
         const currentLength = target.value.length;
 
         const counter = document.querySelector('.counter__item');
 
-        if (currentLength >= maxLength) {
-            return console.log("You have reached the maximum number of characters.");
+        counter.textContent = currentLength;
+        if (currentLength === +maxLength) {
+            formAddError(items.textarea);
+
+        } else {
+            formRemoveError(items.textarea);
         }
-        counter.textContent = maxLength - currentLength;
     }
+
 }
 
 export default message;

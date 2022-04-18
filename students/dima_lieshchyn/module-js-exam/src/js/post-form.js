@@ -2,6 +2,7 @@ import items from "./items";
 import formRemoveError from "./formRemoveError";
 import formAddError from "./formAddError";
 import cancelInfo from "./cancelInfo";
+import randomId from "./idGen";
 
 function postForm() {
 
@@ -25,6 +26,56 @@ function postForm() {
 
     function commentSend(e) {
         e.preventDefault();
+        if (items.userName.value !== '' && !items.userName.classList.contains('_error') &&
+            items.email.value !== '' && !items.email.classList.contains('_error') &&
+            !items.www.classList.contains('_error') &&
+            items.textarea.value !== '' && !items.textarea.classList.contains('_error')) {
+
+
+            items.userList.push({
+                userId: randomId(),
+                username: items.userName.value,
+                email: items.email.value,
+                www: items.www.value,
+                message: items.textarea.value,
+                messageId: randomId(),
+            });
+
+            if (localStorage.getItem('userList')) {
+                let temp = [];
+                let temp1 = [];
+                items.userListlocal = JSON.parse(localStorage.getItem('userList'));
+
+                items.userListlocal.push(items.userList[0])
+                localStorage.setItem('userList', JSON.stringify(items.userListlocal));
+            } else {
+                localStorage.setItem('userList', JSON.stringify(items.userList));
+            }
+
+            function userCheck(arr1, arr2) {
+
+            }
+
+            // var users = [];
+            // if (localStorage.getItem('storedUsers'))
+            //   users = JSON.parse(localStorage.getItem('storedUsers'));
+
+
+        } else if (items.userName.value === '' && !items.userName.classList.contains('_error') &&
+            items.email.value === '' && !items.email.classList.contains('_error') &&
+            !items.www.classList.contains('_error') &&
+            items.textarea.value === '' && !items.textarea.classList.contains('_error')) {
+            formAddError(items.userName);
+            formAddError(items.email);
+            formAddError(items.textarea);
+
+            items.errorMsg.forEach(elem => {
+                if (elem.dataset.type !== 'www') {
+                    elem.textContent = items.msg.empty;
+                }
+            })
+
+        }
     }
 
     function isEmpty(e) {
@@ -48,7 +99,7 @@ function postForm() {
                 formRemoveError(items.email)
                 if (elem.dataset.type === 'email') {
                     elem.textContent = items.msg.okEmail;
-                    localStorage.setItem("email", items.email.value);
+                    // localStorage.setItem("email", items.email.value);
                 }
             })
         } else {
@@ -66,7 +117,7 @@ function postForm() {
                 formRemoveError(items.userName)
                 if (elem.dataset.type === 'name') {
                     elem.textContent = items.msg.okName;
-                    localStorage.setItem("name", items.userName.value);
+                    // localStorage.setItem("name", items.userName.value);
                 }
             })
         } else {
@@ -84,7 +135,7 @@ function postForm() {
                 formRemoveError(items.www)
                 if (elem.dataset.type === 'www') {
                     elem.textContent = items.msg.okSite;
-                    localStorage.setItem("www", items.www.value);
+                    // localStorage.setItem("www", items.www.value);
                 }
 
             })

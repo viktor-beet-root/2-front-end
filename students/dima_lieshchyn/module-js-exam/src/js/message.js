@@ -11,7 +11,19 @@ function message() {
 
     items.textarea.addEventListener('input', function () {
         items.textarea.addEventListener('blur', function () {
-            localStorage.setItem('text', items.textarea.value)
+            // console.log(items.textarea.value.length);
+            if (items.textarea.value.length > 60) {
+                // localStorage.setItem('text', items.textarea.value)
+            } else {
+                for (let i = 0; i < items.textarea.value.length; i++) {
+                    // if (items.textarea.value.length < 60) {
+                    //     items.textarea.value = items.textarea.value + ' ';
+                    // }
+
+                }
+                // localStorage.setItem('text', items.textarea.value);
+
+            }
         })
     });
 

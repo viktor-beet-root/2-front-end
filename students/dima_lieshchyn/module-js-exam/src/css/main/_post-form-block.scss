@@ -8,32 +8,18 @@ justify-content: center;
             }
 		}
 
-		// .post-form-block__title
-
 		&__title {
             padding-top: 40px;
             padding-bottom: 10px;
 		}
-
-		// .post-form-block__form
 
 		&__form {
 		}
 }
 .post-form * {
     outline: none;
-    // & input {
-    //     &:focus {
-    //         background-color: $black-color;
-    //         color:$gray-color;
-    //         transition: all .8s ease-in-out;
-    //         box-shadow: 5px 5px 15px 5px #000000;
-    //     }
-    // }
 }
 .post-form {
-
-		// .post-form__items-wrapper
 
 		&__items-wrapper {
             display: flex;
@@ -50,9 +36,8 @@ justify-content: center;
         
         &__textarea-wrapper {
           position: relative;
-        }
-		// .post-form__item-wrapper
-        
+          width: 100%;
+        }        
 		&__item-wrapper {
             // margin-right: 5px;
             display: flex;
@@ -63,13 +48,9 @@ justify-content: center;
             }
 		}
 
-		// .post-form__label
-
 		&__label {
             margin-left: 5px;
 		}
-
-		// .post-form__input
 
 		&__input {
             border: 1px solid transparent;
@@ -78,7 +59,7 @@ justify-content: center;
               width: 100%;
             }
             display: block;
-            width: 230px;
+            width: 100%;
             height: 44px;
             padding: 0.375rem 0.75rem;
             font-family: inherit;
@@ -95,42 +76,28 @@ justify-content: center;
             }
 		}
 
-		// .post-form__switch-wrapper
-
 		&__switch-wrapper {
             display: flex;
 		}
 
-		// .post-form__switch
-
 		&__switch {
 		}
-
-		// .post-form__smiles-wrapper
 
 		&__smiles-wrapper {
             padding-top: 30px;
             margin-bottom: $default-gap;
 		}
 
-		// .post-form__item
-
 		&__item {
 		}
-
-		// .post-form__cancel
 
 		&__cancel {
 		}
 }
 .switch {
 
-		// .switch__item
-
 		&__item {
 		}
-
-		// .switch__info
 
 		&__info {
             margin: 0;
@@ -141,10 +108,7 @@ justify-content: center;
             }
 		}
 }
-.slider {
-}
-.round {
-}
+
 .smiles {
     &__item{
         &:hover {
@@ -182,8 +146,6 @@ justify-content: center;
 }
 .btn {
 
-		// .btn_cancel
-
 		&_cancel {
             background-color: $gray-color;
             color: $black-color;
@@ -194,8 +156,6 @@ justify-content: center;
                 box-shadow: 5px 5px 15px 5px #000000;
             }
 		}
-        
-		// .btn__post
         
 		&__post {
             background-color: $black-color;
@@ -221,9 +181,7 @@ justify-content: center;
 ._error textarea {
     box-shadow: 5px 5px 15px 5px red;
 }
-._error:hover {
-   
-}
+
 .post-form__input._error {
     &:hover{
         background-color: $orang-color;
@@ -243,14 +201,8 @@ position: absolute;
 bottom: 10px;
 right: 1%;
 font-size: 12px;
-
-    // .counter__item
-
     &__item {
     }
-
-    // .counter__max
-
     &__max {
     }
 }

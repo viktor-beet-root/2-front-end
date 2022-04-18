@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .active {
+            color: red;
+        }
+
+        .add-user-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            display: flex;
+        }
+
+        .user-list {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .user-list__item {
+            width: 45%;
+        }
+
+        .add-user-form>div {
+            width: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .add-user-form>div:first-child>p {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .user {
+            margin-bottom: 50px;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, .4);
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .error {
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <h2>Работа с классами и стилями</h2>
+        <div class="test" :class="{ active: isActive, two: isTwo }">tesdkfj hlasghl</div>
+        <div :class="{ active: hasActive, error: !this.hasActive }">
+            <input type="text" v-model.lazy="firstName">
+            <input type="text" v-model.lazy="lastName">
+        </div>
+        <p :class="classP" :style="{color: textColor}">dfgdfg ({{ classP.length }})</p>
+        <div>
+            <select name="" v-model="textColor" id="">
+                <option v-for="color in colors" :key="color" :value="color">{{ color }}</option>
+            </select>
+        </div>
+        <div>
+            <input ref="addClass" v-model="addClassData" type="text">
+            <button @click="addClass">add</button>
+        </div>
+        <div class="add-user-form">
+            <div>
+                <p :class="{error: !firstName.length && isValidate}">
+                    First Name <input type="text" v-model.lazy="firstName">
+                </p>
+                <p :class="{error: !lastName.length && isValidate}">
+                    Last Name <input type="text" v-model="lastName">
+                </p>
+                <p :class="{error: !userName.length && isValidate}">
+                    User Name <span v-if="isShowUserError">Пользователь уже существует</span> <input type="text"
+                        v-model="userName">
+                </p>
+                <p :class="{error: !email.length && isValidate}">Email <input type="text" v-model="email"></p>
+                <p :class="{error: !password.length && isValidate}">Password <input v-model="password">
+                </p>
+                <p :class="{error: !confirmPassword.length && isValidate}">Confinm Password <input
+                        v-model="confirmPassword"></p>
+                <p><button @click="addUser">Add User</button></p>
+            </div>
+            <div>
+                <p>First Name {{ firstName }}</p>
+                <p>Last Name {{ lastName }}</p>
+                <p>Your User Name: {{ userName }}</p>
+                <p>Your Email: <a :href="viewEmail">{{ email }}</a></p>
+                <p>Confirmed Password: {{ isConfirmed ? 'Confirmed' : 'Not Confirmed'}}</p>
+            </div>
+        </div>
+        <div class="user-list">
+            <div v-for="(user, index) in userList" :key="user.id" class="user-list__item user">
+                <p>Id: {{user.id}}</p>
+                <p>First Name: {{ user.firstName }}</p>
+                <p>Last Name: {{ user.lastName }}</p>
+                <p>Your User Name: {{ user.userName }}</p>
+                <p>Your Email: <a :href="'mailto:' + user.email">{{ user.email }}</a></p>
+                <p>Password: {{ user.pass }}</p>
+                <p><button @click="removeUser(index)">Remove user</button></p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,7 +1,8 @@
 import items from "./items";
 import formRemoveError from "./formRemoveError";
 
-function cancelInfo() {
+function cancelInfo(e) {
+    e.preventDefault();
     formRemoveError(items.userName);
     formRemoveError(items.email);
     formRemoveError(items.www);
@@ -16,6 +17,7 @@ function cancelInfo() {
     items.textarea.value = '';
     items.textCounter.textContent = '0';
     items.switchItem.checked = false;
+    console.log('cansel');
 }
 
 export default cancelInfo;

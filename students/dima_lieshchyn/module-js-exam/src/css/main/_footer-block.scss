@@ -38,7 +38,7 @@ align-items: center;
 		&__icon {
             fill: $black-color;
             &:hover{
-                    fill: #FFBA9D;
+                    fill: $orang-color;
                     transition: all .5s ease-in-out;
             }
 		}

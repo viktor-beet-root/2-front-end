@@ -9,41 +9,26 @@ function message() {
         elem.addEventListener('click', pasteSmile);
     });
 
-    items.textarea.addEventListener('input', function () {
-        items.textarea.addEventListener('blur', function () {
-            // console.log(items.textarea.value.length);
-            if (items.textarea.value.length > 60) {
-                // localStorage.setItem('text', items.textarea.value)
-            } else {
-                for (let i = 0; i < items.textarea.value.length; i++) {
-                    // if (items.textarea.value.length < 60) {
-                    //     items.textarea.value = items.textarea.value + ' ';
-                    // }
-
-                }
-                // localStorage.setItem('text', items.textarea.value);
-
-            }
-        })
-    });
 
     function pasteSmile(e) {
         items.textarea.value = `${items.textarea.value} [::${e.currentTarget.dataset.smile}::] `;
         items.textarea.focus();
+        items.textarea.dispatchEvent(new Event('input', { 'bubbles': true }));
     }
 
     function countKeyUp(e) {
         const target = e.currentTarget;
         const maxLength = e.target.getAttribute("maxlength");
         const currentLength = target.value.length;
-
+        const errorMess = document.querySelector('textarea~.counter~.error-msg')
         const counter = document.querySelector('.counter__item');
 
         counter.textContent = currentLength;
-        if (currentLength === +maxLength) {
+        if (currentLength < 16 && target.dataset.type === 'message') {
+            errorMess.textContent = items.msg.minSymbols;
             formAddError(items.textarea);
-
         } else {
+            errorMess.textContent = '';
             formRemoveError(items.textarea);
         }
     }

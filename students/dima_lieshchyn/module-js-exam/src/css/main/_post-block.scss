@@ -10,33 +10,23 @@
 		&__text {
             font-size: 12px;
             padding: 10px;
+            margin-top: 5px;
 		}
         
 		&__icon {
+            fill: $black-color;
             padding: 10px;
-            font-size: 0;
-            display: inline-block;
+            width: 45px;
             border-radius: 4px;
+            &:nth-child(1){
+                width: 35px;
+            }
             @include media('xs'){
-              
                 margin-bottom: 5px;
             }
             &:hover {
-                transform: scale(1.5);
-                transform-origin: center;
+                fill: $orang-color;
                 transition: all 1s ease-out;
-                &:nth-child(1){
-                    background-color: #3b5998;
-                }
-                &:nth-child(2){
-                    background-color: $gray-basic;
-                }
-                &:nth-child(3){
-                    background-color: #00acee;
-                }
-                &:nth-child(4){
-                    background-color: #3f729b;
-                }
             }
 		}
         &__content-wrapper {
@@ -62,7 +52,7 @@
     flex-grow: 1;
     text-align: right;
     &:hover {
-        transform: scale(2);
+        transform: scale(1.5);
         transform-origin: center;
         transition: all 1s ease-out;
         text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);;

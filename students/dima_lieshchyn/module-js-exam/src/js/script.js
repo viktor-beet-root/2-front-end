@@ -2,6 +2,9 @@ import scrollSmooth from './scroll';
 import postForm from './post-form';
 import message from './message';
 import items from './items';
+import cancelInfo from './cancelInfo';
+import formAddError from './formAddError';
+import removeProfanity from './checkProfanity';
 
 scrollSmooth('.arrow, .nav-link');
 
@@ -9,12 +12,11 @@ document.addEventListener('DOMContentLoaded', postForm);
 
 document.addEventListener('DOMContentLoaded', message);
 
-document.addEventListener('DOMContentLoaded', saveInfo);
+document.addEventListener('DOMContentLoaded', removeProfanity);
+
+items.cancel.addEventListener('click', cancelInfo);
 
 
-function saveInfo() {
-    // items.switchItem.addEventListener('')
-}
 
 const com = document.querySelector('.comments-block__wrapper')
 const newComment = document.createElement('div');
@@ -77,6 +79,8 @@ src="./images/comments-block/photo_1.jpg" alt="avatar" srcset="">
 newComment.innerHTML = commentData;
 console.log(newComment);
 com.append(newComment)
+
+
 
 
 

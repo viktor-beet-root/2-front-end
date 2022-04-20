@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page">
+    <header>
+        <div class="container">
+            <div class="cart" id="cart">
+                <p>Cart: ({{ cartList.length }})</p>
+                <div v-for="(product, index) in cartList" :key="product.id" class="cart__item">
+                    <img :src="'./images/' + product.img" :alt="product.name">
+                    <p>{{product.name}}</p>
+                    <p class="cart__price price-box">
+                        <span class="price-box__price" :class="{sale: product.price > product.specialPrice}">
+                            {{ product.price.toLocaleString() }} {{ currencySymbol }}
+                        </span>
+                        <span v-if="product.price > product.specialPrice" class="price-box__special-price">
+                            {{ product.specialPrice.toLocaleString() }} {{ currencySymbol }}
+                        </span>
+                    </p>
+                    <div class="cart__qty qty">
+                        <button @click="setQty(false, product)">-</button>
+                        <input v-model="product.qty" type="text">
+                        <button @click="setQty(true, product)">+</button>
+                        <button @click="removeProduct(index)">Remove</button>
+                    </div>
+                    <p>Total price: {{ getTotalProcutPrice(product)?.toLocaleString() }} {{ currencySymbol }}</p>
+                </div>
+                <div v-if="cartList.length" class="cart__total">
+                    <strong>Total: {{ getTotal().toLocaleString() }} {{ currencySymbol }}</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div id="productList" class="product-list">
+                <div class="product-list__item product" :class="{'out-of-stock': !product.instock}"
+                    v-for="product in productList" :key="product.id">
+                    <img class="product__img" :src="'./images/' + product.img" :alt="product.name">
+                    <div class="product__label label">
+                        <span v-for="(label, key) in product.labels" :key="key" class="label__item" :class="key">
+                            {{ label }}
+                        </span>
+                    </div>
+                    <h2 class="product__name">{{ product.name }} {{product.sku}}</h2>
+                    <p class="product__info-title">Description</p>
+                    <ul class="product__info-list">
+                        <li v-for="(value, key) in product.characteristics" :key="key" class="product__info-item">
+                            <strong>{{key}}:</strong> {{ value }}
+                        </li>
+                    </ul>
+                    <p class="product__price price-box">
+                        <span class="price-box__price" :class="{sale: product.price > product.specialPrice}">
+                            {{ product.price.toLocaleString() }} {{ currencySymbol }}
+                        </span>
+                        <span v-if="product.price > product.specialPrice" class="price-box__special-price">
+                            {{ product.specialPrice.toLocaleString() }} {{ currencySymbol }}
+                        </span>
+                    </p>
+                    <div class="product__add-to-cart-wrapper">
+                        <button v-if="product.instock" @click="addToCart(product)" class="product__add-to-cart">
+                            Add to Cart
+                        </button>
+                        <p v-else class="product__out-of-stock">
+                            {{ outOfStockMessage }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">Copyrite 2022.</div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

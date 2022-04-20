@@ -1,0 +1,27 @@
+.product {
+    position: relative;
+
+    &__img {
+        max-width: 100%;
+        display: block;
+    }
+
+    &__name {
+        font-size: 15px;
+    }
+
+    &__label {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    &__info-title {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    &__info-list {
+        font-size: 11px;
+    }
+}

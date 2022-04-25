@@ -1,8 +1,10 @@
 import items from "./items";
 import formRemoveError from "./formRemoveError";
 import formAddError from "./formAddError";
-import addUser from "./addUser";
+import addCommentData from "./addCommentData";
 import addErrorMessage from "./addErrorMessage";
+import renderComment from "./renderComment";
+import clearForm from "./clearForm";
 
 function postForm() {
     items.post.addEventListener('click', commentSend);
@@ -15,7 +17,6 @@ function postForm() {
                 formRemoveError(e.target);
             }
         });
-
 
         items.email.addEventListener('input', emailInput);
         items.userName.addEventListener('input', nameInput);
@@ -30,14 +31,15 @@ function postForm() {
             items.email.value !== '' && !items.email.classList.contains('_error') &&
             !items.www.classList.contains('_error') &&
             items.textarea.value !== '' && !items.textarea.classList.contains('_error')) {
-
             if (localStorage.getItem('userList')) {
                 items.userList = JSON.parse(localStorage.getItem('userList'));
-                addUser();
+                addCommentData()
                 localStorage.setItem('userList', JSON.stringify(items.userList));
+                clearForm();
             } else {
-                addUser();
+                addCommentData()
                 localStorage.setItem('userList', JSON.stringify(items.userList));
+                clearForm();
             }
 
 
@@ -45,6 +47,8 @@ function postForm() {
             items.email.value === '' && !items.email.classList.contains('_error') &&
             !items.www.classList.contains('_error') &&
             items.textarea.value === '' && !items.textarea.classList.contains('_error')) {
+
+            console.log('asd');
             formAddError(items.userName);
             formAddError(items.email);
             formAddError(items.textarea);
@@ -56,6 +60,7 @@ function postForm() {
             })
 
         }
+
     }
 
     function isEmpty(e) {

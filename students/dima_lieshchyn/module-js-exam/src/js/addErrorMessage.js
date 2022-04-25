@@ -4,7 +4,6 @@ import formRemoveError from "./formRemoveError";
 
 function addErrorMessage(input, errMsg, flag) {
     if (flag) {
-        console.log(input.dataset.type);
         items.errorMsg.forEach(elem => {
             formAddError(input)
             if (elem.dataset.type === input.dataset.type) {
@@ -12,7 +11,6 @@ function addErrorMessage(input, errMsg, flag) {
             }
         })
     } else {
-        console.log(input.dataset.type);
         items.errorMsg.forEach(elem => {
             formRemoveError(input)
             if (elem.dataset.type === input.dataset.type) {

@@ -1,13 +1,38 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/addComment.js":
-/*!******************************!*\
-  !*** ./src/js/addComment.js ***!
-  \******************************/
-/***/ (function() {
+/***/ "./src/js/addCommentData.js":
+/*!**********************************!*\
+  !*** ./src/js/addCommentData.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+/* harmony import */ var _idGen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./idGen */ "./src/js/idGen.js");
+/* harmony import */ var _renderComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./renderComment */ "./src/js/renderComment.js");
 
 
+
+
+function addCommentData() {
+  var tempId = (0,_idGen__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  _items__WEBPACK_IMPORTED_MODULE_0__["default"].userList.push({
+    userId: tempId,
+    username: _items__WEBPACK_IMPORTED_MODULE_0__["default"].userName.value,
+    email: _items__WEBPACK_IMPORTED_MODULE_0__["default"].email.value,
+    www: _items__WEBPACK_IMPORTED_MODULE_0__["default"].www.value,
+    message: _items__WEBPACK_IMPORTED_MODULE_0__["default"].textarea.value,
+    time: Date.now(),
+    likeCount: 0,
+    dislikeCount: 0,
+    heartCount: 0
+  });
+  (0,_renderComment__WEBPACK_IMPORTED_MODULE_2__["default"])(_items__WEBPACK_IMPORTED_MODULE_0__["default"].userName.value, _items__WEBPACK_IMPORTED_MODULE_0__["default"].www.value, _items__WEBPACK_IMPORTED_MODULE_0__["default"].textarea.value, tempId);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (addCommentData);
 
 /***/ }),
 
@@ -34,7 +59,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function addErrorMessage(input, errMsg, flag) {
   if (flag) {
-    console.log(input.dataset.type);
     _items__WEBPACK_IMPORTED_MODULE_2__["default"].errorMsg.forEach(function (elem) {
       (0,_formAddError__WEBPACK_IMPORTED_MODULE_3__["default"])(input);
 
@@ -43,7 +67,6 @@ function addErrorMessage(input, errMsg, flag) {
       }
     });
   } else {
-    console.log(input.dataset.type);
     _items__WEBPACK_IMPORTED_MODULE_2__["default"].errorMsg.forEach(function (elem) {
       (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_4__["default"])(input);
 
@@ -58,34 +81,6 @@ function addErrorMessage(input, errMsg, flag) {
 
 /***/ }),
 
-/***/ "./src/js/addUser.js":
-/*!***************************!*\
-  !*** ./src/js/addUser.js ***!
-  \***************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
-/* harmony import */ var _idGen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./idGen */ "./src/js/idGen.js");
-
-
-
-function addUser() {
-  return _items__WEBPACK_IMPORTED_MODULE_0__["default"].userList.push({
-    userId: (0,_idGen__WEBPACK_IMPORTED_MODULE_1__["default"])(),
-    username: _items__WEBPACK_IMPORTED_MODULE_0__["default"].userName.value,
-    email: _items__WEBPACK_IMPORTED_MODULE_0__["default"].email.value,
-    www: _items__WEBPACK_IMPORTED_MODULE_0__["default"].www.value,
-    message: _items__WEBPACK_IMPORTED_MODULE_0__["default"].textarea.value,
-    messageId: (0,_idGen__WEBPACK_IMPORTED_MODULE_1__["default"])()
-  });
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (addUser);
-
-/***/ }),
-
 /***/ "./src/js/cancelInfo.js":
 /*!******************************!*\
   !*** ./src/js/cancelInfo.js ***!
@@ -94,33 +89,12 @@ function addUser() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
-/* harmony import */ var _formRemoveError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./formRemoveError */ "./src/js/formRemoveError.js");
-
-
-
+/* harmony import */ var _clearForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clearForm */ "./src/js/clearForm.js");
 
 
 function cancelInfo(e) {
   e.preventDefault();
-  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].userName);
-  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].email);
-  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].www);
-  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].textarea);
-  _items__WEBPACK_IMPORTED_MODULE_2__["default"].errorMsg.forEach(function (elem) {
-    elem.textContent = '';
-  });
-  _items__WEBPACK_IMPORTED_MODULE_2__["default"].userName.value = '';
-  _items__WEBPACK_IMPORTED_MODULE_2__["default"].email.value = '';
-  _items__WEBPACK_IMPORTED_MODULE_2__["default"].www.value = '';
-  _items__WEBPACK_IMPORTED_MODULE_2__["default"].textarea.value = '';
-  _items__WEBPACK_IMPORTED_MODULE_2__["default"].textCounter.textContent = '0';
-  _items__WEBPACK_IMPORTED_MODULE_2__["default"].switchItem.checked = false;
-  console.log('cansel');
+  (0,_clearForm__WEBPACK_IMPORTED_MODULE_0__["default"])();
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (cancelInfo);
@@ -183,6 +157,106 @@ function removeProfanity() {
 
 /***/ }),
 
+/***/ "./src/js/clearForm.js":
+/*!*****************************!*\
+  !*** ./src/js/clearForm.js ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+/* harmony import */ var _formRemoveError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./formRemoveError */ "./src/js/formRemoveError.js");
+
+
+
+
+
+function clearForm() {
+  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].userName);
+  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].email);
+  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].www);
+  (0,_formRemoveError__WEBPACK_IMPORTED_MODULE_3__["default"])(_items__WEBPACK_IMPORTED_MODULE_2__["default"].textarea);
+  _items__WEBPACK_IMPORTED_MODULE_2__["default"].errorMsg.forEach(function (elem) {
+    elem.textContent = '';
+  });
+  _items__WEBPACK_IMPORTED_MODULE_2__["default"].userName.value = '';
+  _items__WEBPACK_IMPORTED_MODULE_2__["default"].email.value = '';
+  _items__WEBPACK_IMPORTED_MODULE_2__["default"].www.value = '';
+  _items__WEBPACK_IMPORTED_MODULE_2__["default"].textarea.value = '';
+  _items__WEBPACK_IMPORTED_MODULE_2__["default"].textCounter.textContent = '0';
+  _items__WEBPACK_IMPORTED_MODULE_2__["default"].switchItem.checked = false;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (clearForm);
+
+/***/ }),
+
+/***/ "./src/js/editMessage.js":
+/*!*******************************!*\
+  !*** ./src/js/editMessage.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _clearForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clearForm */ "./src/js/clearForm.js");
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+/* harmony import */ var _updateStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./updateStorage */ "./src/js/updateStorage.js");
+
+
+
+
+
+
+function editMessage() {
+  var comment = document.querySelector('.comments-block__wrapper');
+  var btn = document.querySelector('.edit-btn');
+  var tempMessage = '';
+  btn.addEventListener('click', editMessageEvent);
+  comment.addEventListener('click', function (e) {
+    if (e.target.nodeName === 'IMG' && e.target.classList.contains('edit-message')) {
+      var tempId = e.target.dataset.id;
+      var tempElem = e.currentTarget.querySelectorAll('.new-comment p');
+      tempElem.forEach(function (text) {
+        if (tempId === text.dataset.id) {
+          _items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea.value = text.textContent;
+          _items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea.focus();
+          _items__WEBPACK_IMPORTED_MODULE_3__["default"].post.style.display = 'none';
+          btn.style.display = 'block';
+          btn.addEventListener('editMessage', function (e) {
+            text.textContent = tempMessage;
+            (0,_updateStorage__WEBPACK_IMPORTED_MODULE_4__["default"])(tempId, 'message', tempMessage);
+            _items__WEBPACK_IMPORTED_MODULE_3__["default"].post.style.display = 'block';
+            btn.style.display = 'none';
+          });
+        }
+      });
+    }
+  });
+
+  function editMessageEvent(e) {
+    e.preventDefault();
+    tempMessage = _items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea.value;
+    (0,_clearForm__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    e.target.dispatchEvent(new Event('editMessage', {
+      'bubbles': true
+    }));
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (editMessage);
+
+/***/ }),
+
 /***/ "./src/js/formAddError.js":
 /*!********************************!*\
   !*** ./src/js/formAddError.js ***!
@@ -214,6 +288,79 @@ function formRemoveError(input) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (formRemoveError);
+
+/***/ }),
+
+/***/ "./src/js/getCommentsList.js":
+/*!***********************************!*\
+  !*** ./src/js/getCommentsList.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function getCommentsList() {
+  return localStorage.getItem('userList') ? JSON.parse(localStorage.getItem('userList')) : '';
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (getCommentsList);
+
+/***/ }),
+
+/***/ "./src/js/getDate.js":
+/*!***************************!*\
+  !*** ./src/js/getDate.js ***!
+  \***************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_math_trunc_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.math.trunc.js */ "./node_modules/core-js/modules/es.math.trunc.js");
+/* harmony import */ var core_js_modules_es_math_trunc_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_math_trunc_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+function getDate(date) {
+  var dayOfMonth = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+  var hour = date.getHours();
+  var minutes = date.getMinutes();
+  var diffMs = new Date() - date;
+  var diffSec = Math.round(diffMs / 1000);
+  var diffMin = diffSec / 60;
+  var diffHour = diffMin / 60; // форматирование
+
+  year = year.toString().slice(-2);
+  month = month < 10 ? '0' + month : month;
+  dayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
+  hour = hour < 10 ? '0' + hour : hour;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+
+  if (diffSec < 1) {
+    return 'Just now';
+  } else if (diffMin < 1) {
+    return "".concat(diffSec, " seconds ago");
+  } else if (diffHour < 1) {
+    return "".concat(Math.trunc(diffMin), " minutes ago");
+  } else {
+    return "".concat(dayOfMonth, ".").concat(month, ".").concat(year, " ").concat(hour, ":").concat(minutes);
+  }
+} // console.log(formatDate(new Date(1650538733571)));
+
+
+/* harmony default export */ __webpack_exports__["default"] = (getDate);
 
 /***/ }),
 
@@ -351,6 +498,7 @@ var items = {
   cancel: document.querySelector('.btn_cancel'),
   post: document.querySelector('.btn__post'),
   switchItem: document.querySelector('.switch__item'),
+  commentsWrapper: document.querySelector('.comments-block__wrapper'),
   name_regexp: /^([A-Z][a-z]+([ ]?[a-z]?['-]?[A-Z][a-z]+)*)$/,
   email_regexp: /^(((?:(?![\t-\r "\(\),\.:-<>@\[\]\xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF])[\s\S])+(\.(?:(?![\t-\r "\(\),\.:-<>@\[\]\xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF])[\s\S])+)*)|("(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])+"))@(((?:(?![\t-\r "\(\),\.:-<>@\[\]\xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF])[\s\S])+\.)+(?:(?![\t-\r "\(\),\.:-<>@\[\]\xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF])[\s\S]){2,})$/i,
   www_regexp: /(((https?: \/\/)|(www\.))[a-zA-Z0-9]{1,256}\.[a-zA-Z0-9]{1,4}\.?[a-zA-Z0-9]?\S+)|((www\.)?[a-zA-Z0-9]{1,256}\.[a-zA-Z0-9]{1,4}\.?[a-zA-Z0-9]?\S+)/,
@@ -359,6 +507,58 @@ var items = {
   userListlocal: []
 };
 /* harmony default export */ __webpack_exports__["default"] = (items);
+
+/***/ }),
+
+/***/ "./src/js/likeProcess.js":
+/*!*******************************!*\
+  !*** ./src/js/likeProcess.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _getCommentsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getCommentsList */ "./src/js/getCommentsList.js");
+/* harmony import */ var _renderComment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderComment */ "./src/js/renderComment.js");
+/* harmony import */ var _renderComments__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderComments */ "./src/js/renderComments.js");
+/* harmony import */ var _updateStorage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./updateStorage */ "./src/js/updateStorage.js");
+
+
+
+
+
+
+
+function likeProcess() {
+  var comment = document.querySelector('.comments-block__wrapper');
+  comment.addEventListener('click', function (e) {
+    var tempId = e.target.dataset.id;
+    var users = (0,_getCommentsList__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    users.forEach(function (user) {
+      if (tempId === user.userId) {
+        if (e.target.nodeName === 'IMG' && e.target.classList.contains('like-block__img')) {
+          console.log('like');
+          (0,_updateStorage__WEBPACK_IMPORTED_MODULE_5__["default"])(tempId, 'heartCount', user.heartCount = user.heartCount + 1);
+          e.target.nextElementSibling.textContent = user.heartCount;
+        } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('good')) {
+          console.log('good');
+          (0,_updateStorage__WEBPACK_IMPORTED_MODULE_5__["default"])(tempId, 'likeCount', user.likeCount = user.likeCount + 1);
+          e.target.previousElementSibling.textContent = user.likeCount;
+        } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('bad')) {
+          console.log('bad');
+          (0,_updateStorage__WEBPACK_IMPORTED_MODULE_5__["default"])(tempId, 'dislikeCount', user.dislikeCount = user.dislikeCount + 1);
+          e.target.nextElementSibling.textContent = user.dislikeCount;
+        }
+      }
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (likeProcess);
 
 /***/ }),
 
@@ -439,8 +639,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
 /* harmony import */ var _formRemoveError__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./formRemoveError */ "./src/js/formRemoveError.js");
 /* harmony import */ var _formAddError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./formAddError */ "./src/js/formAddError.js");
-/* harmony import */ var _addUser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./addUser */ "./src/js/addUser.js");
+/* harmony import */ var _addCommentData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./addCommentData */ "./src/js/addCommentData.js");
 /* harmony import */ var _addErrorMessage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./addErrorMessage */ "./src/js/addErrorMessage.js");
+/* harmony import */ var _renderComment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./renderComment */ "./src/js/renderComment.js");
+/* harmony import */ var _clearForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./clearForm */ "./src/js/clearForm.js");
+
+
 
 
 
@@ -470,13 +674,16 @@ function postForm() {
     if (_items__WEBPACK_IMPORTED_MODULE_3__["default"].userName.value !== '' && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].userName.classList.contains('_error') && _items__WEBPACK_IMPORTED_MODULE_3__["default"].email.value !== '' && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].email.classList.contains('_error') && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].www.classList.contains('_error') && _items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea.value !== '' && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea.classList.contains('_error')) {
       if (localStorage.getItem('userList')) {
         _items__WEBPACK_IMPORTED_MODULE_3__["default"].userList = JSON.parse(localStorage.getItem('userList'));
-        (0,_addUser__WEBPACK_IMPORTED_MODULE_6__["default"])();
+        (0,_addCommentData__WEBPACK_IMPORTED_MODULE_6__["default"])();
         localStorage.setItem('userList', JSON.stringify(_items__WEBPACK_IMPORTED_MODULE_3__["default"].userList));
+        (0,_clearForm__WEBPACK_IMPORTED_MODULE_9__["default"])();
       } else {
-        (0,_addUser__WEBPACK_IMPORTED_MODULE_6__["default"])();
+        (0,_addCommentData__WEBPACK_IMPORTED_MODULE_6__["default"])();
         localStorage.setItem('userList', JSON.stringify(_items__WEBPACK_IMPORTED_MODULE_3__["default"].userList));
+        (0,_clearForm__WEBPACK_IMPORTED_MODULE_9__["default"])();
       }
     } else if (_items__WEBPACK_IMPORTED_MODULE_3__["default"].userName.value === '' && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].userName.classList.contains('_error') && _items__WEBPACK_IMPORTED_MODULE_3__["default"].email.value === '' && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].email.classList.contains('_error') && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].www.classList.contains('_error') && _items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea.value === '' && !_items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea.classList.contains('_error')) {
+      console.log('asd');
       (0,_formAddError__WEBPACK_IMPORTED_MODULE_5__["default"])(_items__WEBPACK_IMPORTED_MODULE_3__["default"].userName);
       (0,_formAddError__WEBPACK_IMPORTED_MODULE_5__["default"])(_items__WEBPACK_IMPORTED_MODULE_3__["default"].email);
       (0,_formAddError__WEBPACK_IMPORTED_MODULE_5__["default"])(_items__WEBPACK_IMPORTED_MODULE_3__["default"].textarea);
@@ -534,6 +741,163 @@ function postForm() {
 
 /***/ }),
 
+/***/ "./src/js/removeComment.js":
+/*!*********************************!*\
+  !*** ./src/js/removeComment.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _removeUser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./removeUser */ "./src/js/removeUser.js");
+
+
+function removeComment() {
+  var comment = document.querySelector('.comments-block__wrapper');
+  comment.addEventListener('click', function (e) {
+    if (e.target.nodeName === 'IMG' && e.target.classList.contains('remove')) {
+      var tempId = e.target.dataset.id;
+
+      if (tempId === e.target.dataset.id) {
+        e.target.closest('.comment').remove();
+        (0,_removeUser__WEBPACK_IMPORTED_MODULE_0__["default"])(tempId);
+      }
+    }
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (removeComment);
+
+/***/ }),
+
+/***/ "./src/js/removeUser.js":
+/*!******************************!*\
+  !*** ./src/js/removeUser.js ***!
+  \******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.splice.js */ "./node_modules/core-js/modules/es.array.splice.js");
+/* harmony import */ var core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_splice_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _getCommentsList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getCommentsList */ "./src/js/getCommentsList.js");
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+
+
+
+
+
+
+function removeUser(id) {
+  _items__WEBPACK_IMPORTED_MODULE_4__["default"].userList = (0,_getCommentsList__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  _items__WEBPACK_IMPORTED_MODULE_4__["default"].userList.forEach(function (user, index) {
+    if (user.userId === id) {
+      _items__WEBPACK_IMPORTED_MODULE_4__["default"].userList.splice(index, 1);
+    }
+  });
+  localStorage.setItem('userList', JSON.stringify(_items__WEBPACK_IMPORTED_MODULE_4__["default"].userList));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (removeUser);
+
+/***/ }),
+
+/***/ "./src/js/renderComment.js":
+/*!*********************************!*\
+  !*** ./src/js/renderComment.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
+/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+/* harmony import */ var _showTime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./showTime */ "./src/js/showTime.js");
+
+
+
+
+function renderComment() {
+  var author = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var www = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  var message = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+  var tempId = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  var heartCount = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+  var likeCount = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+  var dislikeCount = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 0;
+  var newComment = document.createElement('div');
+  newComment.classList.add('comments-block__comment', 'comment', 'new-comment');
+  newComment.dataset.id = tempId;
+  var commentData = "<div class=\"comment__avatar-wrapper\"><img class=\"comment__avatar\"\n    src=\"./images/comments-block/photo_1.jpg\" alt=\"avatar\" srcset=\"\">\n    <a href=\"#/\" class=\"comment__avatar-info-link\">\n    <span data-id=\"".concat(tempId, "\" class=\"comment__avatar-info-item\">").concat(www ? www : 'Website', "</span>\n    </a>\n    </div>\n    <div class=\"comment__comment-body-wrapper comment-body-wrapper\">\n    <div class=\"comment-body-wrapper__comment-header comment-header\">\n    <div class=\"comment-header__info-block\">\n        <div class=\"comment-header__item name-block\">\n            <span data-id=\"").concat(tempId, "\" class=\"comment-header__author-name\">").concat(author, "</span>\n        </div>\n        <div class=\"comment-header__item time-block\">\n            <span data-id=\"").concat(tempId, "\" class=\"comment-header__post-time\">Just now</span>\n        </div>\n    </div>\n    <div class=\"comment-header__settings-block settings-block\">\n        <img data-id=\"").concat(tempId, "\" id=\"").concat(tempId, "\" class=\"settings-block__item edit-message active\"\n            src=\"./images/comments-block/edit.svg\" alt=\"edit\" srcset=\"\">\n        <img data-id=\"").concat(tempId, "\" class=\"settings-block__item remove active\"\n            src=\"./images/comments-block/remove.svg\" alt=\"remove\" srcset=\"\">\n    </div>\n    </div>\n    <div class=\"comment-body-wrapper__text-wrapper text-block\">\n    <div class=\"text-block__wrapper\">\n        <p data-id=\"").concat(tempId, "\" class=\"text-block__text-info\"><span class=\"author_info\">@").concat(author, "</span> ").concat(message, "</p>\n    </div>\n    <div class=\"text-block__like-block like-block active\">\n        <img data-id=\"").concat(tempId, "\" class=\"like-block__img\" src=\"./images/comments-block/like.svg\"\n            alt=\"like\" srcset=\"\">\n        <span data-id=\"").concat(tempId, "\" class=\"like-block__info\">").concat(heartCount, "</span>\n    </div>\n    </div>\n    <div class=\"comment-body-wrapper__comment-footer comment-footer\">\n    <div data-id=\"").concat(tempId, "\" class=\"comment-footer__reply-block reply-block active\">\n        <img class=\"reply-block__img\" src=\"./images/comments-block/reply.svg\"\n            alt=\"reply\" srcset=\"\">\n        <span class=\"comment-footer__reply-text\">Reply</span>\n    </div>\n    <div data-id=\"").concat(tempId, "\" class=\"comment-footer__like-dislike like-dislike\">\n        <span data-id=\"").concat(tempId, "\" class=\"like-dislike__like-info\">").concat(likeCount, "</span>\n        <img data-id=\"").concat(tempId, "\" class=\"good active\" src=\"./images/comments-block/good.svg\" alt=\"like\"\n            srcset=\"\">\n        <img data-id=\"").concat(tempId, "\" class=\"bad active\" src=\"./images/comments-block/bad.svg\" alt=\"dislike\"\n            srcset=\"\">\n        <span data-id=\"").concat(tempId, "\" class=\"like-dislike__dislike-info\">").concat(dislikeCount, "</span>\n    </div>\n    </div>\n    </div>");
+  newComment.innerHTML = commentData;
+  _items__WEBPACK_IMPORTED_MODULE_1__["default"].commentsWrapper.append(newComment);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (renderComment);
+
+/***/ }),
+
+/***/ "./src/js/renderComments.js":
+/*!**********************************!*\
+  !*** ./src/js/renderComments.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _getCommentsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getCommentsList */ "./src/js/getCommentsList.js");
+/* harmony import */ var _renderComment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderComment */ "./src/js/renderComment.js");
+
+
+
+
+
+function renderComments(commentList) {
+  if (!commentList) return;
+  commentList.forEach(function (elem) {
+    (0,_renderComment__WEBPACK_IMPORTED_MODULE_3__["default"])(elem.username, elem.www, elem.message, elem.userId, elem.heartCount, elem.likeCount, elem.dislikeCount);
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (renderComments);
+
+/***/ }),
+
+/***/ "./src/js/renderSmile.js":
+/*!*******************************!*\
+  !*** ./src/js/renderSmile.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+
+
+function renderSmile(text) {
+  var smilesPath = {
+    smile: './images/smiles/smile_1.svg',
+    cool: './images/smiles/smile_2.svg',
+    nice: './images/smiles/smile_3.svg',
+    hi: './images/smiles/smile_4.svg',
+    bad: './images/smiles/smile_5.svg',
+    angry: './images/smiles/smile_6.svg',
+    sad: './images/smiles/smile_7.svg'
+  };
+  text.indexOf('[::sad::]');
+}
+
+/***/ }),
+
 /***/ "./src/js/saveName.js":
 /*!****************************!*\
   !*** ./src/js/saveName.js ***!
@@ -552,15 +916,18 @@ function postForm() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.concat.js */ "./node_modules/core-js/modules/es.array.concat.js");
-/* harmony import */ var core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_concat_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scroll */ "./src/js/scroll.js");
-/* harmony import */ var _post_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post-form */ "./src/js/post-form.js");
-/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./message */ "./src/js/message.js");
-/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
-/* harmony import */ var _cancelInfo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cancelInfo */ "./src/js/cancelInfo.js");
-/* harmony import */ var _formAddError__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./formAddError */ "./src/js/formAddError.js");
-/* harmony import */ var _checkProfanity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./checkProfanity */ "./src/js/checkProfanity.js");
+/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scroll */ "./src/js/scroll.js");
+/* harmony import */ var _post_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post-form */ "./src/js/post-form.js");
+/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./message */ "./src/js/message.js");
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+/* harmony import */ var _cancelInfo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cancelInfo */ "./src/js/cancelInfo.js");
+/* harmony import */ var _checkProfanity__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./checkProfanity */ "./src/js/checkProfanity.js");
+/* harmony import */ var _getCommentsList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./getCommentsList */ "./src/js/getCommentsList.js");
+/* harmony import */ var _renderComments__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./renderComments */ "./src/js/renderComments.js");
+/* harmony import */ var _showTime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./showTime */ "./src/js/showTime.js");
+/* harmony import */ var _editMessage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./editMessage */ "./src/js/editMessage.js");
+/* harmony import */ var _removeComment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./removeComment */ "./src/js/removeComment.js");
+/* harmony import */ var _likeProcess__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./likeProcess */ "./src/js/likeProcess.js");
 
 
 
@@ -569,25 +936,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_scroll__WEBPACK_IMPORTED_MODULE_1__["default"])('.arrow, .nav-link');
-document.addEventListener('DOMContentLoaded', _post_form__WEBPACK_IMPORTED_MODULE_2__["default"]);
-document.addEventListener('DOMContentLoaded', _message__WEBPACK_IMPORTED_MODULE_3__["default"]);
-document.addEventListener('DOMContentLoaded', _checkProfanity__WEBPACK_IMPORTED_MODULE_7__["default"]);
-_items__WEBPACK_IMPORTED_MODULE_4__["default"].cancel.addEventListener('click', _cancelInfo__WEBPACK_IMPORTED_MODULE_5__["default"]);
-var com = document.querySelector('.comments-block__wrapper');
-var newComment = document.createElement('div');
-var website = 'items.userList[0].website;';
-var author = 'items.userList[0].userName;';
-var postTime = '1 minute ago';
-var userMessage = 'items.userList[0].message;';
-var likeCount = '1';
-var dislikeCount = '1';
-var heartCount = '1';
-newComment.classList.add('comments-block__comment', 'comment');
-var commentData = "<div class=\"comment__avatar-wrapper\"><img class=\"comment__avatar\"\nsrc=\"./images/comments-block/photo_1.jpg\" alt=\"avatar\" srcset=\"\">\n<a href=\"#/\" class=\"comment__avatar-info-link\">\n<span class=\"comment__avatar-info-item\">".concat(website, "</span>\n</a>\n</div>\n<div class=\"comment__comment-body-wrapper comment-body-wrapper\">\n<div class=\"comment-body-wrapper__comment-header comment-header\">\n<div class=\"comment-header__info-block\">\n    <div class=\"comment-header__item name-block\">\n        <span class=\"comment-header__author-name\">").concat(author, "</span>\n    </div>\n    <div class=\"comment-header__item time-block\">\n        <span class=\"comment-header__post-time\">").concat(postTime, "</span>\n    </div>\n</div>\n<div class=\"comment-header__settings-block settings-block\">\n    <img class=\"settings-block__item active\"\n        src=\"./images/comments-block/edit.svg\" alt=\"edit\" srcset=\"\">\n    <img class=\"settings-block__item active\"\n        src=\"./images/comments-block/remove.svg\" alt=\"remove\" srcset=\"\">\n</div>\n</div>\n<div class=\"comment-body-wrapper__text-wrapper text-block\">\n<p class=\"text-block__text-info\">").concat(userMessage, "</p>\n<div class=\"text-block__like-block like-block active\">\n    <img class=\"like-block__img\" src=\"./images/comments-block/like.svg\"\n        alt=\"like\" srcset=\"\">\n    <span class=\"like-block__info\">").concat(heartCount, "</span>\n</div>\n</div>\n<div class=\"comment-body-wrapper__comment-footer comment-footer\">\n<div class=\"comment-footer__reply-block reply-block active\">\n    <img class=\"reply-block__img\" src=\"./images/comments-block/reply.svg\"\n        alt=\"reply\" srcset=\"\">\n    <span class=\"comment-footer__reply-text\">Reply</span>\n</div>\n<div class=\"comment-footer__like-dislike like-dislike\">\n    <span class=\"like-dislike__like-info\">").concat(likeCount, "</span>\n    <img class=\"active\" src=\"./images/comments-block/good.svg\" alt=\"like\"\n        srcset=\"\">\n    <img class=\"active\" src=\"./images/comments-block/bad.svg\" alt=\"dislike\"\n        srcset=\"\">\n    <span class=\"like-dislike__dislike-info\">").concat(dislikeCount, "</span>\n</div>\n</div>\n</div>\n</div>");
-newComment.innerHTML = commentData;
-console.log(newComment);
-com.append(newComment);
+
+
+
+
+(0,_scroll__WEBPACK_IMPORTED_MODULE_0__["default"])('.arrow, .nav-link');
+document.addEventListener('DOMContentLoaded', _post_form__WEBPACK_IMPORTED_MODULE_1__["default"]);
+document.addEventListener('DOMContentLoaded', _message__WEBPACK_IMPORTED_MODULE_2__["default"]);
+document.addEventListener('DOMContentLoaded', _checkProfanity__WEBPACK_IMPORTED_MODULE_5__["default"]);
+document.addEventListener('DOMContentLoaded', _showTime__WEBPACK_IMPORTED_MODULE_8__["default"]);
+_items__WEBPACK_IMPORTED_MODULE_3__["default"].cancel.addEventListener('click', _cancelInfo__WEBPACK_IMPORTED_MODULE_4__["default"]);
+(0,_editMessage__WEBPACK_IMPORTED_MODULE_9__["default"])();
+(0,_removeComment__WEBPACK_IMPORTED_MODULE_10__["default"])();
+(0,_likeProcess__WEBPACK_IMPORTED_MODULE_11__["default"])();
+(0,_renderComments__WEBPACK_IMPORTED_MODULE_7__["default"])((0,_getCommentsList__WEBPACK_IMPORTED_MODULE_6__["default"])());
 
 /***/ }),
 
@@ -669,6 +1031,78 @@ function scrollSmooth(item) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (scrollSmooth);
+
+/***/ }),
+
+/***/ "./src/js/showTime.js":
+/*!****************************!*\
+  !*** ./src/js/showTime.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _getCommentsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getCommentsList */ "./src/js/getCommentsList.js");
+/* harmony import */ var _getDate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getDate */ "./src/js/getDate.js");
+
+
+
+
+
+function showTime() {
+  var comments = (0,_getCommentsList__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  var timeElem = document.querySelectorAll('.comment-header__post-time');
+  if (!comments) return;
+  if (!timeElem) return;
+  comments.forEach(function (elem) {
+    timeElem.forEach(function (time) {
+      if (time.dataset.id === elem.userId) {
+        time.textContent = (0,_getDate__WEBPACK_IMPORTED_MODULE_3__["default"])(new Date(elem.time));
+      } else {
+        time.textContent = '2 minutes ago';
+      }
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (showTime);
+
+/***/ }),
+
+/***/ "./src/js/updateStorage.js":
+/*!*********************************!*\
+  !*** ./src/js/updateStorage.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _getCommentsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getCommentsList */ "./src/js/getCommentsList.js");
+/* harmony import */ var _items__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./items */ "./src/js/items.js");
+
+
+
+
+
+function updateStorage(id, type, value) {
+  _items__WEBPACK_IMPORTED_MODULE_3__["default"].userList = (0,_getCommentsList__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  _items__WEBPACK_IMPORTED_MODULE_3__["default"].userList.forEach(function (user) {
+    if (user.userId === id) {
+      user[type] = value;
+    }
+  });
+  localStorage.setItem('userList', JSON.stringify(_items__WEBPACK_IMPORTED_MODULE_3__["default"].userList));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (updateStorage);
 
 /***/ }),
 
@@ -5786,6 +6220,87 @@ $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.splice.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.splice.js ***!
+  \*********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var toAbsoluteIndex = __webpack_require__(/*! ../internals/to-absolute-index */ "./node_modules/core-js/internals/to-absolute-index.js");
+var toIntegerOrInfinity = __webpack_require__(/*! ../internals/to-integer-or-infinity */ "./node_modules/core-js/internals/to-integer-or-infinity.js");
+var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js/internals/array-species-create.js");
+var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js/internals/create-property.js");
+var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
+
+var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('splice');
+
+var TypeError = global.TypeError;
+var max = Math.max;
+var min = Math.min;
+var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
+var MAXIMUM_ALLOWED_LENGTH_EXCEEDED = 'Maximum allowed length exceeded';
+
+// `Array.prototype.splice` method
+// https://tc39.es/ecma262/#sec-array.prototype.splice
+// with adding support of @@species
+$({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
+  splice: function splice(start, deleteCount /* , ...items */) {
+    var O = toObject(this);
+    var len = lengthOfArrayLike(O);
+    var actualStart = toAbsoluteIndex(start, len);
+    var argumentsLength = arguments.length;
+    var insertCount, actualDeleteCount, A, k, from, to;
+    if (argumentsLength === 0) {
+      insertCount = actualDeleteCount = 0;
+    } else if (argumentsLength === 1) {
+      insertCount = 0;
+      actualDeleteCount = len - actualStart;
+    } else {
+      insertCount = argumentsLength - 2;
+      actualDeleteCount = min(max(toIntegerOrInfinity(deleteCount), 0), len - actualStart);
+    }
+    if (len + insertCount - actualDeleteCount > MAX_SAFE_INTEGER) {
+      throw TypeError(MAXIMUM_ALLOWED_LENGTH_EXCEEDED);
+    }
+    A = arraySpeciesCreate(O, actualDeleteCount);
+    for (k = 0; k < actualDeleteCount; k++) {
+      from = actualStart + k;
+      if (from in O) createProperty(A, k, O[from]);
+    }
+    A.length = actualDeleteCount;
+    if (insertCount < actualDeleteCount) {
+      for (k = actualStart; k < len - actualDeleteCount; k++) {
+        from = k + actualDeleteCount;
+        to = k + insertCount;
+        if (from in O) O[to] = O[from];
+        else delete O[to];
+      }
+      for (k = len; k > len - actualDeleteCount + insertCount; k--) delete O[k - 1];
+    } else if (insertCount > actualDeleteCount) {
+      for (k = len - actualDeleteCount; k > actualStart; k--) {
+        from = k + actualDeleteCount - 1;
+        to = k + insertCount - 1;
+        if (from in O) O[to] = O[from];
+        else delete O[to];
+      }
+    }
+    for (k = 0; k < insertCount; k++) {
+      O[k + actualStart] = arguments[k + 2];
+    }
+    O.length = len - actualDeleteCount + insertCount;
+    return A;
+  }
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.function.name.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/modules/es.function.name.js ***!
@@ -5817,6 +6332,28 @@ if (DESCRIPTORS && !FUNCTION_NAME_EXISTS) {
     }
   });
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.math.trunc.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.math.trunc.js ***!
+  \*******************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+
+var ceil = Math.ceil;
+var floor = Math.floor;
+
+// `Math.trunc` method
+// https://tc39.es/ecma262/#sec-math.trunc
+$({ target: 'Math', stat: true }, {
+  trunc: function trunc(it) {
+    return (it > 0 ? floor : ceil)(it);
+  }
+});
 
 
 /***/ }),
@@ -7637,21 +8174,32 @@ handlePrototype(DOMTokenListPrototype, 'DOMTokenList');
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	__webpack_require__("./src/js/addComment.js");
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	__webpack_require__("./src/js/addCommentData.js");
 /******/ 	__webpack_require__("./src/js/addErrorMessage.js");
-/******/ 	__webpack_require__("./src/js/addUser.js");
 /******/ 	__webpack_require__("./src/js/cancelInfo.js");
 /******/ 	__webpack_require__("./src/js/checkProfanity.js");
+/******/ 	__webpack_require__("./src/js/clearForm.js");
+/******/ 	__webpack_require__("./src/js/editMessage.js");
 /******/ 	__webpack_require__("./src/js/formAddError.js");
 /******/ 	__webpack_require__("./src/js/formRemoveError.js");
+/******/ 	__webpack_require__("./src/js/getCommentsList.js");
+/******/ 	__webpack_require__("./src/js/getDate.js");
 /******/ 	__webpack_require__("./src/js/idGen.js");
 /******/ 	__webpack_require__("./src/js/items.js");
+/******/ 	__webpack_require__("./src/js/likeProcess.js");
 /******/ 	__webpack_require__("./src/js/message.js");
 /******/ 	__webpack_require__("./src/js/post-form.js");
+/******/ 	__webpack_require__("./src/js/removeComment.js");
+/******/ 	__webpack_require__("./src/js/removeUser.js");
+/******/ 	__webpack_require__("./src/js/renderComment.js");
+/******/ 	__webpack_require__("./src/js/renderComments.js");
+/******/ 	__webpack_require__("./src/js/renderSmile.js");
 /******/ 	__webpack_require__("./src/js/saveName.js");
 /******/ 	__webpack_require__("./src/js/script.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/scroll.js");
+/******/ 	__webpack_require__("./src/js/scroll.js");
+/******/ 	__webpack_require__("./src/js/showTime.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/updateStorage.js");
 /******/ 	
 /******/ })()
 ;

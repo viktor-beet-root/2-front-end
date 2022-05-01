@@ -1,0 +1,39 @@
+.button {
+    background-color: $blue-light-color;
+    color: $white-color;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $second-font-name;
+    font-weight: $base-font-weight;
+    font-size: $base-font-size;
+    letter-spacing: 1.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 225px;
+    margin-top: 20px;
+    padding: 24px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg,
+            rgba(73, 107, 254, 1) 0%,
+            rgba(73, 107, 254, 1) 79%,
+            rgba(84, 116, 253, 1) 35%,
+            rgba(84, 116, 253, 1) 100%);
+    background-size: 320% 100%;
+    background-position: 100%;
+    transition: background-position .5s ease-in-out;
+
+    &:hover {
+        background-position: 0;
+    }
+
+    @include media ('sm') {
+        max-width: 150px;
+        padding: 16px;
+        align-items: flex-end;
+        font-size: 14px;
+    }
+}

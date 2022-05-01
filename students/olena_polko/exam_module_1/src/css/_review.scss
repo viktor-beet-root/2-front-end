@@ -1,0 +1,90 @@
+.review {
+    background-image: url(../images/touristbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 128px 0;
+
+    @include media ('md') {
+        padding: 95px 0;
+    }
+
+    @include media ('sm') {
+        padding: 70px 0;
+    }
+
+    &__title {
+        margin-bottom: 93px;
+        text-align: center;
+        font-size: $main-title-size;
+        color: $white-color;
+        font-family: $second-font-name;
+
+        @include media ('sm') {
+            margin-bottom: 55px;
+            font-size: 28px;
+        }
+    }
+
+    &__img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+
+        @include media ('md') {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    &__quote-bg {
+        background-color: $gray-dark-color;
+        height: 100%;
+        margin-left: - $default-gap * 2;
+
+        @include media ('md') {
+            margin-left: 0;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    &__quote {
+        padding: 43px 43px 25px 58px;
+
+        @include media ('sm') {
+            padding: 25px 25px 25px 25px;
+
+        }
+    }
+
+    &__name {
+        margin-bottom: 10px;
+        font-size: $second-title-size;
+        color: $white-color;
+        text-transform: uppercase;
+
+        @include media ('md') {
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+    }
+
+    &__text {
+        color: $gray-light-color;
+        display: block;
+
+        @include media ('sm') {
+            font-size: 14px;
+        }
+
+        &::before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            background-image: url(../images/quote-left-solid-purple.svg);
+            background-repeat: no-repeat;
+            height: 28px;
+            width: 33px;
+        }
+    }
+}

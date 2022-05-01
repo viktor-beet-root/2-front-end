@@ -1,0 +1,45 @@
+$orang-color: #f76707;
+$white-color: #fff;
+$black-color: rgb(35, 35, 35);
+$gray-light-color: #E8E8E8;
+$gray-dark-color: #333333;
+$green-color: green;
+$blue-light-color: #5474FD;
+$blue-dark-color: #496BFE;
+
+$main-color: $blue-light-color;
+$main-text-color: $gray-light-color;
+$title-text-color: $white-color;
+$process-bg-color: $gray-dark-color;
+$border-color: $gray-light-color;
+$footer-bg-color: $black-color;
+$footer-icons-color: $gray-light-color;
+$default-border: 1px solid $border-color;
+
+$container-width: 1110px;
+$default-gap: 15px;
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Josefin Sans';
+$second-font-name: 'Aleo';
+$path-fonts: '../fonts/';
+
+$main-font: $main-font-name;
+$base-font-size: 16px;
+$base-line-height: 26px;
+$base-font-weight: 400;
+$main-title-size: 36px;
+$second-title-size: 20px;
+
+$form-border-radius: 0px;
+$form-border: none;
+$form-padding: 0 10px;
+$textarea-padding: 10px;
+$form-input-height: 50px;
+
+$breack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

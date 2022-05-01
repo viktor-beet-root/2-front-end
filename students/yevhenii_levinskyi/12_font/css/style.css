@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../font/pt-sans-v12-latin-regular.woff2') format('woff2'),
+         url('../font/pt-sans-v12-latin-regular.woff') format('woff');
+}
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../font/roboto-v29-latin-regular.woff2') format('woff2'),
+         url('../font/roboto-v29-latin-regular.woff') format('woff');
+}
+  @font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../font/roboto-v29-latin-700.woff2') format('woff2'),
+         url('../font/roboto-v29-latin-700.woff') format('woff');
+}
+
+body{
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 48px;
+    max-width: 1840px;
+    margin: auto;
+    font-weight: 400;
+}
+
+.head{
+    display: table;
+    flex-direction: row;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.head_list{
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    font-size: 20px;
+    line-height: 23px;
+    list-style: none;
+    padding-top: 32px;
+}
+
+.head_item .head_span{
+    padding-left: 15px;
+}
+.head_item{
+    font-family: 'PT Sans';
+}
+
+.head_item:first-child{
+    padding-right: 42px;
+}
+
+.img{
+    height: 50px;
+    padding-left: 1250px;
+}
+
+.eng{
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.h1{
+    font-weight: 700;
+}
+
+.h2{
+    font-weight: normal;
+}
+
+.h1,
+.h2{
+    margin-top: 90px;
+    margin-bottom: 50px;
+    font-variant-caps: all-petite-caps;
+}
+
+.span{
+    text-decoration: underline;
+}
+
+.main_list>.main_list_item{
+    margin: 50px 0;
+    list-style: none;
+}

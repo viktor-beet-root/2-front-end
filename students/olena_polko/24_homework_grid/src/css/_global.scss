@@ -1,0 +1,20 @@
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}
+
+.footer {
+    background-color: #9BC1BC;
+    box-sizing: border-box;
+    max-width: $container-width;
+    margin: 0 auto;
+
+    &__text {
+        padding: $default-gap;
+        font-size: 64px;
+        text-transform: uppercase;
+        font-weight: bold;
+
+    }
+}

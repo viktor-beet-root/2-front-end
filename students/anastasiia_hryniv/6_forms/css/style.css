@@ -1,0 +1,42 @@
+body {
+    width: 500px;
+    background-color: rgb(241, 232, 220);
+}
+
+fieldset {
+    border: 1px solid rgb(127, 202, 166);
+    color: rgb(158, 110, 22);
+    border-radius: 15px;
+    margin: 8px 0;
+}
+
+legend {
+    color: rgb(127, 202, 166);
+}
+
+h1 {
+    color: rgb(158, 110, 22);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+textarea {
+    background-color: rgb(235, 230, 225);
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(201, 197, 193);
+    border-radius: 15px;
+}
+
+select {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid rgb(201, 197, 193);
+    border-radius: 15px;
+    background-color: rgb(235, 230, 225);
+}

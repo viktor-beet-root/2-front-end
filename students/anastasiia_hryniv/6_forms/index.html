@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/6_forms/css/style.css">
+    <title>Opinion</title>
+</head>
+
+<body>
+    <herader>
+        <h1>Анкета посетителя ресторана</h1>
+    </herader>
+    <main>
+        <form method="POST" action="./">
+            <fieldset>
+                <legend><b>КОНТАКТНАЯ ИНФОРМАЦИЯ</b></legend>
+                <label for="first_name">Имя</label>
+                <input type="text" id="first_name" name="first_name"><br>
+                <label for="last_name001">Фамилия</label>
+                <input id="last_name001" type="text" name="last_name"><br>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone"><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br>
+                <label for="date_visiting">Дата посещения</label>
+                <input type="date" id="date_visiting" name="date_visiting">
+            </fieldset>
+            <fieldset>
+                <legend><b>ПЕРСОНАЛЬНАЯ ИНФОРМАЦИЯ</b></legend>
+                <label for="age">Возраст</label>
+                <input type="number" min="1" max="100" step="1" maxlength="3"><br>
+                <label for="favourite_cuisine">Любимая кухня</label>
+                <select id="cuisine" name="favourite_cuisine">
+                    <option value="" selected hidden disabled> Любимая кухня</option>
+                    <option value="rus">Русская</option>
+                    <option value="ukr">Украинская</option>
+                    <option value="itl">Итальянская</option>
+                    <option value="jap">Японская</option>
+                </select>
+                <br>
+                <label for="message">Какие блюда Вы хотели бы увидеть в меню?</label><br>
+                <textarea name="message" id="message" cols="30" rows="4"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend><b>ОЦЕНКА НАШЕГО ЗАВЕДЕНИЯ</b></legend>
+                <label><b>Почему Вы выбрали наше заведение</b></label><br>
+                <label>
+                    <input type="radio" value="1" name="one">Недалеко от дома/работы
+                </label>
+                <br>
+                <label>
+                    <input type="radio" value="2" name="one">Увидел рекламу
+                </label>
+                <br>
+                <label>
+                    <input type="radio" value="3" name="one">Посоветовали
+                </label>
+                <br>
+                <label>
+                    <input type="radio" value="4" name="one">Оптимальное соотношение цены и качества
+                </label>
+                <br>
+                <label><b>Вы будете рекомендовать наше заведение своим знакомым?</b></label><br>
+                <label>
+                    <input type="radio" value="yes" name="two">Да
+                </label>
+                <br>
+                <label>
+                    <input type="radio" value="no" name="two">Нет
+                </label><br>
+            </fieldset>
+            <fieldset>
+                <legend>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</legend>
+                <label for="grade">Как Вы можете оценить наш ресторан(0 - 5) :</label>
+                <input type="range" id="grage" name="grade" min="0" max="5"><br>
+            </fieldset>
+            <fieldset>
+                <legend>ЧТО НАМ УЛУЧШИТЬ</legend>
+                <label>
+                    <input type="checkbox" value="1" name="one">Блюда
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" value="2" name="two">Напитки
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" value="3" name="three">Персонал
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" value="4" name="four">Интерьер
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" value="5" name="five">Ничего, все и так хорошо
+                </label>
+                <br>
+                <input style="background-color:rgb(114, 184, 150)" type="reset"><br>
+            </fieldset>
+            <input style="background-color:rgb(114, 184, 150);" type="submit" value="Отправить">
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+@include grid();
+
+.sprite {
+    @include visuality-hidden;
+}
+
+.page {
+    font-family: $main-font;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}

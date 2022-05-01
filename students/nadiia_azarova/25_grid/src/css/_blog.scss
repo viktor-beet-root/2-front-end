@@ -1,0 +1,436 @@
+.blog {
+    @include grid;
+
+    &_horizontal {
+
+        .blog__item {
+            grid-template-columns: 2fr 3fr;
+        }
+
+    }
+
+    &_featured {
+        grid-template-columns: 7fr 5fr;
+
+        @include media('md') {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include media('sm') {
+            grid-template-columns: 1fr;
+        }
+
+        .blog__item:first-child {
+            grid-row: span 3;
+            grid-template-columns: 1fr;
+            align-content: stretch;
+
+
+            .img-wrap {
+                grid-column: 1 / -1;
+                grid-row: 1 / -1;
+
+                @include mobile-first('sm') {
+                    height: unset;
+                    padding: 0;
+                }
+
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(to top, $black, transparent 65%);
+                    mix-blend-mode: multiply;
+                    opacity: .75;
+                    pointer-events: none;
+                }
+            }
+
+            .txt-wrap {
+                grid-column: 1 / -1;
+                grid-row: 1 / -1;
+                align-self: end;
+                padding: $grid-gap;
+                z-index: 10;
+            }
+
+            .title {
+                color: $white;
+            }
+        }
+    }
+
+    &_lifestyle {
+
+        .blog__item {
+
+            &:first-child {
+                grid-column: span 2;
+                grid-row: span 2;
+
+                @include media('xs') {
+                    grid-column: unset;
+                    grid-row: unset;
+                }
+            }
+        }
+    }
+
+    &_col-3 {
+        grid-template-columns: repeat(3, 1fr);
+
+        @include media('md') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media('xs') {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &_col-4 {
+        grid-template-columns: repeat(4, 1fr);
+
+        @include media('md') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media('xs') {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &_col-1 {
+        grid-template-columns: 1fr;
+    }
+
+    &_col-2 {
+        grid-template-columns: repeat(2, 1fr);
+
+        @include media('sm') {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        @include grid($half-gap);
+        align-content: start;
+    }
+
+    &__btn {
+        justify-self: center;
+    }
+}
+
+.img-wrap {
+    @extend %round-corners;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 75%;
+
+    &__link {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        &:hover {
+            .img-wrap__img {
+                transform: scale(110%);
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(100%);
+        transition: transform $animation;
+    }
+
+    &__tag {
+        position: absolute;
+        top: $half-gap;
+        left: $half-gap;
+    }
+}
+
+.txt-wrap {
+    @include grid($half-gap);
+    grid-template-columns: 1fr;
+    justify-items: start;
+    align-content: center;
+
+    &__txt {
+        @extend %three-lines;
+    }
+}
+
+.tag {
+    @extend %round-corners;
+    color: $white;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    display: inline-block;
+    padding: 5px 10px;
+
+    &_fitness {
+        @include bg-color-change($green-sea);
+
+        &::before {
+            content: 'Fitness';
+        }
+    }
+
+    &_bodymind {
+        @include bg-color-change($nephritis);
+
+        &::before {
+            content: 'Body & Mind';
+        }
+    }
+
+    &_inspiration {
+        @include bg-color-change($belize-hole);
+
+        &::before {
+            content: 'Inspiration';
+        }
+    }
+
+    &_nutrition {
+        @include bg-color-change($orange);
+
+        &::before {
+            content: 'Nutrition';
+        }
+    }
+
+    &_health {
+        @include bg-color-change($pomegranate);
+
+        &::before {
+            content: 'Health';
+        }
+    }
+
+    &_lifestyle {
+        @include bg-color-change($wisteria);
+
+        &::before {
+            content: 'Lifestyle';
+        }
+    }
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: $fs-xs;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: lighten($body-txt-color, 35%);
+
+    &__item:not(:last-child) {
+        margin-right: 1em;
+    }
+
+    &__item-link {
+        @include color-change($alizarin);
+    }
+
+    &__icon {
+        display: inline-block;
+        width: .75em;
+        height: .75em;
+        fill: currentColor;
+    }
+}
+
+.slider {
+    &__item {
+        position: relative;
+
+        .img-wrap {
+            height: 450px;
+            padding: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                background-color: $black;
+                opacity: .6;
+                mix-blend-mode: multiply;
+            }
+        }
+
+        .txt-wrap {
+            padding: $grid-gap $grid-gap*2;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .title {
+                color: $white;
+            }
+
+
+        }
+    }
+}
+
+.slider-wrap {
+    position: relative;
+}
+
+.slider-control {
+    width: 30px;
+    height: 30px;
+    @extend %round-corners;
+    background-color: $black;
+    opacity: .5;
+    // mix-blend-mode: overlay;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity $animation;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-top: 3px solid $white;
+        border-left: 3px solid $white;
+        position: absolute;
+        z-index: 40;
+    }
+
+    &_left {
+        position: absolute;
+        left: $half-gap;
+        top: 50%;
+        z-index: 30;
+        transform: translateY(-50%);
+
+        &::before {
+            transform-origin: center;
+            transform: rotate(-45deg);
+            left: 12px;
+        }
+    }
+
+    &_right {
+        position: absolute;
+        right: $half-gap;
+        top: 50%;
+        z-index: 30;
+        transform: translateY(-50%);
+
+        &::before {
+            transform-origin: center;
+            transform: rotate(135deg);
+            right: 12px;
+        }
+    }
+}
+
+.aside {
+    &-section:not(:last-child) {
+        margin-bottom: $grid-gap;
+    }
+
+    .title_c {
+        font-size: $fs-m;
+    }
+
+    .title_d {
+        margin-bottom: $half-gap;
+        padding: 5px 0;
+        border-bottom: 1px solid lighten($body-txt-color, 50%);
+    }
+}
+
+.social {
+    &__link {
+        display: block;
+        @extend %round-corners;
+        padding: 10px 15px;
+        color: $white;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+
+        &_fb {
+            @include bg-color-change(#45629f);
+        }
+
+        &_yt {
+            @include bg-color-change(#c61d23);
+        }
+
+        &_tw {
+            @include bg-color-change(#1ab7ea);
+        }
+
+        &_pi {
+            @include bg-color-change(#e60023);
+        }
+
+        & span:nth-child(2) {
+            flex-grow: 1;
+        }
+    }
+
+    &__icon {
+        width: 1.5em;
+        height: 1.5em;
+        margin-right: .5em;
+        fill: currentColor;
+        display: inline-block;
+    }
+}
+
+.ad {
+    &__link {
+        display: block;
+    }
+
+    &__wrap {
+        @extend %round-corners;
+        overflow: hidden;
+    }
+}

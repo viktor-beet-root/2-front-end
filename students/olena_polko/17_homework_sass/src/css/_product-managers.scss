@@ -1,0 +1,38 @@
+.product-managers {
+    padding-top: 62px;
+}
+
+.managers-list {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.icon-small {
+    display: inline-block;
+    vertical-align: 5px;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.icon-small::after {
+    width: 16px;
+    height: 12px;
+    display: inline;
+    vertical-align: -6px;
+}
+
+.icon-managers {
+    background-color: $color-bright-orange;
+}
+
+.icon-managers::after {
+    content: url(#{$path-img}tick.svg);
+}
+
+.managers-list__item {
+    padding-bottom: 30px;
+}

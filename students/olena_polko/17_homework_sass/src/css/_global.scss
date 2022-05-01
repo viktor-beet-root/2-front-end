@@ -1,0 +1,128 @@
+.page {
+    font-family: $font-family;
+    font-size: $text-font-size;
+    font-style: normal;
+    font-weight: $main-font-weight;
+    line-height: $default-line-height;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: $main-width;
+    padding: 0 $default-gap;
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0 (-$default-gap);
+}
+
+.row__col {
+    float: left;
+}
+
+.col {
+    padding: 0 $default-gap;
+    box-sizing: border-box;
+}
+
+.col_3 {
+    width: $col-3;
+}
+
+.col_6 {
+    width: $col-6;
+}
+
+.col_12 {
+    width: $col-12;
+    box-sizing: border-box;
+}
+
+.clear::after,
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.logo {
+    width: 185px;
+    float: left;
+    padding-top: 5px;
+}
+
+.logo__link {
+    display: block;
+}
+
+.logo__image {
+    display: block;
+}
+
+.btn {
+    font-weight: bold;
+    color: $color-white;
+    background-color: $color-bright-orange;
+    border-radius: 4px;
+    padding: 13.5px 10px;
+    display: inline-block;
+    min-width: 175px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.text {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.link::before {
+    content: url(#{$path-img}p.svg);
+    width: 20px;
+    height: 17px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: -3px;
+}
+
+.block {
+    padding: 39px 0;
+}
+
+.title {
+    font-weight: $title-font-weight;
+    font-size: $title-font-size;
+    color: $title-color;
+}
+
+.text-regular {
+    color: $text-color;
+}
+
+.regular-bold {
+    font-weight: bold;
+    color: $color-dark-brown;
+}
+
+.icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 19px;
+    text-align: center;
+}
+
+.icon::after {
+    width: 10px;
+    display: inline;
+    vertical-align: (-$default-gap);
+}

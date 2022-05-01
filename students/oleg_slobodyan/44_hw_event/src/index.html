@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Work JS DOM & Events</title>
+    <style>
+        .required label::after {
+            content: '*';
+            color: red;
+        }
+
+        .error input,
+        .error textarea {
+            border-color: red;
+        }
+
+
+
+        label {
+            display: block;
+        }
+
+        .form__control {
+            position: relative;
+        }
+
+        .message-counter {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .message-counter::before {
+            content: attr(data-max-content);
+
+        }
+
+        .message-counter::after {
+            content: attr(data-current-count);
+
+        }
+
+        input {
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .form__control,
+        .form__action {
+            padding-bottom: 20px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .form__control input,
+        .form__control textarea {
+            width: 100%;
+        }
+
+        .form__action {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form__control input[type=checkbox] {
+            display: inline-block;
+            width: unset;
+        }
+
+        .form__control input[type=checkbox]+label {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav id="menu" title="ffff">
+        <h2>previous</h2>
+
+        <ul class="menu" title='mymenu' data-menu-custom="respons">
+            <li class="menu__item"><a href="#1" class="menu__link"><span>Home</span></a></li>
+            <li class="menu__item"><a href="#3" class="menu__link"><span>Text</span></a></li>
+            <li class="menu__item"><a href="#5" class="menu__link"><span>Form</span></a></li>
+            <li class="menu__item"><a href="#2" class="menu__link"><span>Sing <span>in</span></span></a></li>
+            <li class="menu__item"><a href="#4" class="menu__link"><span>Sing <span>up</span></span></a></li>
+        </ul>
+
+        <h2>next</h2>
+
+    </nav>
+    <form class="form" action="./" method="post">
+        <div class="form__control required">
+            <label for="" class="form__label">Full Name</label>
+            <input class="form__input required letters-only" type="text" name="fullName">
+        </div>
+        <div class="form__control">
+            <label for="" class="form__label">Phone number</label>
+            <input class="form__input input-phone" type="text" name="phone" placeholder="+38(0xx)xxx-xx-xx">
+        </div>
+        <div class="form__control">
+            <label for="" class="form__label">Mail</label>
+            <input class="form__input input-mail" type="text" name="mail" placeholder="exapmle@mail.com">
+        </div>
+        <div class="form__control required">
+            <label for="" class="form__label">Message</label>
+            <textarea data-max-content="50" class="form__input form__input_textarea required" name="message"></textarea>
+            <span class="message-counter" data-max-content="50" data-current-count="0">/</span>
+        </div>
+        <div class="form__control">
+            <input class="form__input checkbox-agree required" type="checkbox" name="agree" id=checkbox-agree>
+            <label for="checkbox-agree" class="form__label">I agree with everything</label>
+        </div>
+        <div class="form__action">
+            <button type="reset" class="reset-btn">cancel</button>
+            <button type="submit">ok</button>
+        </div>
+
+    </form>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

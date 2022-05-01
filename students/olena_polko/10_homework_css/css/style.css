@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/roboto-v29-latin-regular.woff2') format('woff2'),
+        url('../fonts/roboto-v29-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+        url('../fonts/roboto-v29-latin-900.woff2') format('woff2'),
+        url('../fonts/roboto-v29-latin-900.woff') format('woff');
+}
+
+* {
+    transition: all .1s ease-in;
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: #3B3F45;
+}
+
+header,
+button {
+    background-color: #4A4F56;
+    color: #FF8984;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+h1+p {
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 12px;
+}
+
+.main_section {
+    max-width: 534px;
+    margin: 0 auto;
+}
+
+.main_section>.dinner_form>.dinner_list>li:nth-child(2n) {
+    background-color: #7A7593;
+}
+
+.main_section>.dinner_form>.dinner_list>li:nth-child(odd) {
+    background-color: #88839E;
+}
+
+.main_section>.dinner_form>.dinner_list>li:hover {
+    padding: 4px;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    background-color: #625E77;
+}
+
+.main_section>.dinner_form>.dinner_list>li:active {
+    background-color: #FF8984;
+    text-decoration: line-through;
+}
+
+.dinner_list {
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 45px;
+    margin-left: -40px;
+
+}
+
+.dinner_list+button {
+    display: block;
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    height: 45px;
+    border: none;
+    width: 534px;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.checkbox {
+    margin: 18px 16px 14px 12px;
+    border-radius: 0%;
+    cursor: pointer;
+}
+
+li {
+    height: 45px;
+    color: white;
+}
+
+.check-text>span {
+    font-size: 11px;
+    line-height: 13px;
+}
+
+button::after {
+    content: ':)';
+}
+
+button:hover {
+    border: 3px solid white;
+}

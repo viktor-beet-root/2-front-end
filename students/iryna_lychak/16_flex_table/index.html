@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_flex_table</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="blog row">
+            <li class="blog__blog-article col-4">
+                <img class="blog-article__img" src="images\article.jpg" alt="">
+                <h2 class="blog-article__title tile">
+                    <span class="title__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </h2>
+                <p class="blog-article__date">25.10.2021</p>
+                <p class="blog-article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit vero
+                    quaerat repellat blanditiis corrupti,
+                    aut consequuntur! Ex modi fugiat perferendis fugit ea mollitia quam iure! Delectus
+                    laudantium
+                    quod
+                    aspernatur minus.</p>
+                <p class="blog-article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit vero
+                    quaerat repellat blanditiis corrupti,
+                    aut consequuntur! Ex modi fugiat perferendis fugit ea mollitia quam iure! Delectus
+                    laudantium
+                    quod
+                    aspernatur minus.</p>
+                <p class="blog-article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit vero
+                    quaerat repellat blanditiis corrupti,
+                    aut consequuntur! Ex modi fugiat perferendis fugit ea mollitia quam iure! Delectus
+                    laudantium
+                    quod
+                    aspernatur minus.</p>
+                <div class="blog-article__footer">
+                    <a class="blog-article__btn btn" href="">читати статтю</a>
+                    <div class="blog-article__autor-wrapper">
+                        <img class="blog-article__avatar" src="images\person.png" alt="">
+                        <p class="blog-article__autor">Lorem Ipsum</p>
+                    </div>
+                </div>
+            </li>
+            <li class="blog__blog-article col-4">
+                <img class="blog-article__img" src="images\article.jpg" alt="">
+                <h2 class="blog-article__title">Lorem ipsum dolor</h2>
+                <p class="blog-article__date">25.10.2021</p>
+                <p class="blog-article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
+                    vero
+                    quaerat repellat blanditiis corrupti,
+                    aut consequuntur! Ex modi fugiat perferendis fugit ea mollitia quam iure! Delectus
+                    laudantium
+                    quod
+                    aspernatur minus.</p>
+                <p class="blog-article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
+                    vero
+                    quaerat repellat blanditiis corrupti,
+                    aut consequuntur! Ex modi fugiat perferendis fugit ea mollitia quam iure! Delectus
+                    laudantium
+                    quod
+                    aspernatur minus.</p>
+                <div class="blog-article__footer">
+                    <a class="blog-article__btn btn" href="">читати статтю</a>
+                    <div class="blog-article__autor-wrapper">
+                        <img class="blog-article__avatar" src="images\person.png" alt="">
+                        <p class="blog-article__autor">Lorem Ipsum</p>
+                    </div>
+                </div>
+            </li>
+            <li class="blog__blog-article col-4">
+                <img class="blog-article__img" src="images\article.jpg" alt="">
+                <h2 class="blog-article__title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Id magnam
+                    aspernatur cum ratione officiis
+                    perferendis. Expedita odit alias nam, ad cum dolorum</h2>
+                <p class="blog-article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Sit vero
+                    quaerat repellat blanditiis corrupti,
+                    aut consequuntur! Ex modi fugiat perferendis fugit ea mollitia quam iure! Delectus
+                    laudantium
+                    quod
+                    aspernatur minus.</p>
+                <div class="blog-article__footer">
+                    <a class="blog-article__btn btn" href="">читати статтю</a>
+                    <div class="blog-article__autor-wrapper">
+                        <img class="blog-article__avatar" src="images\person.png" alt="">
+                        <p class="blog-article__autor">Lorem Ipsum</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <tr class="table__column">
+                        <th class="header__cell"><input class="input__cell" type="checkbox" name="" id=""></th>
+                        <th class="header__cell align_left">Name</th>
+                        <th class="header__cell">Description</th>
+                        <th class="header__cell">Deposit</th>
+                        <th class="header__cell">Status</th>
+                    </tr>
+                    <tr class="table__column">
+                        <td class="table__cell"><input class="input__cell" type="checkbox" name="" id=""></td>
+                        <td class="table__cell name_font-weight name">Kadin Herwitz
+                            <span class="cell__number">5684236583</span>
+                        </td>
+                        <td class="table__cell description">Lorem ipsum dolor sit amet, consectetur...</td>
+                        <td class="table__cell deposit"> 500.00</td>
+                        <td class="table__cell status"><span class="status_active">active</span></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Edit.svg" alt="Edit"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Delete.svg" alt="Delete"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\More.svg" alt="More"></td>
+                    </tr>
+                    <tr class="table__column">
+                        <td class="table__cell"><input class="input__cell" type="checkbox" name="" id=""></td>
+                        <td class="table__cell name_font-weight name">Cristofer Korsgaard
+                            <span class="cell__number">5684236583</span>
+                        </td>
+                        <td class="table__cell description">Lorem ipsum dolor sit amet, consectetur...</td>
+                        <td class="table__cell deposit">500.00</td>
+                        <td class="table__cell status"><span class="status_active">active</span></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Edit.svg" alt="Edit"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Delete.svg" alt="Delete"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\More.svg" alt="More"></td>
+                    </tr>
+                    <tr class="table__column">
+                        <td class="table__cell"><input class="input__cell" type="checkbox" name="" id=""></td>
+                        <td class="table__cell name_font-weight name">Omar Workman
+                            <span class="cell__number">5684236583</span>
+                        </td>
+                        <td class="table__cell description">Lorem ipsum dolor sit amet, consectetur...</td>
+                        <td class="table__cell deposit">500.00</td>
+                        <td class="table__cell status"><span class="status_inactive">inactive</span></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Edit.svg" alt="Edit"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Delete.svg" alt="Delete"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\More.svg" alt="More"></td>
+                    </tr>
+                    <tr class="table__column">
+                        <td class="table__cell"><input class="input__cell" type="checkbox" name="" id=""></td>
+                        <td class="table__cell name_font-weight name">Tatiana Westervelt
+                            <span class="cell__number">5684236583</span>
+                        </td>
+                        <td class="table__cell description">Lorem ipsum dolor sit amet, consectetur...</td>
+                        <td class="table__cell deposit">500.00</td>
+                        <td class="table__cell status"><span class="status_inactive">inactive</span></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Edit.svg" alt="Edit"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Delete.svg" alt="Delete"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\More.svg" alt="More"></td>
+                    </tr>
+                    <tr class="table__column">
+                        <td class="table__cell"><input class="input__cell" type="checkbox" name="" id=""></td>
+                        <td class="table__cell name_font-weight name">Mira Dokidis
+                            <span class="cell__number">5684236583</span>
+                        </td>
+                        <td class="table__cell description">Lorem ipsum dolor sit amet, consectetur...</td>
+                        <td class="table__cell deposit">500.00</td>
+                        <td class="table__cell status"><span class="status_active">active</span></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Edit.svg" alt="Edit"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\Delete.svg" alt="Delete"></td>
+                        <td class="table__cell"><img class="cell__img" src="images\More.svg" alt="More"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

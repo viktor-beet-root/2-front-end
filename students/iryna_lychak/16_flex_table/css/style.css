@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+        url('../fonts/inter-v7-latin-500.woff2') format('woff2'),
+        url('../fonts/inter-v7-latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/inter-v7-latin-regular.woff2') format('woff2'),
+        url('../fonts/inter-v7-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+        url('../fonts/inter-v7-latin-600.woff2') format('woff2'),
+        url('../fonts/inter-v7-latin-600.woff') format('woff');
+}
+
+body {
+    background-color: maroon;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1300px;
+    margin: o auto;
+}
+
+.col-1 {
+    width: calc(100% / 12);
+}
+
+.col-2 {
+    width: calc(100% / 12 * 2);
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: calc(100% / 12 * 4);
+}
+
+.col-5 {
+    width: calc(100% / 12 * 5);
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: calc(100% / 12 * 7);
+}
+
+.col-8 {
+    width: calc(100% / 12 * 8);
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: calc(100% / 12 * 10);
+}
+
+.col-11 {
+    width: calc(100% / 12 * 11);
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.blog__blog-article {
+    background-color: lightskyblue;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    margin: 0 15px;
+}
+
+
+.blog-article__footer {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+
+.blog-article__avatar {
+    width: 50px;
+    height: 50px;
+    border: 3px solid maroon;
+    border-radius: 50%;
+}
+
+.blog-article__date {
+    align-self: flex-end;
+    margin-bottom: 15px;
+    color: maroon;
+    font-weight: bold;
+}
+
+.blog-article__autor-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.blog-article__title {
+    min-height: 60px;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-article__title+.blog-article__text {
+    margin-top: 65px;
+}
+
+.blog-article__text {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.blog-article__autor-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.blog-article__avatar {
+    margin-bottom: 5px;
+}
+
+.blog-article__autor {
+    text-align: center;
+}
+
+.blog-article__btn {
+    background-color: maroon;
+    color: white;
+    width: 100px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.blog-article__btn:hover {
+    background-color: lightskyblue;
+    color: black;
+    border: 1px solid black;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.table {
+    background-color: white;
+    color: #2E3B52;
+    margin: 30px auto;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 17px;
+    border-collapse: collapse;
+}
+
+.header__cell {
+    font-size: 12px;
+    font-weight: 600;
+    color: #606F89;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+
+.table__cell {
+    color: #2E3B52;
+    border-top: 1px solid #e8edff;
+    padding: 10px 15px;
+}
+
+.table__column:nth-child(2n) {
+    background: #e8edff;
+}
+
+.cell__number {
+    display: block;
+    font-size: 12px;
+    line-height: 14.5px;
+    color: #606F89;
+}
+
+.input__cell {
+    transform: scale(1.5);
+}
+
+.status_active {
+    background-color: #0A65FF;
+    color: white;
+    border-radius: 11px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.status_inactive {
+    border: 1px solid #606F89;
+    border-radius: 11px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.name_font-weight {
+    font-weight: 500;
+}
+
+.align_left {
+    text-align: left;
+}
+
+.description {
+    max-width: 200px;
+    padding: 0 100px;
+}
+
+.deposit {
+    text-align: center;
+}
+
+.status {
+    text-align: center;
+}

@@ -1,5 +1,4 @@
-
-function getDate(date) {
+export default function getDate(date) {
     let dayOfMonth = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
@@ -10,7 +9,6 @@ function getDate(date) {
     let diffMin = diffSec / 60;
     let diffHour = diffMin / 60;
 
-    // форматирование
     year = year.toString().slice(-2);
     month = month < 10 ? '0' + month : month;
     dayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
@@ -27,6 +25,3 @@ function getDate(date) {
         return `${dayOfMonth}.${month}.${year} ${hour}:${minutes}`
     }
 }
-// console.log(formatDate(new Date(1650538733571)));
-
-export default getDate;

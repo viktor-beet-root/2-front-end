@@ -1,5 +1,6 @@
 import getCommentsList from "./getCommentsList";
 import items from "./items";
+
 function updateStorage(id, type, value) {
     items.userList = getCommentsList();
 

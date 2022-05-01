@@ -1,6 +1,8 @@
-import clearForm from "./clearForm";
-import items from "./items";
-import updateStorage from "./updateStorage";
+import clearForm from "../form/clearForm";
+import items from "../dev-modules/items";
+import updateStorage from "../dev-modules/updateStorage";
+import parseSmile from "../form/smileParse";
+import renderSmile from "../dev-modules/renderSmile";
 
 function editMessage() {
     const comment = document.querySelector('.comments-block__wrapper');
@@ -14,17 +16,16 @@ function editMessage() {
 
             tempElem.forEach(text => {
                 if (tempId === text.dataset.id) {
-                    items.textarea.value = text.textContent;
+                    items.textarea.value = parseSmile(text) ? parseSmile(text) : text.textContent;
                     items.textarea.focus();
                     items.post.style.display = 'none';
                     btn.style.display = 'block';
                     btn.addEventListener('editMessage', function (e) {
-                        text.textContent = tempMessage;
+                        text.innerHTML = `${renderSmile(tempMessage)}`;
                         updateStorage(tempId, 'message', tempMessage);
                         items.post.style.display = 'block';
                         btn.style.display = 'none';
                     })
-
                 }
             });
 

@@ -1624,7 +1624,7 @@ textarea {
 }
 @media screen and (max-width: 576px) {
   .comment__avatar-info-link {
-    text-align: left;
+    margin-right: 15px;
   }
 }
 .comment__comment-body-wrapper {
@@ -1814,6 +1814,29 @@ textarea {
 .author_info {
   background-color: #C4C4C4;
   border-radius: 4px;
+}
+
+.answer-btn {
+  display: none;
+}
+
+.comments-block .answer {
+  margin-left: 50px;
+}
+@media screen and (max-width: 576px) {
+  .comments-block .answer {
+    margin-left: 15px;
+  }
+}
+
+.answer .comment__avatar-wrapper {
+  left: 50px;
+}
+
+@media screen and (max-width: 576px) {
+  .answer .text-block__wrapper {
+    margin-top: 20px;
+  }
 }
 
 .footer {

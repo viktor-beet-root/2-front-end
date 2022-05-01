@@ -1,9 +1,10 @@
-import items from "./items";
-import showTime from "./showTime";
+import items from "../dev-modules/items";
+import renderSmile from "../dev-modules/renderSmile";
 
 function renderComment(author = '', www = '', message = '', tempId = '', heartCount = 0, likeCount = 0, dislikeCount = 0) {
     const newComment = document.createElement('div');
-
+    const newAnswer = document.createElement('div');
+    message = renderSmile(message);
     newComment.classList.add('comments-block__comment', 'comment', 'new-comment');
     newComment.dataset.id = tempId;
     const commentData = `<div class="comment__avatar-wrapper"><img class="comment__avatar"
@@ -31,19 +32,19 @@ function renderComment(author = '', www = '', message = '', tempId = '', heartCo
     </div>
     <div class="comment-body-wrapper__text-wrapper text-block">
     <div class="text-block__wrapper">
-        <p data-id="${tempId}" class="text-block__text-info"><span class="author_info">@${author}</span> ${message}</p>
+        <p data-id="${tempId}" class="text-block__text-info">${message}</p>
     </div>
     <div class="text-block__like-block like-block active">
-        <img data-id="${tempId}" class="like-block__img" src="./images/comments-block/like.svg"
+        <img data-id="${tempId}" data-toggle="tooltip" data-placement="left" title="Only one time per day" class="like-block__img" src="./images/comments-block/like.svg"
             alt="like" srcset="">
         <span data-id="${tempId}" class="like-block__info">${heartCount}</span>
     </div>
     </div>
     <div class="comment-body-wrapper__comment-footer comment-footer">
-    <div data-id="${tempId}" class="comment-footer__reply-block reply-block active">
-        <img class="reply-block__img" src="./images/comments-block/reply.svg"
+    <div data-id="${tempId}" data-type="reply" class="comment-footer__reply-block reply-block active">
+        <img data-id="${tempId}" data-type="reply" class="reply-block__img" src="./images/comments-block/reply.svg"
             alt="reply" srcset="">
-        <span class="comment-footer__reply-text">Reply</span>
+        <span data-id="${tempId}" data-type="reply" class="comment-footer__reply-text">Reply</span>
     </div>
     <div data-id="${tempId}" class="comment-footer__like-dislike like-dislike">
         <span data-id="${tempId}" class="like-dislike__like-info">${likeCount}</span>
@@ -56,7 +57,10 @@ function renderComment(author = '', www = '', message = '', tempId = '', heartCo
     </div>
     </div>`
     newComment.innerHTML = commentData;
+    newAnswer.classList.add('comments-block__comment', 'answer');
+    newAnswer.dataset.id = tempId;
     items.commentsWrapper.append(newComment)
+    items.commentsWrapper.append(newAnswer);
 }
 
 export default renderComment;

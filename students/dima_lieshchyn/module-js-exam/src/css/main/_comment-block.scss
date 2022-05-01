@@ -59,10 +59,10 @@
             color:$black-color;
         }
         @include media('xs'){
-            text-align: left;
+            margin-right: $default-gap;
         }
     }
-
+    
     &__comment-body-wrapper {
         margin-left: 24px;
         width: 100%;
@@ -240,4 +240,22 @@ justify-content: space-between;
 .author_info {
     background-color: $gray-text;
     border-radius: 4px;
+}
+.answer-btn {
+    display: none;
+}
+
+.comments-block .answer {
+    margin-left: 50px;
+    @include media('xs') {
+        margin-left: 15px;
+    }
+}
+.answer .comment__avatar-wrapper {
+    left: 50px;
+}
+.answer .text-block__wrapper {
+    @include media('xs'){
+        margin-top: 20px;
+    }
 }

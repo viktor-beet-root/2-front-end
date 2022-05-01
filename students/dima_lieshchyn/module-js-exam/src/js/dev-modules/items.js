@@ -23,6 +23,7 @@ const items = {
     post: document.querySelector('.btn__post'),
     switchItem: document.querySelector('.switch__item'),
     commentsWrapper: document.querySelector('.comments-block__wrapper'),
+    commentWrapper: document.querySelectorAll('.new-comment'),
     name_regexp: /^([A-Z][a-z]+([ ]?[a-z]?['-]?[A-Z][a-z]+)*)$/,
     email_regexp: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
     www_regexp: /(((https?: \/\/)|(www\.))[a-zA-Z0-9]{1,256}\.[a-zA-Z0-9]{1,4}\.?[a-zA-Z0-9]?\S+)|((www\.)?[a-zA-Z0-9]{1,256}\.[a-zA-Z0-9]{1,4}\.?[a-zA-Z0-9]?\S+)/,

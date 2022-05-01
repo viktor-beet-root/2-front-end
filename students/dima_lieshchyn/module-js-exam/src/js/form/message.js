@@ -1,4 +1,4 @@
-import items from "./items";
+import items from "../dev-modules/items";
 import formRemoveError from "./formRemoveError";
 import formAddError from "./formAddError";
 
@@ -10,8 +10,9 @@ function message() {
     });
 
 
+
     function pasteSmile(e) {
-        items.textarea.value = `${items.textarea.value} [::${e.currentTarget.dataset.smile}::] `;
+        items.textarea.value = `${items.textarea.value} ::${e.currentTarget.dataset.smile}:: `;
         items.textarea.focus();
         items.textarea.dispatchEvent(new Event('input', { 'bubbles': true }));
     }

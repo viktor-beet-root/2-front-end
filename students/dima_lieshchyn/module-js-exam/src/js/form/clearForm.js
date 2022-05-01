@@ -1,4 +1,4 @@
-import items from "./items";
+import items from "../dev-modules/items";
 import formRemoveError from "./formRemoveError";
 
 function clearForm() {

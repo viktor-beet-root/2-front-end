@@ -1,10 +1,10 @@
-import items from "./items";
+import items from "../dev-modules/items";
 import formRemoveError from "./formRemoveError";
 import formAddError from "./formAddError";
-import addCommentData from "./addCommentData";
+import addCommentData from "../comment/addCommentData";
 import addErrorMessage from "./addErrorMessage";
-import renderComment from "./renderComment";
 import clearForm from "./clearForm";
+import saveName from "./saveName";
 
 function postForm() {
     items.post.addEventListener('click', commentSend);
@@ -33,9 +33,13 @@ function postForm() {
             items.textarea.value !== '' && !items.textarea.classList.contains('_error')) {
             if (localStorage.getItem('userList')) {
                 items.userList = JSON.parse(localStorage.getItem('userList'));
-                addCommentData()
+                addCommentData();
                 localStorage.setItem('userList', JSON.stringify(items.userList));
-                clearForm();
+                if (items.switchItem.checked) {
+                    saveName();
+                    clearForm();
+                }
+
             } else {
                 addCommentData()
                 localStorage.setItem('userList', JSON.stringify(items.userList));
@@ -43,12 +47,11 @@ function postForm() {
             }
 
 
-        } else if (items.userName.value === '' && !items.userName.classList.contains('_error') &&
-            items.email.value === '' && !items.email.classList.contains('_error') &&
-            !items.www.classList.contains('_error') &&
+        } else if (items.userName.value === '' && !items.userName.classList.contains('_error') ||
+            items.email.value === '' && !items.email.classList.contains('_error') ||
+            !items.www.classList.contains('_error') ||
             items.textarea.value === '' && !items.textarea.classList.contains('_error')) {
 
-            console.log('asd');
             formAddError(items.userName);
             formAddError(items.email);
             formAddError(items.textarea);

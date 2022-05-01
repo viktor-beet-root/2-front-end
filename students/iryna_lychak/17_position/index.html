@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation/Who`s using</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="row container__row">
+                <div class="col-12 row__col">
+                    <div class="header-wrapper">
+                        <div class="header-wrapper__info">
+                            <div class="img-eng info__img-eng">
+                                <img class="ENG" src="images\ENG.svg" alt="ENG">
+                            </div>
+                            <div class="doc-item info__doc-item">
+                                <p class="doc-item__text">Documentation/Who's using</p>
+                            </div>
+                        </div>
+                        <div class="logo info__logo">
+                            <img src="images\company-logo-black.svg" alt="logo" class="logo-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container main__container nav">
+            <div class="row container__row">
+                <div class="col-12 row__col">
+                    <section class="menu">
+                        <ul class="menu__wrapper">
+                            <li class="menu__list">
+                                <a class="menu__link" href="#"><sup>1</sup>&nbsp;INTRODUCTION</a>
+                            </li>
+                            <li class="menu__list">
+                                <a class="menu__link" href="#"><sup>2</sup>&nbsp;CORE COMPONENTS</a>
+                            </li>
+                            <li class="menu__list">
+                                <a class="menu__link" href="#"><sup>3</sup>&nbsp;REACT FUNDAMENTALS</a>
+                            </li>
+                            <li class="menu__list">
+                                <a class="menu__link" href="#"><sup>4</sup>&nbsp;HANDING TEXT INPUT</a>
+                            </li>
+                        </ul>
+                        </і>
+
+                </div>
+            </div>
+        </div>
+        <div class="container main__container info">
+            <div class="row container__row">
+                <div class="col-12 row__col">
+                    <section class="introduction section">
+                        <div class="title introduction__title">
+                            <strong>INTRODUCTION</strong>
+                        </div>
+                        <div class="introduction__info-wrapper">
+                            <p class="info-wrapper__item"> Welcome to the very start of your React Native journey! If
+                                you're
+                                looking
+                                for
+                                environment
+                                setup
+                                instructions, they've moved to <span class="underline">their own section</span>.
+                                Continue
+                                reading for an
+                                introduction to the documentation, Native Components, React, and more!
+                            </p>
+                        </div>
+                    </section>
+                    <section class="core-components section">
+                        <div class="title core-components__title">
+                            <strong>CORE COMPONENTS</strong>
+                        </div>
+                        <div class="core-component__info-wrapper">
+                            <p class="info-wrapper__item">React Native is an open source framework for building Android
+                                and iOS
+                                applications using
+                                React
+                                and the
+                                app platform’s native capabilities. With React Native, you use JavaScript to access
+                                your
+                                platform’s APIs
+                                as well as to describe the appearance and behavior of your UI using React
+                                components:
+                                bundles of
+                                reusable, nestable code. You can learn more about React in the next section. But
+                                first,
+                                let’s
+                                cover how
+                                components work in React Native.
+                            </p>
+                        </div>
+                    </section>
+                    <section class="react-fundamentals section">
+                        <div class="title react-fundamentals__title">
+                            <strong>REACT FUNDAMENTALS</strong>
+                        </div>
+                        <div class="react-fundamentals__info-wrapper">
+                            <p class="info-wrapper__item">React Native runs on <span class="underline">React</span>, a
+                                popular
+                                open
+                                source library
+                                for
+                                building
+                                user interfaces with JavaScript. To make the most of React Native, it helps to
+                                understand
+                                React
+                                itself.
+                                This section can get you started or can serve as a refresher course.
+                            </p>
+                            <p class="info-wrapper__item">We’re going to cover the core concepts behind React:</p>
+                            <p class="info-wrapper__item"><span class="item__bold">+ components.</span> The rest of this
+                                introduction to
+                                React uses cats
+                                in
+                                its
+                                examples:
+                                friendly, approachable creatures that need names and a cafe to work in.
+                            </p>
+                            <p class="info-wrapper__item"><span class="item__bold">+ JSX.</span> React and React Native
+                                use
+                                JSX, a
+                                syntax
+                                that lets you
+                                write
+                                elements
+                                inside JavaScript like so: &lt;Text&gt;Hello, I am your cat!&lt;/Text&gt;. The React
+                                docs
+                                have
+                                <span class="item__underline">a comprehensive guide to JSX</span> you can refer to learn
+                                even
+                                more.
+                                Because JSX
+                                is JavaScript, you can use variables inside it. Here you are declaring a name for
+                                the
+                                cat,
+                                name,
+                                and
+                                embedding it with curly braces inside &lt;Text&gt;.
+                            </p>
+                            <p class="info-wrapper__item"><span class="item__bold">+ props.</span> Props is short for
+                                “properties”.</p>
+                            <p class="info-wrapper__item"><span class="item__bold">+ state.</span> While you can think
+                                of
+                                props as
+                                arguments
+                                you use to
+                                configure
+                                how
+                                components render, state is like a component’s personal data storage. State is
+                                useful
+                                for
+                                handling data
+                                that changes over time or that comes from user interaction. State gives your
+                                components
+                                memory!
+                            </p>
+                        </div>
+                    </section>
+                    <section class="handing-text-input section">
+                        <div class="title handing-text-input__title">
+                            <strong>HANDING TEXT INPUT</strong>
+                        </div>
+                        <div class="handing-text-input__info-wrapper">
+                            <p class="info-wrapper__item">TextInput is a Core Component that allows the user to enter
+                                text. It has
+                                an
+                                onChangeText
+                                prop
+                                that takes
+                                a function to be called every time the text changed, and an onSubmitEditing prop
+                                that
+                                takes
+                                a
+                                function
+                                to be called when the text is submitted.
+                            </p>
+                            <p class="info-wrapper__item">For example, let's say that as the user types, you're
+                                translating their
+                                words into a
+                                different
+                                language.
+                                In this new language, every single word is written the same way:
+                                <img src="images\pizza.png" alt="pizza" class="info-wrapper__img">. So
+                                the
+                                sentence "Hello
+                                there Bob"
+                                would be translated as "
+                                <img src="images\pizza.png" alt="pizza" class="info-wrapper__img">
+                                <img src="images\pizza.png" alt="pizza" class="info-wrapper__img">
+                                <img src="images\pizza.png" alt="pizza" class="info-wrapper__img">".
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <img src="images\sets.svg" alt="sets" class="bg-img">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

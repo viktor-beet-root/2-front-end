@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="../">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <form action="#" method="post">
+            <table class="table">
+                <tr class="table__row">
+                    <td class="table__call table__nav">
+                        <div class="filter">
+                            <img src="./images/filter.svg" width="20" height="20" alt="filter">
+                        </div>
+                    </td>
+                    <td class="table__call table__nav" colspan="6">
+                        <div class="searchw">
+                            <input id="search" class="search" type="search" placeholder="Search">
+                        </div>
+                    </td>
+                    <td class="table__call table__nav">
+                        <div class="button">
+                            <img src="./images/plusbtn.svg" width="20" height="20" alt="plus">
+                            Add customer
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row table_head">
+                    <th class="table__coll checker">
+                        <input id="select_all" type="checkbox" class="select_all">
+                    </th>
+                    <th class="table__coll name">
+                        Name
+                    </th>
+                    <th class="table__coll description">
+                        Description
+                    </th>
+                    <th class="table__coll rate">
+                        Rate
+                    </th>
+                    <th class="table__coll balance">
+                        Balance
+                    </th>
+                    <th class="table__coll deposit">
+                        Deposit
+                    </th>
+                    <th class="table__coll status">
+                        Status
+                    </th>
+                    <th class="table__coll tool">
+                        <div class="tools">
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </th>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Kadin Herwitz<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance negative">
+                        -270.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status1" type="checkbox" class="hidden status">
+                        <label for="status1">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Cristofer Korsgaard<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance positive">
+                        270.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status2" type="checkbox" class="hidden status">
+                        <label for="status2">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Omar Workman<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        80.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance negative">
+                        -20.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status3" type="checkbox" class="hidden status">
+                        <label for="status3">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Tatiana Westervelt<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance positive">
+                        600.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status4" type="checkbox" class="hidden status">
+                        <label for="status4">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Mira Dokidis<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance negative">
+                        -350.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status5" type="checkbox" class="hidden status">
+                        <label for="status5">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Jakob Bergson<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        75.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance negative">
+                        -270.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status6" type="checkbox" class="hidden status">
+                        <label for="status6">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Carter Rosser<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance negative">
+                        -2070.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status7" type="checkbox" class="hidden status">
+                        <label for="status7">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Miracle Septimus<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance negative">
+                        -270.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status8" type="checkbox" class="hidden status">
+                        <label for="status8">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Kianna Baptista<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance positive">
+                        460.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status9" type="checkbox" class="hidden status">
+                        <label for="status9">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__coll checker">
+                        <input id="selected" type="checkbox">
+                    </td>
+                    <td class="table__coll name">
+                        Haylie Rosser<br>
+                        <span class="secondary">5684236583</span>
+                    </td>
+                    <td class="table__coll description">
+                        Lorem ipsum dolor sit amet, consectetur...
+                    </td>
+                    <td class="table__coll rate">
+                        70.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll balance neutral">
+                        00.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll deposit">
+                        500.00<br>
+                        <span class="secondary">INR</span>
+                    </td>
+                    <td class="table__coll status">
+                        <input id="status10" type="checkbox" class="hidden status">
+                        <label for="status10">
+                            <div class="status__btn"></div>
+                        </label>
+                    </td>
+                    <td class="table__coll tool">
+                        <div class="tools tools_wrap">
+                            <span class="tools__edit"></span>
+                            <span class="tools__delete"></span>
+                            <span class="tools__tripledot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table__row table_footnav">
+                    <td class="table__coll activity" colspan="4">
+                        Active customers: <span>479</span>/706
+                    </td>
+                    <td class="table__coll rower" colspan="2">
+                        Rows per page: <select class="rowcount" name="rowCount" id="rowCount">
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </td>
+                    <td class="table__coll counter">
+                        1-10 of 706
+                    </td>
+                    <td class="table__coll naver">
+                        <div class="tools tools_wrap">
+                            <span>&lt;</span>
+                            <span>&gt;</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </main>
+</body>
+
+</html>

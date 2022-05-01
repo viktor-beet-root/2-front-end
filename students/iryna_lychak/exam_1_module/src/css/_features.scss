@@ -1,0 +1,259 @@
+.features_center {
+    text-align: center;
+    margin: 0 300px 100px;
+
+    @include media ("sm") {
+        padding: 0 25px;
+        margin: 0;
+    }
+
+    @include media ("xs") {}
+}
+
+.features-wrapper {
+    padding: 0;
+
+    &__item {
+        position: relative;
+        display: flex;
+        padding: 40px;
+        margin: 25px 0;
+
+        @include media ("sm") {
+            flex-direction: column;
+            padding: 15px;
+        }
+
+        @include media ("xs") {
+            width: 100%;
+            padding: 0 60px 0 75px;
+            margin: 50px 0;
+        }
+    }
+
+    &__info-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 66px 0 15px;
+        line-height: 25.6px;
+        justify-content: flex-start;
+        height: 320px;
+
+        @include media ("sm") {
+            flex-grow: 1;
+            margin: 25px 0 0 25px;
+            padding: 15px 45px 0 45px;
+            height: 250px;
+        }
+
+        @include media ("xs") {
+            padding: 0;
+            margin: 0 0 0 25px;
+            height: 210px;
+        }
+    }
+}
+
+.color {
+
+    &_lightgreen {
+        @extend %trapezoid;
+        color: $block-1-features;
+    }
+
+    &_lightviolet {
+        @extend %trapezoid;
+        color: $block-2-features;
+    }
+
+    &_lightpink {
+        @extend %trapezoid;
+        color: $block-3-features;
+    }
+
+    &_lightblue {
+        @extend %trapezoid;
+        color: $block-4-features;
+    }
+}
+
+.title_regular {
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0;
+
+    @include media ("sm") {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    @include media ("xs") {
+        margin: 0;
+    }
+}
+
+.features-img {
+    position: absolute;
+    width: 560px;
+    height: 335px;
+    top: 0;
+    left: 0;
+
+    &_big1 {
+        top: 38px;
+        left: 255px;
+
+        @include media ('sm') {
+            left: 150px;
+        }
+
+        @include media ('xs') {
+            top: 225px;
+        }
+    }
+
+    &_small1 {
+        top: 70px;
+        left: 315px;
+
+        @include media ('sm') {
+            left: 210px;
+        }
+
+        @include media ('xs') {
+            top: 245px;
+            left: 200px;
+        }
+    }
+
+    &_big2 {
+        top: 235px;
+        left: 250px;
+
+        @include media ('sm') {
+            top: 140px;
+            left: 150px;
+        }
+
+        @include media ('xs') {
+            top: 275px;
+            left: 300px;
+        }
+    }
+
+
+    &_small3 {
+        top: 75px;
+        left: 400px;
+
+        @include media ('sm') {
+            top: 30px;
+            left: 300px;
+        }
+
+        @include media ('xs') {
+            top: 235px;
+            left: 450px;
+        }
+    }
+
+    &_big4 {
+        top: 100px;
+        left: 120px;
+
+        @include media ('sm') {
+            top: 50px;
+            left: 75px;
+        }
+
+        @include media ('xs') {
+            top: 225px;
+            left: 100px;
+        }
+    }
+
+    &_small4 {
+        top: 350px;
+        left: 400px;
+
+        @include media ('sm') {
+            top: 250px;
+            left: 300px;
+        }
+
+        @include media ('xs') {
+            top: 390px;
+            left: 450px;
+        }
+    }
+}
+
+.img-ellips {
+    position: absolute;
+}
+
+.features1_big {
+    transform: scale(1.1);
+
+    @include media ('sm') {}
+
+    @include media ('xs') {
+        transform: scale(1.5);
+    }
+}
+
+.features2_big {
+    transform: scale(-1, -1) rotate(0deg) scale(1.1);
+
+    @include media ('sm') {
+        transform: scale(-1, -1) rotate(0deg) scale(0.9);
+    }
+
+    @include media ('xs') {
+        transform: scale(-1, -1) rotate(0deg) scale(1.2);
+    }
+}
+
+.features4_big {
+    transform: scale(-1, -1) rotate(300deg) scale(1.6);
+
+    @include media ('sm') {
+        transform: scale(-1, -1) rotate(300deg) scale(1);
+    }
+
+    @include media ('xs') {
+        transform: scale(-1, -1) rotate(300deg) scale(1.3);
+    }
+}
+
+.features1_small {
+    @include media ('sm') {}
+
+    @include media ('xs') {
+        transform: scale(1.5);
+    }
+}
+
+.features3_small {
+    transform: scale(2) rotate(120deg);
+
+    @include media ('sm') {
+        transform: scale(1.5) rotate(120deg);
+    }
+
+    @include media ('xs') {
+        transform: scale(1.8) rotate(120deg);
+    }
+}
+
+.features4_small {
+    transform: scale(2) rotate(15deg);
+
+    @include media ('sm') {
+        transform: scale(1.5);
+    }
+
+    @include media ('xs') {
+        transform: scale(1.75);
+    }
+}

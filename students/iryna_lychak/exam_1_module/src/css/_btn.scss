@@ -1,0 +1,60 @@
+.btn {
+    padding: 10px 50px 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+
+    @include media ('sm') {
+        font-size: 14px;
+    }
+
+    @include media ('xs') {
+        font-size: 18px;
+    }
+}
+
+.btn_color-learn {
+    font-size: 18px;
+    background-color: $violet-color;
+    color: #fff;
+    padding: 16px 37px;
+
+    @include media('sm') {
+        font-size: 20px;
+    }
+
+}
+
+.btn_color-pink {
+    background-color: $pink-color;
+}
+
+.btn_request {
+    background-color: #fff;
+    padding: 16px 29px;
+    border: 1px solid #fff;
+    color: $darkblue-color;
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 255, .2);
+    font-size: 18px;
+
+    @include media ('sm') {
+        font-size: 20px;
+    }
+}
+
+.info-wrapper__btn {
+    padding: 0;
+    font-weight: 900;
+    color: $darkblue-color;
+}
+
+.btn_sm {
+    @include media ('sm') {
+        width: 225%;
+        justify-content: center;
+    }
+
+    @include media ('xs') {
+        width: 100%;
+    }
+}

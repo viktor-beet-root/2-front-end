@@ -1,0 +1,90 @@
+.block {
+    @extend %block;
+
+    &_bp {
+        padding: 60px 0 109px;
+    }
+
+    &_bg {
+        background-color: $ivory-color;
+    }
+}
+
+.col {
+    &_3 {
+        width: 25%;
+    }
+}
+
+.title {
+    @extend %title;
+}
+
+.superpowers {
+
+    &__title {
+        max-width: 521px;
+        margin: 0 auto 55px;
+    }
+}
+
+
+.superpowers-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+
+    &__item {
+        margin-bottom: 15px;
+    }
+}
+
+.icon {
+    @extend %icon;
+
+    &_v1 {
+        background-color: $violet-color;
+    }
+
+    &_arrow {
+        &::after {
+            content: url(../images/arrow.svg);
+        }
+    }
+
+    &_v2 {
+        background-color: $lightorange-color;
+    }
+
+    &_snake {
+        &::after {
+            content: url(../images/snack.svg);
+        }
+    }
+
+    &_v3 {
+        background-color: $red-color;
+
+    }
+
+    &_heart {
+        &::after {
+            content: url(../images/heart.svg);
+        }
+    }
+
+    &_v4 {
+        background-color: $sky-color;
+
+    }
+
+    &_time {
+        &::after {
+            content: url(../images/time.svg);
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}

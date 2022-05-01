@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/poppins-v15-latin-ext_latin-regular.woff2') format('woff2'),
+        url('../fonts/poppins-v15-latin-ext_latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+        url('../fonts/poppins-v15-latin-ext_latin-500.woff2') format('woff2'),
+        url('../fonts/poppins-v15-latin-ext_latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+        url('../fonts/poppins-v15-latin-ext_latin-600.woff2') format('woff2'),
+        url('../fonts/poppins-v15-latin-ext_latin-600.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('../fonts/poppins-v15-latin-ext_latin-700.woff2') format('woff2'),
+        url('../fonts/poppins-v15-latin-ext_latin-700.woff') format('woff');
+}
+
+.page {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.625;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.container {
+    max-width: $container-width;
+    padding: 0 $default-gap;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    margin: 0 -($default-gap);
+}
+
+[class*="col-"] {
+    padding: 0 $default-gap;
+    box-sizing: border-box;
+}
+
+.col-1 {
+    width: calc(100% / 12);
+}
+
+.col-2 {
+    width: calc(100% / 12 * 2);
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: calc(100% / 12 * 4);
+}
+
+.col-5 {
+    width: calc(100% / 12 * 5);
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: calc(100% / 12 * 7);
+}
+
+.col-8 {
+    width: calc(100% / 12 * 8);
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: calc(100% / 12 * 10);
+}
+
+.col-11 {
+    width: calc(100% / 12 * 11);
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.title {
+    @extend %title;
+}
+
+.info-wrapper {
+    @extend %info-wrapper;
+}
+
+.text {
+    @extend %text;
+}
+
+.icon {
+    @extend %icon;
+}
+
+.btn {
+    @extend %btn;
+}

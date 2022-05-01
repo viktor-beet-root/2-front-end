@@ -1,0 +1,40 @@
+$lightblue-color:#DDE7F2;
+$orange-color:#FF9900;
+$white-color:#fff;
+$lightsky-color:#BCD0E5;
+$blue-color:#173A56;
+$brown-color:#2F281E;
+$ivory-color:#FFF4EC;
+$violet-color:#7752BE;
+$lightorange-color:#FAB005;
+$red-color:#F03E3D;
+$sky-color:#4DADF7;
+
+$btn-bg-color:$orange-color;
+$icon-1-color:$violet-color;
+$icon-2-color:$lightorange-color;
+$icon-3-color:$red-color;
+$icon-4-color:$sky-color;
+$header-line-color:$lightblue-color;
+$btn-br-color: $lightsky-color;
+$text-brown-color:$brown-color;
+$btn-tx1-color:$blue-color;
+$btn-tx2-color:$white-color;
+$block-bg-color:$ivory-color;
+
+$default-border: 1px solid;
+
+$container-width: 1110px;
+$default-gap: 15px;
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Poppins';
+$path-fonts: '../fonts/';
+
+$main-font: $main-font-name,
+$font-follback;
+$base-font-size: 16px;
+$base-line-height: 1.625;
+$base-font-weight: 500;

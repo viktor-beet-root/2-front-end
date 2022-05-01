@@ -1,0 +1,113 @@
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/roboto-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/roboto-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* roboto-700 - latin */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/roboto-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/roboto-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* roboto-900 - latin */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+         url('../fonts/roboto-v29-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/roboto-v29-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+/* pt-sans-regular - latin */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/pt-sans-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/pt-sans-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    width: 1840px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+header {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23,44px;
+}
+
+.lang {
+    font-weight: 900;
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+}
+
+main {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+}
+
+h1,
+h2 {
+    margin-top: 96px;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+}
+
+ .concepts::before {
+     content: '+';
+}
+
+.under {
+     text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    margin-left: -40px; 
+}
+
+ul {
+    list-style-type: none;
+    float: left;
+}
+
+li {
+    padding: 0px 42px 0px 0px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}

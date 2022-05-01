@@ -1,0 +1,223 @@
+@font-face{
+    font-family: 'gilroy-bold';
+    src:url('../fonts/Gilroy-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/open-sans-v26-latin-regular.woff2') format('woff2'),
+         url('../fonts/open-sans-v26-latin-regular.woff') format('woff');
+}
+
+body{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #070707;
+}
+.container{
+    max-width: 944px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.menu__list{
+    display: inline-flex;
+    padding: 25px;
+}
+
+.menu__item{
+    margin-right: 40px;
+}
+
+.menu__link{
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 25px;
+    color: #828282;
+    transition: color.5s;
+    text-decoration: none;
+}
+
+.menu__link:hover{
+    color: #070707;
+}
+
+hr{
+    color: #828282;
+}
+
+.header__title{
+    font-weight: bold;
+    font-size: 47.3392px;
+    line-height: 64px;
+    color: #070707;
+    text-align: left;
+    margin-top: 31px;
+}
+
+.header__img{
+    width: 944px;
+    height: 387px;
+    margin-top: 39px;
+    padding-bottom: 100px;
+}
+
+/* main content */
+
+/* about me */
+
+.main__content{
+    background-color: #F6F6F6;
+    padding-top: 100px;
+}
+
+.about__me{
+    height: 517px;
+}
+
+.section__name{
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 46px;
+    text-align: center;
+    color: #070707;
+    padding-bottom: 29px;
+}
+
+.description{
+    width: 480px;
+    height: 246px;
+    margin: auto;
+    
+}
+
+.description__text{
+    padding-bottom: 50px;
+}
+
+/* skils */
+
+.container__skills{
+    max-width: 944px;
+    margin: 0 auto;
+}
+
+.skills{
+    background-color: #fff;
+    padding-top: 100px;
+    justify-content: center;
+}
+
+.description__img{
+    width: 81px;
+    height: 80px;
+}
+
+.description__star{
+    width: 26px;
+    height: 26px;
+}
+
+.description__figma{
+    width: 58px;
+    height: 88px;
+}
+
+.description__skills{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 936px;
+    height: 396px;
+}
+
+.description__text__skills{
+    font-family: 'gilroy-bold';
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+}
+
+.stars{
+    padding-top: 60px;
+}
+
+.stars__figma{
+    padding-top: 68px;
+}
+
+/* portfolio */
+
+.portfolio{
+    padding-top: 230px;
+}
+
+.portfolio__img{
+    width: 936px;
+    height: 510px;
+    padding-top: 120px;
+}
+
+.portfolio__description__text{
+    padding-top: 15px;
+}
+
+/* contacts */
+
+.container__contacts{
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.contacts{
+    background-color: #fff; 
+    padding-top: 112px;
+    width: 340px;
+    margin: auto;
+}
+
+.contacts__text{
+    font-size: 18px;
+    line-height: 25px;
+    color: #070707;
+    font-weight: 400;
+    padding-bottom: 86px;
+}
+
+.contact__btn{
+    display: inline-block;
+    color: #fff;
+    background: #000;
+    border-radius: 100px;
+    text-decoration: none;
+    width: 180px;
+    height: 42px;
+}
+
+.contact__icons{
+    padding-top: 37px;
+}
+
+
+.icons{
+    display: inline;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input, select {
+    vertical-align:middle;
+}

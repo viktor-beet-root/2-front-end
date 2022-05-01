@@ -1,0 +1,115 @@
+*{transition: all .2s ease-in;}
+body{
+    background-color: #3B3F45;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px white solid;
+    margin: 20px auto ;
+    width: 793px;
+    height: 507px;
+}
+
+.header{
+    background-color: #4A4F56;
+    width: 793px;
+}
+
+.header>div,
+h1{
+    color: #FF8984;
+    text-align: center;
+}
+
+.form{
+    margin-top: 20px;
+}
+
+.form .div_label:nth-child(even):not(:hover){
+    background-color: #7A7593;
+}
+
+.div_label{
+    color: white;
+    background-color: #88839E;
+    width: 534px;
+    height: 42px;
+    border-top: 3px transparent solid;
+    border-bottom: 3px transparent solid;
+}
+
+.div_label input{
+    width: 19px;
+    height: 19px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.div_label:hover{
+    background-color: #625E77;
+    border-top: 3px white solid;
+    border-bottom: 3px white solid;
+}
+
+.div_label:active{
+    background-color:#FF8984;
+}
+
+.div_label .label{
+    text-align: center;
+}
+
+.label span{
+    margin-left: 16px; 
+    font-size: 18px;
+    font-weight: bold;
+}
+
+label .span_smool{   
+    vertical-align: middle;
+    margin-left: 3px; 
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.span_smool:before{
+    content: "\00a0(";
+    font-weight:normal;
+}
+.span_smool:after{
+    content: ")";
+    font-weight:normal;
+}
+
+.label input{
+    margin-left: 12px;
+    margin-top: 12px;
+    width: 19px;
+    height: 19px;
+}
+
+input:checked~span{
+    color: #9B96AC;
+    text-decoration: line-through;
+}
+
+.button{
+    background-color: #4A4F56;
+    border: none;
+    outline: none;
+    width: 534px;
+    height: 45px;
+    margin-top: 45px;
+    color: #FF8984;
+    font-size: 18px;
+}
+
+.button:hover{
+    border: 3px white solid;
+}
+
+.button:active{
+    width: 514px;
+    height: 40px;
+}

@@ -1,18 +1,13 @@
 import getCommentsList from "./getCommentsList";
 
 export default function insertUsersList(list) {
-    const users = getCommentsList();
-    if (!getCommentsList()) {
+    let users = getCommentsList();
+    if (!users) {
         users = list;
-    } else {
-        list.forEach(user => {
-            users.push(user);
-        });
+
+        localStorage.setItem('userList', JSON.stringify(users))
     }
 
-    // list.forEach(user => {
-    //     users.push(user);
-    // });
-    localStorage.setItem('userList', JSON.stringify(users))
 
+    return users;
 }

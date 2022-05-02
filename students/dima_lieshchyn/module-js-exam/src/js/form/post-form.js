@@ -37,8 +37,8 @@ function postForm() {
                 localStorage.setItem('userList', JSON.stringify(items.userList));
                 if (items.switchItem.checked) {
                     saveName();
-                    clearForm();
                 }
+                clearForm();
 
             } else {
                 addCommentData()

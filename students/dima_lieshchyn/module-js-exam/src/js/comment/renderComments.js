@@ -1,10 +1,11 @@
 import renderAnswer from "../answer/renderAnswer";
 import renderComment from "./renderComment";
 import isEmpty from "../dev-modules/isEmpty";
+import userList from "../userList";
 
 
 function renderComments(commentList) {
-    if (!commentList) return;
+
     commentList.forEach(elem => {
 
         renderComment(elem.username, elem.www, elem.message, elem.userId, elem.heartCount, elem.likeCount, elem.dislikeCount);

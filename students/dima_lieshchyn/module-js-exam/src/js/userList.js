@@ -2,7 +2,7 @@ import randomId from "./dev-modules/idGen";
 
 export default [
     {
-        userId: randomId(),
+        userId: '871b244f',
         username: 'Jon Davis',
         email: 'email@gmail.com',
         www: '',
@@ -13,7 +13,7 @@ export default [
         heartCount: 10,
         answer: [
             {
-                userId: randomId(),
+                userId: 'f1aeb573',
                 username: 'Jon Davis',
                 email: 'email@gmail.com',
                 www: '',
@@ -23,7 +23,7 @@ export default [
                 dislikeCount: 2,
             },
             {
-                userId: randomId(),
+                userId: '5d506268',
                 username: 'Shane Hobbins',
                 email: 'email@gmail.com',
                 www: '',
@@ -35,7 +35,7 @@ export default [
         ],
     },
     {
-        userId: randomId(),
+        userId: '3f5aae01',
         username: 'Jon Davis',
         email: 'email@gmail.com',
         www: '',

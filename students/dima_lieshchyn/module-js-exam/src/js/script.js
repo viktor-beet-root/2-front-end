@@ -4,82 +4,47 @@ import message from './form/message';
 import items from './dev-modules/items';
 import cancelInfo from './form/cancelInfo';
 import removeProfanity from './form/checkProfanity';
-import getCommentsList from './dev-modules/getCommentsList';
 import renderComments from './comment/renderComments';
 import showTime from './dev-modules/showTime';
 import editMessage from './user-buttons/editMessage';
 import removeComment from './user-buttons/removeComment';
 import likeProcess from './user-buttons/likeProcess';
-import addAnswer from './answer/addAnswer';
-import renderAnswer from './answer/renderAnswer';
-import randomId from './dev-modules/idGen';
-import clearForm from './form/clearForm';
 import setSavedUser from './form/setSavedUser';
-import getCommentList from './dev-modules/getCommentsList'
 import insertUsersList from './dev-modules/insertUsersList';
 import userList from './userList';
+import eventAnswer from './answer/eventAnswer';
 
+//Плавный скроллинг
 scrollSmooth('.arrow, .nav-link', 0.8);
 
+//Просто tooltip на кнопке сердечка
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 
-
+//отправка формы
 document.addEventListener('DOMContentLoaded', postForm);
-
+//работа текстареи
 document.addEventListener('DOMContentLoaded', message);
-
+//удаление плохих слов
 document.addEventListener('DOMContentLoaded', removeProfanity);
-
+//показ времени на коменте
 document.addEventListener('DOMContentLoaded', showTime);
-
+//сохранение юзера после перезагрузки
 document.addEventListener('DOMContentLoaded', setSavedUser);
-
+//очистка формы
 items.cancel.addEventListener('click', cancelInfo);
 
 
-
+//редактирование комента
 editMessage();
-
+//удаление комента
 removeComment();
-
+//работа лайков дислайков
 likeProcess();
-
-
-
-items.commentsWrapper.addEventListener('click', function (e) {
-    const btn = document.querySelector('.answer-btn');
-    let tempid = randomId();
-
-    if (e.target.dataset.type === 'reply') {
-        items.userName.focus();
-        items.post.style.display = 'none';
-        btn.style.display = 'block';
-        let wrapper = e.target.closest('.new-comment,.answer').nextElementSibling;
-        let currentId = e.target.dataset.id;
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            addAnswer(currentId);
-            renderAnswer({
-                wrapper: wrapper,
-                tempId: tempid,
-                www: items.www.value,
-                author: items.userName.value,
-                message: items.textarea.value,
-                likeCount: 0,
-                dislikeCount: 0,
-            });
-            items.post.style.display = 'block';
-            btn.style.display = 'none';
-            clearForm();
-        })
-
-    }
-})
-insertUsersList(userList);
-
-renderComments(getCommentsList());
+//работа Reply кнопки
+eventAnswer();
+//рендеринг коментов из локал стораджа
+renderComments(insertUsersList(userList));
 
 

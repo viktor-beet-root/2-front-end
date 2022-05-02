@@ -5,9 +5,12 @@ function updateAnswerStorage(id, type, value) {
     items.userList = getCommentsList();
 
     items.userList.forEach(user => {
-        if (user.answer.userId === id) {
-            user.answer[type] = value;
-        }
+        user.answer.forEach(answer => {
+            if (answer.userId === id) {
+                answer[type] = value;
+            }
+        })
+
     });
 
     localStorage.setItem('userList', JSON.stringify(items.userList))

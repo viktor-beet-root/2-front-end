@@ -9,17 +9,19 @@ function renderComments(commentList) {
 
         renderComment(elem.username, elem.www, elem.message, elem.userId, elem.heartCount, elem.likeCount, elem.dislikeCount);
         let wrapper = document.querySelector('.new-comment').nextElementSibling;
+        elem.answer.forEach(answer => {
+            if (isEmpty(answer)) return;
+            renderAnswer({
+                wrapper: wrapper,
+                tempId: answer.userId,
+                www: answer.www,
+                author: answer.username,
+                message: answer.message,
+                likeCount: answer.likeCount,
+                dislikeCount: answer.dislikeCount,
+            });
+        })
 
-        if (isEmpty(elem.answer)) return;
-        renderAnswer({
-            wrapper: wrapper,
-            tempId: elem.answer.userId,
-            www: elem.answer.www,
-            author: elem.answer.username,
-            message: elem.answer.message,
-            likeCount: elem.answer.likeCount,
-            dislikeCount: elem.answer.dislikeCount,
-        });
 
     });
 

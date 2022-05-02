@@ -23,7 +23,7 @@ function addAnswer(id) {
   var updatedComentList = (0,_dev_modules_getCommentsList__WEBPACK_IMPORTED_MODULE_3__["default"])();
   updatedComentList.map(function (elem) {
     if (elem.userId === id) {
-      elem.answer = {
+      elem.answer.push({
         userId: (0,_dev_modules_idGen__WEBPACK_IMPORTED_MODULE_2__["default"])(),
         username: _dev_modules_items__WEBPACK_IMPORTED_MODULE_1__["default"].userName.value,
         email: _dev_modules_items__WEBPACK_IMPORTED_MODULE_1__["default"].email.value,
@@ -32,7 +32,7 @@ function addAnswer(id) {
         time: Date.now(),
         likeCount: 0,
         dislikeCount: 0
-      };
+      });
     }
   });
   localStorage.setItem('userList', JSON.stringify(updatedComentList));
@@ -100,7 +100,7 @@ function addCommentData() {
     likeCount: 0,
     dislikeCount: 0,
     heartCount: 0,
-    answer: {}
+    answer: []
   });
   (0,_renderComment__WEBPACK_IMPORTED_MODULE_2__["default"])(_dev_modules_items__WEBPACK_IMPORTED_MODULE_0__["default"].userName.value, _dev_modules_items__WEBPACK_IMPORTED_MODULE_0__["default"].www.value, _dev_modules_items__WEBPACK_IMPORTED_MODULE_0__["default"].textarea.value, tempId);
 }
@@ -176,15 +176,17 @@ function renderComments(commentList) {
   commentList.forEach(function (elem) {
     (0,_renderComment__WEBPACK_IMPORTED_MODULE_3__["default"])(elem.username, elem.www, elem.message, elem.userId, elem.heartCount, elem.likeCount, elem.dislikeCount);
     var wrapper = document.querySelector('.new-comment').nextElementSibling;
-    if ((0,_dev_modules_isEmpty__WEBPACK_IMPORTED_MODULE_4__["default"])(elem.answer)) return;
-    (0,_answer_renderAnswer__WEBPACK_IMPORTED_MODULE_2__["default"])({
-      wrapper: wrapper,
-      tempId: elem.answer.userId,
-      www: elem.answer.www,
-      author: elem.answer.username,
-      message: elem.answer.message,
-      likeCount: elem.answer.likeCount,
-      dislikeCount: elem.answer.dislikeCount
+    elem.answer.forEach(function (answer) {
+      if ((0,_dev_modules_isEmpty__WEBPACK_IMPORTED_MODULE_4__["default"])(answer)) return;
+      (0,_answer_renderAnswer__WEBPACK_IMPORTED_MODULE_2__["default"])({
+        wrapper: wrapper,
+        tempId: answer.userId,
+        www: answer.www,
+        author: answer.username,
+        message: answer.message,
+        likeCount: answer.likeCount,
+        dislikeCount: answer.dislikeCount
+      });
     });
   });
 }
@@ -419,6 +421,47 @@ __webpack_require__.r(__webpack_exports__);
 function randomId() {
   var uint32 = window.crypto.getRandomValues(new Uint32Array(1))[0];
   return uint32.toString(16);
+}
+
+/***/ }),
+
+/***/ "./src/js/dev-modules/insertUsersList.js":
+/*!***********************************************!*\
+  !*** ./src/js/dev-modules/insertUsersList.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ insertUsersList; }
+/* harmony export */ });
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _getCommentsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getCommentsList */ "./src/js/dev-modules/getCommentsList.js");
+
+
+
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
+
+
+function insertUsersList(list) {
+  var users = (0,_getCommentsList__WEBPACK_IMPORTED_MODULE_2__["default"])();
+
+  if (!(0,_getCommentsList__WEBPACK_IMPORTED_MODULE_2__["default"])()) {
+    list, _readOnlyError("users");
+  } else {
+    list.forEach(function (user) {
+      users.push(user);
+    });
+  } // list.forEach(user => {
+  //     users.push(user);
+  // });
+
+
+  localStorage.setItem('userList', JSON.stringify(users));
 }
 
 /***/ }),
@@ -706,9 +749,11 @@ __webpack_require__.r(__webpack_exports__);
 function updateAnswerStorage(id, type, value) {
   _items__WEBPACK_IMPORTED_MODULE_2__["default"].userList = (0,_getCommentsList__WEBPACK_IMPORTED_MODULE_3__["default"])();
   _items__WEBPACK_IMPORTED_MODULE_2__["default"].userList.forEach(function (user) {
-    if (user.answer.userId === id) {
-      user.answer[type] = value;
-    }
+    user.answer.forEach(function (answer) {
+      if (answer.userId === id) {
+        answer[type] = value;
+      }
+    });
   });
   localStorage.setItem('userList', JSON.stringify(_items__WEBPACK_IMPORTED_MODULE_2__["default"].userList));
 }
@@ -1245,6 +1290,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dev_modules_idGen__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./dev-modules/idGen */ "./src/js/dev-modules/idGen.js");
 /* harmony import */ var _form_clearForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./form/clearForm */ "./src/js/form/clearForm.js");
 /* harmony import */ var _form_setSavedUser__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./form/setSavedUser */ "./src/js/form/setSavedUser.js");
+/* harmony import */ var _dev_modules_insertUsersList__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dev-modules/insertUsersList */ "./src/js/dev-modules/insertUsersList.js");
+/* harmony import */ var _userList__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./userList */ "./src/js/userList.js");
+
+
+
 
 
 
@@ -1274,8 +1324,7 @@ document.addEventListener('DOMContentLoaded', _form_setSavedUser__WEBPACK_IMPORT
 _dev_modules_items__WEBPACK_IMPORTED_MODULE_3__["default"].cancel.addEventListener('click', _form_cancelInfo__WEBPACK_IMPORTED_MODULE_4__["default"]);
 (0,_user_buttons_editMessage__WEBPACK_IMPORTED_MODULE_9__["default"])();
 (0,_user_buttons_removeComment__WEBPACK_IMPORTED_MODULE_10__["default"])();
-(0,_user_buttons_likeProcess__WEBPACK_IMPORTED_MODULE_11__["default"])(); // addAnswer('81b5235e');
-
+(0,_user_buttons_likeProcess__WEBPACK_IMPORTED_MODULE_11__["default"])();
 _dev_modules_items__WEBPACK_IMPORTED_MODULE_3__["default"].commentsWrapper.addEventListener('click', function (e) {
   var btn = document.querySelector('.answer-btn');
   var tempid = (0,_dev_modules_idGen__WEBPACK_IMPORTED_MODULE_14__["default"])();
@@ -1304,6 +1353,7 @@ _dev_modules_items__WEBPACK_IMPORTED_MODULE_3__["default"].commentsWrapper.addEv
     });
   }
 });
+(0,_dev_modules_insertUsersList__WEBPACK_IMPORTED_MODULE_17__["default"])(_userList__WEBPACK_IMPORTED_MODULE_18__["default"]);
 (0,_comment_renderComments__WEBPACK_IMPORTED_MODULE_7__["default"])((0,_dev_modules_getCommentsList__WEBPACK_IMPORTED_MODULE_6__["default"])());
 
 /***/ }),
@@ -1406,31 +1456,37 @@ function likeProcess() {
     var tempId = e.target.dataset.id;
     var users = (0,_dev_modules_getCommentsList__WEBPACK_IMPORTED_MODULE_2__["default"])();
     users.forEach(function (user) {
-      if (tempId === user.userId || tempId === user.answer.userId) {
+      if (tempId === user.userId) {
         if (e.target.nodeName === 'IMG' && e.target.classList.contains('like-block__img')) {
           if ((0,_dev_modules_getCookie__WEBPACK_IMPORTED_MODULE_5__["default"])(user.username)) return;
           (0,_dev_modules_updateStorage__WEBPACK_IMPORTED_MODULE_3__["default"])(tempId, 'heartCount', user.heartCount = user.heartCount + 1);
           e.target.setAttribute('src', './images/comments-block/like_b.svg');
           e.target.nextElementSibling.textContent = user.heartCount;
           (0,_dev_modules_setCookie__WEBPACK_IMPORTED_MODULE_6__["default"])(user.username, tempId, 1);
-        } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('good')) {
-          if ((0,_dev_modules_isEmpty__WEBPACK_IMPORTED_MODULE_7__["default"])(user.answer)) {
-            (0,_dev_modules_updateStorage__WEBPACK_IMPORTED_MODULE_3__["default"])(tempId, 'likeCount', user.likeCount = user.likeCount + 1);
-            e.target.previousElementSibling.textContent = user.likeCount;
-          } else {
-            (0,_dev_modules_updateAnswerStorage__WEBPACK_IMPORTED_MODULE_4__["default"])(tempId, 'likeCount', user.answer.likeCount = user.answer.likeCount + 1);
-            e.target.previousElementSibling.textContent = user.answer.likeCount;
-          }
+        }
+
+        if (e.target.nodeName === 'IMG' && e.target.classList.contains('good')) {
+          (0,_dev_modules_updateStorage__WEBPACK_IMPORTED_MODULE_3__["default"])(tempId, 'likeCount', user.likeCount = user.likeCount + 1);
+          e.target.previousElementSibling.textContent = user.likeCount;
         } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('bad')) {
-          if ((0,_dev_modules_isEmpty__WEBPACK_IMPORTED_MODULE_7__["default"])(user.answer)) {
-            (0,_dev_modules_updateStorage__WEBPACK_IMPORTED_MODULE_3__["default"])(tempId, 'dislikeCount', user.dislikeCount = user.dislikeCount + 1);
-            e.target.nextElementSibling.textContent = user.dislikeCount;
-          } else {
-            (0,_dev_modules_updateAnswerStorage__WEBPACK_IMPORTED_MODULE_4__["default"])(tempId, 'dislikeCount', user.answer.dislikeCount = user.answer.dislikeCount + 1);
-            e.target.nextElementSibling.textContent = user.answer.dislikeCount;
-          }
+          (0,_dev_modules_updateStorage__WEBPACK_IMPORTED_MODULE_3__["default"])(tempId, 'dislikeCount', user.dislikeCount = user.dislikeCount + 1);
+          e.target.nextElementSibling.textContent = user.dislikeCount;
         }
       }
+
+      user.answer.forEach(function (answer) {
+        if (tempId === answer.userId) {
+          if ((0,_dev_modules_isEmpty__WEBPACK_IMPORTED_MODULE_7__["default"])(answer)) return;
+
+          if (e.target.nodeName === 'IMG' && e.target.classList.contains('good')) {
+            (0,_dev_modules_updateAnswerStorage__WEBPACK_IMPORTED_MODULE_4__["default"])(tempId, 'likeCount', answer.likeCount = answer.likeCount + 1);
+            e.target.previousElementSibling.textContent = answer.likeCount;
+          } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('bad')) {
+            (0,_dev_modules_updateAnswerStorage__WEBPACK_IMPORTED_MODULE_4__["default"])(tempId, 'dislikeCount', answer.dislikeCount = answer.dislikeCount + 1);
+            e.target.nextElementSibling.textContent = answer.dislikeCount;
+          }
+        }
+      });
     });
   });
 }
@@ -1481,6 +1537,60 @@ function removeComment() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (removeComment);
+
+/***/ }),
+
+/***/ "./src/js/userList.js":
+/*!****************************!*\
+  !*** ./src/js/userList.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _dev_modules_idGen__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dev-modules/idGen */ "./src/js/dev-modules/idGen.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  userId: (0,_dev_modules_idGen__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+  username: 'Jon Davis',
+  email: 'email@gmail.com',
+  www: '',
+  message: 'Lorem ::smile:: ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ',
+  time: Date.now(),
+  likeCount: 5,
+  dislikeCount: 2,
+  heartCount: 10,
+  answer: [{
+    userId: (0,_dev_modules_idGen__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+    username: 'Jon Davis',
+    email: 'email@gmail.com',
+    www: '',
+    message: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    time: Date.now(),
+    likeCount: 5,
+    dislikeCount: 2
+  }, {
+    userId: (0,_dev_modules_idGen__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+    username: 'Shane Hobbins',
+    email: 'email@gmail.com',
+    www: '',
+    message: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    time: Date.now(),
+    likeCount: 5,
+    dislikeCount: 2
+  }]
+}, {
+  userId: (0,_dev_modules_idGen__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+  username: 'Jon Davis',
+  email: 'email@gmail.com',
+  www: '',
+  message: 'Lorem ::smile:: ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. ',
+  time: Date.now(),
+  likeCount: 5,
+  dislikeCount: 2,
+  heartCount: 10,
+  answer: []
+}]);
 
 /***/ }),
 
@@ -8044,8 +8154,24 @@ handlePrototype(DOMTokenListPrototype);
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./src/js/script.js");
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	__webpack_require__("./src/js/userList.js");
 /******/ 	__webpack_require__("./src/js/answer/addAnswer.js");
 /******/ 	__webpack_require__("./src/js/answer/renderAnswer.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/getCommentsList.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/getCookie.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/getDate.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/getName.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/idGen.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/insertUsersList.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/isEmpty.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/items.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/removeUser.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/renderSmile.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/scroll.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/setCookie.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/showTime.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/updateAnswerStorage.js");
+/******/ 	__webpack_require__("./src/js/dev-modules/updateStorage.js");
 /******/ 	__webpack_require__("./src/js/comment/addCommentData.js");
 /******/ 	__webpack_require__("./src/js/comment/renderComment.js");
 /******/ 	__webpack_require__("./src/js/comment/renderComments.js");
@@ -8060,20 +8186,6 @@ handlePrototype(DOMTokenListPrototype);
 /******/ 	__webpack_require__("./src/js/form/saveName.js");
 /******/ 	__webpack_require__("./src/js/form/setSavedUser.js");
 /******/ 	__webpack_require__("./src/js/form/smileParse.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/getCommentsList.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/getCookie.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/getDate.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/getName.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/idGen.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/isEmpty.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/items.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/removeUser.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/renderSmile.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/scroll.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/setCookie.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/showTime.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/updateAnswerStorage.js");
-/******/ 	__webpack_require__("./src/js/dev-modules/updateStorage.js");
 /******/ 	__webpack_require__("./src/js/user-buttons/editMessage.js");
 /******/ 	__webpack_require__("./src/js/user-buttons/likeProcess.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/js/user-buttons/removeComment.js");

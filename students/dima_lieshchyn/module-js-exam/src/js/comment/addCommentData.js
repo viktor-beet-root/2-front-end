@@ -15,7 +15,7 @@ function addCommentData() {
         likeCount: 0,
         dislikeCount: 0,
         heartCount: 0,
-        answer: {},
+        answer: [],
     });
     renderComment(items.userName.value, items.www.value, items.textarea.value, tempId);
 

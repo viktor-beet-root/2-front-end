@@ -15,6 +15,9 @@ import renderAnswer from './answer/renderAnswer';
 import randomId from './dev-modules/idGen';
 import clearForm from './form/clearForm';
 import setSavedUser from './form/setSavedUser';
+import getCommentList from './dev-modules/getCommentsList'
+import insertUsersList from './dev-modules/insertUsersList';
+import userList from './userList';
 
 scrollSmooth('.arrow, .nav-link', 0.8);
 
@@ -45,7 +48,6 @@ likeProcess();
 
 
 
-// addAnswer('81b5235e');
 items.commentsWrapper.addEventListener('click', function (e) {
     const btn = document.querySelector('.answer-btn');
     let tempid = randomId();
@@ -76,6 +78,7 @@ items.commentsWrapper.addEventListener('click', function (e) {
 
     }
 })
+insertUsersList(userList);
 
 renderComments(getCommentsList());
 

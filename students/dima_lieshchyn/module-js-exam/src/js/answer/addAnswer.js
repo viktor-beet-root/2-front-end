@@ -6,7 +6,7 @@ function addAnswer(id) {
     const updatedComentList = getCommentsList();
     updatedComentList.map(elem => {
         if (elem.userId === id) {
-            elem.answer = {
+            elem.answer.push({
                 userId: randomId(),
                 username: items.userName.value,
                 email: items.email.value,
@@ -15,7 +15,7 @@ function addAnswer(id) {
                 time: Date.now(),
                 likeCount: 0,
                 dislikeCount: 0,
-            }
+            })
         }
     });
     localStorage.setItem('userList', JSON.stringify(updatedComentList));

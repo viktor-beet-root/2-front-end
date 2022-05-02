@@ -11,8 +11,10 @@ function likeProcess() {
     comment.addEventListener('click', function (e) {
         let tempId = e.target.dataset.id;
         const users = getCommentsList();
+
         users.forEach(user => {
-            if (tempId === user.userId || tempId === user.answer.userId) {
+
+            if (tempId === user.userId) {
                 if (e.target.nodeName === 'IMG' && e.target.classList.contains('like-block__img')) {
 
                     if (getCookie(user.username)) return;
@@ -22,28 +24,32 @@ function likeProcess() {
                     e.target.nextElementSibling.textContent = user.heartCount;
                     setCookie(user.username, tempId, 1);
 
+                }
+                if (e.target.nodeName === 'IMG' && e.target.classList.contains('good')) {
+                    updateStorage(tempId, 'likeCount', user.likeCount = user.likeCount + 1);
+                    e.target.previousElementSibling.textContent = user.likeCount;
 
-                } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('good')) {
-                    if (isEmpty(user.answer)) {
-                        updateStorage(tempId, 'likeCount', user.likeCount = user.likeCount + 1);
-                        e.target.previousElementSibling.textContent = user.likeCount;
-                    } else {
-                        updateAnswerStorage(tempId, 'likeCount', user.answer.likeCount = user.answer.likeCount + 1);
-                        e.target.previousElementSibling.textContent = user.answer.likeCount;
-                    }
 
                 } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('bad')) {
 
-                    if (isEmpty(user.answer)) {
-                        updateStorage(tempId, 'dislikeCount', user.dislikeCount = user.dislikeCount + 1);
-                        e.target.nextElementSibling.textContent = user.dislikeCount;
-                    } else {
-                        updateAnswerStorage(tempId, 'dislikeCount', user.answer.dislikeCount = user.answer.dislikeCount + 1);
-                        e.target.nextElementSibling.textContent = user.answer.dislikeCount;
-                    }
+                    updateStorage(tempId, 'dislikeCount', user.dislikeCount = user.dislikeCount + 1);
+                    e.target.nextElementSibling.textContent = user.dislikeCount;
 
                 }
             }
+            user.answer.forEach(answer => {
+                if (tempId === answer.userId) {
+                    if (isEmpty(answer)) return;
+                    if (e.target.nodeName === 'IMG' && e.target.classList.contains('good')) {
+                        updateAnswerStorage(tempId, 'likeCount', answer.likeCount = answer.likeCount + 1);
+                        e.target.previousElementSibling.textContent = answer.likeCount;
+                    } else if (e.target.nodeName === 'IMG' && e.target.classList.contains('bad')) {
+                        updateAnswerStorage(tempId, 'dislikeCount', answer.dislikeCount = answer.dislikeCount + 1);
+                        e.target.nextElementSibling.textContent = answer.dislikeCount;
+                    }
+                }
+            })
+
         });
 
 

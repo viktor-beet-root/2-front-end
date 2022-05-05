@@ -1,0 +1,94 @@
+.footer {
+    background-color: $light-grey;
+    position: relative;
+    padding: 25px 0;
+    @include media('sm'){
+        padding: 65px 0 48px;
+       }
+    &__arrow{
+        position:absolute;
+        top: -27px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 63px;
+        background-color: #fff;
+        height: 63px;
+        width: 63px;
+        border-radius: 50%;
+        &::before{
+            content:'';
+            height: 12px;
+            width: 12px;
+            display: block;
+            background-image: url(./../images/footer-left.png);
+            position: absolute;
+            top: 25px;
+            left: -10px;
+        }
+        &::after{
+            content:'';
+            height: 9px;
+            width: 12px;
+            display: block;
+            background-image: url(./../images/footer-right.png);
+            position: absolute;
+            top: 27px;
+            right: -10px;
+        }
+        img{
+            transition: transform .4s ease-in-out;
+        }
+        a:hover img{
+            transform: translateY(-3px);
+        }
+       
+    }
+    &__copyright {
+        font-size: 12px;
+        span{
+            font-size: 18px;
+        }
+        @include media('sm'){
+            margin-bottom: 42px;
+           }
+    }
+
+    &__social {
+        display: flex;
+        li{
+            &:not(:last-child){
+                margin-right: 24px;
+            }
+            a{
+                transition: color .4s ease-in-out;
+                display: inline-block;
+                color:$text-color;
+                &:hover{
+                    color:$main-color;
+                    svg{
+                        path{
+                            fill:$main-color;
+                        }
+                    }
+                }
+                svg{
+                    path{
+                    transition: fill .4s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    @include media('sm'){
+        display: block;
+       }
+}

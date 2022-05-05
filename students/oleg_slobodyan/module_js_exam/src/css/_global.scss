@@ -1,0 +1,68 @@
+@include font-face("Roboto Mono", roboto-mono-v13-latin-300,300);
+@include font-face("Roboto Mono", roboto-mono-v13-latin-italic,400,italic);
+@include font-face("Roboto Mono", roboto-mono-v13-latin-regular);
+@include font-face("Roboto Mono", roboto-mono-v13-latin-700,700);
+
+@include grid();
+
+a {
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type:none;
+}
+
+
+.container {
+    max-width: $main-width;
+    margin: 0 auto;
+    padding: 0 $default-gap;
+}
+
+.row {
+    margin: 0 (-$default-gap);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*="col-"] {
+    padding: 0 $default-gap;
+    box-sizing: border-box;
+}
+
+svg{
+    transition: all .4s ease-in-out;
+    path{
+        transition: fill .4s ease-in-out;
+    }
+}
+.page {
+    font-family: $main-font-text, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: $main-font-size;
+    line-height: $main-font-line-height;
+    font-style: normal;
+    color:$text-color;
+}
+.main-title{
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    font-weight: normal;
+    @include media('sm'){
+        margin-bottom: 24px;
+    }
+
+
+}
+.title{
+    font-size: 19px;
+    line-height: 1.47;
+    margin-bottom: 35px;
+    font-weight: normal;
+}
+.text{
+    margin-bottom: 30px;
+}

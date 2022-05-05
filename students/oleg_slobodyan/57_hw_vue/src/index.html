@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class work 56 Vue</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+
+        <p><strong>Name:</strong> {{firstName}}</p>
+        <p><strong>Surname:</strong> {{lastName}}</p>
+        <p><strong>Full name:</strong> {{fullName}}</p>
+        <p><strong>Email:</strong> <a :href="email">{{emailText}}</a></p>
+        <p><strong>City:</strong> {{city}}</p>
+        <p><strong>Birthday:</strong> {{birthday}}</p>
+        <p><strong>Age:</strong> {{age? age:'click how old buttons'}}</p>
+        <button @click="getAge">how old</button>
+        <button @click="showCard">show short info</button>
+        <br>
+        <div ref="info" class="disp-none">
+            <h2>User info</h2>
+            <p><strong>date:</strong> {{currentData}}</p>
+            <p><strong>Full name:</strong> {{fullName}}</p>
+            <p><strong>Email:</strong> <a :href="email">{{emailText}}</a></p>
+            <p><strong>Age:</strong> {{age? age:'click how old buttons'}}</p>
+
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+
+</html>

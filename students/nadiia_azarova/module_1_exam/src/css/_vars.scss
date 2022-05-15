@@ -1,0 +1,237 @@
+// File Pathes
+$path-fonts: '../fonts/';
+$path-img: '../images/';
+
+// Container
+$container-width: 1280px; // Change this!
+
+// For Responsive Grid Mixin
+$grid-gap: 16px; // Change this!
+
+$breack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);
+
+// Project Colors
+$dark-blue: #262A3F;
+$spring: #85BBB1;
+$coral: #F1897B;
+$white: #FFFFFF;
+$blue: #689FF2;
+$green: #53F3CD;
+$blue-black: #161926;
+$light-grey: #E4E4E4;
+
+$overlay-bk: linear-gradient(rgba(25, 28, 41, .7));
+$black: #000000;
+
+$primary-1: $dark-blue;
+$primary-2: $white;
+$secondary-1: $spring;
+$secondary-2: $coral;
+$secondary-1-dark: $blue;
+$secondary-2-dark: $green;
+$dark-bk: $blue-black;
+$secondary-3: $light-grey;
+$arrow-color: $black;
+
+// Project Typography
+$primary-font: 'Lato';
+$secondary-font: 'Playfair Display';
+
+$title-font-family: $secondary-font;
+$body-font-family: $primary-font;
+
+$body-font-weight: 300;
+
+$body-line-height: 1.44em;
+
+// Font Sizes
+$fs-xs: 14px;
+$fs-s: 16px;
+$fs-m: 18px;
+$fs-l: 20px;
+$fs-xl: 24px;
+$fs-xxl-2: 32px;
+$fs-xxl: 40px;
+$fs-xxxl: 44px;
+
+// Font Stacks
+$humanist: "Myriad Pro",
+Seravek,
+Ember,
+"Trebuchet MS",
+"BN Trebuchet MS",
+"PT Sans",
+"Frutiger Neue",
+Roboto,
+sans-serif;
+$geometric: Futura,
+"Century Gothic",
+"Apple SD Gothic Neo",
+AppleGothic,
+sans-serif;
+
+$oldstyle: "Minion Pro",
+"Iowan Old Style",
+Palatino,
+"Palatino Linotype",
+"Palatino Nova",
+"BN Amasis",
+Cambria,
+FreeSerif,
+"Times New Roman",
+serif;
+
+$modern: Athelas,
+Literata,
+Bookerly,
+"Merriweather Serif",
+Malabar,
+"BN Malabar",
+Georgia,
+"Droid Serif",
+serif;
+
+// The monospace
+$monospace: Consolas,
+"Andale Mono WT",
+"Andale Mono",
+"Lucida Console",
+"Lucida Sans Typewriter",
+"DejaVu Sans Mono",
+"Bitstream Vera Sans Mono",
+"Liberation Mono",
+"Nimbus Mono L",
+Monaco,
+"Courier New",
+Courier,
+monospace;
+
+//  Other Modern Font Stacks
+
+// System
+$system-font: system,
+-apple-system,
+".SFNSText-Regular",
+"San Francisco",
+"Roboto",
+"Segoe UI",
+"Helvetica Neue",
+"Lucida Grande",
+sans-serif;
+
+// Times New Roman-based serif
+$timenewroman-based: Cambria,
+"Hoefler Text",
+Utopia,
+"Liberation Serif",
+"Nimbus Roman No9 L Regular",
+Times,
+"Times New Roman",
+serif;
+
+// A modern Georgia-based serif
+$georgia-based: Constantia,
+"Lucida Bright",
+Lucidabright,
+"Lucida Serif",
+Lucida,
+"DejaVu Serif",
+"Bitstream Vera Serif",
+"Liberation Serif",
+Georgia,
+serif;
+
+// A more traditional Garamond-based serif 
+$garamond-based: "Palatino Linotype",
+Palatino,
+Palladio,
+"URW Palladio L",
+"Book Antiqua",
+Baskerville,
+"Bookman Old Style",
+"Bitstream Charter",
+"Nimbus Roman No9 L",
+Garamond,
+"Apple Garamond",
+"ITC Garamond Narrow",
+"New Century Schoolbook",
+"Century Schoolbook",
+"Century Schoolbook L",
+Georgia,
+serif;
+
+// The Helvetica/Arial-based sans serif
+$arial-based: Frutiger,
+"Frutiger Linotype",
+Univers,
+Calibri,
+"Gill Sans",
+"Gill Sans MT",
+"Myriad Pro",
+Myriad,
+"DejaVu Sans Condensed",
+"Liberation Sans",
+"Nimbus Sans L",
+Tahoma,
+Geneva,
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+
+// The Verdana-based sans serif 
+$verdana-based: Corbel,
+"Lucida Grande",
+"Lucida Sans Unicode",
+"Lucida Sans",
+"DejaVu Sans",
+"Bitstream Vera Sans",
+"Liberation Sans",
+Verdana,
+"Verdana Ref",
+sans-serif;
+
+// The Trebuchet-based sans serif 
+$trebuchet-based: "Segoe UI",
+Candara,
+"DejaVu Sans",
+"Bitstream Vera Sans",
+"Trebuchet MS",
+Verdana,
+"Verdana Ref",
+sans-serif;
+
+// The heavier "Impact" sans serif
+$impact-based: Impact,
+Haettenschweiler,
+"Franklin Gothic Bold",
+Charcoal,
+"Helvetica Inserat",
+"Bitstream Vera Sans Bold",
+"Arial Black",
+sans-serif;
+
+// Flat colors
+$turquoise: #1abc9c;
+$emerald: #2ecc71;
+$peter-river: #3498db;
+$amethyst: #9b59b6;
+$wet-asphalt: #34495e;
+$green-sea: #16a085;
+$nephritis: #27ae60;
+$belize-hole: #2980b9;
+$wisteria: #8e44ad;
+$midnight-blue: #2c3e50;
+$sunflower: #f1c40f;
+$carrot: #e67e22;
+$alizarin: #e74c3c;
+$clouds: #ecf0f1;
+$concrete:#95a5a6;
+$orange: #f39c12;
+$pumpkin: #d35400;
+$pomegranate: #c0392b;
+$silver: #bdc3c7;
+$asbestos: #7f8c8d;

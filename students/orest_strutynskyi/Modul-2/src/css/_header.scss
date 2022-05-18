@@ -49,15 +49,17 @@
 	display: flex;
 
 	&__item {
-		padding-right: 45px;
+		padding-right: 43px;
 
 		@include media("sm") {
 			padding-right: 20px;
 		}
+		@include media("xs") {
+			padding-right: 0;
+		}
 
 		&:last-child {
 			padding-right: 0px;
-			// padding-right: 108px;
 
 			@include media("md") {
 				padding-right: 40px;
@@ -65,6 +67,9 @@
 
 			@include media("sm") {
 				padding-right: 30px;
+			}
+			@include media("xs") {
+				padding-right: 0;
 			}
 		}
 	}
@@ -88,7 +93,6 @@
 	&__arrow {
 		position: absolute;
 		top: 4px;
-		// margin-left: 8px;
 		right: -15px;
 		border: solid $dark-gray-color;
 		border-width: 0 1px 1px 0;
@@ -105,14 +109,32 @@
 		}
 
 		@include media("xs") {
-			right: 265px;
-			top: 94px;
+			overflow: hidden;
+			opacity: 0;
+		}
+	}
+}
+
+.menu__arrow-xs {
+	position: relative;
+	@include media("xs") {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 4px;
+			right: -15px;
+			border: solid $dark-gray-color;
+			border-width: 0 1px 1px 0;
+			display: inline-block;
+			padding: 3px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
 		}
 	}
 }
 
 .form {
-	position: relative;
+	// position: relative;
 	width: 100%;
 	border: none;
 	display: flex;
@@ -120,7 +142,6 @@
 	border-radius: 5px;
 	background-color: #f4f4f4;
 	margin-left: 108px;
-	z-index: -1;
 
 	@include media("md") {
 		max-width: 220px;
@@ -182,6 +203,7 @@
 
 	@include media("xs") {
 		position: relative;
+		border-color: #e8e8e8;
 	}
 
 	&__item {
@@ -245,6 +267,10 @@
 	}
 
 	.menu.active {
-		left: 0;
+		left: 0px;
+		margin-left: 33px;
+		max-width: 93%;
+		position: absolute;
+		z-index: 100;
 	}
 }

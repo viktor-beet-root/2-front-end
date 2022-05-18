@@ -1,0 +1,96 @@
+.container__allign {
+	position: relative;
+}
+.footer {
+	position: relative;
+	margin-top: 36px;
+	background-color: #f4f4f4;
+
+	&__info {
+		padding: 39px 0 41px 0;
+		@include media("sm") {
+			padding-top: 65px;
+		}
+	}
+
+	&__arrow {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		position: absolute;
+		margin: 0 auto;
+		right: 0;
+		left: 0;
+		bottom: 69px;
+		width: 63px;
+		height: 63px;
+		background-color: #fff;
+		border-radius: 50%;
+		@include media("sm") {
+			bottom: 113px;
+		}
+		@include media("xs") {
+			bottom: 145px;
+		}
+	}
+	&__arrow::after{
+		content: url(.././images/after-footer.svg);
+		position: absolute;
+		top:29px;
+		left: 61px;
+	}
+	&__arrow::before{
+		content: url(.././images/before-footer.svg);
+		position: absolute;
+		top:30px;
+		right:58px;
+	}
+}
+.arrow {
+	left: 29px;
+	top: 40px;
+	position: absolute;
+	border: solid #474747;
+	border-width: 1px 0 0 1px;
+	display: inline-block;
+	padding: 3px;
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+.footer__block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include media("sm") {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+@include media("sm") {
+	.share1 {
+		margin-left: 0px;
+	}
+}
+@include media("xs") {
+	.share1 {
+		margin-left: 0px;
+	}
+}
+
+.colorimg1:hover {
+	content: url(.././images/facebook-icon-color.svg);
+}
+.colorimg2:hover {
+	content: url(.././images/cat-icon-color.svg);
+}
+
+.colorimg3:hover {
+	content: url(.././images/twiter-icon-color.svg);
+}
+
+.colorimg4:hover {
+	content: url(.././images/in-icon-color.svg);
+}

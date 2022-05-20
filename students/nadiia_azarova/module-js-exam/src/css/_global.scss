@@ -1,0 +1,37 @@
+@include font-face('Roboto Mono', roboto-mono-v21-latin-300, 300);
+@include font-face('Roboto Mono', roboto-mono-v21-latin-500, 500);
+@include font-face('Roboto Mono', roboto-mono-v21-latin-500italic, 500, italic);
+@include font-face('Roboto Mono', roboto-mono-v21-latin-700, 700);
+
+.page {
+    font-family: $body-font-family, $monospace;
+    font-size: $body-font-size;
+    font-weight: 500;
+    line-height: $body-line-height;
+    color: $body-color;
+
+    &__header {
+        box-sizing: border-box;
+        padding: 96px 0;
+    }
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $grid-gap;
+}
+
+@include grid;
+
+.title {
+    &_a {
+        font-size: $fs-xl;
+        line-height: $lh-xl;
+    }
+
+    &_b {
+        font-size: $fs-l;
+        line-height: $lh-l;
+    }
+}

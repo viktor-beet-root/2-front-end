@@ -1,0 +1,111 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__logo {
+        align-self: center;
+        position: relative;
+        top: 3px;
+    }
+
+    &__menu {
+        flex-grow: 1;
+    }
+
+    &__search {
+
+    }
+}
+
+.logo {
+    &__img {
+        width: 98px;
+        height: 19px;
+        fill: $primary-1;
+    }
+}
+
+.menu {
+    @include list-reset;
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+
+    margin-right: 100px;
+
+    &__item {
+        box-sizing: border-box;
+        padding: 0 24px;
+    }
+
+    &__link {
+        @include link-reset;
+        color: $secondary-dark;
+        display: block;
+        line-height: $lh-m;
+        height: 100%;
+        box-sizing: border-box;
+        border-bottom: 2px solid transparent;
+        @include transition(all);
+
+        &_active {
+            color: $primary-1;
+            border-bottom: 2px solid $secondary-dark;
+        }
+
+        &:hover {
+            @extend .menu__link_active;
+        }
+    }
+}
+
+.search {
+    position: relative;
+
+    &__field {
+        @include input-reset;
+        width: 256px;
+        height: 40px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        background-color: $secondary-light;
+        padding: 13px 40px 13px 14px;
+        font-size: $fs-s;
+        line-height: 1em;
+
+        &::placeholder {
+            color: $primary-1;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: $accent;
+    border-radius: 3px;
+
+    &__img {
+        width: 16px;
+        height: 16px;
+        fill: $primary-3;
+    }
+
+    &:active {
+        background-color: $active-color;
+    }
+}

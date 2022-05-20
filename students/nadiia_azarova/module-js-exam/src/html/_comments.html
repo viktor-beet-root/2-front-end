@@ -1,0 +1,151 @@
+<div class="comments">
+    <section class="comments__add">
+        <div class="row">
+            <div class="col-8 comments__content">
+                <h2 class="title title_b">Add a Comment</h2>
+                <form action="./" method="post" class="add-comment">
+                    <label for="userName" class="add-comment__user-label">Name</label>
+                    <input id="userName" type="text" class="add-comment__user" placeholder="Shane Hobbins" required>
+                    <label for="userMail" class="add-comment__user-label">Email</label>
+                    <input id="userMail" type="email" class="add-comment__user" placeholder="info@interface.com" required>
+                    <label for="userUrl" class="add-comment__user-label">Website</label>
+                    <input id="userUrl" type="url" class="add-comment__user" placeholder="www.interface.com">
+
+                    <label for="saveCookie" class="add-comment__checkbox-label">Save my name, email, and website in this browser for the next time I comment</label>
+                    <input id="saveCookie" type="checkbox" class="add-comment__checkbox">
+
+                    <label for="message" class="add-comment__textarea-label">Message</label>
+                    <ul class="add-comment__smiles smile-list">
+                        <li class="smile-list__item"></li>
+                        <li class="smile-list__item"></li>
+                        <li class="smile-list__item"></li>
+                        <li class="smile-list__item"></li>
+                        <li class="smile-list__item"></li>
+                        <li class="smile-list__item"></li>
+                    </ul>
+                    <textarea name="message" id="message" class="add-comment__textarea" placeholder="Hi there [::smile::] lorem [b]ipsum[/b] [i]dolor[/i]" required></textarea>
+
+                    <button class="add-comment__btn add-comment__btn_reset">Cancel</button>
+                    <button class="add-comment__btn add-comment__btn_send">Post</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="comments__exist">
+        <div class="row">
+            <div class="col-8 comments__content">
+                <h2 class="title title_b">Comments</h2>
+                <ul class="comments-list">
+                    <li class="comments-list__item">
+                        <div class="comment">
+                            <figure class="comment__img-wrap">
+                                <img class="comment__img" src="./images/user-1.jpg" alt="">
+                                <figcaption class="comment__website">Website</figcaption>
+                            </figure>
+                            <div class="comment__name-wrap">
+                                <div class="comment__name">Jon Davis</div>
+                                <div class="comment__date">2 Minutes ago</div>
+                            </div>
+                            <div class="comment__change change">
+                                <svg class="change__img change__img_edit">
+                                    <use xlink:href="#edit" />
+                                </svg>
+                                <svg class="change__img change__img_delete">
+                                    <use xlink:href="#delete" />
+                                </svg>
+                            </div>
+                            <div class="like-counter">
+                                <svg class="like-counter__img">
+                                    <use xlink:href="#heart" />
+                                </svg>
+                                <span class="like-counter__counter">10</span>
+                            </div>
+                            <div class="comment__txt">
+                                <p class="body-txt">Lorem  ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna. </p>
+                            </div>
+                            <div class="reaction">
+                                <div class="reply">
+                                    <div class="reply__add-reply">Reply</div>
+                                    <div class="reply__react react">
+                                        <div class="react__wrap">
+                                            <svg class="react__img react__img_like">
+                                                <use xlink:href="#like" />
+                                            </svg>
+                                            <span class="react__counter">5</span>
+                                        </div>
+                                        <div class="react__wrap">
+                                            <svg class="react__img react__img_dislike">
+                                                <use xlink:href="#dislike" />
+                                            </svg>
+                                            <span class="react__counter">2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="answer">
+                            <li class="comment">
+                                <figure class="comment__img-wrap">
+                                    <img class="comment__img" src="./images/user-2.jpg" alt="">
+                                    <figcaption class="comment__website">Website</figcaption>
+                                </figure>
+                                <div class="comment__name-wrap">
+                                    <div class="comment__name">Jon Davis</div>
+                                    <div class="comment__date">2 Minutes ago</div>
+                                </div>
+                                <div class="reaction">
+                                    <div class="reply">
+                                        <div class="reply__add-reply">Reply</div>
+                                        <div class="reply__react react">
+                                            <div class="react__wrap">
+                                                <svg class="react__img react__img_like">
+                                                    <use xlink:href="#like" />
+                                                </svg>
+                                                <span class="react__counter">5</span>
+                                            </div>
+                                            <div class="react__wrap">
+                                                <svg class="react__img react__img_dislike">
+                                                    <use xlink:href="#dislike" />
+                                                </svg>
+                                                <span class="react__counter">2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="comment">
+                        <figure class="comment__img-wrap">
+                            <img class="comment__img" src="./images/user-1.jpg" alt="">
+                            <figcaption class="comment__website">Website</figcaption>
+                        </figure>
+                        <div class="comment__name-wrap">
+                            <div class="comment__name">Jon Davis</div>
+                            <div class="comment__date">2 Minutes ago</div>
+                        </div>
+                        <div class="reaction">
+                            <div class="reply">
+                                <div class="reply__add-reply">Reply</div>
+                                <div class="reply__react react">
+                                    <div class="react__wrap">
+                                        <svg class="react__img react__img_like">
+                                            <use xlink:href="#like" />
+                                        </svg>
+                                        <span class="react__counter">5</span>
+                                    </div>
+                                    <div class="react__wrap">
+                                        <svg class="react__img react__img_dislike">
+                                            <use xlink:href="#dislike" />
+                                        </svg>
+                                        <span class="react__counter">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

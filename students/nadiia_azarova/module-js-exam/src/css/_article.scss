@@ -1,0 +1,19 @@
+.glide {
+    &-wrap {
+        padding: 48px 0;
+    }
+
+    &__slides {
+        height: 420px;
+    }
+
+    &__slide {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+}

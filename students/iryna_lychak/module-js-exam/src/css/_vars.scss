@@ -1,0 +1,40 @@
+$darkgray-color: #474747;
+$gray-color: #777777;
+$lightgray-1-color: #f4f4f4;
+$lightgray-2-color: #dfdfdf;
+$white-color: #fff;
+$peach-color: #ffba9d;
+$darkred-color: #891900;
+
+$main-font-color: $darkgray-color;
+$add-font-color: $gray-color;
+$background-form: $lightgray-1-color;
+$line-color: $lightgray-2-color;
+$validation-color: $darkred-color;
+
+$default-border: 1px solid;
+
+$container-width: 1120px;
+$default-gap: 15px;
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Roboto Mono';
+$path-fonts: '../fonts/';
+
+$main-font: $main-font-name,
+$font-follback;
+$base-font-size: 16px;
+$base-line-height: 32px;
+$base-font-weight: 400;
+$title-font-size: 19px;
+$main-title-font-size: 24px;
+$small-form-font-size: 12px;
+$email-small-text: 9px;
+$comments-number: 10px;
+
+$breack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

@@ -1,0 +1,46 @@
+.hero-block {
+width: 100%;
+
+.first_t {
+    @include media('xs') {
+    padding-top: 50px;
+}
+}
+&__text {
+    width: 200px;
+    color: $gray-neutral-color;
+    font-size: 14px;
+}
+
+&__title {
+    display: block;
+    padding-bottom: 60px;
+    font-size: 24px;
+    flex-grow: 1;
+    @include media('xs') {
+        padding-bottom: 20px;
+    }
+
+}
+
+&__info-wrapper {
+   display: flex;
+   position: relative;
+
+    & .hero-block__text:nth-child(2) {
+   padding-bottom: 32px;
+ 
+   &::before {
+    position: absolute;
+    top: 3px;
+    left: 190px;
+    content: "";
+    width: 0px;
+    height: 14px;
+    border-left: 1px solid #DFDFDF;
+   
+        }
+    }
+}
+}
+

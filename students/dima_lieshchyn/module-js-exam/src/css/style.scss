@@ -1,0 +1,16 @@
+@use 'sass:math';
+@import './vars';
+@import './mixins';
+@import './normalize';
+@import './global';
+@import './header/nav';
+@import './main/hero-block';
+@import './main/slider-section';
+@import './main/lorem-section';
+@import './main/sed-block';
+@import './main/lessons-block';
+@import './main/post-block';
+@import './main/switch';
+@import './main/post-form-block';
+@import './main/comment-block';
+@import './main/footer-block';

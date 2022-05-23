@@ -1,0 +1,33 @@
+.lessons-block {
+padding-top: 79px;
+@include media('xs'){
+    padding-top: $default-gap;
+        }
+
+		&__title {
+            margin-left: $default-gap*2;
+            padding-bottom: 40px;
+            @include media('xs'){
+                margin-left: 0;
+            }
+		}
+
+		&__text {
+            width: 75%;
+            margin-left: $default-gap*2;
+            padding-bottom: $default-gap;
+            &::before {
+                position: absolute;
+                content: '';
+                margin-top: 7px;
+                left: 10px;
+                width: 7px;
+                height: 7px;
+                background-color: $black-color;
+                border-radius: 50%;
+            }
+            @include media('xs'){
+                width: 90%;
+            }
+		}
+}

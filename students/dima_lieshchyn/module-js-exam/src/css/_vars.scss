@@ -1,0 +1,49 @@
+$orang-color: #FFBA9D;
+$white-color: #fff;
+$gray-color: #F4F4F4;
+$gray-neutral-color: #777777;
+$gray-basic: #DFDFDF;
+$gray-text: #C4C4C4;
+$brown-color: #891900;
+$black-color: #474747;
+$red-color: red;
+
+$border-color:$gray-color;
+
+$text-shadow-color: $white-color;
+
+$text-shadow-default:1px 1px $text-shadow-color;
+
+$main-color: $black-color;
+$main-text-color: $black-color;
+
+
+$default-border: 1px solid $border-color;
+
+$container-width: 1110px;
+$default-gap: 15px;
+
+$font-follback: Arial,
+Helvetica,
+sans-serif;
+$main-font-name: 'Roboto Mono';
+$path-fonts: '../fonts/';
+
+$main-font: $main-font-name,
+$font-follback;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$base-font-weight: 400;
+
+$title-main: 24px;
+
+$form-border-radius: 5px;
+$form-border: $default-border;
+$form-padding: 0 10px;
+$textarea-padding: 10px;
+$form-input-height: 50px;
+
+$beack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

@@ -1,0 +1,15 @@
+.sed-block {
+padding-top: 48px;
+@include media('xs'){
+    padding-top: $default-gap;
+}
+		&__sed-wrapper {
+            border-left: 1px solid $gray-basic;
+            padding: 10px 0;
+            padding-left: $default-gap;
+            margin-left: $default-gap*2;
+            @include media('xs'){
+                margin-left: 0;
+            }
+		}
+}

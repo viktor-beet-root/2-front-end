@@ -1,0 +1,28 @@
+// Colors
+$main-color: #FFBA9D;
+$light-grey: #F4F4F4;;
+$text-color :#474747;
+$second-text-color:#777777;
+$error-color:#891900;
+$green:#01620B;
+$border-color:#DFDFDF;
+
+
+
+// Global Style
+$main-width: 1120px;
+$default-gap: 15px;
+$border-radius:3px;
+
+// Fonts
+$main-font-size:16px;
+$main-font-line-height:2;
+$main-font-text:'Roboto Mono';
+$main-font-title:'Roboto Mono';
+
+$path-fonts: '../fonts/';
+
+$beack-points: ("lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px);

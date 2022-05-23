@@ -1,0 +1,63 @@
+.spain-hous {
+	background: url(.././images/bg-block-3.png);
+	padding: 227px 0 100px 0;
+	font-family: "Josefin Sans";
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include media("xs") {
+		padding: 50px 0 25px 0;
+	}
+}
+
+.spain-wrapper {
+	color: $white-color;
+	max-width: 545px;
+	background-color: rgba(35, 35, 35, 0.8);
+	padding-left: 32px;
+
+	&__span {
+		display: block;
+		padding: 49px 0 23px 0;
+		font-size: $titleBlockSmall;
+		letter-spacing: 1.5px;
+
+		@include media("sm") {
+			font-size: $titleBlockSmallSm;
+		}
+
+		@include media("xs") {
+			padding: 20px 0 15px 0;
+		}
+	}
+
+	&__title {
+		font-size: $titleBlockSmall;
+		padding-bottom: 13px;
+		text-transform: uppercase;
+
+		@include media("sm") {
+			font-size: $titleBlockSmallSm;
+		}
+
+		@include media("xs") {
+			padding-bottom: 10px;
+		}
+	}
+
+	&__text {
+		line-height: 26px;
+
+		@include media("sm") {
+			font-size: $sizepageSm;
+		}
+	}
+}
+
+.btn-main__position {
+	padding-bottom: 50px;
+
+	@include media("xs") {
+		margin: 0;
+	}
+}

@@ -1,0 +1,98 @@
+.tourist {
+	background: url(.././images/bg-block-4.png);
+	font-family: "Josefin Sans";
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.tourist__container {
+	padding: 128px 0 200px 0;
+	color: $white-color;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include media("xs") {
+		padding: 50px 0 50px 0;
+	}
+}
+
+.tourist-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 91px;
+
+	@include media("xs") {
+		margin-bottom: 30px;
+	}
+
+	&__title {
+		font-family: Aleo;
+		font-size: $titleBlockBig;
+	}
+}
+
+.tourist-img {
+	display: flex;
+	@include media("sm") {
+		flex-direction: column-reverse;
+	}
+
+	&-size {
+		width: 100%;
+		object-fit: cover;
+
+		@include media("md") {
+			max-width: 350px;
+		}
+
+		@include media("sm") {
+			margin: 0 auto;
+			max-width: 445px;
+		}
+	}
+}
+
+.tourist-text {
+	display: block;
+	background-color: $brown-color-bg;
+	padding: 49px 25px 39px 62px;
+
+	@include media("sm") {
+		padding: 39px 44px 35px 44px;
+		margin: 0 auto;
+		max-width: 359px;
+	}
+
+	@include media("xs") {
+		margin: 0 auto;
+		max-width: 359px;
+	}
+
+	&__title {
+		padding-bottom: 8px;
+		font-size: $titleBlockSmall;
+		text-transform: uppercase;
+
+		@include media("md") {
+			font-size: $titleBlockSmallSm;
+		}
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 26px;
+
+		@include media("md") {
+			font-size: 13px;
+		}
+
+		.fa-quote-left {
+			color: #5474fd;
+			font-size: 30px;
+			padding-right: 5px;
+
+			@include media("sm") {
+				font-size: 25px;
+			}
+		}
+	}
+}

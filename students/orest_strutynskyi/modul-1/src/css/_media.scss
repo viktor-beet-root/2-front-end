@@ -1,0 +1,117 @@
+// .main,
+// .footer {
+// 	display: none;
+// }
+
+// burger menu
+
+// .mobile-nav {
+// 	height: 25px;
+// 	border: none;
+// 	padding: 0;
+// 	background: none;
+
+// 	.mobile-nav__icon {
+// 		position: relative;
+// 		display: block;
+// 		background-color: rgb(14, 188, 241);
+// 		width: 42px;
+// 		height: 5px;
+// 		border: none;
+// 		box-shadow: inset 1px 2px 1px 0 rgba(14, 0, 0, 0.5);
+
+// 		&::after {
+// 			position: absolute;
+// 			left: 0;
+// 			top: -10px;
+// 			content: "";
+// 			display: block;
+// 			background-color: rgb(14, 188, 241);
+// 			width: 42px;
+// 			height: 5px;
+// 		}
+// 		&::before {
+// 			position: absolute;
+// 			left: 0;
+// 			top: 10px;
+// 			content: "";
+// 			display: block;
+// 			background-color: rgb(14, 188, 241);
+// 			width: 42px;
+// 			height: 5px;
+// 		}
+// 	}
+// }
+// .menu {
+// 	display: flex;
+// 	@include media("sm") {
+// 		position: absolute;
+// 		z-index: 100000;
+// 		display: block;
+// 		top: 100%;
+// 		left: 0;
+// 		right: 0;
+// 		background-color: rgba(255, 255, 255, 0.9);
+// 		text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+// 		text-align: center;
+// 		overflow-y: auto;
+// 		box-sizing: border-box;
+// 		transform: translateX(-100%);
+// 		transition: transform 0.5s ease-in-out;
+// 	}
+// 	&__link {
+// 		padding-right: 32px;
+// 		@include media("sm") {
+// 			border: 1px solid $color-dark-blue;
+// 			padding: 10px;
+// 			width: 100%;
+// 			box-sizing: border-box;
+// 		}
+// 	}
+// 	&__item {
+// 		text-decoration: none;
+// 		color: $color-dark-blue;
+// 		@include media("sm") {
+// 		}
+// 	}
+// }
+// .menu-open-input-btn {
+// 	@include visuality-hidden;
+// 	&:checked {
+// 		& ~ .menu {
+// 			transform: translateX(0);
+// 		}
+// 	}
+// }
+// .menu-open-btn {
+// 	width: $default-gap * 3;
+// 	height: $default-gap * 2;
+// 	border-radius: 4px;
+// 	border: 1px solid $color-dark-blue;
+// 	margin-right: $default-gap;
+// 	align-self: center;
+// 	justify-content: center;
+// 	align-items: center;
+// 	display: none;
+// 	@media screen and (max-width: 768px) {
+// 		display: flex;
+// 	}
+// }
+// .btn {
+// 	position: relative;
+// 	width: 32px;
+// 	height: 32px;
+// 	z-index: 10;
+// 	background-color: rgba(38, 42, 63, 0.3);
+// 	@include media("lg") {
+// 		margin-right: $default-gap;
+// 	}
+// 	&__btn-img {
+// 		position: absolute;
+// 		transform: translate(30%, 30%);
+// 		cursor: pointer;
+// 		&:nth-child(2) {
+// 			opacity: 0;
+// 		}
+// 	}
+// }

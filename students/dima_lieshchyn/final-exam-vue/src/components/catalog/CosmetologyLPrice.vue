@@ -1,13 +1,13 @@
 <template>
     <div class="product__price price-box">
         <div class="currency">
-            <button @click="uahChange" id="uah" class="btn btn-primary">
+            <button @click="uahChange" id="uah" class="btn">
                 {{ currencySymbol }}
             </button>
-            <button @click="dollarChange" class="btn btn-primary">
+            <button @click="dollarChange" class="btn">
                 {{ currencyDollar }}
             </button>
-            <button @click="euroChange" class="btn btn-primary">
+            <button @click="euroChange" class="btn">
                 {{ currencyEuro }}
             </button>
         </div>
@@ -69,6 +69,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/css/_var.scss";
 .price-box__price {
     display: flex;
     align-items: center;
@@ -91,6 +92,11 @@ export default {
     justify-content: center;
     & .btn {
         margin: 5px;
+        background-color: white;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: $box-shadow;
+        }
     }
 }
 .cart__product-info {

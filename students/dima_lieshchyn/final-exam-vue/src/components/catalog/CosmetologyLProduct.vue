@@ -224,4 +224,9 @@ export default {
 .btn {
     border-radius: 15px !important;
 }
+.price-box__price {
+    @media (max-width: 750px) {
+        margin-bottom: 10px !important;
+    }
+}
 </style>

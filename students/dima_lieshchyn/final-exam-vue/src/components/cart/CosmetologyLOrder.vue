@@ -1,7 +1,8 @@
 <template>
     <div class="order-block">
         <va-button
-            class="order-block__button"
+            style="background-color: #f171ab"
+            class="order-block__button mb-3"
             text-color="#fff"
             @click="showModal = !showModal"
         >
@@ -19,23 +20,35 @@
                 style="width: 300px"
             >
                 <div class="va-table-responsive">
-                    <p>
-                        Общая стоимость покупки: {{ getTotal }}
-                        {{ currencySymbol }}
+                    <p class="va-table__text">
+                        Общая стоимость покупки:
+                        <span>
+                            {{ getTotal }}
+                            {{ currencySymbol }}
+                        </span>
                     </p>
                     <table class="va-table va-table--hoverable">
                         <thead>
                             <tr>
                                 <th>Название</th>
-                                <th>Колличество</th>
-                                <th>Цена</th>
+                                <th>Кол-во</th>
+                                <th>Цена за 1 товар</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="product in cart" :key="product.id">
                                 <td>{{ product.name }}</td>
-                                <td>{{ product.qty }}</td>
-                                <td>{{ product.price }}</td>
+                                <td style="text-align: center">
+                                    {{ product.qty }}
+                                </td>
+                                <td style="text-align: center">
+                                    {{
+                                        product.price > product.specialPrice
+                                            ? product.specialPrice
+                                            : product.price
+                                    }}
+                                    {{ currencySymbol }}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -110,10 +123,28 @@ export default {
 </script>
 <style lang="scss" scoped>
 .order-block {
+    display: flex;
+    justify-content: center;
     &__button {
-        position: absolute;
+        /* position: fixed;
         top: 85px;
-        left: 200px;
+        left: 200px; */
+
+        border: 1px solid transparent;
+        &:hover {
+            transition: all 0.5s ease;
+            border: 1px solid white;
+        }
+    }
+}
+.va-table {
+    width: 100%;
+    &__text {
+        color: rgb(44, 130, 224);
+        & span {
+            font-weight: bold;
+            text-decoration: underline;
+        }
     }
 }
 .va-table-responsive {

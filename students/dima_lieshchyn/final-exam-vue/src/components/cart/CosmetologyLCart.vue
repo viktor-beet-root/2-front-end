@@ -3,12 +3,12 @@
         <div class="container">
             <div class="row">
                 <div class="cart__wrapper">
-                    <cosmetology-l-order />
                     <cosmetology-l-prev-icon @click="previous" />
                     <cosmetology-lh-2
-                        class="mb-5 cart__title fw-bold text-center"
+                        class="mb-3 cart__title fw-bold text-center"
                         title="Корзина"
                     />
+                    <cosmetology-l-order />
                     <div class="cart__products-wrapper">
                         <cosmetology-l-cart-product
                             @total="getTotal"
@@ -77,6 +77,9 @@ export default {
 
     &__wrapper {
         padding-top: 80px;
+        @media (max-width: 750px) {
+            padding-top: 45px;
+        }
     }
     &__title {
         color: white;

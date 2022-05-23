@@ -5,6 +5,7 @@
         :key="i"
     >
         <cosmetology-l-info @click="show = !show" />
+        <cosmetology-service-order v-if="!show" :options="service.drop" />
         <va-card
             class="service-card__front"
             :ref="service.refer"
@@ -15,9 +16,12 @@
             <va-card-title
                 style="
                     text-transform: none;
-                    font-size: 14px;
+                    font-size: 13px;
                     font-weigth: bold;
                     justify-content: center;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    width: 100%;
                 "
                 >{{ service.title }}</va-card-title
             >
@@ -42,13 +46,15 @@
                             </li>
                         </ul>
                     </template>
-                    <div
-                        v-if="show"
-                        class="service-card__back back"
-                        :class="{ showBack: show }"
-                    >
-                        <p class="back__info">{{ service.info }}</p>
-                    </div>
+                    <transition name="fade">
+                        <div
+                            v-if="show"
+                            class="service-card__back back"
+                            :class="{ showBack: show }"
+                        >
+                            <p class="back__info">{{ service.info }}</p>
+                        </div>
+                    </transition>
                 </va-card-content>
             </div>
         </va-card>
@@ -59,8 +65,13 @@
 import { mapGetters } from "vuex";
 import CosmetologyLInfo from "../ui/icons/CosmetologyLInfo.vue";
 import CosmetologyServiceCardInfo from "./CosmetologyServiceCardInfo.vue";
+import CosmetologyServiceOrder from "./CosmetologyServiceOrder.vue";
 export default {
-    components: { CosmetologyServiceCardInfo, CosmetologyLInfo },
+    components: {
+        CosmetologyServiceCardInfo,
+        CosmetologyLInfo,
+        CosmetologyServiceOrder,
+    },
     name: "cosmetology-l-service-card",
     props: {
         services: {
@@ -90,9 +101,14 @@ export default {
     width: 40px;
 }
 .service-card {
+    transition: all 0.5s ease;
     position: relative;
+    justify-content: space-between;
     box-sizing: border-box;
     padding: 10px;
+    /* margin: 10px; */
+    /* height: 100vh; */
+    /* max-height: 320px !important; */
 }
 
 .service-card {
@@ -150,5 +166,14 @@ export default {
     &__price {
         align-self: flex-end;
     }
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

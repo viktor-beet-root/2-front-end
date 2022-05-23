@@ -3,7 +3,6 @@
         <div class="container">
             <div class="row">
                 <div class="education_wrapper">
-                    <!-- <cosmetology-l-carousel /> -->
                     <cosmetology-l-education />
                 </div>
             </div>

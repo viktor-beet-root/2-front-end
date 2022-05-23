@@ -1,30 +1,75 @@
 <template>
-    <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
-</template> 
+    <cosmetology-l-navbar />
+    <main>
+        <div class="cart">
+            <router-link to="/cart"
+                ><cosmetology-l-count-icon
+                    :countData="countCart" /><cosmetology-l-cart-icon
+                    href="/cart"
+            /></router-link>
+        </div>
+        <router-view v-slot="{ Component }">
+            <transition name="fade" mode="out-in"
+                ><component :is="Component"
+            /></transition>
+        </router-view>
+    </main>
+    <footer>
+        <cosmetology-l-footer
+            :instagram="'https://instagram.com/cosmetology_leschina?igshid=YmMyMTA2M2Y='"
+            :phone="'0996798619'"
+            :telegram="'0996798619'"
+        />
+    </footer>
+</template>
+
+<script>
+import { mapGetters, mapActions } from "vuex";
+import CosmetologyLFooter from "./components/sections/CosmetologyLFooter.vue";
+import CosmetologyLCartIcon from "./components/ui/icons/CosmetologyLCartIcon.vue";
+import CosmetologyLCountIcon from "./components/ui/icons/CosmetologyLCountIcon.vue";
+import CosmetologyLNavbar from "./components/ui/navbar/CosmetologyLNavbar.vue";
+
+export default {
+    components: {
+        CosmetologyLNavbar,
+        CosmetologyLFooter,
+        CosmetologyLCartIcon,
+        CosmetologyLCountIcon,
+    },
+    computed: {
+        ...mapGetters(["countCart"]),
+    },
+    methods: {
+        ...mapActions([
+            "getProduct",
+            "getCart",
+            "getCurrency",
+            "getDollar",
+            "getEuro",
+        ]),
+    },
+    created() {
+        this.getProduct();
+        this.getCart();
+        this.getCurrency();
+        this.getDollar();
+        this.getEuro();
+    },
+};
+</script>
 
 <style lang="scss">
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+main {
+    font-family: "Alegreya Sans";
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
 }
 
-nav {
-    padding: 30px;
-
-    a {
-        font-weight: bold;
-        color: #2c3e50;
-
-        &.router-link-exact-active {
-            color: #42b983;
-        }
-    }
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

@@ -1,0 +1,17 @@
+html {
+	scroll-behavior: smooth;
+}
+@include grid();
+.page {
+	font-size: $sizepage;
+	font-family: "Roboto Mono";
+}
+.container {
+	max-width: $container-width;
+	margin: 0 auto;
+	padding: 0 $default-gap;
+}
+.strong {
+	font-weight: normal;
+	color: $black;
+}

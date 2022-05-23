@@ -1,0 +1,397 @@
+.messages-list {
+	list-style-type: none;
+	padding: 0;
+}
+.comment__wrapper {
+	position: relative;
+	padding-left: 94px;
+}
+@media screen and (max-width: 768px) {
+	.comment__wrapper {
+		padding-left: 0;
+	}
+}
+.comment__header,
+.reply__header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-bottom: 17px;
+
+	@include media("xs") {
+		padding-bottom: 12px;
+	}
+}
+
+.reply__group{
+	@include media ("sm"){
+		margin-left: 25px;
+	}
+	@include media ("xs"){
+		margin-left: 0px;
+	}
+}
+
+.ava__web{
+	z-index: 100;
+	position: relative;
+}
+@include media("sm"){
+	.ava__web{
+position: relative;
+top: 20px;
+left: 15px;
+	}
+}
+
+@include media("xs"){
+	.ava__web{
+position: relative;
+top: -10px;
+left: 0px;
+	}
+}
+
+
+
+.comment__ava {
+	position: absolute;
+	left: 0;
+}
+@media screen and (max-width: 768px) {
+	.comment__ava {
+		position: static;
+		margin-right: 15px;
+	}
+}
+.comment__group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+
+	@include media ("sm"){
+		margin-left: 25px;
+	}
+	@include media ("xs"){
+		margin-left: 0px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.comment__group {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
+.comment__publish-date,
+.reply__publish-date {
+	font-size: 16px;
+	color: $light-gray-color;
+
+	@include media("xs") {
+		font-size: 13px;
+	}
+}
+.comment__title,
+.reply__title {
+	margin: 0 15px 0 0;
+	@include media("sm") {
+		padding-bottom: 5px;
+	}
+}
+.comment__actions {
+	padding-right: 50px;
+}
+@media screen and (max-width: 768px) {
+	.comment__actions {
+		display: flex;
+		align-items: flex-start;
+		padding-right: 0;
+	}
+}
+
+.edit,
+.remove,
+.top-p,
+.top-m,
+.like {
+	padding: 0;
+	border: none;
+	background-color: $white-color;
+}
+@include media("sm") {
+	.remove {
+		padding-left: 20px;
+	}
+}
+
+.top {
+	position: relative;
+	padding-right: 48px;
+	@include media("xs") {
+		padding-right: 0;
+	}
+	// right: 28px;
+	&__reply-padding {
+		padding-right: 0;
+	}
+
+	&-p {
+		position: relative;
+		&::before {
+			position: relative;
+			bottom: 4px;
+			left: 5px;
+			content: "5";
+			font-size: 10px;
+		}
+	}
+
+	&-m {
+		position: relative;
+		top: 5px;
+		&::after {
+			position: relative;
+			bottom: 9px;
+			right: 5px;
+			content: "2";
+			font-size: 10px;
+		}
+	}
+}
+
+.text-smile {
+	position: relative;
+	top: 3px;
+	content: url(.././images/smile-1.svg);
+	width: 16px;
+}
+
+.comment__text{
+	word-wrap: break-word;
+	overflow-x:hidden;
+}
+
+.comment__text,
+.reply__text {
+	line-height: 32px;
+	max-width: 594px;
+}
+
+.comment__content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.comment__like-wrapper {
+	// position: relative;
+	position: absolute;
+	right: 0;
+	width: 50px;
+	display: flex;
+	justify-content: end;
+}
+.like {
+	padding-right: 10px;
+	position: absolute;
+
+	&-number{
+		position: absolute;
+		left: 24px;
+		top: 28px;
+		font-size: 10px;
+		color: $dark-gray-color;
+
+		@include media("sm"){
+			top: -41px;
+			left: 7px;
+		}
+	}
+	
+	@include media("sm") {
+		display: flex;
+		top: -48px;
+		right: 12px;
+		padding: 0;
+		// &::after {
+		// 	position: relative;
+		// 	top: 5px;
+		// 	padding-left: 18px;
+		// }
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.comment__like-wrapper {
+		position: absolute;
+		// top: 70px;
+		right: 0;
+		width: auto;
+		right: 20px;
+		
+	}
+}
+.comment__footer {
+	padding: 10px 0 20px 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	// border-bottom: 1px solid $light-v-rgay-color;
+
+	@include media("xs") {
+		padding: 17px 0 20px 0;
+	}
+}
+.ava {
+	text-align: center;
+
+	&__img1,
+	&__img2 {
+		width: 70px;
+		height: 70px;
+		// content: url(.././images/face-1.png);
+		border-radius: 5px;
+		padding-bottom: 7px;
+
+		@include media("sm") {
+			width: 38px;
+			height: 38px;
+		}
+	}
+
+	&__web {
+		font-size: 10px;
+		text-decoration: none;
+		color: $dark-gray-color;
+		@include media("xs") {
+			font-size: 9px;
+		}
+	}
+}
+.comment__reply {
+	border-top: 1px solid $light-v-rgay-color;
+	&:last-child {
+		border-bottom: none;
+	}
+}
+.reply {
+	position: relative;
+	padding-top: 23px;
+
+	@include media("xs") {
+		padding-top: 20px;
+	}
+	&__content {
+		padding-left: 94px;
+
+		@include media("xs") {
+			padding-left: 0;
+		}
+	}
+	&-img {
+		border: none;
+		position: relative;
+		background-color: $white-color;
+		&::before {
+			content: url(.././images/reply.svg);
+			padding-right: 8px;
+		}
+	}
+	&-img__second {
+		padding-left: 94px;
+		@include media("xs") {
+			padding-left: 0;
+		}
+	}
+}
+
+@include media("xs") {
+	.reply {
+		padding-left: 38px;
+	}
+}
+.reply__header {
+	padding-left: 94px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	@include media("xs") {
+		padding-left: 0;
+	}
+}
+.reply__ava {
+	position: absolute;
+	left: 0;
+}
+@media screen and (max-width: 768px) {
+	.reply__ava {
+		position: static;
+		margin-right: 15px;
+	}
+}
+.reply__group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+@media screen and (max-width: 768px) {
+	.reply__group {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
+.reply__footer {
+	// padding: 13px 0 0 94px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 10px 0 20px 0;
+
+	@include media("xs") {
+		padding: 13px 0 0 0;
+	}
+}
+
+.comment__header-border {
+	width: 737px;
+	border-top: 1px solid black;
+}
+
+.borderr {
+	border-top: 1px solid $light-v-rgay-color;
+	padding-top: 26px;
+	border-bottom: 1px solid $light-v-rgay-color;
+}
+.arrow {
+	cursor: pointer;
+}
+.messages-list__item{
+list-style: none;
+}
+
+@include media("xs"){
+	.ava__img1-size{
+		width: 38px;
+		height: 38px;
+	}
+}
+ .q{
+	 background-color: $gray-3-color;
+ }

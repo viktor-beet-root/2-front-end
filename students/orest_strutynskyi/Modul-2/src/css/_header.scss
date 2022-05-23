@@ -1,0 +1,276 @@
+.header {
+	padding-top: 96px;
+	font-size: 16px;
+	font-weight: 400;
+
+	@include media("xs") {
+		padding-top: 14px;
+	}
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include media("xs") {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.header__logo {
+	@include media("md") {
+		margin-right: 30px;
+	}
+	@include media("sm") {
+		margin-right: 10px;
+	}
+}
+
+.header__items {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	align-items: center;
+
+	@include media("xs") {
+		width: 100%;
+		position: absolute;
+		right: 16px;
+		top: 11px;
+
+		padding-bottom: 40px;
+	}
+}
+
+.menu {
+	position: relative;
+	display: flex;
+
+	&__item {
+		padding-right: 43px;
+
+		@include media("sm") {
+			padding-right: 20px;
+		}
+		@include media("xs") {
+			padding-right: 0;
+		}
+
+		&:last-child {
+			padding-right: 0px;
+
+			@include media("md") {
+				padding-right: 40px;
+			}
+
+			@include media("sm") {
+				padding-right: 30px;
+			}
+			@include media("xs") {
+				padding-right: 0;
+			}
+		}
+	}
+
+	&__link {
+		font-size: 16px;
+		color: $light-gray-color;
+		text-decoration: none;
+		padding-bottom: 10px;
+
+		@include media("sm") {
+			font-size: 14px;
+		}
+
+		&:hover {
+			color: $dark-gray-color;
+			border-bottom: 2px solid black;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 4px;
+		right: -15px;
+		border: solid $dark-gray-color;
+		border-width: 0 1px 1px 0;
+		display: inline-block;
+		padding: 3px;
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+
+		@include media("md") {
+			right: 25px;
+		}
+		@include media("sm") {
+			right: 17px;
+		}
+
+		@include media("xs") {
+			overflow: hidden;
+			opacity: 0;
+		}
+	}
+}
+
+.menu__arrow-xs {
+	position: relative;
+	@include media("xs") {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 4px;
+			right: -15px;
+			border: solid $dark-gray-color;
+			border-width: 0 1px 1px 0;
+			display: inline-block;
+			padding: 3px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+		}
+	}
+}
+
+.form {
+	// position: relative;
+	width: 100%;
+	border: none;
+	display: flex;
+	max-width: 256px;
+	border-radius: 5px;
+	background-color: #f4f4f4;
+	margin-left: 108px;
+
+	@include media("md") {
+		max-width: 220px;
+		margin-left: 10px;
+	}
+
+	@include media("sm") {
+		max-width: 150px;
+		margin-left: 5px;
+	}
+	@include media("xs") {
+		margin-left: 0;
+		width: 100%;
+		max-width: 312px;
+		margin: 0 auto;
+		margin-top: 57px;
+	}
+
+	&__input {
+		height: 40px;
+		border: none;
+		width: calc(100% - 40px);
+		background-color: #f4f4f4;
+		position: relative;
+		border-radius: 5px;
+
+		@include media("sm") {
+			width: calc(100% - 20px);
+		}
+		&::placeholder {
+			font-size: 12px;
+			color: $dark-gray-color;
+			padding-left: 14px;
+		}
+	}
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border: none;
+		border-radius: 5px;
+		background: #ffba9d;
+		cursor: pointer;
+		position: relative;
+	}
+}
+
+.sub-menu {
+	color: $light-gray-color;
+	text-decoration: none;
+	position: absolute;
+	overflow: hidden;
+	opacity: 0;
+	height: 0;
+	background-color: $white-color;
+	background-color: #f4f4f4;
+
+	@include media("xs") {
+		position: relative;
+		border-color: #e8e8e8;
+	}
+
+	&__item {
+		padding-top: 20px;
+
+		@include media("xs") {
+			padding-top: 10px;
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+		color: $dark-gray-color;
+	}
+}
+
+.hamburger {
+	display: none;
+	cursor: pointer;
+}
+
+.bar {
+	display: block;
+	width: 24px;
+	height: 3px;
+	margin: 5px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-color: gray;
+}
+@include media("xs") {
+	.hamburger {
+		display: block;
+		z-index: 100;
+	}
+
+	.hamburger.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+	.hamburger.active .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+	.hamburger.active .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	.menu {
+		position: fixed;
+		left: -100%;
+		top: 57px;
+		gap: 0;
+		flex-direction: column;
+		background-color: $beige;
+		width: 100%;
+		text-align: center;
+		transition: 0.3s;
+	}
+
+	.menu__item {
+		margin: 6px 0;
+	}
+
+	.menu.active {
+		left: 0px;
+		margin-left: 33px;
+		max-width: 93%;
+		position: absolute;
+		z-index: 100;
+	}
+}

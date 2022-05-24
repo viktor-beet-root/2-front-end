@@ -2,11 +2,13 @@
     <cosmetology-l-navbar />
     <main>
         <div class="cart">
-            <router-link to="/cart"
-                ><cosmetology-l-count-icon
-                    :countData="countCart" /><cosmetology-l-cart-icon
-                    href="/cart"
-            /></router-link>
+            <transition name="fade">
+                <router-link v-if="countCart" to="/cart"
+                    ><cosmetology-l-count-icon
+                        :countData="countCart" /><cosmetology-l-cart-icon
+                        href="/cart"
+                /></router-link>
+            </transition>
         </div>
         <router-view v-slot="{ Component }">
             <transition name="fade" mode="out-in"

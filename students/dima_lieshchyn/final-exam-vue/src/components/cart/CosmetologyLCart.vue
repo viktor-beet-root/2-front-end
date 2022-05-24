@@ -11,7 +11,6 @@
                     <cosmetology-l-order />
                     <div class="cart__products-wrapper">
                         <cosmetology-l-cart-product
-                            @total="getTotal"
                             v-for="(product, index) in cart"
                             :product="product"
                             :key="product.id"
@@ -51,12 +50,6 @@ export default {
         ...mapActions(["addToTotal"]),
         previous() {
             this.$router.go(-1);
-        },
-        getTotal(value) {
-            // this.total.push(value);
-            console.log(value);
-            this.addToTotal(value);
-            // console.log(temp);
         },
     },
 };

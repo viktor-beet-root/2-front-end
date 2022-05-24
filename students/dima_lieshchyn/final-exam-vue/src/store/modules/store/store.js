@@ -12,8 +12,12 @@ export default {
         currencyDollar: "$",
         currencyEuro: "€",
         outOfStockMessage: "Нет в наличии",
+        auth: false,
     },
     getters: {
+        auth(state) {
+            return state.auth;
+        },
         total(state) {
             return state.total;
         },
@@ -44,8 +48,14 @@ export default {
         countCart(state) {
             return state.cart.length;
         },
+        countProducts(state) {
+            return state.productList.length;
+        },
     },
     mutations: {
+        setAuth(state) {
+            state.auth = !state.auth;
+        },
         addToTotal(state, price) {
             state.total = state.total + price;
         },
@@ -166,6 +176,9 @@ export default {
         addToCart(state, product) {
             state.cart.push(product);
         },
+        addToProductList(state, product) {
+            state.productList.push(product);
+        },
         changeQty(state, options) {
             state.cart[options.productIndex].qty = options.qty;
         },
@@ -175,8 +188,14 @@ export default {
         removeProductCart(state, productIndex) {
             state.cart.splice(productIndex, 1);
         },
+        removeProduct(state, productIndex) {
+            state.productList.splice(productIndex, 1);
+        },
     },
     actions: {
+        toggleAuth({ commit }) {
+            commit("setAuth");
+        },
         addToTotal({ commit }, price) {
             commit("addToTotal", price);
         },
@@ -305,7 +324,7 @@ export default {
             const product = state.cart[productIndex];
             const url = host + "cart/" + product.id;
             const respose = await request(url, "DELETE", product);
-
+            console.log(product.id);
             if (respose.message) {
                 console.log(respose.message);
             }

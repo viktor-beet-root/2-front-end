@@ -14,73 +14,96 @@
             title="Заказать товар"
             hide-default-actions
         >
-            <va-form
-                tag="form"
-                @submit.prevent="handleSubmit"
-                style="width: 300px"
-            >
-                <div class="va-table-responsive">
-                    <p class="va-table__text">
-                        Общая стоимость покупки:
-                        <span>
-                            {{ getTotal }}
-                            {{ currencySymbol }}
-                        </span>
-                    </p>
-                    <table class="va-table va-table--hoverable">
-                        <thead>
-                            <tr>
-                                <th>Название</th>
-                                <th>Кол-во</th>
-                                <th>Цена за 1 товар</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="product in cart" :key="product.id">
-                                <td>{{ product.name }}</td>
-                                <td style="text-align: center">
-                                    {{ product.qty }}
-                                </td>
-                                <td style="text-align: center">
-                                    {{
-                                        product.price > product.specialPrice
-                                            ? product.specialPrice
-                                            : product.price
-                                    }}
-                                    {{ currencySymbol }}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <va-input class="mb-4" label="Ваше имя" v-model="name" />
-                <va-input
-                    class="mb-4"
-                    label="Номер телефона"
-                    v-model="phone"
-                    :rules="[
-                        (value) =>
-                            (value && value.length > 0) ||
-                            'Поле не должно быть пустым',
-                    ]"
+            <!-- <cosmetology-l-prev-icon /> -->
+            <div class="va-table-responsive">
+                <p class="va-table__text">
+                    Общая стоимость покупки:
+                    <span>
+                        {{ getTotal }}
+                        {{ currencySymbol }}
+                    </span>
+                </p>
+                <table class="va-table va-table--hoverable">
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Кол-во</th>
+                            <th>Цена за 1 товар</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="product in cart" :key="product.id">
+                            <td>{{ product.name }}</td>
+                            <td style="text-align: center">
+                                {{ product.qty }}
+                            </td>
+                            <td style="text-align: center">
+                                {{
+                                    product.price > product.specialPrice
+                                        ? product.specialPrice
+                                        : product.price
+                                }}
+                                {{ currencySymbol }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <form class="form-order" ref="form" @submit.prevent="handleSubmit">
+                <label class="form-order__label">Имя</label>
+                <input
+                    class="form-order__input input-group-text"
+                    type="text"
+                    name="from_name"
+                    v-model="name"
                 />
-                <va-button @click="show = !show" type="submit" class="mt-2"
-                    >Заказать</va-button
-                >
-            </va-form>
+                <span>{{ nError }}</span>
+                <label class="form-order__label">Номер телефона</label>
+                <input
+                    class="form-order__input input-group-text"
+                    type="text"
+                    name="from_phone"
+                    v-model="phone"
+                />
+                <span>{{ mError }}</span>
+                <input class="btn btn-primary" type="submit" value="Заказать" />
+                <input
+                    v-for="product in cart"
+                    :key="product.id"
+                    class="form-order__value"
+                    type="text"
+                    name="from_order"
+                    :value="`${product.name} - ${product.qty} шт. - ${
+                        product.price > product.specialPrice
+                            ? product.specialPrice
+                            : product.price
+                    }`"
+                />
+                <input
+                    class="form-order__value"
+                    type="text"
+                    name="from_total"
+                    :value="getTotal"
+                />
+            </form>
         </va-modal>
     </div>
 </template>
 <script>
+// import emailjs from "../../../node_modules/emailjs-com";
+import emailjs from "emailjs-com";
 import { mapGetters } from "vuex";
+// import CosmetologyLPrevIcon from "../ui/icons/CosmetologyLPrevIcon.vue";
 
 export default {
+    // components: { CosmetologyLPrevIcon },
     name: "cosmetology-l-order",
     data() {
         return {
             value: "Выбрать",
             name: "",
             phone: "",
+            message: "",
             options: [
                 "Косметолог с нуля",
                 "Мезотерапия лица/тела",
@@ -88,8 +111,9 @@ export default {
                 "Контурная пластика губ",
             ],
             showModal: false,
-            message: "",
             show: false,
+            nameError: "",
+            phoneError: "",
         };
     },
     computed: {
@@ -97,10 +121,41 @@ export default {
         getTotal() {
             return this.getTotalPrice(this.cart);
         },
+        cartToSend() {
+            return JSON.stringify(this.cart);
+        },
+        nError() {
+            return this.nameError;
+        },
+        mError() {
+            return this.phoneError;
+        },
     },
     methods: {
         handleSubmit() {
-            alert("-- form submit --");
+            if (
+                this.validEmptyName &&
+                this.valideEmptyPhone &&
+                this.validPhone(this.phone)
+            ) {
+                this.sendEmail();
+                this.showModal = !this.showModal;
+            }
+        },
+        sendEmail() {
+            try {
+                emailjs.sendForm(
+                    "cosmetology_l",
+                    "cosmetology_l_template",
+                    this.$refs.form,
+                    "nIOnRx7mmATjb0vGn"
+                );
+            } catch (error) {
+                console.log({ error });
+            }
+            this.name = "";
+            this.phone = "";
+            this.message = "";
         },
         getTotalPrice(obj) {
             let sum = 0;
@@ -118,6 +173,27 @@ export default {
 
             return sum;
         },
+        validPhone(phone) {
+            var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+            return re.test(phone);
+        },
+        validEmptyName() {
+            if (this.name === "") {
+                this.nameError = "Введите имя";
+                return false;
+            } else {
+                this.nameError = "";
+                return true;
+            }
+        },
+        valideEmptyPhone() {
+            if (this.phone !== "") {
+                this.phoneError = "";
+                return true;
+            } else {
+                this.phoneError = "Введите номер телефона";
+            }
+        },
     },
 };
 </script>
@@ -126,10 +202,6 @@ export default {
     display: flex;
     justify-content: center;
     &__button {
-        /* position: fixed;
-        top: 85px;
-        left: 200px; */
-
         border: 1px solid transparent;
         &:hover {
             transition: all 0.5s ease;
@@ -150,5 +222,33 @@ export default {
 .va-table-responsive {
     width: 100%;
     overflow: auto;
+}
+.form-order {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__label {
+        font-size: 12px;
+    }
+
+    &__input {
+        border-radius: 4px;
+    }
+
+    &__value {
+        display: none;
+        visibility: hidden;
+    }
+    .btn {
+        margin-top: 10px;
+    }
+}
+.prev_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media (min-width: 577px) {
+        display: none;
+    }
 }
 </style>

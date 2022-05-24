@@ -13,40 +13,65 @@
         title="Запись на процедуры"
         hide-default-actions
     >
-        <va-form
-            tag="form"
-            @submit.prevent="handleSubmit"
-            style="width: 600px @media (max-width: 600px) {width: 300px}"
-        >
+        <form class="form-order" ref="formS" @submit.prevent="handleSubmit">
             <div class="input-box">
                 <va-select
+                    v-model="orderTotal"
                     label="Выбрать"
-                    v-model="value"
                     :options="options"
                     multiple
                 />
             </div>
-            <va-input class="mb-4" label="Ваше имя" v-model="name" />
-            <va-input
-                class="mb-4"
-                label="Номер телефона"
-                v-model="phone"
-                :rules="[
-                    (value) =>
-                        (value && value.length > 0) ||
-                        'Поле не должно быть пустым',
-                ]"
+            <div class="flex">
+                <p class="form-order__label">Выбери дни когда тебе удобно</p>
+                <va-date-input
+                    first-weekday="Monday"
+                    :weekday-names="weekdayNames"
+                    :month-names="monthNames"
+                    mode="multiple"
+                    v-model="date"
+                />
+            </div>
+            <label class="form-order__label">Имя</label>
+            <input
+                class="form-order__input input-group-text"
+                type="text"
+                name="from_name"
+                v-model="name"
             />
-            <va-button @click="show = !show" type="submit" class="mt-2"
-                >Записаться</va-button
-            >
-        </va-form>
-        <!-- <div style="max-width: 300px"></div> -->
+            <label class="form-order__label">Номер телефона</label>
+            <input
+                class="form-order__input input-group-text"
+                type="text"
+                name="from_phone"
+                v-model="phone"
+            />
+            <input class="btn btn-primary" type="submit" value="Заказать" />
+
+            <input
+                v-model="getTotalOrder"
+                class="form-order__value"
+                type="text"
+                name="from_order"
+            />
+            <input
+                v-model="getDate"
+                class="form-order__value"
+                type="text"
+                name="from_days"
+            />
+        </form>
     </va-modal>
 </template>
 <script>
-// import message from "./popup-message";
+import emailjs from "emailjs-com";
 
+const datePlusDay = (date, days) => {
+    const d = new Date(date);
+    d.setDate(d.getDate() + days);
+    return d;
+};
+const nextWeek = datePlusDay(new Date(), 7);
 export default {
     name: "cosmetology-l-service-order",
     props: {
@@ -54,17 +79,87 @@ export default {
     },
     data() {
         return {
-            value: "",
+            orderTotal: [],
             name: "",
             phone: "",
             showModal: false,
             message: "",
             show: false,
+            date: [new Date(), nextWeek],
+            monthNames: [
+                "Янв",
+                "Фев",
+                "Март",
+                "Апр",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Авг",
+                "Сент",
+                "Окт",
+                "Ноябрь",
+                "Дек",
+            ],
+            weekdayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
         };
     },
+    computed: {
+        getTotalOrder() {
+            return this.orderTotal.join();
+        },
+        getDate() {
+            return this.dateArray(this.date);
+        },
+    },
     methods: {
+        dateTransform(date) {
+            return date.toLocaleString().slice(0, 10);
+        },
+        dateArray(arr) {
+            return arr.map((item) => this.dateTransform(item));
+        },
         handleSubmit() {
-            alert("-- form submit --");
+            if (
+                this.getTotalOrder !== "" &&
+                this.validEmptyName &&
+                this.valideEmptyPhone &&
+                this.validPhone(this.phone)
+            ) {
+                this.sendEmail();
+                this.showModal = !this.showModal;
+            }
+        },
+        sendEmail() {
+            try {
+                emailjs.sendForm(
+                    "cosmetology_l",
+                    "cosmetology_l_template_s",
+                    this.$refs.formS,
+                    "nIOnRx7mmATjb0vGn"
+                );
+            } catch (error) {
+                console.log({ error });
+            }
+            this.name = "";
+            this.phone = "";
+        },
+        validPhone(phone) {
+            var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+            return re.test(phone);
+        },
+        validEmptyName() {
+            if (this.name === "") {
+                return false;
+            } else {
+                return true;
+            }
+        },
+        valideEmptyPhone() {
+            if (this.phone !== "") {
+                return true;
+            } else {
+                return false;
+            }
         },
     },
 };
@@ -85,5 +180,25 @@ export default {
 }
 input {
     height: 50px;
+}
+.form-order {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__label {
+        font-size: 12px;
+    }
+
+    &__input {
+        border-radius: 4px;
+    }
+
+    &__value {
+        display: none;
+        visibility: hidden;
+    }
+    .btn {
+        margin-top: 10px;
+    }
 }
 </style>

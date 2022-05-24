@@ -33,13 +33,15 @@
                     <template v-for="(item, j) in service.category" :key="j">
                         <ul class="service-card__list">
                             <li class="service-card__item service-item">
-                                <cosmetology-service-card-info
-                                    :title="item.title"
-                                    :text="item.text"
-                                    :text1="item.text1"
-                                    :text2="item.text2"
-                                    :titleMain="item.titleMain"
-                                />
+                                <transition name="fade">
+                                    <cosmetology-service-card-info
+                                        :title="item.title"
+                                        :text="item.text"
+                                        :text1="item.text1"
+                                        :text2="item.text2"
+                                        :titleMain="item.titleMain"
+                                    />
+                                </transition>
                                 <span class="service-item__price"
                                     >{{ item.price }} {{ currencySymbol }}</span
                                 >
@@ -106,9 +108,6 @@ export default {
     justify-content: space-between;
     box-sizing: border-box;
     padding: 10px;
-    /* margin: 10px; */
-    /* height: 100vh; */
-    /* max-height: 320px !important; */
 }
 
 .service-card {

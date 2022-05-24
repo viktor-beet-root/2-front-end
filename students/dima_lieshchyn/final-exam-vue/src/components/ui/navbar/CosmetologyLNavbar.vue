@@ -1,10 +1,31 @@
 <template>
     <header @mouseenter="focusNav = true" @mouseleave="focusNav = false">
         <nav>
-            <div class="logo">
+            <div
+                @click="showModal = !showModal"
+                class="logo"
+                style="cursor: pointer"
+            >
                 <span class="neonText"
                     ><i class="logo_icon fa fa-lips"></i
                 ></span>
+                <va-modal v-model="showModal" title="Вход" hide-default-actions>
+                    <va-form
+                        style="width: 300px"
+                        tag="form"
+                        @submit.prevent="handleSubmit"
+                    >
+                        <va-input v-model="username" label="Логин" />
+
+                        <va-input
+                            class="mt-2"
+                            v-model="password"
+                            type="password"
+                            label="Пароль"
+                        />
+                        <va-button type="submit" class="mt-2"> Вход </va-button>
+                    </va-form>
+                </va-modal>
             </div>
             <ul v-show="!mobile" class="navigation">
                 <li
@@ -140,6 +161,10 @@ export default {
             mobileNav: null,
             windowWidth: null,
             focusNav: false,
+            showModal: false,
+            regFlag: false,
+            username: "",
+            password: "",
         };
     },
     computed: {
@@ -159,7 +184,7 @@ export default {
     },
     mounted() {},
     methods: {
-        ...mapActions(["getProduct", "getCart"]),
+        ...mapActions(["getProduct", "getCart", "toggleAuth"]),
         toggleMobileNav() {
             this.mobileNav = !this.mobileNav;
         },
@@ -173,6 +198,17 @@ export default {
             this.mobile = false;
             this.mobileNav = false;
             return;
+        },
+        handleSubmit() {
+            if (this.username !== "admin" && this.password !== "admin") {
+                alert("-- только для администраторов --");
+            } else {
+                this.$router.push("/admin");
+                this.showModal = !this.showModal;
+                this.username = "";
+                this.password = "";
+                this.toggleAuth();
+            }
         },
     },
 };

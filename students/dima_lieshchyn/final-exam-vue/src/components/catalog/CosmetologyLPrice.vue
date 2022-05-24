@@ -16,11 +16,11 @@
                 class="price-box__price"
                 :class="{ sale: price > specialPrice }"
             >
-                {{ (price * current).toLocaleString() }}
+                {{ Math.floor(price / current).toLocaleString() }}
                 {{ symbol ? symbol : currencySymbol }}
             </span>
             <span v-if="price > specialPrice" class="price-box__special-price">
-                {{ (specialPrice * current).toLocaleString() }}
+                {{ Math.floor(specialPrice / current).toLocaleString() }}
                 {{ symbol ? symbol : currencySymbol }}
             </span>
         </div>

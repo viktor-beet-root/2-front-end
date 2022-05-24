@@ -5,6 +5,7 @@ import EducationView from "../views/EducationView.vue";
 import ServiceView from "../views/ServiceView.vue";
 import WorksView from "../views/WorksView.vue";
 import ProductsView from "../views/ProductsView.vue";
+import AdminView from "../views/AdminView.vue";
 
 const routes = [
     {
@@ -15,6 +16,7 @@ const routes = [
     {
         path: "/",
         name: "Home",
+        meta: { auth: true },
         component: HomeView,
     },
     {
@@ -37,11 +39,17 @@ const routes = [
         name: "works",
         component: WorksView,
     },
+    {
+        path: "/admin",
+        name: "admin",
+        component: AdminView,
+    },
 ];
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
 });
+
 
 export default router;

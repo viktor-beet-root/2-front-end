@@ -9,9 +9,10 @@
     transition: all 0.5s ease-in-out;
 }
 @mixin blur {   
-    filter: url(#blurFilter);
-    -webkit-filter: url(#blurFilter);
-    -moz-filter: url(#blurFilter);
+    // filter: url(#blurFilter);
+    // -webkit-filter: url(#blurFilter);
+    -moz-filter: unset;
     -o-filter: url(#blurFilter);
     -ms-filter: url(#blurFilter);
+    
 }

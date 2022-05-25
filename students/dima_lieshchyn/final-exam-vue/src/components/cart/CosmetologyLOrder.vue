@@ -14,7 +14,12 @@
             title="Заказать товар"
             hide-default-actions
         >
-            <!-- <cosmetology-l-prev-icon /> -->
+            <img
+                @click="showModal = !showModal"
+                class="icon_exit"
+                src="../../assets/icon_exit.png"
+                alt="exit"
+            />
             <div class="va-table-responsive">
                 <p class="va-table__text">
                     Общая стоимость покупки:
@@ -56,16 +61,18 @@
                     type="text"
                     name="from_name"
                     v-model="name"
+                    placeholder="Ваше имя"
                 />
-                <span>{{ nError }}</span>
+                <span class="error" v-if="msg.name">{{ msg.name }}</span>
                 <label class="form-order__label">Номер телефона</label>
                 <input
                     class="form-order__input input-group-text"
                     type="text"
                     name="from_phone"
                     v-model="phone"
+                    placeholder="+3801234567"
                 />
-                <span>{{ mError }}</span>
+                <span class="error" v-if="msg.phone">{{ msg.phone }}</span>
                 <input class="btn btn-primary" type="submit" value="Заказать" />
                 <input
                     v-for="product in cart"
@@ -90,13 +97,10 @@
     </div>
 </template>
 <script>
-// import emailjs from "../../../node_modules/emailjs-com";
 import emailjs from "emailjs-com";
 import { mapGetters } from "vuex";
-// import CosmetologyLPrevIcon from "../ui/icons/CosmetologyLPrevIcon.vue";
 
 export default {
-    // components: { CosmetologyLPrevIcon },
     name: "cosmetology-l-order",
     data() {
         return {
@@ -112,8 +116,7 @@ export default {
             ],
             showModal: false,
             show: false,
-            nameError: "",
-            phoneError: "",
+            msg: [],
         };
     },
     computed: {
@@ -124,15 +127,11 @@ export default {
         cartToSend() {
             return JSON.stringify(this.cart);
         },
-        nError() {
-            return this.nameError;
-        },
-        mError() {
-            return this.phoneError;
-        },
     },
     methods: {
         handleSubmit() {
+            this.validateName(this.name);
+            this.validatePhone(this.phone);
             if (
                 this.validEmptyName &&
                 this.valideEmptyPhone &&
@@ -194,6 +193,38 @@ export default {
                 this.phoneError = "Введите номер телефона";
             }
         },
+        validatePhone(value) {
+            if (/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(value)) {
+                this.msg["phone"] = "";
+            } else if (value === "") {
+                this.msg["phone"] = "Введите номер";
+            } else {
+                this.msg["phone"] = "Неверный номер";
+            }
+        },
+        validateName(value) {
+            if (
+                /(-?([А-Я].\s)?([А-Я][а-я]+)\s?)+([А-Я]'([А-Я][а-я]+))?/.test(
+                    value
+                )
+            ) {
+                this.msg["name"] = "";
+            } else if (value === "") {
+                this.msg["name"] = "Введите имя";
+            } else {
+                this.msg["name"] = "Напишите имя правильно";
+            }
+        },
+    },
+    watch: {
+        name(value) {
+            this.name = value;
+            this.validateName(value);
+        },
+        phone(value) {
+            this.phone = value;
+            this.validatePhone(value);
+        },
     },
 };
 </script>
@@ -247,6 +278,21 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
+    @media (min-width: 577px) {
+        display: none;
+    }
+}
+.error {
+    font-size: 10px;
+    color: rosybrown;
+}
+.icon_exit {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
     @media (min-width: 577px) {
         display: none;
     }

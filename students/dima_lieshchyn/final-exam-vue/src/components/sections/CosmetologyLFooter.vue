@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer__wrapper">
-                    <!-- <div @click="prev" class="prev">Prev</div> -->
+                    <cosmetology-l-icon-next class="prev" @click="prev" />
                     <a
                         :href="`https://telegram.me/+380${telegram}`"
                         target="_blank"
@@ -24,13 +24,14 @@
                         class="footer__link"
                         ><cosmetology-l-phone
                     /></a>
-                    <!-- <div @click="next" class="next">Next</div> -->
+                    <cosmetology-l-icon-next class="next" @click="next" />
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+import CosmetologyLIconNext from "../ui/icons/CosmetologyLIconNext.vue";
 import CosmetologyLInstagram from "../ui/icons/CosmetologyLInstagram.vue";
 import CosmetologyLPhone from "../ui/icons/CosmetologyLPhone.vue";
 import CosmetologyLTelegram from "../ui/icons/CosmetologyLTelegram.vue";
@@ -39,6 +40,7 @@ export default {
         CosmetologyLTelegram,
         CosmetologyLInstagram,
         CosmetologyLPhone,
+        CosmetologyLIconNext,
     },
     name: "cosmetology-l-footer",
     data() {
@@ -51,12 +53,51 @@ export default {
         instagram: String,
         phone: String,
     },
+    computed: {
+        currentRouteName() {
+            return this.$route.name;
+        },
+    },
     methods: {
         prev() {
-            this.$router.go(-1);
+            switch (this.currentRouteName) {
+                case "education":
+                    this.$router.push("/");
+                    break;
+                case "Home":
+                    console.log(this.currentRouteName);
+                    this.$router.push("/works");
+                    break;
+                case "works":
+                    this.$router.push("/service");
+                    break;
+                case "service":
+                    this.$router.push("/products");
+                    break;
+                case "products":
+                    this.$router.push("/education");
+                    break;
+            }
         },
         next() {
-            this.$router.go(1);
+            switch (this.currentRouteName) {
+                case "education":
+                    this.$router.push("/products");
+                    break;
+                case "products":
+                    console.log(this.currentRouteName);
+                    this.$router.push("/service");
+                    break;
+                case "service":
+                    this.$router.push("/works");
+                    break;
+                case "works":
+                    this.$router.push("/");
+                    break;
+                case "Home":
+                    this.$router.push("/education");
+                    break;
+            }
         },
     },
 };
@@ -89,16 +130,9 @@ export default {
         justify-content: center;
     }
 }
-.icon_telegram svg,
-.icon_instagram svg,
-.icon_phone svg {
-    /* width: 70px; */
-    /* width: 50px;
-    height: 50px; */
-}
+
 .icon_instagram {
     position: absolute;
-    /* left: 215px; */
 }
 .icon_telegram {
     position: absolute;
@@ -107,15 +141,20 @@ export default {
     position: absolute;
 }
 
-.svg_icon {
-    /* margin: 15px; */
-}
 .footer_focus {
     transition: transform 1s ease-in-out;
 }
-.prev,
+.prev {
+    transform: rotate(180deg);
+    margin-right: 100px;
+    @media (max-width: 576px) {
+        margin-right: 15px;
+    }
+}
 .next {
-    background-color: white;
-    cursor: pointer;
+    margin-left: 100px;
+    @media (max-width: 576px) {
+        margin-left: 15px;
+    }
 }
 </style>

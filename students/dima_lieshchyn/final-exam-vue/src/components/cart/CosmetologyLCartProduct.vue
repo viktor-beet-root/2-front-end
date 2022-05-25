@@ -159,7 +159,4 @@ export default {
         flex-direction: column;
     }
 }
-.currency {
-}
 </style>
-

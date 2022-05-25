@@ -86,7 +86,7 @@ export default {
     mounted() {},
 };
 </script>
-<style lang="scss" >
+<style lang="scss">
 .filter-block {
     /* width: 100%;
     height: 65px; */

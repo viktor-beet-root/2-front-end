@@ -1,16 +1,16 @@
 <template>
-    <div class="bg_hero blur">
+    <div class="bg_hero" :class="{ blur: this.browser }">
         <div class="container">
             <div class="row">
                 <div class="hero-block col-12">
                     <div class="hero-block__wrapper">
                         <div class="hero-block__info-block">
                             <h1 class="hero-block__title">Твой Косметолог</h1>
-                            <p>
+                            <p class="second">
                                 Меня зовут Ирина и я твой проводник в мир
                                 Косметологии.
                             </p>
-                            <p>
+                            <p class="third">
                                 Со мной можно усовершенствовать свою красоту,
                                 устранить недостатки, подобрать домашний уход,
                                 быть вечно молодой, здоровой, освоить новую
@@ -32,8 +32,36 @@ export default {
     name: "cosmetology-l-hero",
     data() {
         return {
-            mobile: null,
+            mobile: false,
+            browser: "",
         };
+    },
+    methods: {
+        checkScreen() {
+            this.windowWidth = window.innerWidth;
+            if (this.windowWidth <= 750) {
+                this.mobile = true;
+                return;
+            }
+
+            this.mobile = false;
+            return;
+        },
+
+        detectBrowser() {
+            let temp = navigator.userAgent.slice(0, 7);
+            console.log(temp);
+            if (temp === "Mozilla") {
+                this.browser = false;
+            } else {
+                this.browser = true;
+            }
+        },
+    },
+    created() {
+        this.detectBrowser();
+        window.addEventListener("resize", this.checkScreen);
+        this.checkScreen();
     },
 };
 </script>
@@ -85,9 +113,13 @@ export default {
     &__title {
         color: white;
         font-style: italic;
+        padding-bottom: 50px;
+        @media (max-width: 750px) {
+            padding-bottom: 0;
+        }
     }
     &__info-block {
-        width: 40%;
+        width: 100%;
         height: 100%;
         & p {
             font-size: 21px;
@@ -97,12 +129,41 @@ export default {
                 font-size: 15px;
             }
         }
+        @media (max-width: 750px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+            height: 80vh;
+        }
+    }
+    .second {
+        padding-bottom: 30px;
+        color: white;
+        @media (max-width: 750px) {
+            padding-bottom: 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+    }
+    .third {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 4px;
+        padding: 15px;
+        box-shadow: $box-shadow;
     }
     .water {
-        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: $box-shadow;
+        margin-top: 30px;
+        background-color: rgba(255, 255, 255, 0.7);
         border-radius: 4px;
-        width: 80%;
+        padding: 15px;
+        width: 40%;
         text-align: center;
+        @media (max-width: 750px) {
+            margin-top: 0;
+            width: 100%;
+        }
     }
 }
 </style>

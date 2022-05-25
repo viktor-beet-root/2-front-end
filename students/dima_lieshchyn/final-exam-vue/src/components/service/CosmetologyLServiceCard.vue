@@ -108,6 +108,10 @@ export default {
     justify-content: space-between;
     box-sizing: border-box;
     padding: 10px;
+    &:hover {
+        transition: all 0.5s ease;
+        box-shadow: $box-shadow;
+    }
 }
 
 .service-card {

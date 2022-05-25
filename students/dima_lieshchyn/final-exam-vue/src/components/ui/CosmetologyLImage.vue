@@ -1,9 +1,11 @@
 <template>
-    <img
-        class="image"
-        :src="require('@/assets/store_photos/' + src)"
-        :alt="alt"
-    />
+    <transition name="fade">
+        <img
+            class="image"
+            :src="require('@/assets/store_photos/' + src)"
+            :alt="alt"
+        />
+    </transition>
 </template>
 
 <script>

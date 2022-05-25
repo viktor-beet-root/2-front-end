@@ -10,11 +10,18 @@
         "
     >
         <div class="product__img-wrapper show">
-            <cosmetology-l-image
-                class="mb-3 product__image"
-                :src="product.img"
-                :alt="product.name"
-            />
+            <transition name="fade">
+                <cosmetology-l-image
+                    class="mb-3 product__image"
+                    :src="product.img"
+                    :alt="product.name"
+                    @load="loaded"
+                    v-show="isLoad"
+                />
+            </transition>
+            <div v-show="!isLoad" class="loading">
+                <cosmetology-l-load />
+            </div>
         </div>
         <div class="anim_block">
             <cosmetology-l-info @click="show = !show" />
@@ -58,6 +65,7 @@ import CosmetologyLDescription from "./CosmetologyLDescription.vue";
 import CosmetologyLPrice from "./CosmetologyLPrice.vue";
 import CosmetologyLInfo from "../ui/icons/CosmetologyLInfo.vue";
 import { mapActions } from "vuex";
+import CosmetologyLLoad from "../ui/icons/CosmetologyLLoad.vue";
 
 export default {
     components: {
@@ -66,12 +74,14 @@ export default {
         CosmetologyLPrice,
         CosmetologyLAction,
         CosmetologyLInfo,
+        CosmetologyLLoad,
     },
     name: "cosmetology-l-product",
     emits: ["addToCart"],
     data() {
         return {
             show: false,
+            isLoad: false,
         };
     },
     props: {
@@ -97,6 +107,20 @@ export default {
                 qty: 1,
             });
         },
+        loadImg() {
+            this.isLoad = false;
+            this.$nextTick(() => {
+                this.url = this.images[this.index];
+                this.index =
+                    this.index < this.images.length - 1 ? this.index + 1 : 0;
+            });
+        },
+        loaded() {
+            this.isLoad = true;
+        },
+    },
+    created() {
+        this.loadImg();
     },
 };
 </script>
@@ -228,5 +252,14 @@ export default {
     @media (max-width: 750px) {
         margin-bottom: 10px !important;
     }
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

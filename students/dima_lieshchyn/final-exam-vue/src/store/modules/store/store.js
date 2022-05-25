@@ -82,87 +82,87 @@ export default {
                 if (product.category === "choice" && product.type === "Добрая еда") {
                     state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByBiox(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "choice" && product.type === "Biox") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByFito(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "choice" && product.type === "Фитотерапия") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByChemical(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "choice" && product.type === "Бытовая химия") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByProHealth(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "choice" && product.type === "ProHealth") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByCosmetics(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "choice" && product.type === "Косметика") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByHomeCare(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "homeCare") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByClean(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "homeCare" && product.type === "Очищающие средства") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByTonic(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "homeCare" && product.type === "Тонизирующие средства") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByCreams(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "homeCare" && product.type === "Крема/Сыворотки") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsByOils(state, productList) {
             state.productList = [];
             productList.forEach((product) => {
                 if (product.category === "homeCare" && product.type === "Масла/Скрабы") {
-                    state.productList.push(product)
+                    state.productList.push(product);
                 }
-            });;
+            });
         },
         productsSortByUp(state) {
             state.productList.sort((a, b) => a["price"] - b["price"]);
@@ -332,5 +332,4 @@ export default {
             commit("removeProductCart", productIndex);
         },
     },
-}
-
+};

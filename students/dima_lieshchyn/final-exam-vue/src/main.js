@@ -16,6 +16,5 @@ import "bootstrap/dist/js/bootstrap";
 import "bootstrap/scss/bootstrap.scss";
 import "./assets/css/style.scss";
 
-
 const comsetology = createApp(App).use(store).use(router);
 comsetology.use(createVuestic()).use(LottieAnimation).mount("#app");

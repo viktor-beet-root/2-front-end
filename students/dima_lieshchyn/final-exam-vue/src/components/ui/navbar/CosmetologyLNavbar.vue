@@ -1,12 +1,11 @@
 <template>
     <header @mouseenter="focusNav = true" @mouseleave="focusNav = false">
         <nav>
-            <div
-                @click="showModal = !showModal"
-                class="logo"
-                style="cursor: pointer"
-            >
-                <span class="neonText"
+            <div class="logo">
+                <span
+                    @click="showModal = !showModal"
+                    style="cursor: pointer"
+                    class="neonText"
                     ><i class="logo_icon fa fa-lips"></i
                 ></span>
                 <va-modal v-model="showModal" title="Вход" hide-default-actions>
@@ -399,5 +398,8 @@ header {
         @include blur;
         z-index: 98;
     }
+}
+.filter {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 </style>

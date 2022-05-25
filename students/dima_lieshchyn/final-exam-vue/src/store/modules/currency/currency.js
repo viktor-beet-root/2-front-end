@@ -1,4 +1,3 @@
-// import axios from "axios";
 import request from "@/store/request";
 
 export default {
@@ -39,14 +38,12 @@ export default {
             const url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
             const current = await request(url);
             const dollar = current[0].sale;
-
             commit("setDollar", dollar);
         },
         async getEuro({ commit }) {
             const url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
             const current = await request(url);
             const euro = current[1].sale;
-
             commit("setEuro", euro);
         },
     },

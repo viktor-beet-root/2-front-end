@@ -1,0 +1,41 @@
+.icon-list {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        margin-left: 24px;
+    }
+
+    &__link {
+        &:hover {
+            & > .icon-list__img {
+                fill: $coral;
+            }
+        }
+    }
+
+    &__img {
+        fill: $darkest-grey;
+        @include transition(fill);
+
+        &_fb {
+            width: 10px;
+            height: 18px;
+        }
+
+        &_gh {
+            width: 21px;
+            height: 20px;
+        }
+
+        &_tw {
+            width: 20px;
+            height: 17px;
+        }
+
+        &_ln {
+            width: 18px;
+            height: 17px;
+        }
+    }
+}

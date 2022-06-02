@@ -1,0 +1,19 @@
+.glide {
+    border-radius: 8px;
+
+    &__slides {
+        height: 352px;
+    }
+
+    &__slide {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+}

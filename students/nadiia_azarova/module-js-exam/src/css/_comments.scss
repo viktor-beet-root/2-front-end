@@ -1,0 +1,519 @@
+.comments {
+    padding: 8px 16px;
+}
+
+.add-comment {
+        padding: 20px 0;
+
+		&__label {
+            display: block;
+
+            .required & {
+                &::after {
+                    content: '*';
+                    display: inline;
+                }
+            }
+		}
+
+		&__input {
+            display: block;
+            background-color: $light-grey;
+            border: none;
+            border-radius: 3px;
+            box-sizing: border-box;
+            width: 100%;
+            font-size: $fs-s;
+            color: $darkest-grey;
+
+            &:focus {
+                outline: none;
+            }
+
+            &_s {
+                height: 44px;
+                line-height: 44px;
+                padding: 0 14px;
+            }
+
+            &_textarea {
+                height: 96px;
+                margin-top: 12px;
+                padding: 14px;
+                resize: vertical;
+            }
+
+            &::placeholder {
+                color: inherit;
+            }
+		}
+
+        &__checkbox {
+            @include visuality-hidden;
+		}
+
+		&__checkbox-label {
+            font-size: $fs-s;
+            line-height: $lh-s;
+		}
+}
+
+.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -12px;
+
+    &__item {
+        flex-grow: 1;
+        box-sizing: border-box;
+        padding: 0 12px;
+
+        @include media(sm) {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.label-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.smile-list {
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+
+		&__item {
+            margin: 0 7.5px;
+            cursor: pointer;
+		}
+
+        &__img {
+            display: block;
+            height: 22px;
+            fill: currentColor;
+            @include transition(fill);
+
+            .smile-list__item:hover & {
+                fill: $dark-grey;
+            }
+
+            &_1,
+            &_2,
+            &_3,
+            &_6,
+            &_7 {
+                width: 21px;
+            }
+
+            &_4 {
+                width: 16px;
+            }
+
+            &_5 {
+                width: 22px;
+            }
+        }
+}
+
+.checkbox {
+    flex-shrink: 0;
+    width: 30px;
+    height: 19px;
+    box-sizing: border-box;
+    padding: 1px;
+    border: 1px solid currentColor;
+    border-radius: 9.5px;
+    background-color: $light-grey;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+
+    .add-comment__checkbox:checked ~ & {
+        justify-content: flex-end;
+    }
+
+    &__circle {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $additional-grey;
+
+        .add-comment__checkbox:checked ~ .checkbox & {
+            background-color: $coral;
+        }
+    }
+}
+
+.save {
+    padding: 24px 0 16px;
+    display: flex;
+    align-items: center;
+
+    &__checkbox {
+        margin-right: 6px;
+    }
+}
+
+.message-wrap {
+    padding-bottom: 20px;
+    
+}
+
+.button-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    display: block;
+    border: none;
+    width: 88px;
+    height: 44px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transition(background-color);
+    
+    &_light {
+        color: currentColor;
+        background-color: $light-grey;
+        border: 1px solid transparent;
+        @include transition(border);
+
+        &:hover {
+            background-color: transparent;
+            border: 1px solid $darkest-grey;
+        }
+
+    }
+
+    &_regular {
+        color: $white;
+        background-color: $darkest-grey;
+
+        &:hover {
+            background-color: $almost-black;
+        }
+
+    }
+}
+
+// Existing Comments
+.comments-list {
+    padding: 29px 0;
+}
+
+.comment-list {
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+.replies {
+    padding: 24px 0;
+}
+
+.comment {
+    padding: 18px 49px 18px 94px;
+    box-sizing: border-box;
+    position: relative;
+    border-top: 1px solid $grey;
+
+    @include media(sm) {
+        padding: 18px 0;
+    }
+
+    & & {
+        padding: 18px 0 18px 94px;
+        margin-right: -49px;
+
+        @include media(sm) {
+            padding: 18px 0 18px 36px;
+            margin-right: 0;
+        }
+    }
+
+    .comment-list > &:first-child {
+        border-top: none;
+    }
+
+    .comment-list > &:last-of-type {
+        border-bottom: 1px solid $grey;
+    }
+
+    .replies &:last-child {
+        padding-bottom: 0;
+        
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+
+        @include media(sm) {
+            align-items: flex-start;
+        }
+    }
+
+    &__body {
+        padding: 18px 0 7px;
+    }
+
+    &__starter {
+        display: inline-block;
+        line-height: 17px;
+        margin-right: 10px;
+        background-color: $additional-grey;
+        border-radius: 3px;
+        
+        &::before {
+            content: '@';
+            display: inline;
+        }
+    }
+
+    &__foot {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.comment-ava {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 70px;
+
+    @include media(sm) {
+        width: 38px;
+    }
+
+    @include media(sm) {
+        position: static;
+    }
+
+    &__img-wrap {
+        width: 70px;
+        height: 70px;
+        border-radius: 3px;
+        overflow: hidden;
+
+        @include media(sm) {
+            width: 38px;
+            height: 38px;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__website {
+        text-align: center;
+        font-size: $fs-xs;
+        line-height: 26px;
+
+        @include media(sm) {
+            font-size: $fs-xxs;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        @include transition(color);
+
+        .comment-ava__website:hover & {
+            color: $active-color;
+        }
+    }
+}
+
+.comment-title {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media(sm) {
+        padding: 0 8px;
+    }
+
+    &__name {
+        font-size: $fs-l;
+        line-height: 20px;
+        margin-right: 24px;
+    }
+
+    &__date {
+        line-height: 20px;
+        font-weight: 300;
+        color: $dark-grey;
+    }
+}
+
+.change {
+    display: flex;
+
+    &__img {
+        display: block;
+        height: 16px;
+        cursor: pointer;
+        @include transition(fill);
+
+        &:hover {
+            fill: $darkest-grey;
+        }
+
+        &_edit {
+            width: 18px;
+            fill: $green;
+            margin-right: 14px;
+        }
+
+        &_delete {
+            width: 14px;
+            fill: $red;
+        }
+    }
+}
+
+.likes {
+    position: absolute;
+    top: 82px;
+    right: 0;
+    width: 49px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    cursor: pointer;
+
+    @include media(sm) {
+        position: static;
+        width: auto;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img {
+        display: block;
+        width: 23px;
+        height: 21px;
+        fill: $darkest-grey;
+
+        &_inner {
+            position: absolute;
+            opacity: 0;
+            @include transition(opacity);
+
+            .likes:hover &,
+            .active {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__counter {
+        text-align: center;
+        font-size: $fs-xs;
+        line-height: 24px;
+    }
+}
+
+.reply {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &__img {
+        display: block;
+        width: 16px;
+        height: 14px;
+        fill: $dark-grey;
+        margin-right: 8px;
+        @include transition(fill);
+
+        .reply:hover & {
+            fill: $darkest-grey;
+        }
+    }
+
+    &__txt {
+        color: $dark-grey;
+        @include transition(color);
+
+        .reply:hover & {
+            color: $darkest-grey; 
+        }
+    }
+}
+
+.helpful {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+
+        &_up {
+            margin-right: 8px;
+            top: -3px;
+        }
+
+        &_down {
+            top: 4px;
+            right: 4px;
+        }
+    }
+
+    &__counter {
+        font-size: $fs-xs;
+        line-height: 1em;
+        position: relative;
+
+        &_up {
+            top: 3px;
+            right: 4px;
+        }
+
+        &_down {
+            left: 3px;
+            bottom: 4px;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 22px;
+        height: 22px;
+
+        .helpful__item:hover & {
+            fill: $darkest-grey;
+        }
+
+        &_up {
+            fill: $green;
+        }
+
+        &_down {
+            fill: $red;
+        }
+    }
+}

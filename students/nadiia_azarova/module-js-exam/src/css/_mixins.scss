@@ -97,3 +97,9 @@
 @mixin transition($property) {
     transition: $property .2s ease-in-out;
 }
+
+@mixin mob-media($point) {
+    @media screen and (min-width: (map-get($breack-points, $point) + 1px)) {
+        @content;
+    }
+}

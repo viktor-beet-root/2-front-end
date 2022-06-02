@@ -16,8 +16,11 @@ $breack-points: (
 );
 
 // Font Sizes and Line Heights
-$fs-xs: 9px;
-$lh-xs: 14px;
+$fs-xxs: 9px;
+$lh-xxs: 14px;
+
+$fs-xs: 10px;
+$lh-xs: 12px;
 
 $fs-s: 12px;
 $lh-s: 14px;
@@ -45,6 +48,13 @@ $white: #ffffff;
 $dark-red: #891900;
 
 $active-color: #8a8a8a;
+
+$additional-grey: #c4c4c4;
+
+$green: #01620B;
+$red: #a30000;
+
+$almost-black: #2b2b2b;
 
 // Colors in project
 $primary-1: $darkest-grey;

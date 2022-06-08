@@ -116,6 +116,12 @@
             &_5 {
                 width: 22px;
             }
+
+            .comment__body & {
+                display: inline-block;
+                position: relative;
+                top: 6px;
+            }
         }
 }
 
@@ -159,7 +165,7 @@
 }
 
 .message-wrap {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     
 }
 
@@ -421,7 +427,7 @@
             @include transition(opacity);
 
             .likes:hover &,
-            .active {
+            .active & {
                 opacity: 1;
             }
         }
@@ -514,6 +520,31 @@
 
         &_down {
             fill: $red;
+        }
+    }
+}
+
+.error {
+    .add-comment__input {
+        outline: 1px solid $red;
+    }
+
+    .add-comment__label {
+        color: $red;
+    }
+    
+    position: relative;
+
+    &-message {
+        font-size: $fs-xxs;
+        line-height: 1em;
+        position: absolute;
+        left: 12px;
+        bottom: -1.5em;
+        color: $red;
+
+        .add-comment__input_textarea + & {
+            left: 0;
         }
     }
 }

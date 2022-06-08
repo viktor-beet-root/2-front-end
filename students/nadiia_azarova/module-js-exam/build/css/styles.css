@@ -1765,6 +1765,11 @@ html {
 .smile-list__img_5 {
   width: 22px;
 }
+.comment__body .smile-list__img {
+  display: inline-block;
+  position: relative;
+  top: 6px;
+}
 
 .checkbox {
   -ms-flex-negative: 0;
@@ -1814,7 +1819,7 @@ html {
 }
 
 .message-wrap {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .button-wrap {
@@ -2113,8 +2118,7 @@ html {
   -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
-.likes:hover .likes__img_inner,
-.likes__img_inner .active {
+.likes:hover .likes__img_inner, .active .likes__img_inner {
   opacity: 1;
 }
 .likes__counter {
@@ -2207,4 +2211,25 @@ html {
 }
 .helpful__img_down {
   fill: #a30000;
+}
+
+.error {
+  position: relative;
+}
+.error .add-comment__input {
+  outline: 1px solid #a30000;
+}
+.error .add-comment__label {
+  color: #a30000;
+}
+.error-message {
+  font-size: 9px;
+  line-height: 1em;
+  position: absolute;
+  left: 12px;
+  bottom: -1.5em;
+  color: #a30000;
+}
+.add-comment__input_textarea + .error-message {
+  left: 0;
 }

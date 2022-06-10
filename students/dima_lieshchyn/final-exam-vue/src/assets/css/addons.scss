@@ -1,0 +1,18 @@
+
+@mixin transition-10-all {
+    transition: all 1s ease-in-out;
+}
+@mixin transition-8-all {
+    transition: all 0.8s ease-in-out;
+}
+@mixin transition-5-all {
+    transition: all 0.5s ease-in-out;
+}
+@mixin blur {   
+    // filter: url(#blurFilter);
+    // -webkit-filter: url(#blurFilter);
+    -moz-filter: unset;
+    -o-filter: url(#blurFilter);
+    -ms-filter: url(#blurFilter);
+    
+}

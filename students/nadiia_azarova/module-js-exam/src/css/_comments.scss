@@ -68,6 +68,7 @@
         flex-grow: 1;
         box-sizing: border-box;
         padding: 0 12px;
+        position: relative;
 
         @include media(sm) {
             margin-bottom: 24px;
@@ -166,6 +167,7 @@
 
 .message-wrap {
     margin-bottom: 20px;
+    position: relative;
     
 }
 

@@ -101,6 +101,8 @@ function resetForm(e) {
 // all comments in localStorage
 const comments = getComments();
 
+
+
 // add new comment form
 const addComment = document.forms.addCommentForm;
 
@@ -113,6 +115,9 @@ let saveUserInfo = addComment.saveUserInfo;
 addComment.addEventListener('submit', checkEmptyFields);
 addComment.addEventListener('submit', submitForm);
 addComment.addEventListener('focusout', cancelError);
+
+// user Info in locaStorage
+getUserInfo();
 
 // all text fields array
 const textFields = addComment.querySelectorAll('.add-comment__input');
@@ -231,7 +236,8 @@ function checkEmptyFields(e) {
     })
 }
 
-setDefaultValues();
+// setDefaultValues();
+// getUserInfo();
 
 function submitForm(e) {
     e.preventDefault();
@@ -263,9 +269,14 @@ function submitForm(e) {
         localStorage.setItem('comments', JSON.stringify(comments));
 
         if(saveUserInfo.checked) {
-            localStorage.setItem('userName', newComment.name);
-            localStorage.setItem('userEmail', newComment.email);
-            localStorage.setItem('userWebsite', newComment.website);
+            const userInfo = {
+                name: userName,
+                email: userEmail,
+                website: userWebsite,
+            }
+
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
         } 
 
         addComment.userMessage.value = '';
@@ -457,15 +468,6 @@ function deleteThisComment(e) {
     this.closest('li').remove();
 }
 
-
-// Like comment
-
-// const likeCounters = document.querySelectorAll('.likes__wrap');
-
-// likeCounters.forEach(counter => {
-//     counter.addEventListener('click', countLikes, {once: true});
-// })
-
 function getCurrentObject(target) {
     const savedComments = getComments();
     const currentLi = target.closest('li').id;
@@ -575,13 +577,6 @@ function codeToSmile(text) {
     return text.replace(regAngry, angry).replace(regGrin, grin).replace(regHappy, happy).replace(regWink, wink).replace(regVictory, victory).replace(regPerplexed,perplexed).replace(regSad, sad);
 
 }
-
-
-// add reply
-// const replyBtn = document.querySelectorAll('.reply');
-// replyBtn.forEach(btn => {
-//     btn.addEventListener('click', scrollToForm);
-// });
 
 function scrollToForm(e) {
 
@@ -709,25 +704,27 @@ function renderReply(newReply) {
 
 }
 
-function setDefaultValues() {
+function getUserInfo() {
 
-    localStorage.getItem('userName') ? addComment.userName.value = localStorage.getItem('userName') : addComment.userName.value = '';
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
-    localStorage.getItem('userEmail') ? addComment.userEmail.value = localStorage.getItem('userEmail') : addComment.userEmail.value = '';
+    if (userInfo) {
 
-    localStorage.getItem('userWebsite') ? addComment.userWebsite.value = localStorage.getItem('userWebsite') : userWebsite.value = '';
+        saveUserInfo.checked = true;
+        addComment.userName.value = userInfo.name;
+        addComment.userEmail.value = userInfo.email;
+        addComment.userWebsite.value = userInfo.website;
 
-    localStorage.getItem('userName') ? saveUserInfo.checked = true : saveUserInfo.checked = false;
-    
+    } else {
+        return {};
+    }
 }
 
-saveUserInfo.addEventListener('change', getUser);
+saveUserInfo.addEventListener('change', removeUser);
 
-function getUser() {
-    if (localStorage.getItem('userName')) {
-        localStorage.removeItem('userName');
-        localStorage.removeItem('userEmail')
-        localStorage.removeItem('userWebsite');
+function removeUser() {
 
+    if (localStorage.userInfo) {
+        localStorage.removeItem('userInfo');
     }
 }

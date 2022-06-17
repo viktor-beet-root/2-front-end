@@ -1,0 +1,140 @@
+.article {
+    &__cat {
+        font-size: $fs-s;
+        line-height: $lh-s;
+    }
+
+    &__cat-link {
+        text-decoration: none;
+        color: inherit;
+        @include transition(color);
+
+        &:hover {
+            color: $darkest-grey;
+        }
+    }
+
+    &__title {
+        &_a {
+           padding: 24px 0;
+        }
+
+        &_b {
+            padding: 28px 0 36px;
+        }
+
+        &_c {
+            padding: 8px 40px;
+        }
+       
+    }
+
+    &__cat,
+    &__info {
+        color: $dark-grey;
+    }
+
+    &__info {
+        display: flex;
+        font-size: $fs-s;
+        line-height: $lh-s;
+        margin-top: 36px;
+    }
+
+    &__author {
+        margin-left: 71px;
+        box-sizing: border-box;
+        padding: 0 12px;
+        border-left: 1px solid $grey;
+    }
+
+    &__slider {
+        margin: 48px 0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    &__quote {
+        margin: 58px 40px;
+    }
+
+    &__footer {
+        padding: 49px 0 6px;
+        border-bottom: 1px solid $grey;
+    }
+}
+
+.quote {
+    padding: 12px 16px; 
+    border-left: 1px solid $grey;
+
+    &__body {
+        
+    }
+
+    &__author {
+        margin-top: 32px;
+        font-style: normal;
+    }
+}
+
+.list {
+    padding: 36px 40px;
+    list-style: none;
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: currentColor;
+            position: absolute;
+            left: -40px;
+            top: 14px
+        }
+    }
+}
+
+.tags {
+    display: flex;
+    align-items: flex-start;
+
+    &__item {
+        font-size: $fs-s;
+        line-height: $lh-s;
+        padding: 8px 16px;
+        border-radius: 3px;
+        background-color: $light-grey;
+        cursor: pointer;
+        @include transition(background-color);
+
+        &:hover {
+            background-color: $grey;
+        }
+
+        &:not(:last-child) {
+            margin-right: 4px;
+        }
+    }
+}
+
+.share {
+    font-size: $fs-s;
+    line-height: $lh-s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include media(sm) {
+        justify-content: flex-start;
+        margin-top: 40px;
+    }
+}

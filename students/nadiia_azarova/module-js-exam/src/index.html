@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module JS Exam</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="page">
+    <header class="page__header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    @@include("./html/_nav.html")
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="page__main main">
+        <div class="container">
+            @@include("./html/_article.html")
+            <div class="row">
+                <div class="col-8 col-md-12 main__comments">
+                    @@include("./html/_comments.html")
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <footer class="page__footer footer">
+        <div class="footer__up-btn up-btn">
+            <svg class="up-btn__btn-img up-btn__btn-img_btn">
+                <use xlink:href="#up-btn" />
+            </svg>
+            <svg class="up-btn__btn-img up-btn__btn-img_arrow">
+                <use xlink:href="#up-arrow" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 footer__content">
+                    <div class="copyright">Copyright 
+                        <svg class="copyright__img">
+                            <use xlink:href="#copyright" />
+                        </svg>
+                        2020 Meliora, Inc</div>
+                    @@include("./html/_social-icons.html")
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @@include("./html/_sprite.html")
+    <script src="./js/script.js"></script>
+</body>
+</html>

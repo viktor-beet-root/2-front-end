@@ -1,0 +1,85 @@
+<section class="comments">
+    <h2 class="title title_b">Add a Comment</h2>
+    <form action="" method="post" class="add-comment" name="addCommentForm" id="addCommentForm">
+        <div class="user-info">
+            <div class="user-info__item required">
+                <label for="userName" class="add-comment__label">Name</label>
+                <input id="userName" type="text" class="add-comment__input add-comment__input_s" placeholder="Shane Hobbins" name="userName">
+                <div class="error-message"></div>
+            </div>
+            <div class="user-info__item required">
+                <label for="userMail" class="add-comment__label">Email</label>
+                <input id="userMail" type="email" class="add-comment__input add-comment__input_s" placeholder="info@interface.com" name="userEmail">
+                <div class="error-message"></div>
+            </div>
+            <div class="user-info__item">
+                <label for="userUrl" class="add-comment__label">Website</label>
+                <input id="userUrl" type="text" class="add-comment__input add-comment__input_s" placeholder="www.interface.com" name="userWebsite">
+                <div class="error-message"></div>
+            </div>
+        </div>
+        <div class="save">
+            <input id="saveUser" type="checkbox" class="add-comment__checkbox" name="saveUserInfo">
+            <label for="saveUser" class="checkbox save__checkbox">
+                <div class="checkbox__circle"></div>
+            </label>
+            <div class="add-comment__checkbox-label">Save my name, email, and website in this browser for the next time I comment</div>
+        </div>
+        <div class="message-wrap required">
+            <div class="label-wrap">
+                <label for="message" class="add-comment__label">Message</label>
+                <ul class="smile-list">
+                    <li class="smile-list__item">
+                        <svg class="smile-list__img smile-list__img_1" id="smileGrin">
+                            <use xlink:href="#smile-1" />
+                        </svg>
+                    </li>
+                    <li class="smile-list__item">
+                        <svg class="smile-list__img smile-list__img_2" id="smileWink">
+                            <use xlink:href="#smile-2" />
+                        </svg>
+                    </li>
+                    <li class="smile-list__item">
+                        <svg class="smile-list__img smile-list__img_3" id="smileHappy">
+                            <use xlink:href="#smile-3" />
+                        </svg>
+                    </li>
+                    <li class="smile-list__item">
+                        <svg class="smile-list__img smile-list__img_4" id="smileVictory">
+                            <use xlink:href="#smile-4" />
+                        </svg>
+                    </li>
+                    <li class="smile-list__item">
+                        <svg class="smile-list__img smile-list__img_5" id="smilePerplexed">
+                            <use xlink:href="#smile-5" />
+                        </svg>
+                    </li>
+                    <li class="smile-list__item">
+                        <svg class="smile-list__img smile-list__img_6" id="smileAngry">
+                            <use xlink:href="#smile-6" />
+                        </svg>
+                    </li>
+                    <li class="smile-list__item">
+                        <svg class="smile-list__img smile-list__img_7" id="smileSad">
+                            <use xlink:href="#smile-7" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+            <textarea name="userMessage" id="message" class="add-comment__input add-comment__input_textarea" placeholder="Hi there [::smile::] lorem [b]ipsum[/b] [i]dolor[/i]"></textarea>
+            <div class="error-message"></div>
+        </div>
+        <div class="button-wrap">
+            <button class="btn btn_light" id="resetBtn">Cancel</button>
+            <button class="btn btn_regular" id="postBtn"  type="submit" form="addCommentForm" value="submit">Post</button>
+        </div>
+        
+    </form>
+</section>
+    
+<section class="comments">
+    <h2 class="title title_b">Comments</h2>
+    <ul class="comment-list" id="commentList">
+        
+    </ul>
+</section>

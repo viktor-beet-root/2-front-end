@@ -1,0 +1,126 @@
+@include font-face('Roboto Mono', roboto-mono-v21-latin-300, 300);
+@include font-face('Roboto Mono', roboto-mono-v21-latin-500, 500);
+@include font-face('Roboto Mono', roboto-mono-v21-latin-500italic, 500, italic);
+@include font-face('Roboto Mono', roboto-mono-v21-latin-700, 700);
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sprite {
+    @include visuality-hidden;
+}
+
+.page {
+    font-family: $body-font-family, $monospace;
+    font-size: $body-font-size;
+    font-weight: 500;
+    line-height: $body-line-height;
+    color: $body-color;
+
+    &__header {
+        box-sizing: border-box;
+        padding: 96px 0;
+
+        @include media(md) {
+            padding: 16px 0;
+        }
+    }
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 $grid-gap;
+}
+
+@include grid;
+
+.title {
+    &_a {
+        font-size: $fs-xl;
+        line-height: $lh-xl;
+    }
+
+    &_b {
+        font-size: $fs-l;
+        line-height: $lh-l;
+    }
+
+    &_c {
+        @extend .title_b;
+    }
+}
+
+.main {
+    &__comments {
+        margin: 0 auto;
+        padding: 32px 0 14px;
+    }
+}
+
+.footer {
+    background-color: $light-grey;
+    box-sizing: border-box;
+    position: relative;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+
+        @include media(sm) {
+            height: 193px;
+            justify-content: center;
+            align-content: center;
+        }
+
+    }
+}
+
+.up-btn {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &__btn-img {
+        &_btn {
+            width: 80px;
+            height: 63px;
+            fill: $white;
+        }
+
+        &_arrow {
+            width: 12px;
+            height: 7px;
+            fill: $darkest-grey;
+            position: absolute;
+            bottom: 14px;
+            @include transition(bottom);
+
+            .up-btn:hover & {
+                bottom: 20px;
+            }
+        }
+    }
+}
+
+.copyright {
+    font-size: $fs-s;
+
+    &__img {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        fill: currentColor;
+        position: relative;
+        top: 1.5px;
+    }
+}
